@@ -1,0 +1,215 @@
+---
+/* The job application. Mike asked for this in March 2024: a plain form on the
+   site, no Google account, no cookie banner, nothing to download. It posts to
+   Web3Forms like the service form, but lands on its own thank-you page so an
+   application is never counted as a customer lead. */
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Photo from '../../components/Photo.astro';
+import { BRAND, FORM } from '../../data/site';
+import { href } from '../../lib/paths';
+import { breadcrumbs } from '../../lib/schema';
+
+const thanks = `${BRAND.origin}/careers/thanks/`;
+const schema = [breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Careers', path: '/careers/' }])];
+---
+
+<Base title="Now Hiring | Misty's Irrigation, Fenton MI" description="Work outside this season with Misty's Irrigation in Fenton. Apply in a few minutes: a short form, no account to make and nothing to download." path="/careers/" schema={schema} quoteHref="/book-service/">
+  <PageHead eyebrow="Now hiring" title="Work outside, **in good company.**" lede="We hire for the irrigation season, spring through fall. Apply below in a few minutes. No account, nothing to download." crumbs={[{ name: 'Careers', path: '/careers/' }]} />
+
+  <section class="band" aria-labelledby="j1">
+    <div class="wrap two top">
+      <div class="stack" style="--gap:1.25rem">
+        <h2 class="h2" id="j1">What the work is</h2>
+        <div class="prose muted">
+          <p>Spring startups, summer repairs and fall blowouts across Fenton and the towns around it. You will dig, fix, test and talk with homeowners, and you will learn how a sprinkler system actually works from the ground up.</p>
+          <p>Questions first? Call or text <a href={BRAND.phoneHref} data-loc="careers">{BRAND.phone}</a>.</p>
+        </div>
+        <figure>
+          <div class="frame wide"><Photo id="trencher-dog" ratio={3 / 2} widths={[480, 720]} sizes="(min-width: 60rem) 44vw, 100vw" /></div>
+          <figcaption class="note">The trencher, and the shop dog.</figcaption>
+        </figure>
+      </div>
+
+      <form class="app card pad light" id="apply" action={FORM.endpoint} method="POST" data-key={FORM.key ? '1' : ''} data-thanks={href('/careers/thanks/')}>
+        <input type="hidden" name="access_key" value={FORM.key} />
+        <input type="hidden" name="subject" value="New job application from mistysirr.com" />
+        <input type="hidden" name="from_name" value="Misty's Irrigation website" />
+        <input type="hidden" name="redirect" value={thanks} />
+        <input type="checkbox" name="botcheck" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <h2 class="h3">Application</h2>
+        <label class="f"><span>Full name</span><input name="name" required autocomplete="name" /></label>
+        <div class="f2">
+          <label class="f"><span>Phone</span><input name="phone" type="tel" required autocomplete="tel" inputmode="tel" /></label>
+          <label class="f"><span>Email <em>optional</em></span><input name="email" type="email" autocomplete="email" /></label>
+        </div>
+        <label class="f"><span>Town you live in</span><input name="town" required autocomplete="address-level2" /></label>
+        <fieldset class="f">
+          <legend>Irrigation experience</legend>
+          <div class="opts">
+            {['None yet', 'One season', 'Two or more seasons'].map((o, i) => <label><input type="radio" name="experience" value={o} checked={i === 0} /><span>{o}</span></label>)}
+          </div>
+        </fieldset>
+        <div class="f2">
+          <fieldset class="f">
+            <legend>Valid driver's license?</legend>
+            <div class="opts">
+              {['Yes', 'No'].map((o, i) => <label><input type="radio" name="drivers_license" value={o} checked={i === 0} /><span>{o}</span></label>)}
+            </div>
+          </fieldset>
+          <fieldset class="f">
+            <legend>Looking for</legend>
+            <div class="opts">
+              {['Full time', 'Part time'].map((o, i) => <label><input type="radio" name="hours" value={o} checked={i === 0} /><span>{o}</span></label>)}
+            </div>
+          </fieldset>
+        </div>
+        <label class="f"><span>When could you start?</span><input name="start_date" placeholder="For example, April 1" /></label>
+        <label class="f"><span>Recent work, and anything else we should know <em>optional</em></span><textarea name="message" rows="4"></textarea></label>
+        <button class="btn primary" type="submit">Send my application</button>
+        <p class="app__msg small" role="status" aria-live="polite"></p>
+        <p class="fine muted">Used only to consider your application. Have a resume? Mention it and we will ask for it.</p>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  (function () {
+    var f = document.getElementById('apply');
+    if (!f) return;
+    var msg = f.querySelector('.app__msg'), btn = f.querySelector('button[type=submit]');
+    function call(t) { msg.innerHTML = t + ' <a href="tel:+18104239513">(810) 423-9513</a>.'; }
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msg.textContent = ''; msg.className = 'app__msg small';
+      if (!f.dataset.key) { call('Applications open online when this site goes live. For now, call or text'); return; }
+      var d = new FormData(f), o = {};
+      d.forEach(function (v, k) { o[k] = v; });
+      o.subject = 'New job application: ' + (o.name || '');
+      btn.disabled = true; btn.textContent = 'Sending';
+      fetch(f.action, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(o) })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { if (!j.success) throw new Error('rejected'); if (window.miTrack) window.miTrack('application_sent', {}); location.href = f.dataset.thanks; })
+        .catch(function () { btn.disabled = false; btn.textContent = 'Send my application'; call('That did not go through. Please call or text'); msg.classList.add('is-bad'); });
+    });
+  })();
+</script>
+
+<style>
+  .app {
+    display: grid;
+    gap: 1rem;
+    scroll-margin-top: calc(var(--header) + 1rem);
+  }
+
+  .f {
+    display: grid;
+    gap: 0.3rem;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .f legend {
+    padding: 0;
+    margin-bottom: 0.3rem;
+  }
+
+  .f em {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .f input:not([type='radio']),
+  .f textarea {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #8794a6;
+    border-radius: var(--r-sm);
+    background: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .f :focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 1px;
+  }
+
+  .f2 {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 34rem) {
+    .f2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .opts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .opts label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .opts input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .opts span {
+    display: inline-grid;
+    place-items: center;
+    min-height: 2.75rem;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid #8794a6;
+    border-radius: var(--r-sm);
+    background: #fff;
+    font-weight: 560;
+  }
+
+  .opts input:checked + span {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .opts input:focus-visible + span {
+    outline: 2px solid var(--rose);
+    outline-offset: 2px;
+  }
+
+  .app button {
+    justify-self: start;
+  }
+
+  .app__msg:empty {
+    display: none;
+  }
+
+  .app__msg {
+    font-weight: 600;
+  }
+
+  .app__msg:global(.is-bad) {
+    padding: 0.7rem 0.85rem;
+    border-left: 3px solid #a12b1f;
+    background: #fbeeeb;
+    color: #6f1c13;
+  }
+</style>

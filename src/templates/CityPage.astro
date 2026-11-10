@@ -1,0 +1,219 @@
+---
+/* ============================================================================
+   A TOWN HUB, at /service-areas/<town>-mi/
+
+     1  hero       the town in the h1, the rating, two actions
+     2  mist       what is different about irrigation here, beside a photo
+     3  white      every service, linking to this town's own page where one exists
+     4  ink        the map, how a visit runs here, and the facts
+     5  mist       reviews, the questions and the neighboring towns
+     6  ink        the booking form
+   Copy comes from src/content/cities/<city>.json.
+   ========================================================================== */
+import type { CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Head from '../components/Head.astro';
+import Photo from '../components/Photo.astro';
+import Faq from '../components/Faq.astro';
+import Reviews from '../components/Reviews.astro';
+import QuoteBand from '../components/QuoteBand.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import AreaMap from '../components/AreaMap.astro';
+import { BRAND } from '../data/site';
+import { SERVICES } from '../data/services';
+import { city as getCity, hubPath, cityLabel, hasTownPage } from '../data/cities';
+import { review } from '../data/reviews';
+import { photo, type PhotoId } from '../data/photos';
+import { heroImage } from '../lib/hero';
+import { href } from '../lib/paths';
+import { rich } from '../lib/rich';
+import { breadcrumbs, faqSchema, serviceSchema } from '../lib/schema';
+
+interface Props {
+  entry: CollectionEntry<'cities'>;
+}
+const { entry } = Astro.props;
+const c = entry.data;
+const town = getCity(c.city);
+const path = hubPath(town);
+const hero = await heroImage(c.hero.photo as PhotoId);
+const local = SERVICES.filter((s) => hasTownPage(s, town));
+const rest = SERVICES.filter((s) => !hasTownPage(s, town));
+
+const schema = [
+  serviceSchema({ name: `Lawn sprinkler service in ${town.name}, MI`, type: 'Lawn sprinkler service', description: c.meta.description, url: `${BRAND.origin}${path}`, area: cityLabel(town) }),
+  faqSchema(c.faq),
+  breadcrumbs([
+    { name: 'Home', path: '/' },
+    { name: 'Service areas', path: '/service-areas/' },
+    { name: town.name, path },
+  ]),
+];
+---
+
+<Base ogImage={hero.fallback} title={c.meta.title} description={c.meta.description} path={path} preload={hero.preload} schema={schema}>
+  <Hero
+    image={hero}
+    kicker={c.hero.kicker}
+    title={c.hero.title}
+    lede={c.hero.lede}
+    chips={c.hero.chips}
+    primary={{ label: `Book in ${town.name}`, href: '#quote' }}
+    crumbs={[
+      { name: 'Service areas', path: '/service-areas/' },
+      { name: town.name, path },
+    ]}
+  />
+
+  <section class="band" aria-labelledby="about-h">
+    <div class="wrap two top">
+      <div class="stack" style="--gap:1.4rem">
+        <Head id="about-h" layout="left" eyebrow={c.about.eyebrow ?? `Irrigation in ${town.name}`} title={c.about.title} />
+        <div class="prose muted">
+          {c.about.body.map((p) => <p set:html={rich(p)} />)}
+        </div>
+        <ul class="pts">
+          {
+            c.about.points.map((p) => (
+              <li>
+                <h3 class="h3">{p.title}</h3>
+                <p class="small muted" set:html={rich(p.body)} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <figure class="stick">
+        <div class="frame tall">
+          <Photo id={c.about.photo as PhotoId} ratio={4 / 5} widths={[400, 640, 880]} sizes="(min-width: 60rem) 44vw, 100vw" />
+        </div>
+        <figcaption class="note">{photo(c.about.photo as PhotoId).caption}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band white" aria-labelledby="svc-h">
+    <div class="wrap">
+      <Head id="svc-h" eyebrow={`Services in ${town.name}`} title={`What we do **in ${town.name}.**`} intro="Each one has its own page with the details for this town." />
+      <ServiceCards services={local} town={town} columns={local.length === 4 ? 4 : 3} />
+      <p class="small muted also">
+        Also in {town.name}:
+        {rest.map((s, i) => <><a class="link" href={href(s.path)}>{s.short.toLowerCase()}</a>{i < rest.length - 1 ? ', ' : '.'}</>)}
+      </p>
+    </div>
+  </section>
+
+  <section class="band ink dawn" aria-labelledby="how-h">
+    <div class="wrap two top">
+      <div class="stack" style="--gap:1.25rem">
+        <Head id="how-h" layout="left" eyebrow={`Getting to ${town.name}`} title={c.logistics.title} />
+        <div class="prose muted">
+          {c.logistics.body.map((p) => <p set:html={rich(p)} />)}
+        </div>
+        <dl class="facts">
+          {
+            c.logistics.facts.map((f) => (
+              <div>
+                <dt class="fine">{f.label}</dt>
+                <dd>{f.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+      <AreaMap current={town.id} />
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="rev-h">
+    <div class="wrap">
+      <Head id="rev-h" eyebrow="Reviews" title="What **neighbors** say." />
+      <Reviews reviews={c.reviews.map((id) => review(id)!)} />
+    </div>
+  </section>
+
+  <section class="band white" aria-labelledby="faq-h">
+    <div class="wrap faqs">
+      <Head id="faq-h" layout="left" eyebrow="Questions" title={`Sprinkler questions from ${town.name}.`} intro={`If yours is not here, call or text [${BRAND.phone}](${BRAND.phoneHref}).`} />
+      <Faq items={c.faq} />
+    </div>
+    <div class="wrap more">
+      <h2 class="h3">Nearby</h2>
+      <ul class="chips">
+        {c.neighbors.map((n) => { const t = getCity(n); return <li><a class="chip" href={href(hubPath(t))}>{t.name}, MI</a></li>; })}
+        <li><a class="chip" href={href('/service-areas/')}>Every town we serve</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <QuoteBand title={`Book service in ${town.name}.`} town={town.name} avoid={[c.hero.photo, c.about.photo]} />
+</Base>
+
+<style>
+  .pts {
+    display: grid;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .pts li {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .also {
+    margin-top: 1.75rem;
+  }
+
+  .facts {
+    display: grid;
+    border-top: 1px solid var(--line-ink);
+  }
+
+  .facts div {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line-ink);
+  }
+
+  .facts dt {
+    font-weight: 650;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pink-on-ink);
+  }
+
+  .facts dd {
+    font-size: 1.0625rem;
+    font-weight: 600;
+  }
+
+  .faqs {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 72rem) {
+    .faqs {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .faqs :global(.head) {
+      position: sticky;
+      top: calc(var(--header) + 2rem);
+    }
+  }
+
+  .more {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid var(--line);
+  }
+</style>

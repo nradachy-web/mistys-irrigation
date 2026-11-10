@@ -1,0 +1,335 @@
+---
+/* The first screen. A full bleed photo with a scrim, one h1 (the keyword line
+   above a short display line), one paragraph, two actions and a trust row.
+
+   The page-load moment (home and `dawn`): the photo starts a shade cooler and
+   darker, as it would be just before sunrise, and warms up; the words rise; then
+   a fine mist starts drifting across the lower half and glints where the light
+   catches it, and parts around the pointer (Mist.astro). Opacity and transform
+   only, nothing hidden from a browser without script, and none of it for a
+   visitor who asked for less motion. */
+import Icon from './Icon.astro';
+import Stars from './Stars.astro';
+import Mist from './Mist.astro';
+import { BRAND, LINKS, RATING } from '../data/site';
+import { heading } from '../lib/rich';
+import { href } from '../lib/paths';
+import type { HeroImage } from '../lib/hero';
+
+interface Props {
+  image: HeroImage;
+  kicker: string;
+  title: string;
+  lede: string;
+  chips?: string[];
+  primary?: { label: string; href: string };
+  secondary?: { label: string; href: string } | false;
+  crumbs?: { name: string; path: string }[];
+  /** The home page: taller, with the sunrise and the mist. */
+  home?: boolean;
+  /** The sunrise and mist on an inner page. */
+  dawn?: boolean;
+  focus?: string;
+}
+const {
+  image,
+  kicker,
+  title,
+  lede,
+  chips = [],
+  primary = { label: 'Book service', href: '#quote' },
+  secondary,
+  crumbs,
+  home = false,
+  dawn = home,
+  focus,
+} = Astro.props;
+const second = secondary === false ? null : (secondary ?? { label: `Call ${BRAND.phone}`, href: BRAND.phoneHref });
+const p = primary.href.startsWith('#') ? primary.href : href(primary.href);
+---
+
+<section class:list={['hero', 'ink', home && 'hero--home', dawn && 'is-dawn']} aria-labelledby="hero-h">
+  <div class="hero__media" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset={image.avif} sizes={image.sizes} />
+      <source type="image/webp" srcset={image.webp} sizes={image.sizes} />
+      <img src={image.fallback} width={image.width} height={image.height} alt="" fetchpriority="high" decoding="sync" style={focus ? `object-position:${focus}` : undefined} />
+    </picture>
+    {dawn && <span class="hero__warm" />}
+    {dawn && <Mist />}
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="wrap hero__body">
+    {
+      crumbs && (
+        <nav class="crumbs fine" aria-label="Breadcrumb">
+          <ol>
+            <li><a href={href('/')}>Home</a></li>
+            {crumbs.map((c, i) => (
+              <li>{i === crumbs.length - 1 ? <span aria-current="page">{c.name}</span> : <a href={href(c.path)}>{c.name}</a>}</li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
+    <h1 id="hero-h" class="hero__h">
+      <span class="hero__kicker">{kicker}</span>
+      <span class:list={['h1', !home && 'h1--page', 'hero__title']} set:html={heading(title, 'accent')} />
+    </h1>
+    <p class="lede hero__lede">{lede}</p>
+    <div class="actions hero__actions">
+      <a class="btn primary" href={p} data-cta="hero-primary">{primary.label}</a>
+      {second && <a class="btn ghost" href={second.href.startsWith('tel:') ? second.href : href(second.href)} data-loc="hero"><Icon name="phone" />{second.label}</a>}
+    </div>
+    <ul class="hero__trust">
+      <li>
+        <a class="rating" href={LINKS.google} target="_blank" rel="noopener">
+          <Stars />
+          <span>{RATING.value} on Google, {RATING.countLabel} reviews</span>
+        </a>
+      </li>
+      {chips.map((c) => <li class="hero__chip"><Icon name="check" />{c}</li>)}
+    </ul>
+    {image.note && <p class="hero__note fine">{image.note}</p>}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    align-items: end;
+    min-height: min(78svh, 46rem);
+    padding-block: clamp(6rem, 12vw, 9rem) clamp(2.5rem, 5vw, 4rem);
+    overflow: hidden;
+  }
+
+  .hero--home {
+    min-height: min(calc(100svh - var(--header)), 54rem);
+  }
+
+  @media (max-width: 47.99rem) {
+    .hero {
+      min-height: 0;
+      padding-top: min(17rem, 42svh);
+    }
+
+    .hero--home {
+      padding-top: min(19.5rem, 48svh);
+    }
+  }
+
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: var(--ink-3);
+  }
+
+  .hero__media picture,
+  .hero__media img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 47.99rem) {
+    .hero {
+      background: var(--ink);
+    }
+
+    .hero__media {
+      bottom: auto;
+      height: min(30rem, 72svh);
+    }
+
+    .hero__media img {
+      object-position: 68% 50%;
+    }
+  }
+
+  .hero__media img {
+    object-fit: cover;
+  }
+
+  /* the sunrise: the photo starts cool and a little dark, and warms */
+  .hero__warm {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(10 22 48 / 0.55), rgb(10 22 48 / 0.25));
+    mix-blend-mode: multiply;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .is-dawn .hero__warm {
+      animation: dawn 2.6s 0.15s var(--ease) both reverse;
+    }
+
+    .is-dawn .hero__h,
+    .is-dawn .hero__lede,
+    .is-dawn .hero__actions,
+    .is-dawn .hero__trust {
+      animation: rise 1s var(--ease) both;
+    }
+
+    .is-dawn .hero__lede {
+      animation-delay: 0.12s;
+    }
+
+    .is-dawn .hero__actions {
+      animation-delay: 0.22s;
+    }
+
+    .is-dawn .hero__trust {
+      animation-delay: 0.32s;
+    }
+  }
+
+  @keyframes dawn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* the words are never hidden: they start low and only a little faded */
+  @keyframes rise {
+    from {
+      transform: translateY(14px);
+      opacity: 0.35;
+    }
+  }
+
+  .hero__scrim {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, rgb(11 18 32 / 0.86) 0%, rgb(11 18 32 / 0.6) 38%, rgb(11 18 32 / 0.08) 72%),
+      linear-gradient(0deg, rgb(11 18 32 / 0.8) 0%, rgb(11 18 32 / 0) 46%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 47.99rem) {
+    .hero__scrim {
+      bottom: auto;
+      height: min(30rem, 72svh);
+      background: linear-gradient(0deg, var(--ink) 0%, rgb(11 18 32 / 0.82) 28%, rgb(11 18 32 / 0.1) 62%, rgb(11 18 32 / 0.15) 100%);
+    }
+  }
+
+  .hero__body {
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+  }
+
+  .hero__h {
+    display: grid;
+    gap: 0.9rem;
+    max-width: min(100%, 50rem);
+    font-weight: inherit;
+  }
+
+  .hero__kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    font-weight: 680;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pink-on-ink);
+  }
+
+  .hero__kicker::before {
+    content: '';
+    width: 1.6rem;
+    height: 0.7rem;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 14'%3E%3Cpath d='M1 13C7 4.5 17 1 31 3c-12-.4-21 3.4-28 10.6z'/%3E%3Cpath d='M7 13.4C12 8 20 5.6 30.5 7 21.5 7 14 9.4 8.6 14z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 14'%3E%3Cpath d='M1 13C7 4.5 17 1 31 3c-12-.4-21 3.4-28 10.6z'/%3E%3Cpath d='M7 13.4C12 8 20 5.6 30.5 7 21.5 7 14 9.4 8.6 14z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .hero__title {
+    display: block;
+    text-wrap: balance;
+  }
+
+  .hero__lede {
+    max-width: 36rem;
+    color: #d6deea;
+  }
+
+  .hero__actions {
+    margin-top: 0.4rem;
+  }
+
+  .hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1.5rem;
+    margin-top: 0.25rem;
+    font-size: 0.9375rem;
+    color: #d6deea;
+  }
+
+  .hero__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 2.75rem;
+    font-weight: 560;
+  }
+
+  .hero__chip :global(.icon) {
+    width: 1.05rem;
+    height: 1.05rem;
+    color: var(--pink-on-ink);
+  }
+
+  .hero__note {
+    position: absolute;
+    right: var(--gutter);
+    bottom: 0.6rem;
+    margin: 0;
+    color: rgb(214 222 234 / 0.75);
+  }
+
+  @media (max-width: 47.99rem) {
+    .hero__note {
+      position: static;
+      margin-top: 0.25rem;
+    }
+  }
+
+  .crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    color: #c4cedc;
+  }
+
+  .crumbs li + li::before {
+    content: '/';
+    margin-right: 0.35rem;
+    opacity: 0.6;
+  }
+
+  .crumbs a {
+    display: inline-block;
+    padding-block: 0.6rem;
+    text-decoration: none;
+  }
+
+  .crumbs a:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+</style>

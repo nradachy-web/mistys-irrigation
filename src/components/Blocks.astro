@@ -1,0 +1,347 @@
+---
+/* Renders a page's blocks in order. One look per block type, so every service
+   page is built from the same parts. Shapes are in src/content.schema.mjs. */
+import Head from './Head.astro';
+import Photo from './Photo.astro';
+import Steps from './Steps.astro';
+import Faq from './Faq.astro';
+import Reviews from './Reviews.astro';
+import Coverage from './Coverage.astro';
+import Blowout from './Blowout.astro';
+import ZoneCalc from './ZoneCalc.astro';
+import Season from './Season.astro';
+import RustReveal from './RustReveal.astro';
+import AreaChips from './AreaChips.astro';
+import type { Block } from '../content.config';
+import type { PhotoId } from '../data/photos';
+import { photo } from '../data/photos';
+import { review } from '../data/reviews';
+import type { Service } from '../data/services';
+import { href } from '../lib/paths';
+import { heading, rich } from '../lib/rich';
+
+interface Props {
+  blocks: Block[];
+  service?: Service;
+}
+const { blocks, service } = Astro.props;
+
+const planeClass = (p: string) => ['band', p === 'ink' && 'ink', p === 'white' && 'white'];
+const link = (h: string) => (h.startsWith('#') || /^(https?:|tel:|sms:)/.test(h) ? h : href(h));
+---
+
+{
+  blocks.map((b, i) => {
+    const hid = `b${i}-h`;
+    return (
+      <section class:list={[...planeClass(b.plane), b.type === 'areas' && 'tight', b.type === 'panel' && b.plane === 'ink' && 'dawn']} aria-labelledby={hid}>
+        <div class="wrap">
+          {b.type === 'intro' && (
+            <div class:list={['two', b.flip && 'flip', !b.photo && 'solo']}>
+              <div class="stack" style="--gap:1.4rem">
+                <Head id={hid} layout="left" eyebrow={b.eyebrow} title={b.title} intro={b.intro} />
+                {b.body.length > 0 && (
+                  <div class="prose">
+                    {b.body.map((p) => <p set:html={rich(p)} />)}
+                  </div>
+                )}
+                {b.checks.length > 0 && (
+                  <ul class="checks">
+                    {b.checks.map((c) => <li><span set:html={rich(c)} /></li>)}
+                  </ul>
+                )}
+                {b.cta && <p><a class="arrow" href={link(b.cta.href)}>{b.cta.label}</a></p>}
+              </div>
+              {b.photo && (
+                <figure>
+                  <div class="frame tall">
+                    <Photo id={b.photo as PhotoId} ratio={4 / 5} widths={[400, 640, 880]} sizes="(min-width: 60rem) 44vw, 100vw" />
+                  </div>
+                  <figcaption class="note">{photo(b.photo as PhotoId).caption}</figcaption>
+                </figure>
+              )}
+            </div>
+          )}
+
+          {b.type === 'cards' && (
+            <>
+              <Head id={hid} eyebrow={b.eyebrow} title={b.title} intro={b.intro} />
+              <ul class:list={['grid', `c${b.columns}`]}>
+                {b.items.map((it) => (
+                  <li class="card pad tile">
+                    {it.tag && <p class="tile__tag fine">{it.tag}</p>}
+                    <h3 class="h3">{it.title}</h3>
+                    <p class="small muted" set:html={rich(it.body)} />
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {b.type === 'compare' && (
+            <>
+              <Head id={hid} eyebrow={b.eyebrow} title={b.title} intro={b.intro} />
+              <ul class:list={['grid', b.columns.length === 2 ? 'c2' : b.columns.length === 4 ? 'c4' : 'c3']}>
+                {b.columns.map((col, c) => (
+                  <li class:list={['card', 'pad', 'cmp', b.highlight === c && 'cmp--on']}>
+                    {b.highlight === c && <p class="cmp__flag fine">What we recommend</p>}
+                    <h3 class="h3">{col}</h3>
+                    <dl>
+                      {b.rows.map((r) => (
+                        <div>
+                          <dt class="fine">{r.label}</dt>
+                          <dd class="small">{r.values[c]}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {b.type === 'steps' && (
+            <>
+              <Head id={hid} eyebrow={b.eyebrow} title={b.title} intro={b.intro} />
+              <Steps steps={b.steps} />
+              {b.footnote && <p class="small muted foot" set:html={rich(b.footnote)} />}
+            </>
+          )}
+
+          {b.type === 'gallery' && (
+            <>
+              <Head id={hid} eyebrow={b.eyebrow} title={b.title} intro={b.intro} />
+              <ul class:list={['gal', `gal--${b.photos.length}`]}>
+                {b.photos.map((id) => (
+                  <li>
+                    <figure>
+                      <div class="frame">
+                        <Photo id={id as PhotoId} ratio={4 / 3} widths={[400, 640, 880]} sizes="(min-width: 60rem) 32vw, (min-width: 40rem) 48vw, 92vw" />
+                      </div>
+                      <figcaption class="note">{photo(id as PhotoId).caption}</figcaption>
+                    </figure>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {b.type === 'reviews' && (
+            <>
+              <Head id={hid} eyebrow={b.eyebrow ?? 'Reviews'} title={b.title} intro={b.intro} />
+              <Reviews reviews={b.ids.map((id) => review(id)!)} />
+            </>
+          )}
+
+          {b.type === 'panel' && (
+            <div class:list={['pn', `pn--${b.kind}`]}>
+              <div class="pn__head stack" style="--gap:1.1rem">
+                <Head id={hid} layout="left" eyebrow={b.eyebrow ?? 'Try it'} title={b.title} intro={b.intro} />
+                {b.points.length > 0 && (
+                  <ul class="checks small">
+                    {b.points.map((p) => <li><span set:html={rich(p)} /></li>)}
+                  </ul>
+                )}
+              </div>
+              <div class="pn__tool">
+                {b.kind === 'coverage' && <Coverage />}
+                {b.kind === 'blowout' && <Blowout />}
+                {b.kind === 'calc' && <ZoneCalc />}
+                {b.kind === 'season' && <Season />}
+                {b.kind === 'rust' && <RustReveal />}
+              </div>
+            </div>
+          )}
+
+          {b.type === 'note' && (
+            <div class="nt">
+              <div class="nt__fig">
+                {b.figure && <p class="nt__num">{b.figure}</p>}
+                {b.figureLabel && <p class="fine nt__lab">{b.figureLabel}</p>}
+              </div>
+              <div class="stack" style="--gap:1rem">
+                {b.eyebrow && <p class="eyebrow">{b.eyebrow}</p>}
+                <h2 class="h2" id={hid} set:html={heading(b.title, 'accent')} />
+                <p class="lede" set:html={rich(b.body)} />
+              </div>
+            </div>
+          )}
+
+          {b.type === 'areas' && (
+            <>
+              <Head id={hid} eyebrow={b.eyebrow ?? 'Where we work'} title={b.title} intro={b.intro} />
+              <AreaChips service={service} />
+            </>
+          )}
+
+          {b.type === 'faq' && (
+            <div class="faqs">
+              <Head id={hid} layout="left" eyebrow={b.eyebrow ?? 'Questions'} title={b.title} intro={b.intro} />
+              <Faq items={b.items} />
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  })
+}
+
+<style>
+  .solo {
+    grid-template-columns: minmax(0, 46rem);
+  }
+
+  .tile {
+    display: grid;
+    gap: 0.55rem;
+    align-content: start;
+  }
+
+  .tile__tag {
+    font-weight: 680;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rose-ink);
+  }
+
+  :global(.ink) .tile__tag {
+    color: var(--pink-on-ink);
+  }
+
+  .cmp {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+  }
+
+  .cmp--on {
+    border-color: var(--rose);
+    box-shadow: 0 0 0 1px var(--rose);
+  }
+
+  :global(.ink) .cmp--on {
+    border-color: var(--pink-btn);
+    box-shadow: 0 0 0 1px var(--pink-btn);
+  }
+
+  .cmp__flag {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: var(--r-sm);
+    background: var(--rose);
+    color: #fff;
+    font-weight: 680;
+  }
+
+  :global(.ink) .cmp__flag {
+    background: var(--pink-btn);
+    color: var(--ink);
+  }
+
+  .cmp dl {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .cmp dt {
+    font-weight: 650;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  :global(.ink) .cmp dt {
+    color: var(--on-ink-muted);
+  }
+
+  .foot {
+    margin-top: 2rem;
+    max-width: 46rem;
+  }
+
+  .gal {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  @media (min-width: 40rem) {
+    .gal {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 60rem) {
+    .gal--3,
+    .gal--6 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .gal .frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pn {
+    display: grid;
+    gap: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  @media (min-width: 64rem) {
+    .pn--coverage,
+    .pn--rust {
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+  }
+
+  .pn__head :global(.head) {
+    margin-bottom: 0;
+  }
+
+  .nt {
+    display: grid;
+    gap: 1.5rem 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 60rem) {
+    .nt {
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    }
+  }
+
+  .nt__num {
+    font-size: clamp(5rem, 13vw, 10rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 0.85;
+    color: var(--rose);
+  }
+
+  :global(.ink) .nt__num {
+    color: var(--pink-on-ink);
+  }
+
+  .nt__lab {
+    margin-top: 0.75rem;
+    max-width: 16rem;
+    font-weight: 600;
+  }
+
+  .faqs {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 72rem) {
+    .faqs {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: start;
+    }
+  }
+</style>

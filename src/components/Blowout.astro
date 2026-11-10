@@ -1,0 +1,434 @@
+---
+/* WINTERIZE IT: a cut-away of a yard. The water comes out of the house, up
+   through the backflow device, down to the valve box and out to three zones.
+   "Blow it out" connects a compressor and clears the main, then each zone in
+   turn: the water is pushed out through the heads in a puff of mist. Then drag
+   winter in. Wherever water is still sitting in a pipe when the frost line
+   passes it, it turns to ice and something cracks. Skip the blowout to see
+   that. Drawn as SVG, so it is sharp at any size; script only runs the story.
+   Labeled as an illustration. */
+---
+
+<figure class="bo panel" data-bo>
+  <span class="panel__tag">Illustration, not to scale</span>
+  <svg class="bo__svg" viewBox="0 0 800 330" role="img" aria-labelledby="bo-t">
+    <title id="bo-t">A cut-away of a yard: water pipes from the house to a backflow device, a valve box and three zones of sprinkler heads, with a frost line that moves down as winter comes.</title>
+    <defs>
+      <linearGradient id="bo-soil" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#3a2c22" />
+        <stop offset="1" stop-color="#1d1713" />
+      </linearGradient>
+      <linearGradient id="bo-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#16243c" />
+        <stop offset="1" stop-color="#2b3e5e" />
+      </linearGradient>
+      <pattern id="bo-ice" width="10" height="10" patternUnits="userSpaceOnUse">
+        <path d="M0 5h10M5 0v10" stroke="#ffffff" stroke-width="1" opacity=".5" />
+      </pattern>
+    </defs>
+    <!-- sky and ground -->
+    <rect width="800" height="122" fill="url(#bo-sky)" />
+    <rect y="122" width="800" height="208" fill="url(#bo-soil)" />
+    <g opacity=".12" stroke="#fff">
+      <path d="M0 210h800M0 290h800" stroke-dasharray="2 9" />
+    </g>
+    <!-- frost: drawn over the soil and under the pipes -->
+    <g class="bo__frost">
+      <rect class="bo__frostfill" x="0" y="122" width="800" height="0" fill="#bfe6ff" opacity=".16" />
+      <line class="bo__frostline" x1="0" x2="800" y1="122" y2="122" stroke="#bfe6ff" stroke-width="2" stroke-dasharray="8 6" />
+      <text class="bo__frostlabel" x="790" y="140" text-anchor="end" fill="#cdeeff" font-size="13" font-weight="700" opacity="0">FROST LINE</text>
+    </g>
+    <!-- grass and snow -->
+    <rect y="116" width="800" height="7" fill="#2f6b3c" />
+    <rect class="bo__snow" y="116" width="800" height="0" fill="#eef6ff" />
+    <!-- house -->
+    <rect x="0" y="18" width="92" height="104" fill="#2a3a55" />
+    <rect x="0" y="122" width="92" height="208" fill="#3b3f48" />
+    <rect x="12" y="140" width="66" height="176" fill="#262a32" />
+    <text x="46" y="300" text-anchor="middle" fill="#9aa6b8" font-size="12" font-weight="600">BASEMENT</text>
+    <!-- depth marks -->
+    <g fill="#c9b79c" font-size="11" font-weight="600">
+      <path d="M226 126v48" stroke="#c9b79c" stroke-width="1" />
+      <path d="M222 126h8M222 174h8" stroke="#c9b79c" stroke-width="1" />
+      <text x="152" y="200">Pipes 6 to 12 in. down</text>
+    </g>
+
+    <!-- pipes: a casing and the water inside it -->
+    <g class="bo__pipes" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path class="cs" d="M40 250H112V64" />
+      <path class="w" data-seg="supply" d="M40 250H112V64" />
+      <path class="cs" d="M112 64H140V176H262" />
+      <path class="w" data-seg="main" d="M112 64H140V176H262" />
+      <path class="cs" d="M300 150H438" />
+      <path class="w" data-seg="z1" d="M300 150H438" />
+      <path class="cs" d="M300 162H598" />
+      <path class="w" data-seg="z2" d="M300 162H598" />
+      <path class="cs" d="M300 174H758" />
+      <path class="w" data-seg="z3" d="M300 174H758" />
+      <!-- risers up to the heads -->
+      <path class="cs" d="M368 150V120M438 150V120M528 162V120M598 162V120M688 174V120M758 174V120" />
+      <path class="w" data-seg="r1" d="M368 150V120M438 150V120" />
+      <path class="w" data-seg="r2" d="M528 162V120M598 162V120" />
+      <path class="w" data-seg="r3" d="M688 174V120M758 174V120" />
+    </g>
+
+    <!-- the inside shutoff, the backflow device and the blowout port -->
+    <g>
+      <circle cx="40" cy="250" r="9" fill="#c79a3a" />
+      <rect x="100" y="48" width="44" height="26" rx="5" fill="#b8892f" stroke="#e7c06a" stroke-width="1.5" />
+      <rect x="104" y="40" width="10" height="9" rx="2" fill="#2f8f4f" />
+      <rect x="130" y="40" width="10" height="9" rx="2" fill="#2f8f4f" />
+      <text x="122" y="30" text-anchor="middle" fill="#e7c06a" font-size="11" font-weight="700">PVB</text>
+      <circle class="bo__port" cx="140" cy="96" r="6" fill="#c79a3a" />
+    </g>
+
+    <!-- the compressor and its hose -->
+    <g class="bo__comp">
+      <rect x="172" y="70" width="78" height="46" rx="6" fill="#d24b2a" />
+      <rect x="180" y="62" width="62" height="10" rx="3" fill="#3b3f48" />
+      <circle cx="186" cy="116" r="6" fill="#111" /><circle cx="236" cy="116" r="6" fill="#111" />
+      <text x="211" y="98" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">AIR</text>
+      <path class="bo__hose" d="M172 96C160 96 156 96 146 96" stroke="#222" stroke-width="5" fill="none" />
+      <path class="bo__air" d="M172 96C160 96 156 96 146 96" stroke="#fff" stroke-width="2" fill="none" stroke-dasharray="3 6" />
+    </g>
+
+    <!-- valve box -->
+    <g>
+      <path d="M248 110h64l-6 82h-52z" fill="#1f5133" stroke="#2f7a4b" stroke-width="2" />
+      <rect x="260" y="140" width="12" height="40" rx="3" fill="#0f2a1b" />
+      <rect class="bo__v" data-v="1" x="276" y="140" width="10" height="16" rx="2" fill="#0f2a1b" />
+      <rect class="bo__v" data-v="2" x="276" y="156" width="10" height="12" rx="2" fill="#0f2a1b" />
+      <rect class="bo__v" data-v="3" x="276" y="168" width="10" height="12" rx="2" fill="#0f2a1b" />
+      <text x="280" y="105" text-anchor="middle" fill="#9fd9b4" font-size="11" font-weight="700">VALVES</text>
+    </g>
+
+    <!-- heads, with their zone label and a mist puff -->
+    <g class="bo__heads">
+      {
+        [
+          [368, 1], [438, 1], [528, 2], [598, 2], [688, 3], [758, 3],
+        ].map(([hx, z]) => (
+          <g data-head={z}>
+            <rect x={hx - 6} y="108" width="12" height="14" rx="2" fill="#151515" />
+            <g class="bo__puff">
+              <circle cx={hx} cy="96" r="10" />
+              <circle cx={hx - 9} cy="84" r="8" />
+              <circle cx={hx + 8} cy="78" r="9" />
+              <circle cx={hx} cy="66" r="7" />
+            </g>
+          </g>
+        ))
+      }
+      <g fill="#c8d3e2" font-size="12" font-weight="700" text-anchor="middle">
+        <text x="403" y="208">ZONE 1</text>
+        <text x="563" y="208">ZONE 2</text>
+        <text x="723" y="208">ZONE 3</text>
+      </g>
+    </g>
+
+    <!-- cracks, shown where ice forms -->
+    <g class="bo__cracks" stroke="#ff5aa9" stroke-width="2.5" fill="none" stroke-linecap="round">
+      <path data-crack="pvb" d="M112 50l6 8-5 6 7 8" />
+      <path data-crack="main" d="M196 170l5 6-4 6 6 5" />
+      <path data-crack="z1" d="M368 144l5 8-6 5 6 6" />
+      <path data-crack="z1" d="M420 144l4 8-5 5 5 6" />
+      <path data-crack="z2" d="M528 156l5 8-6 5 6 6" />
+      <path data-crack="z2" d="M470 156l5 7-5 5 5 6" />
+      <path data-crack="z3" d="M688 168l5 8-6 5 6 6" />
+      <path data-crack="z3" d="M640 168l4 8-5 5 5 6" />
+      <path data-crack="z3" d="M758 166l5 8-6 5 6 6" />
+    </g>
+  </svg>
+
+  <div class="panel__bar">
+    <div class="bo__ctl js-only">
+      <button class="btn primary small" type="button" data-act="blow">Blow it out</button>
+      <button class="btn ghost small" type="button" data-act="skip">Skip it this year</button>
+      <button class="bo__reset" type="button" data-act="reset" aria-label="Start over">Start over</button>
+    </div>
+    <label class="bo__winter js-only">
+      <span class="meter__label">Let winter come <b data-month>October</b></span>
+      <input type="range" min="0" max="100" value="0" step="1" data-winter aria-valuetext="October" />
+    </label>
+  </div>
+  <div class="bo__read" aria-live="polite">
+    <div class="meter"><span class="meter__label">Water left in the lines <b data-left>100%</b></span><span class="meter__track"><span class="meter__fill" data-leftbar style="--v:100"></span></span></div>
+    <div class="meter"><span class="meter__label">Cracked parts <b data-cracks>0</b></span><span class="meter__track"><span class="meter__fill is-pink" data-crackbar style="--v:0"></span></span></div>
+    <p class="fine bo__say" data-say>Water is sitting in every pipe, the way it is all summer. Blow it out, or skip it, then drag winter in.</p>
+  </div>
+</figure>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-bo]').forEach(function (fig) {
+      if (fig.dataset.on) return;
+      fig.dataset.on = '1';
+      var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var segs = {};
+      fig.querySelectorAll('[data-seg]').forEach(function (p) {
+        var L = p.getTotalLength ? p.getTotalLength() : 600;
+        p.style.strokeDasharray = L + ' ' + L;
+        p.style.strokeDashoffset = 0;
+        segs[p.dataset.seg] = { el: p, L: L, full: true };
+      });
+      /* depth of each part, in drawing units: the frost line has to pass it to freeze it */
+      var DEPTH = { pvb: 60, main: 176, z1: 150, z2: 162, z3: 174 };
+      var water = { pvb: true, main: true, z1: true, z2: true, z3: true };
+      var busy = false, blown = false, frostY = 122, month = 0;
+      var MONTHS = ['October', 'November', 'December', 'January', 'February'];
+      var leftEl = fig.querySelector('[data-left]'), leftBar = fig.querySelector('[data-leftbar]');
+      var crEl = fig.querySelector('[data-cracks]'), crBar = fig.querySelector('[data-crackbar]'), say = fig.querySelector('[data-say]');
+      var range = fig.querySelector('[data-winter]'), mo = fig.querySelector('[data-month]');
+      function drain(name, ms) {
+        var s = segs[name];
+        if (!s) return;
+        s.el.style.transition = calm ? 'none' : 'stroke-dashoffset ' + ms + 'ms cubic-bezier(.4,.1,.3,1)';
+        s.el.style.strokeDashoffset = -s.L;
+        s.full = false;
+      }
+      function fill() {
+        Object.keys(segs).forEach(function (k) { var s = segs[k]; s.el.style.transition = 'none'; s.el.style.strokeDashoffset = 0; s.full = true; });
+      }
+      function left() {
+        var n = 0; Object.keys(water).forEach(function (k) { if (water[k]) n++; });
+        return n === 0 ? 3 : Math.round((n / 5) * 100);
+      }
+      function update() {
+        var l = left();
+        leftEl.textContent = l + '%'; leftBar.style.setProperty('--v', l);
+        var cracked = 0;
+        fig.querySelectorAll('[data-crack]').forEach(function (c) {
+          var part = c.dataset.crack, frozen = water[part] && frostY >= DEPTH[part] - (part === 'pvb' ? 999 : 0) && (part !== 'pvb' || month >= 1);
+          c.classList.toggle('is-on', !!frozen);
+          if (frozen) cracked++;
+        });
+        Object.keys(segs).forEach(function (k) {
+          var part = k === 'supply' ? null : k === 'r1' ? 'z1' : k === 'r2' ? 'z2' : k === 'r3' ? 'z3' : k;
+          var iced = part && water[part] && (part === 'pvb' ? month >= 1 : frostY >= DEPTH[part]);
+          segs[k].el.classList.toggle('is-ice', !!iced);
+        });
+        crEl.textContent = cracked; crBar.style.setProperty('--v', Math.min(100, cracked * 11));
+        if (month === 0 && !busy) return;
+        if (cracked > 0) say.textContent = cracked + ' parts cracked by ice. Nothing shows until the spring startup, when the yard floods. Each one is a repair.';
+        else if (blown && month > 0) say.textContent = 'No water left to freeze, so nothing cracks. The PVB and the lines are ready for spring.';
+        else if (month > 0) say.textContent = 'The frost has not reached the pipes yet. Keep going.';
+      }
+      function setWinter(v) {
+        month = Math.min(4, Math.floor(v / 20.01));
+        /* the frost line: from the surface down past the pipes by mid winter */
+        frostY = 122 + Math.min(1, v / 70) * 150;
+        fig.querySelector('.bo__frostline').setAttribute('y1', frostY);
+        fig.querySelector('.bo__frostline').setAttribute('y2', frostY);
+        var fl = fig.querySelector('.bo__frostlabel');
+        fl.setAttribute('y', frostY + 18);
+        fl.setAttribute('opacity', v > 2 ? 1 : 0);
+        fig.querySelector('.bo__frostfill').setAttribute('height', frostY - 122);
+        var snow = Math.min(12, Math.max(0, (v - 15) / 6));
+        fig.querySelector('.bo__snow').setAttribute('height', snow);
+        fig.querySelector('.bo__snow').setAttribute('y', 122 - snow);
+        mo.textContent = MONTHS[month];
+        range.setAttribute('aria-valuetext', MONTHS[month]);
+        update();
+      }
+      function puff(z) {
+        fig.querySelectorAll('[data-head="' + z + '"]').forEach(function (h) {
+          h.classList.remove('is-puff'); void h.getBoundingClientRect(); h.classList.add('is-puff');
+        });
+      }
+      function valve(z, on) {
+        fig.querySelectorAll('.bo__v').forEach(function (v) { v.classList.toggle('is-open', on && v.dataset.v == z); });
+      }
+      function blow() {
+        if (busy) return;
+        busy = true; blown = true;
+        fig.classList.add('is-air');
+        say.textContent = 'Compressor connected at the blowout port. Clearing the main line first.';
+        var T = calm ? 0 : 1;
+        drain('main', 900 * T); water.pvb = false; water.main = false;
+        var steps = [1, 2, 3], t = 1000 * T;
+        steps.forEach(function (z) {
+          setTimeout(function () {
+            valve(z, true);
+            say.textContent = 'Zone ' + z + ' open. Air pushes the water out through its heads.';
+            drain('z' + z, 1100 * T); drain('r' + z, 700 * T);
+            setTimeout(function () { puff(z); water['z' + z] = false; update(); }, 500 * T);
+          }, t);
+          t += 1500 * T;
+        });
+        setTimeout(function () {
+          valve(0, false); fig.classList.remove('is-air'); busy = false;
+          say.textContent = 'Lines clear. A little water always clings in the low spots, which is why the air pressure and timing matter. Now drag winter in.';
+          update();
+          if (window.miTrack) window.miTrack('tool_use', { tool: 'blowout', choice: 'blow' });
+        }, t);
+        update();
+      }
+      function skip() {
+        if (busy) return;
+        blown = false;
+        say.textContent = 'Water left in every line. Drag winter in and watch the frost line.';
+        if (window.miTrack) window.miTrack('tool_use', { tool: 'blowout', choice: 'skip' });
+      }
+      function reset() {
+        busy = false; blown = false;
+        water = { pvb: true, main: true, z1: true, z2: true, z3: true };
+        fill(); valve(0, false); fig.classList.remove('is-air');
+        range.value = 0; setWinter(0);
+        say.textContent = 'Water is sitting in every pipe, the way it is all summer. Blow it out, or skip it, then drag winter in.';
+        update();
+      }
+      fig.querySelector('[data-act="blow"]').addEventListener('click', blow);
+      fig.querySelector('[data-act="skip"]').addEventListener('click', skip);
+      fig.querySelector('[data-act="reset"]').addEventListener('click', reset);
+      range.addEventListener('input', function () { setWinter(+range.value); });
+      setWinter(0);
+    });
+  })();
+</script>
+
+<style>
+  .bo__svg {
+    width: 100%;
+    height: auto;
+    background: #16243c;
+  }
+
+  .bo__pipes .cs {
+    stroke: #121a26;
+    stroke-width: 10;
+  }
+
+  .bo__pipes .w {
+    stroke: var(--water);
+    stroke-width: 5;
+    transition: stroke 0.6s var(--ease);
+  }
+
+  .bo__pipes .w:global(.is-ice) {
+    stroke: #f2fbff;
+    filter: drop-shadow(0 0 3px rgb(191 230 255 / 0.9));
+  }
+
+  .bo__air {
+    opacity: 0;
+  }
+
+  .bo:global(.is-air) .bo__air {
+    opacity: 1;
+    animation: bo-air 0.4s linear infinite;
+  }
+
+  @keyframes bo-air {
+    to {
+      stroke-dashoffset: -9;
+    }
+  }
+
+  .bo__v {
+    transition: fill 0.2s var(--ease);
+  }
+
+  .bo__v:global(.is-open) {
+    fill: #7ee0a0;
+  }
+
+  .bo__puff circle {
+    fill: #eaf6ff;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  [data-head]:global(.is-puff) .bo__puff circle {
+    animation: bo-puff 1.6s var(--ease) both;
+  }
+
+  [data-head]:global(.is-puff) .bo__puff circle:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+
+  [data-head]:global(.is-puff) .bo__puff circle:nth-child(3) {
+    animation-delay: 0.22s;
+  }
+
+  [data-head]:global(.is-puff) .bo__puff circle:nth-child(4) {
+    animation-delay: 0.32s;
+  }
+
+  @keyframes bo-puff {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.4);
+    }
+    30% {
+      opacity: 0.85;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-26px) scale(1.5);
+    }
+  }
+
+  .bo__cracks path {
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+  }
+
+  .bo__cracks path:global(.is-on) {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgb(255 90 169 / 0.8));
+  }
+
+  .bo__ctl {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .bo__ctl .ghost {
+    border-color: rgb(255 255 255 / 0.3);
+    color: var(--on-ink);
+  }
+
+  .bo__reset {
+    min-height: 2.75rem;
+    padding: 0 0.5rem;
+    border: 0;
+    background: none;
+    color: var(--on-ink-muted);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .bo__winter {
+    display: grid;
+    gap: 0.3rem;
+    flex: 1 1 16rem;
+    max-width: 24rem;
+  }
+
+  .bo__winter input {
+    width: 100%;
+    accent-color: var(--water);
+    min-height: 2rem;
+  }
+
+  .bo__read {
+    display: grid;
+    gap: 0.75rem 1.5rem;
+    padding: 0 clamp(0.9rem, 2vw, 1.25rem) 1.1rem;
+  }
+
+  @media (min-width: 48rem) {
+    .bo__read {
+      grid-template-columns: 1fr 1fr 2fr;
+      align-items: end;
+    }
+  }
+
+  .bo__say {
+    color: var(--on-ink-muted);
+    min-height: 3em;
+  }
+</style>

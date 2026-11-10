@@ -1,0 +1,393 @@
+---
+/* HEAD TO HEAD: a front yard from above, six rotor heads, and what a tune-up
+   changes. "Before" has the four faults most service calls find: a head knocked
+   sideways so it waters the driveway, a clogged nozzle that falls short, a head
+   sunk under the turf, and a broken one that only makes a puddle. "After" has
+   all six cleaned, raised and aimed so each one throws to the next.
+
+   The lawn color is not painted by hand: it is computed from where the water
+   lands, so the dry patches, the soaked spot and the three readouts all come
+   from the same simulation. Labeled as an illustration. Starts only near the
+   screen, sleeps when off it, and is a still picture with motion reduced. */
+interface Props {
+  start?: 'before' | 'after';
+}
+const { start = 'before' } = Astro.props;
+---
+
+<figure class="cov panel" data-cov data-start={start}>
+  <span class="panel__tag">Illustration. The numbers come from this drawing.</span>
+  <div class="cov__stage">
+    <canvas class="cov__c" width="800" height="500" role="img" aria-label="A front yard seen from above with six sprinkler heads and the water each one throws. Switch between before and after a tune-up to see dry patches appear and disappear."></canvas>
+    <div class="cov__tip" hidden></div>
+  </div>
+  <div class="panel__bar">
+    <div class="seg js-only" role="group" aria-label="Show the yard" style="--n:2;--i:0">
+      <span class="seg__thumb" aria-hidden="true"></span>
+      <button type="button" aria-pressed="true" data-mode="before">Before a tune-up</button>
+      <button type="button" aria-pressed="false" data-mode="after">After a tune-up</button>
+    </div>
+    <dl class="cov__meters">
+      <div class="cov__stat"><dt>of the lawn watered evenly</dt><dd data-m="even">0%</dd><span class="meter__track"><span class="meter__fill" data-f="even"></span></span></div>
+      <div class="cov__stat"><dt>too dry</dt><dd data-m="dry">0%</dd><span class="meter__track"><span class="meter__fill is-pink" data-f="dry"></span></span></div>
+      <div class="cov__stat"><dt>of the water on pavement</dt><dd data-m="waste">0%</dd><span class="meter__track"><span class="meter__fill is-pink" data-f="waste"></span></span></div>
+    </dl>
+  </div>
+  <figcaption class="cov__legend">
+    <ol class="fine" data-legend>
+      <li data-h="0"><b>Knocked sideways.</b> Watering the driveway, not the lawn.</li>
+      <li data-h="1"><b>Clogged nozzle.</b> Falls short, so the middle goes brown.</li>
+      <li data-h="4"><b>Sunk head.</b> The turf grew over it and blocks the spray.</li>
+      <li data-h="5"><b>Broken head.</b> No spray, just a puddle and a water bill.</li>
+    </ol>
+  </figcaption>
+</figure>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-cov]').forEach(function (fig) {
+      if (fig.dataset.on) return;
+      fig.dataset.on = '1';
+      var cv = fig.querySelector('canvas'), x = cv.getContext('2d');
+      if (!x) return;
+      var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var W = 800, H = 500, GW = 160, GH = 100, CX = W / GW, CY = H / GH;
+      var R = 300;
+      /* the yard */
+      var DRIVE = { x: 22, y: 0, w: 128, h: 452 }, HOUSE = { x: 150, y: 18, w: 560, h: 140 }, BED = { x: 150, y: 158, w: 560, h: 36 };
+      var WALK = { x: 0, y: 452, w: 800, h: 26 }, STREET = { y: 478 };
+      var LAWN = { x: 150, y: 194, w: 618, h: 258 };
+      function kind(px, py) {
+        if (py >= WALK.y) return 'pave';
+        if (px >= DRIVE.x && px < DRIVE.x + DRIVE.w) return 'pave';
+        if (py < HOUSE.y + HOUSE.h && px >= HOUSE.x && px < HOUSE.x + HOUSE.w) return 'house';
+        if (py < BED.y + BED.h && px >= BED.x && px < BED.x + BED.w) return 'bed';
+        if (px >= LAWN.x && px < LAWN.x + LAWN.w && py >= LAWN.y) return 'lawn';
+        return 'off';
+      }
+      var D = Math.PI / 180;
+      var HEADS = [
+        { x: 156, y: 198, a0: 0, a1: 90 },
+        { x: 460, y: 198, a0: 0, a1: 180 },
+        { x: 764, y: 198, a0: 90, a1: 180 },
+        { x: 156, y: 448, a0: 270, a1: 360 },
+        { x: 460, y: 448, a0: 180, a1: 360 },
+        { x: 764, y: 448, a0: 180, a1: 270 },
+      ];
+      var FAULT = {
+        0: { rot: 55, tip: 'Knocked sideways by a mower or a car tire, it now waters the driveway.' },
+        1: { reach: 0.45, flow: 0.6, tip: 'Grit in the nozzle: it throws less than half as far.' },
+        4: { reach: 0.3, flow: 0.6, tip: 'Sunk below the turf, so the grass blocks the spray.' },
+        5: { broken: true, tip: 'Cracked body. Water gushes out at the base and pools.' },
+      };
+      var FIXED = 'Cleaned, raised level with the turf and aimed to reach the next head.';
+      function headsFor(mode) {
+        return HEADS.map(function (h, i) {
+          var f = mode === 'before' ? FAULT[i] : null;
+          var rot = f && f.rot ? f.rot : 0;
+          return { x: h.x, y: h.y, a0: h.a0 + rot, a1: h.a1 + rot, reach: R * (f && f.reach ? f.reach : 1), flow: f && f.flow ? f.flow : 1, broken: !!(f && f.broken), fault: !!f, tip: f ? f.tip : FIXED, i: i };
+        });
+      }
+      function inArc(h, px, py) {
+        var a = Math.atan2(py - h.y, px - h.x) / D;
+        if (a < 0) a += 360;
+        var lo = ((h.a0 % 360) + 360) % 360, hi = lo + (h.a1 - h.a0);
+        return (a >= lo && a <= hi) || (a + 360 >= lo && a + 360 <= hi);
+      }
+      /* water on a coarse grid; a rotor puts down more near the middle of its throw */
+      function simulate(mode) {
+        var g = new Float32Array(GW * GH), hs = headsFor(mode);
+        for (var j = 0; j < GH; j++) for (var i = 0; i < GW; i++) {
+          var px = (i + 0.5) * CX, py = (j + 0.5) * CY, w = 0;
+          for (var k = 0; k < hs.length; k++) {
+            var h = hs[k], dx = px - h.x, dy = py - h.y, d = Math.sqrt(dx * dx + dy * dy);
+            if (h.broken) { if (d < 46) w += 3.2 * (1 - d / 46); continue; }
+            if (d > h.reach || !inArc(h, px, py)) continue;
+            var t = d / h.reach;
+            w += h.flow * (0.55 + 0.6 * t - 0.95 * t * t + 0.4 * (1 - t));
+          }
+          g[j * GW + i] = w;
+        }
+        return g;
+      }
+      /* each state is judged against its own average, the way a homeowner sets the
+         timer until most of the lawn looks fine: the gaps stay brown anyway */
+      function mean(g) { var sum = 0, n = 0; for (var q = 0; q < g.length; q++) { var qi = q % GW, qj = (q / GW) | 0; if (kind((qi + 0.5) * CX, (qj + 0.5) * CY) === 'lawn') { sum += g[q]; n++; } } return sum / n; }
+      var NORM = 1;
+      function stats(g) {
+        var lawn = 0, even = 0, dry = 0, onPave = 0, all = 0;
+        for (var q = 0; q < g.length; q++) {
+          var i = q % GW, j = (q / GW) | 0, k = kind((i + 0.5) * CX, (j + 0.5) * CY), v = g[q] / NORM;
+          all += v;
+          if (k === 'pave') onPave += v;
+          if (k === 'lawn') { lawn++; if (v >= 0.7 && v <= 1.45) even++; if (v < 0.55) dry++; }
+        }
+        return { even: Math.round((even / lawn) * 100), dry: Math.round((dry / lawn) * 100), waste: Math.round((onPave / all) * 100) };
+      }
+      /* fixed noise so the dry patches have soft, organic edges */
+      var noise = new Float32Array(GW * GH);
+      (function () { var s = 7; function r() { s = (s * 16807) % 2147483647; return s / 2147483647; } for (var q = 0; q < noise.length; q++) noise[q] = r(); for (var p = 0; p < 2; p++) for (var q2 = GW + 1; q2 < noise.length - GW - 1; q2++) noise[q2] = (noise[q2] * 4 + noise[q2 - 1] + noise[q2 + 1] + noise[q2 - GW] + noise[q2 + GW]) / 8; })();
+      function lawnLayer(g) {
+        var c = document.createElement('canvas'); c.width = GW; c.height = GH;
+        var cx = c.getContext('2d'), img = cx.createImageData(GW, GH), d = img.data;
+        for (var q = 0; q < g.length; q++) {
+          var i = q % GW, j = (q / GW) | 0, k = kind((i + 0.5) * CX, (j + 0.5) * CY), v = g[q] / NORM + (noise[q] - 0.5) * 0.35, o = q * 4;
+          if (k !== 'lawn' && k !== 'pave') {
+            var near = kind((i + 0.5) * CX, (j + 1.5) * CY) === 'lawn' || kind((i - 0.5) * CX, (j + 0.5) * CY) === 'lawn' || kind((i + 1.5) * CX, (j + 0.5) * CY) === 'lawn';
+            if (near) { var n2 = q + GW < g.length ? q + GW : q; v = g[n2] / NORM + (noise[q] - 0.5) * 0.35; k = 'lawn'; }
+          }
+          if (k === 'lawn') {
+            var dry = Math.max(0, Math.min(1, (0.78 - v) / 0.45)), wet = Math.max(0, Math.min(1, (v - 1.7) / 0.9));
+            var gr = [62 + noise[q] * 14, 128 + noise[q] * 22, 62], st = [176, 156, 92], sog = [40, 96, 92];
+            for (var ch = 0; ch < 3; ch++) d[o + ch] = gr[ch] * (1 - dry) * (1 - wet) + st[ch] * dry + sog[ch] * wet;
+            d[o + 3] = 255;
+          } else if (k === 'pave' && v > 0.15) {
+            d[o] = 30; d[o + 1] = 50; d[o + 2] = 74; d[o + 3] = Math.min(150, v * 160);
+          } else d[o + 3] = 0;
+        }
+        cx.putImageData(img, 0, 0);
+        return c;
+      }
+      var simB = simulate('before'), simA = simulate('after'), layers = {}, S = {};
+      NORM = mean(simB); layers.before = lawnLayer(simB); S.before = stats(simB);
+      NORM = mean(simA); layers.after = lawnLayer(simA); S.after = stats(simA);
+
+      function rect(r, fill) { x.fillStyle = fill; x.fillRect(r.x, r.y, r.w, r.h); }
+      function base() {
+        x.fillStyle = '#16233a'; x.fillRect(0, 0, W, H);
+        x.fillStyle = '#20314d'; x.fillRect(0, STREET.y, W, H - STREET.y);
+        x.strokeStyle = 'rgba(255,255,255,0.18)'; x.setLineDash([18, 16]); x.lineWidth = 2; x.beginPath(); x.moveTo(0, 492); x.lineTo(W, 492); x.stroke(); x.setLineDash([]);
+        rect(WALK, '#8d97a6'); x.fillStyle = 'rgba(0,0,0,0.12)'; for (var s = 40; s < W; s += 52) x.fillRect(s, WALK.y, 1.5, WALK.h);
+        rect(DRIVE, '#77818f'); x.fillStyle = 'rgba(0,0,0,0.1)'; for (var t = 60; t < DRIVE.h; t += 70) x.fillRect(DRIVE.x, t, DRIVE.w, 1.5);
+        x.fillStyle = '#2a6a3a'; x.fillRect(LAWN.x, LAWN.y, LAWN.w + 40, LAWN.h);
+        rect(BED, '#4a3426');
+        x.fillStyle = '#2f5b33';
+        for (var b = 175; b < 700; b += 58) { x.beginPath(); x.arc(b, 176, 13, 0, 6.29); x.fill(); }
+        rect(HOUSE, '#2a3a55');
+        x.fillStyle = '#33476a'; x.fillRect(HOUSE.x, HOUSE.y, HOUSE.w, HOUSE.h / 2);
+        x.strokeStyle = 'rgba(255,255,255,0.12)'; x.lineWidth = 2; x.strokeRect(HOUSE.x + 1, HOUSE.y + 1, HOUSE.w - 2, HOUSE.h - 2);
+        x.beginPath(); x.moveTo(HOUSE.x, HOUSE.y + HOUSE.h / 2); x.lineTo(HOUSE.x + HOUSE.w, HOUSE.y + HOUSE.h / 2); x.stroke();
+        x.fillStyle = 'rgba(255,255,255,0.55)'; x.font = '600 13px system-ui, sans-serif';
+        x.fillText('HOUSE', HOUSE.x + 18, HOUSE.y + 30); x.fillText('DRIVEWAY', DRIVE.x + 22, 300); x.fillText('SIDEWALK', 640, WALK.y + 18);
+      }
+      var mode = fig.dataset.start === 'after' ? 'after' : 'before', mix = mode === 'after' ? 1 : 0, target = mix;
+      var parts = [];
+      function emit(h, t) {
+        if (h.broken) {
+          for (var e = 0; e < 3; e++) { var a = Math.random() * 6.29, s = Math.random() * 1.6; parts.push({ x: h.x, y: h.y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: 26 + Math.random() * 18, big: 1 }); }
+          return;
+        }
+        /* a rotor sweeps its arc and back */
+        var span = h.a1 - h.a0, ph = (t * 0.00035 * (360 / Math.max(60, span)) + h.i * 0.7) % 2, f = ph < 1 ? ph : 2 - ph;
+        var ang = (h.a0 + span * f) * D;
+        for (var e2 = 0; e2 < 7; e2++) {
+          var dist = Math.random() * h.reach;
+          parts.push({ x: h.x + Math.cos(ang) * dist, y: h.y + Math.sin(ang) * dist, vx: Math.cos(ang) * 0.6, vy: Math.sin(ang) * 0.6, life: 16 + Math.random() * 14, big: 0 });
+        }
+        h.ang = ang;
+      }
+      var hsNow = headsFor(mode);
+      function draw(t) {
+        base();
+        x.imageSmoothingEnabled = true;
+        x.save(); x.beginPath(); x.rect(LAWN.x, LAWN.y, LAWN.w, LAWN.h); x.rect(0, WALK.y, W, WALK.h); x.rect(DRIVE.x, DRIVE.y, DRIVE.w, DRIVE.h); x.clip();
+        x.globalAlpha = 1 - mix; x.drawImage(layers.before, 0, 0, W, H);
+        x.globalAlpha = mix; x.drawImage(layers.after, 0, 0, W, H);
+        x.restore();
+        x.globalAlpha = 1;
+        /* water */
+        if (!calm) for (var k = 0; k < hsNow.length; k++) emit(hsNow[k], t);
+        x.fillStyle = 'rgba(150,220,255,0.75)';
+        for (var p = parts.length - 1; p >= 0; p--) {
+          var q = parts[p]; q.x += q.vx; q.y += q.vy; q.life--;
+          if (q.life <= 0) { parts.splice(p, 1); continue; }
+          x.globalAlpha = Math.min(1, q.life / 14) * (q.big ? 0.8 : 0.6);
+          x.fillRect(q.x, q.y, q.big ? 2.6 : 2, q.big ? 2.6 : 2);
+        }
+        x.globalAlpha = 1;
+        /* the stream line from each rotor */
+        for (var m = 0; m < hsNow.length; m++) {
+          var h = hsNow[m];
+          if (!h.broken && h.ang !== undefined) {
+            var gx = x.createLinearGradient(h.x, h.y, h.x + Math.cos(h.ang) * h.reach, h.y + Math.sin(h.ang) * h.reach);
+            gx.addColorStop(0, 'rgba(160,225,255,0.7)'); gx.addColorStop(1, 'rgba(160,225,255,0)');
+            x.strokeStyle = gx; x.lineWidth = 2.5; x.beginPath(); x.moveTo(h.x, h.y); x.lineTo(h.x + Math.cos(h.ang) * h.reach, h.y + Math.sin(h.ang) * h.reach); x.stroke();
+          }
+        }
+        /* the heads */
+        for (var z = 0; z < hsNow.length; z++) {
+          var hh = hsNow[z];
+          x.beginPath(); x.arc(hh.x, hh.y, 9, 0, 6.29); x.fillStyle = '#0b1220'; x.fill();
+          x.lineWidth = 3; x.strokeStyle = hh.fault ? '#ff5aa9' : '#7ee0a0'; x.stroke();
+          if (hh.fault) { x.beginPath(); x.arc(hh.x, hh.y, 15 + 3 * Math.sin(t / 300), 0, 6.29); x.strokeStyle = 'rgba(255,90,169,0.45)'; x.lineWidth = 2; x.stroke(); }
+        }
+      }
+      var run = false, raf = 0;
+      function frame(t) {
+        mix += (target - mix) * 0.06;
+        draw(t);
+        if (run) raf = requestAnimationFrame(frame);
+      }
+      function meters(m) {
+        var s = S[m];
+        ['even', 'dry', 'waste'].forEach(function (k) {
+          fig.querySelector('[data-m="' + k + '"]').textContent = s[k] + '%';
+          fig.querySelector('[data-f="' + k + '"]').style.setProperty('--v', k === 'even' ? s[k] : Math.min(100, s[k] * 2.5));
+        });
+        fig.querySelector('[data-legend]').classList.toggle('is-fixed', m === 'after');
+      }
+      function set(m) {
+        mode = m; target = m === 'after' ? 1 : 0; hsNow = headsFor(m); parts.length = 0;
+        fig.querySelectorAll('[data-mode]').forEach(function (b, i) { var on = b.dataset.mode === m; b.setAttribute('aria-pressed', on); if (on) b.parentNode.style.setProperty('--i', i); });
+        meters(m);
+        if (calm) { mix = target; draw(0); }
+        if (window.miTrack) window.miTrack('tool_use', { tool: 'coverage', choice: m });
+      }
+      fig.querySelectorAll('[data-mode]').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.mode); }); });
+      /* a head's story on hover or tap */
+      var tip = fig.querySelector('.cov__tip');
+      function at(e) {
+        var r = cv.getBoundingClientRect(), px = (e.clientX - r.left) * (W / r.width), py = (e.clientY - r.top) * (H / r.height);
+        for (var i = 0; i < hsNow.length; i++) { var h = hsNow[i]; if ((px - h.x) * (px - h.x) + (py - h.y) * (py - h.y) < 30 * 30) return h; }
+        return null;
+      }
+      cv.addEventListener('pointermove', function (e) {
+        var h = at(e);
+        cv.style.cursor = h ? 'pointer' : '';
+        if (!h) { tip.hidden = true; return; }
+        tip.textContent = h.tip; tip.hidden = false;
+        tip.style.left = (h.x / W) * 100 + '%'; tip.style.top = (h.y / H) * 100 + '%';
+        tip.classList.toggle('is-up', h.y > 300);
+      });
+      cv.addEventListener('pointerleave', function () { tip.hidden = true; });
+      set(mode);
+      draw(0);
+      if (calm) return;
+      new IntersectionObserver(function (es) {
+        var on = es[0].isIntersecting;
+        if (on && !run) { run = true; raf = requestAnimationFrame(frame); } else if (!on && run) { run = false; cancelAnimationFrame(raf); }
+      }, { rootMargin: '120px' }).observe(fig);
+    });
+  })();
+</script>
+
+<style>
+  .cov__stage {
+    position: relative;
+  }
+
+  .cov__c {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 8 / 5;
+    background: #16233a;
+    touch-action: pan-y;
+  }
+
+  .cov__tip {
+    position: absolute;
+    z-index: 2;
+    width: max-content;
+    max-width: 15rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: var(--r-sm);
+    background: rgb(11 18 32 / 0.92);
+    border: 1px solid var(--line-ink);
+    color: var(--on-ink);
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    transform: translate(-50%, 1.4rem);
+    pointer-events: none;
+  }
+
+  .cov__tip:global(.is-up) {
+    transform: translate(-50%, calc(-100% - 1.4rem));
+  }
+
+  .cov__meters {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem 1.25rem;
+    flex: 1 1 24rem;
+    margin: 0;
+  }
+
+  .cov__stat {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    align-content: start;
+    gap: 0.2rem;
+  }
+
+  .cov__stat dd {
+    order: -1;
+    margin: 0;
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    font-weight: 760;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cov__stat dt {
+    font-size: 0.78rem;
+    line-height: 1.3;
+    color: var(--on-ink-muted);
+  }
+
+  .cov__stat .meter__track {
+    margin-top: 0.3rem;
+  }
+
+  .panel__bar .seg {
+    flex: 1 1 18rem;
+    max-width: 24rem;
+  }
+
+  .cov__legend {
+    padding: 0 clamp(0.9rem, 2vw, 1.25rem) 1.1rem;
+  }
+
+  .cov__legend ol {
+    display: grid;
+    gap: 0.35rem 1.5rem;
+    color: var(--on-ink-muted);
+  }
+
+  @media (min-width: 48rem) {
+    .cov__legend ol {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .cov__legend li {
+    position: relative;
+    padding-left: 1.1rem;
+  }
+
+  .cov__legend li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    border: 2px solid var(--pink-btn);
+    transition: border-color 0.3s var(--ease);
+  }
+
+  .cov__legend b {
+    color: var(--on-ink);
+    font-weight: 650;
+  }
+
+  .cov__legend ol:global(.is-fixed) li::before {
+    border-color: #7ee0a0;
+  }
+
+  .cov__legend ol:global(.is-fixed) li {
+    text-decoration: line-through;
+    text-decoration-color: rgb(126 224 160 / 0.6);
+  }
+</style>

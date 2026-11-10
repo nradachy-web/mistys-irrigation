@@ -1,0 +1,139 @@
+---
+/* Morning mist over the hero photo: soft drifting vapor in the lower half, and
+   droplets that glint where the low sun catches them. The pointer parts the
+   mist as it passes. It starts after the page has loaded and gone quiet, never
+   for a visitor who asked for less motion or on Save-Data, and sleeps when the
+   hero is off screen or the tab is hidden. One canvas, no library. */
+---
+
+<canvas class="mist" data-mist aria-hidden="true"></canvas>
+
+<script is:inline>
+  (function () {
+    var c = document.querySelector('[data-mist]');
+    if (!c || c.dataset.on) return;
+    c.dataset.on = '1';
+    var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var save = navigator.connection && navigator.connection.saveData;
+    if (calm || save) return;
+
+    function start() {
+      var x = c.getContext('2d');
+      if (!x) return;
+      var host = c.parentNode, W = 0, H = 0, dpr = Math.min(devicePixelRatio || 1, 1.5);
+      var small = innerWidth < 768;
+      var puffs = [], glints = [], px = -9999, py = -9999, run = false, raf = 0, t0 = performance.now();
+
+      /* one soft sprite, drawn once and stamped many times */
+      var sprite = document.createElement('canvas');
+      sprite.width = sprite.height = 128;
+      var s = sprite.getContext('2d'), g = s.createRadialGradient(64, 64, 0, 64, 64, 64);
+      g.addColorStop(0, 'rgba(236,244,255,0.9)');
+      g.addColorStop(0.45, 'rgba(225,236,250,0.35)');
+      g.addColorStop(1, 'rgba(220,232,250,0)');
+      s.fillStyle = g;
+      s.fillRect(0, 0, 128, 128);
+
+      function size() {
+        var r = host.getBoundingClientRect();
+        W = r.width; H = r.height;
+        c.width = Math.round(W * dpr); c.height = Math.round(H * dpr);
+        c.style.width = W + 'px'; c.style.height = H + 'px';
+        x.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      function puff(anywhere) {
+        var r = (small ? 60 : 90) + Math.random() * (small ? 90 : 170);
+        return {
+          x: anywhere ? Math.random() * W : -r,
+          y: H * (0.45 + Math.random() * 0.55),
+          r: r,
+          vx: 0.08 + Math.random() * 0.22,
+          vy: 0,
+          a: 0.05 + Math.random() * 0.09,
+          ph: Math.random() * 6.28,
+        };
+      }
+      function glint() {
+        /* the sun is low on the right of the photo, so the sparkle gathers there */
+        var bias = Math.pow(Math.random(), 0.6);
+        return { x: W * (0.35 + 0.65 * bias), y: H * (0.3 + Math.random() * 0.55), ph: Math.random() * 6.28, sp: 0.6 + Math.random() * 1.6, r: 0.6 + Math.random() * 1.4, vy: 0.05 + Math.random() * 0.12 };
+      }
+      size();
+      for (var i = 0; i < (small ? 22 : 40); i++) puffs.push(puff(true));
+      for (var j = 0; j < (small ? 36 : 80); j++) glints.push(glint());
+
+      function frame(now) {
+        var t = (now - t0) / 1000;
+        x.clearRect(0, 0, W, H);
+        x.globalCompositeOperation = 'lighter';
+        for (var i = 0; i < puffs.length; i++) {
+          var p = puffs[i];
+          var dx = p.x - px, dy = p.y - py, d2 = dx * dx + dy * dy, R = 170;
+          if (d2 < R * R && d2 > 1) {
+            var d = Math.sqrt(d2), f = (1 - d / R) * 0.9;
+            p.vx += (dx / d) * f; p.vy += (dy / d) * f;
+          }
+          p.vx += (0.14 - p.vx) * 0.01;
+          p.vy *= 0.94;
+          p.x += p.vx;
+          p.y += p.vy + Math.sin(t * 0.3 + p.ph) * 0.08;
+          if (p.x - p.r > W) puffs[i] = puff(false);
+          var a = p.a * (0.75 + 0.25 * Math.sin(t * 0.5 + p.ph)) * Math.min(1, t / 2.5);
+          x.globalAlpha = a;
+          x.drawImage(sprite, p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+        }
+        for (var k = 0; k < glints.length; k++) {
+          var q = glints[k];
+          q.y += q.vy;
+          if (q.y > H * 0.95) { glints[k] = glint(); glints[k].y = H * 0.3; }
+          var tw = Math.max(0, Math.sin(t * q.sp + q.ph));
+          x.globalAlpha = Math.pow(tw, 6) * 0.9 * Math.min(1, t / 3);
+          x.fillStyle = '#fff6dc';
+          x.beginPath();
+          x.arc(q.x, q.y, q.r, 0, 6.283);
+          x.fill();
+        }
+        x.globalAlpha = 1;
+        x.globalCompositeOperation = 'source-over';
+        if (run) raf = requestAnimationFrame(frame);
+      }
+      function go(on) {
+        if (on === run) return;
+        run = on;
+        if (on) raf = requestAnimationFrame(frame); else cancelAnimationFrame(raf);
+      }
+      var vis = true, seen = true;
+      new IntersectionObserver(function (e) { seen = e[0].isIntersecting; go(seen && vis); }).observe(host);
+      document.addEventListener('visibilitychange', function () { vis = !document.hidden; go(seen && vis); });
+      var hero = host.parentNode;
+      hero.addEventListener('pointermove', function (e) {
+        var r = host.getBoundingClientRect();
+        px = e.clientX - r.left; py = e.clientY - r.top;
+      }, { passive: true });
+      hero.addEventListener('pointerleave', function () { px = py = -9999; });
+      var rs = 0;
+      addEventListener('resize', function () { clearTimeout(rs); rs = setTimeout(size, 150); });
+      c.classList.add('is-on');
+      go(true);
+    }
+
+    function later() { setTimeout(function () { (window.requestIdleCallback || setTimeout)(start, { timeout: 1500 }); }, 700); }
+    if (document.readyState === 'complete') later(); else addEventListener('load', later);
+  })();
+</script>
+
+<style>
+  .mist {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 2s var(--ease);
+  }
+
+  .mist:global(.is-on) {
+    opacity: 1;
+  }
+</style>

@@ -1,0 +1,100 @@
+---
+/* The top of a page without a photo: crumbs, the h1 and one paragraph, on the
+   pre-dawn ink with the logo's arcs drawn large and faint behind it. */
+import { heading } from '../lib/rich';
+import { href } from '../lib/paths';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+  crumbs?: { name: string; path: string }[];
+}
+const { eyebrow, title, lede, crumbs } = Astro.props;
+---
+
+<section class="ph ink" aria-labelledby="ph-h">
+  <svg class="ph__arcs" viewBox="0 0 32 14" aria-hidden="true" preserveAspectRatio="xMaxYMid meet">
+    <path d="M1 13C7 4.5 17 1 31 3c-12-.4-21 3.4-28 10.6z" />
+    <path d="M7 13.4C12 8 20 5.6 30.5 7 21.5 7 14 9.4 8.6 14z" />
+  </svg>
+  <div class="wrap ph__body">
+    {
+      crumbs && (
+        <nav class="crumbs fine" aria-label="Breadcrumb">
+          <ol>
+            <li><a href={href('/')}>Home</a></li>
+            {crumbs.map((c, i) => <li>{i === crumbs.length - 1 ? <span aria-current="page">{c.name}</span> : <a href={href(c.path)}>{c.name}</a>}</li>)}
+          </ol>
+        </nav>
+      )
+    }
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1 id="ph-h" class="h1 h1--page" set:html={heading(title, 'accent')} />
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .ph {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(3rem, 6vw, 5rem);
+    background:
+      radial-gradient(110% 120% at 100% 0%, rgb(255 140 120 / 0.12), transparent 55%),
+      radial-gradient(80% 90% at 0% 100%, rgb(63 192 240 / 0.08), transparent 60%),
+      var(--ink);
+  }
+
+  .ph__arcs {
+    position: absolute;
+    right: -4%;
+    top: 8%;
+    width: min(56rem, 70vw);
+    height: auto;
+    fill: none;
+    stroke: rgb(63 192 240 / 0.16);
+    stroke-width: 0.12;
+    pointer-events: none;
+  }
+
+  .ph__body {
+    position: relative;
+    display: grid;
+    gap: 1.1rem;
+    justify-items: start;
+  }
+
+  .ph__body .h1 {
+    max-width: 16em;
+  }
+
+  .ph__body .lede {
+    max-width: 40rem;
+  }
+
+  .crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    color: #c4cedc;
+  }
+
+  .crumbs li + li::before {
+    content: '/';
+    margin-right: 0.35rem;
+    opacity: 0.6;
+  }
+
+  .crumbs a {
+    display: inline-block;
+    padding-block: 0.6rem;
+    text-decoration: none;
+  }
+
+  .crumbs a:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+</style>

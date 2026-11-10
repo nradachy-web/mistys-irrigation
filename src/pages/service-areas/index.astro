@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Head from '../../components/Head.astro';
+import AreaMap from '../../components/AreaMap.astro';
+import QuoteBand from '../../components/QuoteBand.astro';
+import Icon from '../../components/Icon.astro';
+import { CITIES, hubPath, pagesIn } from '../../data/cities';
+import { href } from '../../lib/paths';
+import { breadcrumbs } from '../../lib/schema';
+
+const schema = [breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Service areas', path: '/service-areas/' }])];
+---
+
+<Base title="Service Areas | Misty's Irrigation, Fenton MI" description="Misty's Irrigation services lawn sprinkler systems in Fenton, Linden, Grand Blanc, Holly, Hartland and Howell, Michigan. Find your town." path="/service-areas/" schema={schema}>
+  <PageHead eyebrow="Service areas" title="Fenton, and **the towns around it.**" lede="Six towns in Genesee, Oakland and Livingston County, all within about half an hour of home." crumbs={[{ name: 'Service areas', path: '/service-areas/' }]} />
+  <section class="band ink" aria-labelledby="map-h">
+    <div class="wrap">
+      <h2 class="sr" id="map-h">Map of the service area</h2>
+      <AreaMap />
+    </div>
+  </section>
+  <section class="band" aria-labelledby="towns-h">
+    <div class="wrap">
+      <Head id="towns-h" eyebrow="Pick your town" title="Local details, **town by town.**" intro="Each town has its own page, plus a page for each of our main services there." />
+      <ul class="grid c3 tl">
+        {
+          CITIES.map((c) => (
+            <li class="card pad">
+              <a class="tl__name" href={href(hubPath(c))}>{c.name}, MI<Icon name="arrow" /></a>
+              <p class="fine muted">{c.county} County. {c.drive === 'Home base' ? 'Home base.' : `${c.drive} from Fenton.`}</p>
+              <ul class="tl__links">
+                {pagesIn(c).map((p) => <li><a href={href(`/${p.slug}/`)}>{p.service.short}</a></li>)}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <QuoteBand />
+</Base>
+
+<style>
+  .tl > li {
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+  }
+
+  .tl__name {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 740;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+  }
+
+  .tl__name:hover {
+    color: var(--rose-ink);
+  }
+
+  .tl__name :global(.icon) {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: var(--rose-ink);
+  }
+
+  .tl__links {
+    display: grid;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .tl__links a {
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9375rem;
+    font-weight: 560;
+    text-decoration: none;
+  }
+
+  .tl__links a:hover {
+    color: var(--rose-ink);
+  }
+</style>

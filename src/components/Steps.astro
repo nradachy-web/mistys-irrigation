@@ -1,0 +1,110 @@
+---
+/* A numbered process. The numbers sit on a line that reads like a lateral pipe,
+   with a head at each step. */
+import { rich } from '../lib/rich';
+
+interface Props {
+  steps: { title: string; body: string; note?: string }[];
+}
+const { steps } = Astro.props;
+---
+
+<ol class:list={['st', `st--${Math.min(steps.length, 4)}`]}>
+  {
+    steps.map((s, i) => (
+      <li class="st__item">
+        <span class="st__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+        <h3 class="h3">{s.title}</h3>
+        <p class="small muted" set:html={rich(s.body)} />
+        {s.note && <p class="fine st__note">{s.note}</p>}
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .st {
+    display: grid;
+    gap: 2rem;
+    counter-reset: st;
+  }
+
+  @media (min-width: 48rem) {
+    .st {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .st--3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .st--4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .st__item {
+    position: relative;
+    display: grid;
+    gap: 0.6rem;
+    align-content: start;
+    padding-top: 1.6rem;
+  }
+
+  /* the pipe */
+  .st__item::before {
+    content: '';
+    position: absolute;
+    top: 0.45rem;
+    left: 0;
+    right: -2rem;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, currentColor 0 10px, transparent 10px 16px);
+    opacity: 0.18;
+  }
+
+  .st__item:last-child::before {
+    right: 0;
+  }
+
+  /* the head */
+  .st__item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--rose);
+    box-shadow: 0 0 0 5px rgb(194 28 116 / 0.14);
+  }
+
+  :global(.ink) .st__item::after {
+    background: var(--pink-btn);
+    box-shadow: 0 0 0 5px rgb(255 90 169 / 0.16);
+  }
+
+  .st__n {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--rose-ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  :global(.ink) .st__n {
+    color: var(--pink-on-ink);
+  }
+
+  .st__note {
+    color: var(--rose-ink);
+    font-weight: 600;
+  }
+
+  :global(.ink) .st__note {
+    color: var(--pink-on-ink);
+  }
+</style>

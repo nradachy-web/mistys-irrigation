@@ -1,0 +1,17 @@
+---
+/* Where a sent service request lands. Counted as a lead. Never in the sitemap. */
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+import { BRAND } from '../data/site';
+import { href } from '../lib/paths';
+---
+
+<Base title="Thanks, we got your request | Misty's Irrigation" description="Your service request reached Misty's Irrigation. We will call you back to confirm a time. Texting a photo of the problem helps." path="/thank-you/" quoteHref="/book-service/" noindex bare lead>
+  <PageHead eyebrow="Request received" title="Got it. **We will call you back.**" lede="Your request is on its way to Misty and Mike. Want to speed things up? Text a photo of the problem to the same number.">
+    <div class="actions">
+      <a class="btn primary" href={BRAND.smsHref} data-loc="thanks-text"><Icon name="text" />Text a photo</a>
+      <a class="btn ghost" href={href('/watering-guide/')}>Watering guide</a>
+    </div>
+  </PageHead>
+</Base>

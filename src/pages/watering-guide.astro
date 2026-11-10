@@ -1,0 +1,173 @@
+---
+/* The watering guide: the calculator first, then the reasoning behind it in
+   plain words. Written for anyone with a sprinkler controller in the area, so
+   it earns links and answers the question people actually type. */
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Head from '../components/Head.astro';
+import ZoneCalc from '../components/ZoneCalc.astro';
+import Faq from '../components/Faq.astro';
+import QuoteBand from '../components/QuoteBand.astro';
+import Icon from '../components/Icon.astro';
+import { BRAND } from '../data/site';
+import { href } from '../lib/paths';
+import { breadcrumbs, faqSchema, howTo } from '../lib/schema';
+
+const rules = [
+  { icon: 'drop', title: 'About an inch a week', body: 'Most lawns here need about an inch of water a week in summer, rain included. Less in May and September, a little more in a hot July.' },
+  { icon: 'sun', title: 'Water before sunrise', body: 'Start the controller so it finishes by about 8 a.m. Less water is lost to wind and heat, and the grass dries off before the day, which keeps disease down.' },
+  { icon: 'calendar', title: 'Deep, not daily', body: 'Two or three longer waterings a week grow deeper roots than a short run every day. Shallow, daily watering makes a lawn that browns the first week you miss.' },
+  { icon: 'clock', title: 'Split it on clay and slopes', body: 'If water runs off before it soaks in, break the run into two or three shorter cycles about an hour apart. Most controllers can do this for you.' },
+] as const;
+
+const faq = [
+  { q: 'How long should I run my sprinklers in summer?', a: 'It depends on the heads. As a starting point in July, spray heads on loam soil run about 20 minutes per zone, three days a week, and rotors closer to an hour. The calculator above works it out for your zone. Then watch the lawn and adjust.' },
+  { q: 'Is it better to water every day?', a: 'No. Daily short runs keep the roots near the surface. Two or three deeper waterings a week train them down, and the lawn holds up better in a dry spell. New sod and new seed are the exception: they need light, frequent water until they root.' },
+  { q: 'What time should my sprinklers come on?', a: 'Early morning, so the last zone finishes by about 8 a.m. Evening watering leaves the grass wet all night, which invites disease. Midday loses more to wind and evaporation.' },
+  { q: 'How do I know if the lawn is getting enough water?', a: 'Walk on it. If your footprints stay pressed down instead of springing back, or the grass turns a dull blue gray, it is thirsty. If you see standing water or mushrooms, it is getting too much, or a head is broken.' },
+  { q: 'Why is one spot brown when the rest is green?', a: 'That is almost always coverage, not run time. A tilted, sunk, clogged or broken head leaves a gap. Turning the timer up just floods the rest of the lawn. [Sprinkler repair](/sprinkler-repair/) fixes the head.' },
+  { q: 'Does my town limit watering days?', a: 'Some towns on city water set summer watering days or ask for odd and even schedules. If yours does, set the controller to match, and lean on deeper runs on the days you have.' },
+];
+
+const schema = [
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Watering guide', path: '/watering-guide/' }]),
+  faqSchema(faq),
+  howTo({ name: 'How to set sprinkler run times for a lawn', description: 'Work out minutes per zone from the head type, the sun, the month and the soil, less the rain this week.', steps: [
+    { title: 'Know the head type', body: 'Spray heads put down about 1.5 inches an hour, rotors about half an inch, rotary nozzles a little less.' },
+    { title: 'Find the weekly need', body: 'About an inch a week in summer for a full sun lawn, less in shade and in spring and fall, minus any rain.' },
+    { title: 'Turn it into minutes', body: 'Divide the need by the head rate and allow for some loss. Split the total across two or three days.' },
+    { title: 'Split long runs', body: 'On clay or slopes, break each run into shorter cycles about an hour apart so the water soaks in.' },
+  ] }),
+];
+---
+
+<Base title="Sprinkler Watering Guide and Calculator | Misty's Irrigation" description="How long should each sprinkler zone run? Pick the head type, sun, month and soil and get minutes per zone, days per week and a cycle and soak split." path="/watering-guide/" schema={schema}>
+  <PageHead eyebrow="Watering guide" title="How long should **each zone run?**" lede="A starting point for your controller in about ten seconds, and the reasoning behind it." crumbs={[{ name: 'Watering guide', path: '/watering-guide/' }]} />
+
+  <section class="band ink" aria-labelledby="calc-h">
+    <div class="wrap">
+      <h2 class="sr" id="calc-h">Watering time calculator</h2>
+      <ZoneCalc />
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="rules-h">
+    <div class="wrap">
+      <Head id="rules-h" eyebrow="The short version" title="Four rules **that cover most lawns.**" />
+      <ul class="grid c4">
+        {
+          rules.map((r) => (
+            <li class="card pad rule-card">
+              <span class="rule-card__i"><Icon name={r.icon} /></span>
+              <h3 class="h3">{r.title}</h3>
+              <p class="small muted">{r.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="band white" aria-labelledby="cov-h">
+    <div class="wrap two">
+      <div class="stack" style="--gap:1.25rem">
+        <Head id="cov-h" layout="left" eyebrow="Before you turn it up" title="Brown spots are usually **a head, not a timer.**" intro="Run times only work when every head reaches the next one. If one is tilted, sunk or clogged, more minutes just soak the rest of the yard." />
+        <div class="actions">
+          <a class="btn primary" href={href('/sprinkler-repair/')}>See what a tune-up fixes</a>
+          <a class="btn ghost" href={href('/sprinkler-controllers/')}>Smart controllers</a>
+        </div>
+      </div>
+      <ol class="checklist">
+        <li><b>Run each zone for two minutes</b> and walk it. Look for heads that do not pop up, spray sideways, or barely reach.</li>
+        <li><b>Check the edges.</b> Water on the driveway or the house is water the lawn did not get.</li>
+        <li><b>Look for soggy spots</b> and puddles near a head. That is usually a broken head or a leak.</li>
+        <li><b>Call us if a zone will not start or will not stop.</b> That is a valve or wiring, and it is a quick fix for us.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="faq-h">
+    <div class="wrap faqs">
+      <Head id="faq-h" layout="left" eyebrow="Questions" title="Watering **questions.**" intro={`If yours is not here, call or text [${BRAND.phone}](${BRAND.phoneHref}).`} />
+      <Faq items={faq} />
+    </div>
+  </section>
+
+  <QuoteBand title="Want us to set it for you?" lede="At a startup or a tune-up we set the controller for your zones, your heads and the season, and show you how to change it." service="Spring startup" />
+</Base>
+
+<style>
+  .rule-card {
+    display: grid;
+    gap: 0.6rem;
+    align-content: start;
+  }
+
+  .rule-card__i {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgb(194 28 116 / 0.1);
+    color: var(--rose);
+  }
+
+  .rule-card__i :global(.icon) {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .checklist {
+    display: grid;
+    gap: 0;
+    counter-reset: c;
+    border-top: 1px solid var(--line);
+  }
+
+  .checklist li {
+    position: relative;
+    padding: 1.1rem 0 1.1rem 3rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    counter-increment: c;
+  }
+
+  .checklist li::before {
+    content: counter(c);
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .checklist b {
+    color: var(--text);
+  }
+
+  .faqs {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 72rem) {
+    .faqs {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .faqs :global(.head) {
+      position: sticky;
+      top: calc(var(--header) + 2rem);
+    }
+  }
+</style>

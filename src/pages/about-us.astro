@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Head from '../components/Head.astro';
+import Photo from '../components/Photo.astro';
+import Reviews from '../components/Reviews.astro';
+import QuoteBand from '../components/QuoteBand.astro';
+import { BRAND, RATING } from '../data/site';
+import { REVIEWS } from '../data/reviews';
+import { breadcrumbs } from '../lib/schema';
+import { href } from '../lib/paths';
+
+const schema = [
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'About us', path: '/about-us/' }]),
+  { '@type': 'AboutPage', name: `About ${BRAND.name}`, url: `${BRAND.origin}/about-us/`, about: { '@id': `${BRAND.origin}/#business` } },
+];
+---
+
+<Base title="About Misty's Irrigation | Family Run in Fenton, MI" description="Misty's Irrigation is a family run lawn sprinkler company in Fenton, Michigan, owned by Misty and Mike Lutz. Licensed, insured and 5.0 on Google." path="/about-us/" schema={schema}>
+  <PageHead eyebrow="About us" title="Misty's is **a family business.**" lede="Run by Misty and Mike Lutz out of Fenton. Licensed and insured, and rated 5.0 on Google by the people whose lawns we look after." crumbs={[{ name: 'About us', path: '/about-us/' }]} />
+
+  <section class="band white" aria-labelledby="a1">
+    <div class="wrap two">
+      <figure>
+        <div class="frame wide"><Photo id="wrap-car-dog" ratio={3 / 2} widths={[480, 720, 960]} sizes="(min-width: 60rem) 46vw, 100vw" /></div>
+        <figcaption class="note">The service car and the shop dog.</figcaption>
+      </figure>
+      <div class="stack" style="--gap:1.25rem">
+        <Head id="a1" layout="left" eyebrow="Who you get" title="The people **who pick up the phone.**" />
+        <div class="prose muted">
+          <p>Misty's Irrigation is Misty and Mike Lutz. We built the business on the service side of sprinklers: getting systems started right in spring, blown out before the freeze, and fixed when something breaks in between.</p>
+          <p>When you call or text, you reach one of us. When we come out, we run every zone, tell you what we see, and fix it the same way we would on our own lawn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="a2">
+    <div class="wrap">
+      <Head id="a2" eyebrow="How we work" title="Three things **we hold to.**" />
+      <ul class="grid c3">
+        <li class="card pad vals"><h3 class="h3">Show up when we say</h3><p class="small muted">Promptness is the thing our reviewers mention most. We would like to keep it that way.</p></li>
+        <li class="card pad vals"><h3 class="h3">Explain before we fix</h3><p class="small muted">You hear what we found and what it takes before the work starts.</p></li>
+        <li class="card pad vals"><h3 class="h3">Leave it clean</h3><p class="small muted">Turf put back, trenches settled, nothing left on the driveway. A repair should be hard to find a week later.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band white" aria-labelledby="a3">
+    <div class="wrap two flip">
+      <figure>
+        <div class="frame wide"><Photo id="trencher-dog" ratio={3 / 2} widths={[480, 720, 960]} sizes="(min-width: 60rem) 46vw, 100vw" /></div>
+        <figcaption class="note">The trencher, and the same supervisor.</figcaption>
+      </figure>
+      <div class="stack" style="--gap:1.25rem">
+        <Head id="a3" layout="left" eyebrow="The equipment" title="Right tool, **smaller mess.**" />
+        <div class="prose muted">
+          <p>New lines and added zones go in with a compact trencher, so a lawn gets a narrow slit instead of a torn up yard. Blowouts are done zone by zone, at a pressure the pipe can take.</p>
+        </div>
+        <a class="arrow" href={href('/sprinkler-installation/')}>New systems and added zones</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="a4">
+    <div class="wrap">
+      <Head id="a4" eyebrow="Reviews" title={`${RATING.value} from **${RATING.countLabel} neighbors.**`} />
+      <Reviews reviews={REVIEWS} />
+    </div>
+  </section>
+
+  <QuoteBand avoid={['wrap-car-dog', 'trencher-dog']} />
+</Base>
+
+<style>
+  .vals {
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+  }
+</style>

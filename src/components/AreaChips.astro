@@ -1,0 +1,25 @@
+---
+/* The towns as links: to the service's own town page where one exists, else to
+   the town's hub. */
+import { CITIES, hubPath, townPath } from '../data/cities';
+import type { Service } from '../data/services';
+import { href } from '../lib/paths';
+
+interface Props {
+  service?: Service;
+  current?: string;
+}
+const { service, current } = Astro.props;
+---
+
+<ul class="chips">
+  {
+    CITIES.map((c) => (
+      <li>
+        <a class="chip" href={href(service ? townPath(service, c) : hubPath(c))} aria-current={current === c.id ? 'page' : undefined}>
+          {service ? <><span class="sr">{service.name} in </span>{c.name}, MI</> : <>{c.name}, MI</>}
+        </a>
+      </li>
+    ))
+  }
+</ul>

@@ -1,0 +1,14 @@
+---
+/* Where a sent job application lands. Not a lead. Never in the sitemap. */
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import { href } from '../../lib/paths';
+---
+
+<Base title="Application received | Misty's Irrigation" description="Your job application reached Misty's Irrigation. We read every one and will reach out by phone if it is a fit for the season." path="/careers/thanks/" quoteHref="/book-service/" noindex bare>
+  <PageHead eyebrow="Application received" title="Thanks. **We read every one.**" lede="If it looks like a fit for the season, we will call the number you gave us.">
+    <div class="actions">
+      <a class="btn primary" href={href('/')}>Back to the home page</a>
+    </div>
+  </PageHead>
+</Base>

@@ -1,0 +1,191 @@
+---
+/* WIPE THE RUST: a white house and walk stained orange by well water from the
+   sprinklers. Drag across it to treat it and the clean wall comes back. The two
+   pictures are one illustration made twice, pixel aligned, so only the stain
+   changes. Keyboard and one-tap visitors get a button that treats it all.
+   Without script the stained picture shows with a caption. */
+import { getImage } from 'astro:assets';
+import { photo } from '../data/photos';
+
+const clean = photo('ai-rust-clean');
+const stained = photo('ai-rust-stained');
+const W = 1200, H = 800;
+const [c1, s1, c2, s2] = await Promise.all([
+  getImage({ src: clean.src, width: W, height: H, format: 'avif', quality: 50, fit: 'cover' }),
+  getImage({ src: stained.src, width: W, height: H, format: 'avif', quality: 50, fit: 'cover' }),
+  getImage({ src: clean.src, width: W, height: H, format: 'webp', quality: 66, fit: 'cover' }),
+  getImage({ src: stained.src, width: W, height: H, format: 'webp', quality: 66, fit: 'cover' }),
+]);
+const [c3, s3] = await Promise.all([
+  getImage({ src: clean.src, width: 720, height: 480, format: 'webp', quality: 66, fit: 'cover' }),
+  getImage({ src: stained.src, width: 720, height: 480, format: 'webp', quality: 66, fit: 'cover' }),
+]);
+---
+
+<figure class="rr panel" data-rr data-stained={s2.src} data-stained-sm={s3.src}>
+  <span class="panel__tag">Illustration</span>
+  <div class="rr__stage">
+    <picture>
+      <source type="image/avif" srcset={`${c1.src} ${W}w`} />
+      <img class="rr__clean" src={c3.src} srcset={`${c3.src} 720w, ${c2.src} ${W}w`} sizes="(min-width: 60rem) 56vw, 92vw" width={W} height={H} alt="The same white siding and walk, clean after a rust treatment system" loading="lazy" decoding="async" />
+    </picture>
+    <picture class="rr__top">
+      <source type="image/avif" srcset={`${s1.src} ${W}w`} />
+      <img src={s3.src} srcset={`${s3.src} 720w, ${s2.src} ${W}w`} sizes="(min-width: 60rem) 56vw, 92vw" width={W} height={H} alt={stained.alt} loading="lazy" decoding="async" />
+    </picture>
+    <canvas class="rr__c" aria-hidden="true"></canvas>
+    <p class="rr__hint js-only" aria-hidden="true"><span>Drag across the stain</span></p>
+  </div>
+  <div class="panel__bar">
+    <div class="meter rr__meter"><span class="meter__label">Stain treated <b data-pct>0%</b></span><span class="meter__track"><span class="meter__fill" data-bar style="--v:0"></span></span></div>
+    <div class="actions js-only">
+      <button class="btn primary small" type="button" data-all>Treat the whole wall</button>
+      <button class="btn ghost small rr__reset" type="button" data-reset>Stain it again</button>
+    </div>
+  </div>
+</figure>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-rr]').forEach(function (fig) {
+      if (fig.dataset.on) return;
+      var stage = fig.querySelector('.rr__stage'), cv = fig.querySelector('.rr__c'), top = fig.querySelector('.rr__top');
+      var x = cv.getContext('2d');
+      if (!x) return;
+      var img = new Image(), ready = false, W = 0, H = 0, dpr = Math.min(devicePixelRatio || 1, 2);
+      function size() {
+        var r = stage.getBoundingClientRect();
+        W = r.width; H = r.height;
+        cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+        x.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      function paint() {
+        x.globalCompositeOperation = 'source-over';
+        x.drawImage(img, 0, 0, W, H);
+      }
+      function start() {
+        if (fig.dataset.on) return;
+        fig.dataset.on = '1';
+        img.decoding = 'async';
+        img.src = W > 760 || innerWidth > 760 ? fig.dataset.stained : fig.dataset.stainedSm;
+        img.onload = function () { size(); paint(); ready = true; top.style.visibility = 'hidden'; fig.classList.add('is-ready'); };
+      }
+      size();
+      new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { start(); o.disconnect(); } }, { rootMargin: '300px' }).observe(fig);
+      var pct = fig.querySelector('[data-pct]'), bar = fig.querySelector('[data-bar]'), last = 0, used = false;
+      function measure() {
+        var d = x.getImageData(0, 0, cv.width, cv.height).data, n = 0, on = 0;
+        for (var i = 3; i < d.length; i += 4 * 64) { n++; if (d[i] < 40) on++; }
+        var p = Math.min(100, Math.round((on / n) * 112));
+        pct.textContent = p + '%'; bar.style.setProperty('--v', p);
+        if (p > 92) { x.clearRect(0, 0, W, H); pct.textContent = '100%'; bar.style.setProperty('--v', 100); }
+      }
+      function rub(px, py, px0, py0) {
+        x.globalCompositeOperation = 'destination-out';
+        var steps = Math.max(1, Math.ceil(Math.hypot(px - px0, py - py0) / 8));
+        for (var s = 0; s <= steps; s++) {
+          var cx = px0 + ((px - px0) * s) / steps, cy = py0 + ((py - py0) * s) / steps, r = Math.max(34, W * 0.055);
+          var g = x.createRadialGradient(cx, cy, 0, cx, cy, r);
+          g.addColorStop(0, 'rgba(0,0,0,0.85)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+          x.fillStyle = g; x.beginPath(); x.arc(cx, cy, r, 0, 6.29); x.fill();
+        }
+        x.globalCompositeOperation = 'source-over';
+        var now = performance.now();
+        if (now - last > 120) { last = now; measure(); }
+        if (!used) { used = true; fig.classList.add('is-used'); if (window.miTrack) window.miTrack('tool_use', { tool: 'rust_reveal' }); }
+      }
+      var down = false, lx = 0, ly = 0;
+      function pos(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+      cv.addEventListener('pointerdown', function (e) { if (!ready) return; down = true; var p = pos(e); lx = p[0]; ly = p[1]; rub(lx, ly, lx, ly); });
+      cv.addEventListener('pointermove', function (e) {
+        if (!ready) return;
+        /* a mouse wipes on hover too; a finger wipes while it is down */
+        if (!down && e.pointerType !== 'mouse') return;
+        var p = pos(e); rub(p[0], p[1], lx, ly); lx = p[0]; ly = p[1];
+      });
+      addEventListener('pointerup', function () { down = false; if (ready) measure(); });
+      cv.addEventListener('pointerleave', function () { lx = -1; });
+      cv.addEventListener('pointerenter', function (e) { var p = pos(e); lx = p[0]; ly = p[1]; });
+      fig.querySelector('[data-all]').addEventListener('click', function () {
+        if (!ready) return;
+        var calm = matchMedia('(prefers-reduced-motion: reduce)').matches, row = 0, rows = 7;
+        if (calm) { x.clearRect(0, 0, W, H); measure(); return; }
+        (function sweep() {
+          var y = (H / rows) * (row + 0.5);
+          for (var k = 0; k <= 20; k++) rub((W * k) / 20, y, (W * Math.max(0, k - 1)) / 20, y);
+          row++;
+          if (row < rows) requestAnimationFrame(sweep); else { x.clearRect(0, 0, W, H); measure(); }
+        })();
+      });
+      fig.querySelector('[data-reset]').addEventListener('click', function () { if (ready) { paint(); measure(); } });
+      var rs = 0;
+      addEventListener('resize', function () { clearTimeout(rs); rs = setTimeout(function () { if (ready) { size(); paint(); measure(); } else size(); }, 150); });
+    });
+  })();
+</script>
+
+<style>
+  .rr__stage {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: #ddd;
+  }
+
+  .rr__stage picture,
+  .rr__stage img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .rr__stage img {
+    object-fit: cover;
+  }
+
+  .rr__top {
+    position: absolute;
+    inset: 0;
+  }
+
+  .rr__c {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    cursor: crosshair;
+  }
+
+  .rr__hint {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease);
+  }
+
+  .rr__hint span {
+    display: inline-block;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgb(11 18 32 / 0.8);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 650;
+  }
+
+  .rr:global(.is-used) .rr__hint {
+    opacity: 0;
+  }
+
+  .rr__meter {
+    flex: 1 1 12rem;
+    max-width: 20rem;
+  }
+
+  .rr__reset {
+    border-color: rgb(255 255 255 / 0.3);
+    color: var(--on-ink);
+  }
+</style>

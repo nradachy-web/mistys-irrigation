@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Head from '../components/Head.astro';
+import Reviews from '../components/Reviews.astro';
+import QuoteBand from '../components/QuoteBand.astro';
+import { LINKS, RATING } from '../data/site';
+import { REVIEWS } from '../data/reviews';
+import { breadcrumbs } from '../lib/schema';
+
+const schema = [breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Reviews', path: '/reviews/' }])];
+---
+
+<Base title="Reviews | Misty's Irrigation, Fenton MI" description={`Misty's Irrigation is rated ${RATING.value} on Google from ${RATING.countLabel} reviews. Read what customers in Fenton and nearby say, word for word.`} path="/reviews/" schema={schema}>
+  <PageHead eyebrow="Reviews" title={`${RATING.value} on Google, **${RATING.countLabel} reviews.**`} lede="Word for word, spelling and all. Promptness and fair pricing come up the most." crumbs={[{ name: 'Reviews', path: '/reviews/' }]}>
+    <a class="btn primary" href={LINKS.google} target="_blank" rel="noopener">Read every review on Google</a>
+  </PageHead>
+  <section class="band" aria-labelledby="r1">
+    <div class="wrap">
+      <Head id="r1" eyebrow="Recent" title="In their **own words.**" />
+      <Reviews reviews={REVIEWS} />
+    </div>
+  </section>
+  <section class="band white tight" aria-labelledby="r2">
+    <div class="wrap">
+      <Head id="r2" eyebrow="A customer?" title="Tell your neighbors **how it went.**" intro="A Google review is the biggest favor you can do a small business. It takes a minute." />
+      <a class="btn ghost" href={LINKS.google} target="_blank" rel="noopener">Leave a review on Google</a>
+    </div>
+  </section>
+  <QuoteBand />
+</Base>

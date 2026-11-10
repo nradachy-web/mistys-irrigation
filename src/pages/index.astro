@@ -1,0 +1,467 @@
+---
+/* ============================================================================
+   HOME
+
+     1  hero        their lakefront job at sunrise, with the mist
+     2  white       the season clock: what to book right now
+     3  mist        the services, as photo cards
+     4  ink         HEAD TO HEAD: the coverage panel
+     5  white       who they are, beside the wrapped car and the shop dog
+     6  mist        reviews
+     7  ink         WINTERIZE IT: the blowout panel
+     8  mist        how a visit works
+     9  photo       lake lots
+    10  white       the towns and the map
+    11  ink         the watering calculator, as a way in to the guide
+    12  mist        questions
+    13  white       now hiring
+    14  ink         the booking form
+   ========================================================================== */
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Head from '../components/Head.astro';
+import Photo from '../components/Photo.astro';
+import Steps from '../components/Steps.astro';
+import Faq from '../components/Faq.astro';
+import Reviews from '../components/Reviews.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import QuoteBand from '../components/QuoteBand.astro';
+import Season from '../components/Season.astro';
+import Coverage from '../components/Coverage.astro';
+import Blowout from '../components/Blowout.astro';
+import AreaMap from '../components/AreaMap.astro';
+import Icon from '../components/Icon.astro';
+import { BRAND, RATING } from '../data/site';
+import { SERVICES, service } from '../data/services';
+import { CITIES, hubPath } from '../data/cities';
+import { REVIEWS } from '../data/reviews';
+import { heroImage } from '../lib/hero';
+import { href } from '../lib/paths';
+import { faqSchema, serviceListSchema } from '../lib/schema';
+
+const hero = await heroImage('lake-sunrise', { sizes: '100vw', widths: [420, 640, 828, 1080, 1320] });
+const main = ['startup', 'winterization', 'sprinkler-repair', 'installation', 'lake-pump', 'drip'].map(service);
+const more = SERVICES.filter((s) => !main.includes(s));
+
+const steps = [
+  { title: 'Call, text or book', body: 'Tell us what the system is doing, or that it is time for a startup or a blowout. A photo of a broken head by text helps.' },
+  { title: 'We confirm a time', body: 'You get a real person on the phone, a time that works, and a heads up about anything we need, like access to the shutoff.' },
+  { title: 'Every zone, walked', body: 'We run each zone and watch it, so the problem you called about is not the only one we find. You hear what we see before we fix it.' },
+  { title: 'Fixed, set and cleaned up', body: 'Repairs done, heads aimed, the controller set for the season, and the yard left the way we found it.' },
+];
+
+const faq = [
+  { q: 'When should I book my spring sprinkler startup?', a: "Startups start once the hard freezes are over, usually in the middle of April, and run through May. The earlier you get on the list, the earlier your slot. Call or text [(810) 423-9513](tel:+18104239513) or [book online](/book-service/) any time over the winter and Misty's will add you." },
+  { q: 'When is the right time to blow out my sprinklers?', a: 'Before the ground freezes. Around Fenton that usually means October into early November. Water left in the lines and in the backflow device can freeze, crack and flood the yard at the spring startup. A blowout pushes it out with compressed air, zone by zone.' },
+  { q: 'Do you work on systems you did not install?', a: "Yes. Most of what Misty's does is service and repair, whoever put the system in. If a part is no longer made, we will tell you what fits." },
+  { q: 'Do you service sprinklers that pull from a lake?', a: 'Yes. Lake pump systems need the pump primed and the intake checked in spring, and the pump and lines drained in fall. See [lake pump irrigation](/lake-pump-irrigation/).' },
+  { q: 'My sprinklers run but the lawn still has brown spots. Why?', a: 'Almost always coverage, not run time. A head that is tilted, sunk, clogged or broken leaves a gap, and turning the timer up only floods the rest of the lawn. A tune-up fixes the heads so each one reaches the next. [See what a few bad heads do](/sprinkler-repair/).' },
+  { q: 'What towns do you cover?', a: 'Fenton, Linden, Grand Blanc, Holly, Hartland and Howell, and the townships around them. If you are close by and not sure, call and ask.' },
+  { q: 'Can I just turn the system off for the winter?', a: 'Turning it off stops new water but does not empty the pipes. What is already in the lines and the backflow device stays there all winter. That is the water that freezes. A [winterization](/sprinkler-winterization/) is what gets it out.' },
+];
+
+const schema = [serviceListSchema(), faqSchema(faq)];
+---
+
+<Base
+  title="Misty's Irrigation | Sprinkler Service in Fenton, MI"
+  description="Lawn sprinkler startups, blowouts, repairs and new systems in Fenton, Linden, Grand Blanc, Holly, Hartland and Howell. Family run. 5.0 on Google."
+  path="/"
+  preload={hero.preload}
+  schema={schema}
+>
+  <Hero
+    home
+    image={hero}
+    kicker="Lawn sprinkler service in Fenton, MI"
+    title="Sprinklers, handled. **Every season.**"
+    lede="Misty's Irrigation starts up, blows out, repairs and installs lawn sprinkler systems around Fenton, from lake lots in Linden and Holly to newer neighborhoods in Grand Blanc, Hartland and Howell."
+    chips={['Licensed and insured', 'Family run in Fenton']}
+  />
+
+  <section class="band white tight" aria-labelledby="season-h">
+    <div class="wrap">
+      <div class="season-head">
+        <p class="eyebrow">Right now</p>
+        <h2 class="h3" id="season-h">The sprinkler year around Fenton</h2>
+      </div>
+      <Season />
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="svc-h">
+    <div class="wrap">
+      <Head id="svc-h" eyebrow="Services" title="Everything a sprinkler system **needs.**" intro="Startups and blowouts on schedule, repairs found and fixed, and new systems laid out head to head." />
+      <ServiceCards services={main} />
+      <div class="also">
+        <p class="fine also__h">Also</p>
+        <ul class="chips">
+          {more.map((s) => <li><a class="chip" href={href(s.path)}>{s.name}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band ink dawn" aria-labelledby="cov-h">
+    <div class="wrap pn">
+      <div class="stack" style="--gap:1.25rem">
+        <Head id="cov-h" layout="left" eyebrow="Try it" title="What a few bad heads **do to a lawn.**" intro="Most brown patches are not a run time problem. Switch between before and after a tune-up and watch where the water goes." />
+        <ul class="checks small">
+          <li>Hover or tap a pink head to see what is wrong with it.</li>
+          <li>The lawn color and the three numbers come from where the water lands.</li>
+        </ul>
+        <a class="arrow" href={href('/sprinkler-repair/')}>Sprinkler repair</a>
+      </div>
+      <Coverage />
+    </div>
+  </section>
+
+  <section class="band white" aria-labelledby="who-h">
+    <div class="wrap two">
+      <figure>
+        <div class="frame wide">
+          <Photo id="wrap-car-dog" ratio={3 / 2} widths={[480, 720, 960]} sizes="(min-width: 60rem) 46vw, 100vw" focus="left" />
+        </div>
+        <figcaption class="note">The service car and the shop dog, who supervises.</figcaption>
+      </figure>
+      <div class="stack" style="--gap:1.4rem">
+        <Head id="who-h" layout="left" eyebrow="Who we are" title="A family business **that answers the phone.**" />
+        <div class="prose muted">
+          <p>Misty's Irrigation is a family business run by Misty and Mike Lutz out of Fenton. When you call, you get one of us, not a call center.</p>
+          <p>We are licensed and insured, we show up when we say, and we explain what we find before we fix it. That is not us talking: it is what the reviews say most.</p>
+        </div>
+        <ul class="proof">
+          <li><b class="num">{RATING.value}</b><span>Google rating</span></li>
+          <li><b class="num">{RATING.countLabel}</b><span>reviews</span></li>
+          <li><b class="num">6</b><span>towns served</span></li>
+        </ul>
+        <a class="arrow" href={href('/about-us/')}>More about us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="rev-h">
+    <div class="wrap">
+      <Head id="rev-h" eyebrow="Reviews" title="In their **own words.**" intro="Word for word from Google. Promptness and fair pricing are what people mention most." />
+      <Reviews reviews={REVIEWS} />
+    </div>
+  </section>
+
+  <section class="band ink dawn" aria-labelledby="bo-h">
+    <div class="wrap">
+      <Head id="bo-h" eyebrow="Try it" title="Blow it out, **then let winter come.**" intro="Run a blowout zone by zone, then drag the season forward. Skip it and see what the frost does to water left in the lines." />
+      <Blowout />
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="steps-h">
+    <div class="wrap">
+      <Head id="steps-h" eyebrow="How it works" title="One call, **every zone checked.**" />
+      <Steps steps={steps} />
+    </div>
+  </section>
+
+  <section class="lake ink" aria-labelledby="lake-h">
+    <div class="lake__bg" aria-hidden="true">
+      <Photo id="lake-lawn" alt="" widths={[828, 1320, 1600]} sizes="100vw" quality={44} />
+    </div>
+    <div class="wrap lake__body">
+      <p class="eyebrow">Lake lots</p>
+      <h2 class="h2" id="lake-h">Watered by the lake, <span class="accent">looked after by us.</span></h2>
+      <p class="lede">Fenton, Linden, Holly and Hartland sit among dozens of lakes, and plenty of lawns drink straight from them. We prime the pumps and check the intakes in spring, and drain them in fall.</p>
+      <a class="btn primary" href={href('/lake-pump-irrigation/')}>Lake pump irrigation</a>
+      <p class="note">A lakefront system we look after, on a spring morning.</p>
+    </div>
+  </section>
+
+  <section class="band white" aria-labelledby="area-h">
+    <div class="wrap two top">
+      <div class="stack" style="--gap:1.25rem">
+        <Head id="area-h" layout="left" eyebrow="Where we work" title="Fenton, and **the towns around it.**" intro="Six towns, all within about half an hour of Fenton." />
+        <ul class="towns">
+          {
+            CITIES.map((c) => (
+              <li>
+                <a href={href(hubPath(c))}>
+                  <span class="towns__name">{c.name}</span>
+                  <span class="fine muted">{c.county} County</span>
+                  <Icon name="arrow" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="map-dark ink">
+        <AreaMap />
+      </div>
+    </div>
+  </section>
+
+  <section class="band ink dawn" aria-labelledby="calc-h">
+    <div class="wrap calc">
+      <div class="calc__num" aria-hidden="true">
+        <span class="calc__big">21</span><span class="calc__unit">min</span>
+        <span class="fine">a spray zone, full sun, July, loam soil</span>
+      </div>
+      <div class="stack" style="--gap:1.25rem">
+        <Head id="calc-h" layout="left" eyebrow="Watering guide" title="How long should **each zone run?**" intro="Pick the heads, the sun, the month and the soil. The calculator gives you minutes per zone, days per week and how to split it on clay." />
+        <a class="btn primary" href={href('/watering-guide/')}>Open the watering calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="faq-h">
+    <div class="wrap faqs">
+      <Head id="faq-h" layout="left" eyebrow="Questions" title="What people **ask us.**" intro={`If yours is not here, call or text [${BRAND.phone}](${BRAND.phoneHref}).`} />
+      <Faq items={faq} />
+    </div>
+  </section>
+
+  <section class="band white tight" aria-labelledby="hire-h">
+    <div class="wrap hire">
+      <div>
+        <p class="eyebrow">Now hiring</p>
+        <h2 class="h3" id="hire-h">Like working outside? We hire for the season.</h2>
+        <p class="small muted">A short application on this site. No account to make, nothing to download.</p>
+      </div>
+      <a class="btn ghost" href={href('/careers/')}>Apply</a>
+    </div>
+  </section>
+
+  <QuoteBand avoid={['lake-lawn', 'lake-sunrise']} />
+</Base>
+
+<script is:inline>
+  /* the old site's application lived at /#apply */
+  if (location.hash === '#apply') location.replace(location.pathname.replace(/\/?$/, '/') + 'careers/');
+</script>
+
+<style>
+  .season-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .also {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .also__h {
+    font-weight: 680;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .pn {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 64rem) {
+    .pn {
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+  }
+
+  .pn :global(.head) {
+    margin-bottom: 0;
+  }
+
+  .proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 2.5rem;
+    padding-block: 1.25rem;
+    border-block: 1px solid var(--line);
+  }
+
+  .proof li {
+    display: grid;
+  }
+
+  .proof b {
+    font-size: 2.4rem;
+    font-weight: 760;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .proof span {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  .lake {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    align-items: end;
+    min-height: clamp(30rem, 70vh, 42rem);
+    padding-block: var(--band);
+    overflow: hidden;
+  }
+
+  .lake__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .lake__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(11 18 32 / 0.88) 0%, rgb(11 18 32 / 0.55) 45%, rgb(11 18 32 / 0.05) 80%), linear-gradient(0deg, rgb(11 18 32 / 0.6), transparent 50%);
+  }
+
+  .lake__bg :global(picture),
+  .lake__bg :global(img) {
+    width: 100%;
+    height: 100%;
+  }
+
+  .lake__bg :global(img) {
+    object-fit: cover;
+  }
+
+  .lake__body {
+    display: grid;
+    gap: 1.1rem;
+    justify-items: start;
+  }
+
+  .lake__body .h2 {
+    max-width: 14em;
+  }
+
+  .lake__body .lede {
+    max-width: 34rem;
+  }
+
+  .towns {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+
+  .towns a {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.95rem 0.25rem;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    transition: color 0.18s var(--ease), padding 0.25s var(--ease);
+  }
+
+  .towns a:hover {
+    color: var(--rose-ink);
+    padding-left: 0.6rem;
+  }
+
+  .towns__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .towns :global(.icon) {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--rose-ink);
+  }
+
+  .map-dark {
+    background: none;
+  }
+
+  .calc {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 60rem) {
+    .calc {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+  }
+
+  .calc :global(.head) {
+    margin-bottom: 0;
+  }
+
+  .calc__num {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    column-gap: 0.75rem;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid var(--line-ink);
+    border-radius: calc(var(--r) + 4px);
+    background: radial-gradient(120% 80% at 100% 0%, rgb(63 192 240 / 0.16), transparent 60%), var(--ink-2);
+  }
+
+  .calc__big {
+    font-size: clamp(6rem, 14vw, 9.5rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 0.85;
+  }
+
+  .calc__unit {
+    font-size: 1.5rem;
+    font-weight: 650;
+    color: var(--on-ink-muted);
+  }
+
+  .calc__num .fine {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    color: var(--on-ink-muted);
+  }
+
+  .faqs {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 72rem) {
+    .faqs {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .faqs :global(.head) {
+      position: sticky;
+      top: calc(var(--header) + 2rem);
+    }
+  }
+
+  .hire {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+  }
+
+  .hire > div {
+    display: grid;
+    gap: 0.4rem;
+    max-width: 40rem;
+  }
+</style>

@@ -1,0 +1,405 @@
+---
+/* The service request: two short steps, then a real result. It posts to
+   Web3Forms and only shows success when the service confirms it. With no key set
+   (the preview) or on any failure it says so and gives the phone number, because
+   a form that pretends to send is how leads get lost.
+
+   Without script both steps show and the form posts normally. */
+import { BRAND, FORM } from '../data/site';
+import { SERVICES } from '../data/services';
+import { CITIES } from '../data/cities';
+import { href } from '../lib/paths';
+
+interface Props {
+  /** Pre-ticks the matching choice (a service's `ask`). */
+  service?: string;
+  town?: string;
+}
+const { service = '', town = '' } = Astro.props;
+const thanks = `${BRAND.origin}/thank-you/`;
+const id = 'qf';
+const names = CITIES.map((c) => c.name);
+const common = ['Spring startup', 'Fall blowout', 'Repair', 'New system or added zones', 'Lake pump system', 'Heads and nozzles'];
+const others = SERVICES.map((s) => s.ask).filter((a) => !common.includes(a));
+const water = ['City water', 'Well', 'Lake', 'Not sure'];
+---
+
+<form class="qf" id={id} action={FORM.endpoint} method="POST" data-key={FORM.key ? '1' : ''} data-thanks={href('/thank-you/')}>
+  <input type="hidden" name="access_key" value={FORM.key} />
+  <input type="hidden" name="subject" value="New service request from mistysirr.com" />
+  <input type="hidden" name="from_name" value="Misty's Irrigation website" />
+  <input type="hidden" name="redirect" value={thanks} />
+  <input type="checkbox" name="botcheck" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <fieldset class="qf__step" data-step="1">
+    <legend class="qf__legend"><span class="fine muted">Step 1 of 2</span> What do you need?</legend>
+    <ul class="qf__chips">
+      {
+        common.map((c) => (
+          <li>
+            <label class="qf__chip">
+              <input type="checkbox" name="services" value={c} checked={c === service} />
+              <span>{c}</span>
+            </label>
+          </li>
+        ))
+      }
+    </ul>
+    <label class="qf__field">
+      <span>Something else?</span>
+      <select name="other_service">
+        <option value="">Choose one</option>
+        {others.map((o) => <option selected={o === service}>{o}</option>)}
+      </select>
+    </label>
+    <label class="qf__field">
+      <span>Town</span>
+      <input name="town" list="qf-towns" autocomplete="address-level2" placeholder="Where is the system?" value={town} />
+      <datalist id="qf-towns">{names.map((n) => <option value={n} />)}</datalist>
+    </label>
+    <fieldset class="qf__water">
+      <legend class="qf__small-legend">Where does the water come from?</legend>
+      <div class="qf__seg">
+        {water.map((w, i) => <label><input type="radio" name="water_source" value={w} checked={i === 3} /><span>{w}</span></label>)}
+      </div>
+    </fieldset>
+    <button class="btn primary qf__next" type="button">Next</button>
+  </fieldset>
+
+  <fieldset class="qf__step" data-step="2">
+    <legend class="qf__legend"><span class="fine muted">Step 2 of 2</span> How do we reach you?</legend>
+    <label class="qf__field"><span>Name</span><input name="name" required autocomplete="name" /></label>
+    <div class="qf__two">
+      <label class="qf__field"><span>Phone</span><input name="phone" type="tel" required autocomplete="tel" inputmode="tel" /></label>
+      <label class="qf__field"><span>Email <em>optional</em></span><input name="email" type="email" autocomplete="email" /></label>
+    </div>
+    <label class="qf__field"><span>Street address <em>optional, helps us route the visit</em></span><input name="address" autocomplete="street-address" /></label>
+    <label class="qf__field"><span>What is going on? <em>optional</em></span><textarea name="message" rows="3" placeholder="A zone that will not shut off, a dry spot by the drive, a head the mower hit..."></textarea></label>
+    <div class="qf__row">
+      <button class="qf__back" type="button">Back</button>
+      <button class="btn primary qf__send" type="submit">Send my request</button>
+    </div>
+  </fieldset>
+
+  <p class="qf__msg small" role="status" aria-live="polite"></p>
+  <p class="fine muted qf__fine">We use this to answer you and nothing else. Prefer to talk? Call or text <a href={BRAND.phoneHref} data-loc="form">{BRAND.phone}</a>.</p>
+</form>
+
+<script is:inline>
+  (function () {
+    var f = document.getElementById('qf');
+    if (!f || f.dataset.on) return;
+    f.dataset.on = '1';
+    var one = f.querySelector('[data-step="1"]'), two = f.querySelector('[data-step="2"]');
+    var msg = f.querySelector('.qf__msg'), send = f.querySelector('.qf__send');
+    two.hidden = true;
+    function clear() { msg.textContent = ''; msg.className = 'qf__msg small'; }
+    function track(name, params) { if (window.miTrack) window.miTrack(name, params); }
+    var started = false;
+    function start() { if (!started) { started = true; track('booking_start', { form_page: location.pathname }); } }
+    f.addEventListener('focusin', start);
+    f.addEventListener('change', start);
+    f.querySelector('.qf__next').addEventListener('click', function () {
+      clear(); one.hidden = true; two.hidden = false; two.querySelector('input[name=name]').focus();
+      track('booking_step', { step: 2, form_page: location.pathname });
+    });
+    f.querySelector('.qf__back').addEventListener('click', function () {
+      clear(); two.hidden = true; one.hidden = false; one.querySelector('input').focus();
+    });
+    /* Enter in step 1 means Next, including the Go key on a phone. */
+    one.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.target.tagName !== 'BUTTON') { e.preventDefault(); f.querySelector('.qf__next').click(); }
+    });
+    function call(text) {
+      msg.innerHTML = text + ' <a href="tel:+18104239513">(810) 423-9513</a>.';
+    }
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clear();
+      if (!f.dataset.key) { call('Online requests open when this site goes live. For now, call or text us at'); return; }
+      var d = new FormData(f), picked = d.getAll('services');
+      if ((String(d.get('phone')).match(/\d/g) || []).length < 10) { msg.textContent = 'Please check the phone number, so we can reach you.'; msg.classList.add('is-bad'); f.querySelector('input[name=phone]').focus(); return; }
+      if (d.get('other_service')) picked.push(d.get('other_service'));
+      var o = {};
+      d.forEach(function (v, k) { if (k !== 'services' && k !== 'other_service') o[k] = v; });
+      o.services = picked.join(', ') || 'Not chosen';
+      o.subject = 'New service request: ' + o.services + (o.town ? ' in ' + o.town : '');
+      o.page = location.pathname;
+      try { var s = JSON.parse(decodeURIComponent((document.cookie.match(/(?:^|;\s*)mi_src=([^;]+)/) || [])[1] || '{}')); Object.keys(s).forEach(function (k) { o[k] = s[k]; }); } catch (err) {}
+      send.disabled = true; send.textContent = 'Sending';
+      fetch(f.action, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(o) })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (!j.success) throw new Error('rejected');
+          /* counted on the thank-you page, once; nothing personal goes to Google */
+          try { sessionStorage.setItem('mi_lead', JSON.stringify({ lead_source: f.dataset.from || 'booking_form', services: o.services, town: o.town || '', form_page: location.pathname })); } catch (err) {}
+          location.href = f.dataset.thanks;
+        })
+        .catch(function () {
+          send.disabled = false; send.textContent = 'Send my request';
+          call('That did not go through. Please call or text us at');
+          msg.classList.add('is-bad');
+          track('booking_error', { form_page: location.pathname });
+        });
+    });
+  })();
+</script>
+
+<style>
+  .qf {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .qf__step {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .qf__step[hidden] {
+    display: none;
+  }
+
+  .qf__legend {
+    display: grid;
+    gap: 0.15rem;
+    margin-bottom: 0.25rem;
+    padding: 0;
+    font-size: 1.6rem;
+    font-weight: 720;
+    line-height: 1.15;
+    letter-spacing: -0.028em;
+  }
+
+  .qf__legend .fine {
+    font-family: var(--font);
+    letter-spacing: 0;
+  }
+
+  .qf__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .qf__chip {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  .qf__chip input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .qf__chip span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #8794a6;
+    border-radius: var(--r-sm);
+    background: var(--white);
+    font-size: 0.9375rem;
+    font-weight: 560;
+    transition:
+      background-color 0.16s var(--ease),
+      border-color 0.16s var(--ease),
+      color 0.16s var(--ease);
+  }
+
+  .qf__chip:hover span {
+    border-color: var(--rose);
+  }
+
+  .qf__chip input:checked + span {
+    border-color: var(--rose);
+    background: var(--rose);
+    color: #fff;
+  }
+
+  .qf__chip input:focus-visible + span {
+    outline: 2px solid var(--rose);
+    outline-offset: 2px;
+  }
+
+  .qf__field {
+    display: grid;
+    gap: 0.3rem;
+    min-width: 0;
+    font-size: 0.9375rem;
+    font-weight: 560;
+  }
+
+  .qf__field em {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .qf__field input,
+  .qf__field select,
+  .qf__field textarea {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #8794a6;
+    border-radius: var(--r-sm);
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .qf ::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
+
+  .qf__field textarea {
+    resize: vertical;
+  }
+
+  .qf__field :focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 1px;
+    border-color: var(--rose);
+  }
+
+  .qf__two {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 34rem) {
+    .qf__two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .qf__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .qf__back {
+    min-height: 2.75rem;
+    padding: 0 0.25rem;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font-weight: 560;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .qf__next,
+  .qf__send {
+    justify-self: start;
+    min-width: 11rem;
+  }
+
+  @media (max-width: 29.99rem) {
+    .qf__next {
+      justify-self: stretch;
+    }
+
+    .qf__row .qf__send {
+      flex: 1;
+    }
+  }
+
+  .qf__water {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .qf__small-legend {
+    padding: 0;
+    margin-bottom: 0.35rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .qf__seg {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 29.99rem) {
+    .qf__seg {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .qf__seg label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .qf__seg input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .qf__seg span {
+    display: grid;
+    place-items: center;
+    min-height: 2.75rem;
+    padding: 0.3rem 0.4rem;
+    border: 1px solid #8794a6;
+    border-radius: var(--r-sm);
+    background: #fff;
+    font-size: 0.9rem;
+    font-weight: 560;
+    text-align: center;
+    transition: background-color 0.16s var(--ease), border-color 0.16s var(--ease), color 0.16s var(--ease);
+  }
+
+  .qf__seg input:checked + span {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .qf__seg input:focus-visible + span {
+    outline: 2px solid var(--rose);
+    outline-offset: 2px;
+  }
+
+  .qf__msg:empty {
+    display: none;
+  }
+
+  .qf__msg {
+    font-weight: 560;
+  }
+
+  .qf__msg.is-bad {
+    padding: 0.7rem 0.85rem;
+    border-left: 3px solid #a12b1f;
+    background: #fbeeeb;
+    color: #6f1c13;
+  }
+
+  .qf__fine a {
+    font-weight: 600;
+  }
+</style>

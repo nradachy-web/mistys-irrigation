@@ -1,0 +1,494 @@
+---
+/* Sticky header: Misty's own logo at real size, the main links, the phone and
+   one action. "Services" opens a three column panel; below 64rem everything
+   folds into a full screen menu. Both are the native popover, so they open,
+   close and take Escape with no script. */
+import Icon from './Icon.astro';
+import { BRAND } from '../data/site';
+import { GROUPS, inGroup } from '../data/services';
+import { CITIES, hubPath } from '../data/cities';
+import { href } from '../lib/paths';
+
+interface Props {
+  quoteHref: string;
+  current: string;
+}
+const { quoteHref, current } = Astro.props;
+
+const links = [
+  { label: 'Service areas', path: '/service-areas/' },
+  { label: 'Watering guide', path: '/watering-guide/' },
+  { label: 'Reviews', path: '/reviews/' },
+  { label: 'About', path: '/about-us/' },
+];
+const quote = quoteHref.startsWith('#') ? quoteHref : href(quoteHref);
+const mark = href('/brand/mark.webp');
+---
+
+<header class="hdr ink">
+  <div class="wrap hdr__row">
+    <a class="hdr__logo" href={href('/')} aria-label={`${BRAND.name} home`}>
+      <img src={mark} width="144" height="54" alt={`${BRAND.name} logo`} decoding="async" fetchpriority="low" />
+    </a>
+
+    <nav class="hdr__nav" aria-label="Main">
+      <ul>
+        <li>
+          <button class="hdr__drop" type="button" popovertarget="mega">Services<Icon name="chevron" /></button>
+        </li>
+        {
+          links.map((l) => (
+            <li>
+              <a href={href(l.path)} aria-current={current === l.path ? 'page' : undefined}>{l.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="hdr__end">
+      <a class="hdr__phone" href={BRAND.phoneHref} data-loc="header">
+        <Icon name="phone" />
+        <span>{BRAND.phone}</span>
+      </a>
+      <a class="btn primary small hdr__cta" href={quote} data-cta="header-book">Book service</a>
+      <button class="hdr__menu" type="button" popovertarget="menu" aria-label="Menu">
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mega" class="mega ink" popover>
+  <nav class="wrap mega__grid" aria-label="All services">
+    {
+      GROUPS.map((g) => (
+        <div>
+          <p class="eyebrow" id={`mg-${g.id}`}>{g.name}</p>
+          <p class="fine muted mega__blurb">{g.blurb}</p>
+          <ul aria-labelledby={`mg-${g.id}`}>
+            {inGroup(g.id).map((s) => <li><a href={href(s.path)}>{s.name}</a></li>)}
+          </ul>
+        </div>
+      ))
+    }
+    <div class="mega__foot">
+      <a class="arrow" href={href('/services/')}>Every service</a>
+      <a class="arrow" href={href('/service-areas/')}>Where we work</a>
+    </div>
+  </nav>
+</div>
+
+<div id="menu" class="menu ink" popover role="dialog" aria-label="Site menu">
+  <div class="menu__top">
+    <a href={href('/')} aria-label={`${BRAND.name} home`}>
+      <img src={mark} width="144" height="54" alt="" loading="lazy" decoding="async" />
+    </a>
+    <button class="hdr__menu" type="button" popovertarget="menu" popovertargetaction="hide" aria-label="Close menu">
+      <Icon name="close" />
+    </button>
+  </div>
+  <nav class="menu__nav" aria-label="Menu">
+    {
+      GROUPS.map((g) => (
+        <div>
+          <p class="eyebrow">{g.name}</p>
+          <ul>
+            {inGroup(g.id).map((s) => <li><a href={href(s.path)}>{s.name}</a></li>)}
+          </ul>
+        </div>
+      ))
+    }
+    <div>
+      <p class="eyebrow">Service areas</p>
+      <ul>
+        {CITIES.map((c) => <li><a href={href(hubPath(c))}>{c.name}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">{BRAND.name}</p>
+      <ul>
+        <li><a href={href('/watering-guide/')}>Watering guide</a></li>
+        <li><a href={href('/reviews/')}>Reviews</a></li>
+        <li><a href={href('/about-us/')}>About us</a></li>
+        <li><a href={href('/careers/')}>Now hiring</a></li>
+        <li><a href={href('/contact-us/')}>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="menu__actions">
+    <a class="btn primary" href={href('/book-service/')} data-cta="menu-book">Book service</a>
+    <a class="btn ghost" href={BRAND.phoneHref} data-loc="menu"><Icon name="phone" />Call</a>
+    <a class="btn ghost" href={BRAND.smsHref} data-loc="menu"><Icon name="text" />Text</a>
+  </div>
+</div>
+
+<script is:inline>
+  /* While the menu is open, the page behind it cannot be reached by keyboard or
+     screen reader. A link inside a menu closes it, so an in-page jump lands. */
+  (function () {
+    var menu = document.getElementById('menu');
+    var mega = document.getElementById('mega');
+    if (!menu) return;
+    function rest(on) {
+      Array.prototype.forEach.call(document.body.children, function (el) {
+        if (el !== menu && el.tagName !== 'SCRIPT') el.inert = on;
+      });
+    }
+    if (!('popover' in HTMLElement.prototype)) {
+      document.documentElement.classList.add('no-pop');
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest && e.target.closest('[popovertarget]');
+        if (!b) return;
+        var t = document.getElementById(b.getAttribute('popovertarget'));
+        var open = !t.classList.contains('is-open') && b.getAttribute('popovertargetaction') !== 'hide';
+        [menu, mega].forEach(function (m) { m.classList.remove('is-open'); });
+        if (open) t.classList.add('is-open');
+      });
+      return;
+    }
+    menu.addEventListener('toggle', function (e) {
+      var open = e.newState === 'open';
+      rest(open);
+      document.documentElement.classList.toggle('is-locked', open);
+      if (open) menu.querySelector('.hdr__menu').focus();
+    });
+    [menu, mega].forEach(function (m) {
+      m.addEventListener('click', function (e) {
+        if (e.target.closest && e.target.closest('a')) m.hidePopover();
+      });
+    });
+  })();
+</script>
+
+<style>
+  .hdr {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--line-ink);
+    background: rgb(11 18 32 / 0.9);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    backdrop-filter: saturate(1.4) blur(14px);
+  }
+
+  .hdr__row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: var(--header);
+  }
+
+  .hdr__logo {
+    flex: none;
+    display: block;
+    margin-right: auto;
+    padding: 0.25rem 0;
+  }
+
+  .hdr__logo img {
+    width: auto;
+    height: 3.35rem;
+  }
+
+  @media (max-width: 47.99rem) {
+    .hdr__logo img {
+      height: 2.75rem;
+    }
+  }
+
+  .hdr__nav {
+    display: none;
+  }
+
+  .hdr__nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .hdr__nav a,
+  .hdr__drop {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-height: 2.75rem;
+    padding: 0 0.75rem;
+    border: 0;
+    border-radius: var(--r-sm);
+    background: none;
+    color: var(--on-ink);
+    font-size: 0.9625rem;
+    font-weight: 560;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.16s var(--ease), background-color 0.16s var(--ease);
+  }
+
+  .hdr__nav a:hover,
+  .hdr__drop:hover {
+    background: rgb(255 255 255 / 0.06);
+  }
+
+  .hdr__nav a[aria-current='page'] {
+    color: var(--pink-on-ink);
+  }
+
+  .hdr__drop :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.25s var(--ease);
+  }
+
+  :global(#mega:popover-open) ~ * .hdr__drop :global(.icon) {
+    transform: rotate(180deg);
+  }
+
+  .hdr__end {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hdr__phone {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0 0.25rem;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .hdr__phone :global(.icon) {
+    width: 1.15rem;
+    height: 1.15rem;
+    color: var(--pink-on-ink);
+  }
+
+  .hdr__phone:hover span {
+    text-decoration: underline;
+  }
+
+  .hdr__menu {
+    display: inline-grid;
+    place-items: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border: 1px solid var(--line-ink);
+    border-radius: var(--r);
+    background: none;
+    color: var(--on-ink);
+    cursor: pointer;
+  }
+
+  .hdr__menu :global(.icon) {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  @media (max-width: 29.99rem) {
+    .hdr__cta {
+      display: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .hdr__nav {
+      display: block;
+    }
+
+    .hdr__menu {
+      display: none;
+    }
+
+    .hdr__logo {
+      margin-right: 0.5rem;
+    }
+
+    .hdr__end {
+      margin-left: auto;
+    }
+  }
+
+  @media (min-width: 76rem) {
+    .hdr__phone {
+      display: inline-flex;
+    }
+  }
+
+  /* the services panel */
+  .mega {
+    position: fixed;
+    inset: var(--header) 0 auto 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(1.75rem, 3vw, 2.5rem) 0;
+    border: 0;
+    border-bottom: 1px solid var(--line-ink);
+    box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.55);
+    opacity: 0;
+    translate: 0 -8px;
+    transition:
+      opacity 0.22s var(--ease),
+      translate 0.22s var(--ease),
+      display 0.22s allow-discrete,
+      overlay 0.22s allow-discrete;
+  }
+
+  .mega:popover-open {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  @starting-style {
+    .mega:popover-open {
+      opacity: 0;
+      translate: 0 -8px;
+    }
+  }
+
+  .mega__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .mega__blurb {
+    margin: 0.5rem 0 0.9rem;
+    max-width: 24rem;
+  }
+
+  .mega ul {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .mega ul a {
+    display: block;
+    padding: 0.45rem 0;
+    font-size: 1.0625rem;
+    font-weight: 560;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.16s var(--ease);
+  }
+
+  .mega ul a:hover {
+    color: var(--pink-on-ink);
+  }
+
+  .mega__foot {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line-ink);
+  }
+
+  /* the phone menu */
+  .menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0 var(--gutter) 1.5rem;
+    border: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 0;
+    transition:
+      opacity 0.2s var(--ease),
+      display 0.2s allow-discrete,
+      overlay 0.2s allow-discrete;
+  }
+
+  .menu:popover-open {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+  }
+
+  @starting-style {
+    .menu:popover-open {
+      opacity: 0;
+    }
+  }
+
+  .menu__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header);
+    flex: none;
+  }
+
+  .menu__top img {
+    height: 2.75rem;
+    width: auto;
+  }
+
+  .menu__nav {
+    display: grid;
+    gap: 1.75rem;
+    padding: 1rem 0 2rem;
+  }
+
+  @media (min-width: 36rem) {
+    .menu__nav {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .menu__nav ul {
+    display: grid;
+    margin-top: 0.5rem;
+  }
+
+  .menu__nav a {
+    display: block;
+    padding: 0.55rem 0;
+    font-size: 1.125rem;
+    font-weight: 560;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-ink);
+  }
+
+  .menu__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-top: auto;
+    position: sticky;
+    bottom: 0;
+    padding-top: 1rem;
+    background: var(--ink);
+  }
+
+  .menu__actions .primary {
+    grid-column: 1 / -1;
+  }
+
+  :global(.no-pop) .mega,
+  :global(.no-pop) .menu {
+    display: none;
+  }
+
+  :global(.no-pop) .mega.is-open,
+  :global(.no-pop) .menu.is-open {
+    display: block;
+    opacity: 1;
+    translate: 0 0;
+    z-index: 60;
+  }
+
+  :global(html.is-locked) {
+    overflow: hidden;
+  }
+</style>

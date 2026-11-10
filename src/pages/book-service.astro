@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Season from '../components/Season.astro';
+import Icon from '../components/Icon.astro';
+import { BRAND } from '../data/site';
+import { breadcrumbs } from '../lib/schema';
+
+const schema = [breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Book service', path: '/book-service/' }])];
+---
+
+<Base title="Book Sprinkler Service | Misty's Irrigation, Fenton" description="Book a sprinkler startup, blowout, repair or new system with Misty's Irrigation in Fenton, Linden, Grand Blanc, Holly, Hartland or Howell." path="/book-service/" schema={schema} quoteHref="#quote">
+  <PageHead eyebrow="Book service" title="Tell us what **you need.**" lede="Two short steps. We call you back to confirm a time." crumbs={[{ name: 'Book service', path: '/book-service/' }]} />
+  <section class="band" aria-labelledby="b1">
+    <div class="wrap two top">
+      <div class="card pad light" id="quote">
+        <h2 class="sr" id="b1">Service request</h2>
+        <QuoteForm />
+      </div>
+      <div class="stack" style="--gap:1.5rem">
+        <a class="call" href={BRAND.phoneHref} data-loc="book">
+          <span class="fine muted">Rather talk?</span>
+          <span class="call__num num">{BRAND.phone}</span>
+          <span class="call__how small"><Icon name="phone" />Call or text</span>
+        </a>
+        <div>
+          <h2 class="h3">Where the season is</h2>
+          <p class="small muted season-lede">So you know what is being booked right now.</p>
+          <Season />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  #quote {
+    scroll-margin-top: calc(var(--header) + 1rem);
+  }
+
+  .call {
+    display: grid;
+    gap: 0.2rem;
+    padding: 1.5rem;
+    border-radius: var(--r);
+    background: var(--ink);
+    color: var(--on-ink);
+    text-decoration: none;
+  }
+
+  .call .muted {
+    color: var(--on-ink-muted);
+  }
+
+  .call__num {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 760;
+    letter-spacing: -0.035em;
+  }
+
+  .call__how {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--pink-on-ink);
+    font-weight: 650;
+  }
+
+  .call__how :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .season-lede {
+    margin: 0.3rem 0 1rem;
+  }
+</style>

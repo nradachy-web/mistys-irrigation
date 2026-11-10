@@ -1,0 +1,13 @@
+---
+/* The town hubs, at /service-areas/<town>-mi/. A hub exists when its content file exists. */
+import { getCollection } from 'astro:content';
+import CityPage from '../../templates/CityPage.astro';
+
+export async function getStaticPaths() {
+  const cities = await getCollection('cities');
+  return cities.map((entry) => ({ params: { hub: `${entry.data.city}-mi` }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+
+<CityPage entry={entry} />

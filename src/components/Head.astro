@@ -1,0 +1,22 @@
+---
+/* A band's heading: small label with the logo's arc, the h2, and an optional
+   line beside it. Wrap one phrase in ** for the pink italic accent. */
+import { rich, heading } from '../lib/rich';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+  layout?: 'split' | 'center' | 'left';
+  as?: 'h2' | 'h3';
+  small?: boolean;
+  id?: string;
+}
+const { eyebrow, title, intro, layout = 'split', as: Tag = 'h2', small = false, id } = Astro.props;
+---
+
+<div class:list={['head', layout]}>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <Tag class={small ? 'h3' : 'h2'} id={id} set:html={heading(title, 'accent')} />
+  {intro && <p class="lede" set:html={rich(intro)} />}
+</div>

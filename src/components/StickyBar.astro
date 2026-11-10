@@ -1,0 +1,89 @@
+---
+/* On phones: call, text and book, always one thumb away. It stays out of the
+   way of the hero and appears once the visitor scrolls past it. */
+import Icon from './Icon.astro';
+import { BRAND } from '../data/site';
+import { href } from '../lib/paths';
+
+interface Props {
+  quoteHref: string;
+}
+const { quoteHref } = Astro.props;
+const quote = quoteHref.startsWith('#') ? quoteHref : href(quoteHref);
+---
+
+<div class="bar ink" data-bar>
+  <a href={BRAND.phoneHref} data-loc="sticky"><Icon name="phone" /><span>Call</span></a>
+  <a href={BRAND.smsHref} data-loc="sticky"><Icon name="text" /><span>Text</span></a>
+  <a class="bar__book" href={quote} data-cta="sticky-book"><Icon name="calendar" /><span>Book service</span></a>
+</div>
+
+<script is:inline>
+  (function () {
+    var bar = document.querySelector('[data-bar]');
+    if (!bar) return;
+    var y0 = 0, shown = false;
+    function on() {
+      var show = scrollY > Math.min(innerHeight * 0.55, 420);
+      if (show !== shown) { shown = show; bar.classList.toggle('is-on', show); }
+    }
+    addEventListener('scroll', on, { passive: true });
+    on();
+  })();
+</script>
+
+<style>
+  .bar {
+    position: fixed;
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: calc(0.6rem + env(safe-area-inset-bottom));
+    z-index: 40;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.6fr;
+    gap: 0.4rem;
+    padding: 0.4rem;
+    border: 1px solid var(--line-ink);
+    border-radius: calc(var(--r) + 4px);
+    background: rgb(11 18 32 / 0.94);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px -8px rgb(0 0 0 / 0.5);
+    translate: 0 140%;
+    transition: translate 0.35s var(--ease);
+  }
+
+  .bar:global(.is-on),
+  .bar:focus-within {
+    translate: 0 0;
+  }
+
+  .bar a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 3rem;
+    border-radius: var(--r);
+    font-size: 0.9375rem;
+    font-weight: 650;
+    text-decoration: none;
+    background: rgb(255 255 255 / 0.06);
+  }
+
+  .bar :global(.icon) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .bar .bar__book {
+    background: var(--pink-btn);
+    color: var(--ink);
+  }
+
+  @media (min-width: 48rem) {
+    .bar {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,139 @@
+{
+  "service": "sprinkler-repair",
+  "meta": {
+    "title": "Sprinkler Repair in Fenton, MI | Misty's Irrigation",
+    "description": "Broken heads, leaks, dry spots, zones that will not start or stop. Misty's Irrigation finds the cause and fixes it. Fenton, Linden, Holly and nearby."
+  },
+  "hero": {
+    "kicker": "Sprinkler repair in Fenton, MI",
+    "title": "Fix the head, **not the timer.**",
+    "lede": "Brown patches, a geyser by the driveway, a zone that will not start or will not stop. We run every zone, find the actual cause, tell you what it is, and fix it.",
+    "chips": ["Every zone checked", "Licensed and insured"],
+    "photo": "street-sprinklers"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "What we fix",
+      "title": "If it carries water to the lawn, **we repair it.**",
+      "intro": "Most calls start with one symptom. Most visits find two or three things, because we run every zone, not just the one you called about.",
+      "checks": [
+        "Broken, cracked and mower-hit heads, and the risers under them",
+        "Leaks in the lawn: wet spots, sinking turf, water in the valve box",
+        "Zones that will not turn on, or will not shut off",
+        "Weak spray across the whole system, or one zone that barely reaches",
+        "Valves, solenoids and the wiring between them and the controller",
+        "Controllers that skip zones, show errors or run on the wrong days"
+      ],
+      "photo": "colonial-mist",
+      "cta": { "label": "Heads and nozzles in detail", "href": "/sprinkler-head-replacement/" }
+    },
+    {
+      "type": "panel",
+      "kind": "coverage",
+      "plane": "ink",
+      "title": "What a few bad heads **do to a lawn.**",
+      "intro": "Switch between before and after a tune-up. The brown patches, the soaked spot and the numbers all come from where the water lands.",
+      "points": [
+        "Hover or tap a pink head to see what is wrong with it.",
+        "This is why turning the timer up rarely fixes a brown spot."
+      ]
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "Symptoms",
+      "title": "What it is doing, and **what usually causes it.**",
+      "intro": "A short guide to the calls we get most. It is a starting point: the visit is where we confirm it.",
+      "columns": 3,
+      "items": [
+        { "tag": "Zone will not start", "title": "Usually a valve or a wire", "body": "A solenoid that has failed, a wire nicked by a shovel or an edger, or a controller station that has quit. We test each one until we find it." },
+        { "tag": "Zone will not stop", "title": "Usually grit in the valve", "body": "A bit of debris under the valve diaphragm holds it open. Cleaning or rebuilding the valve fixes most of these without digging." },
+        { "tag": "Geyser or puddle", "title": "A broken head or riser", "body": "A mower, a car tire or a hard frost cracks the head or the short pipe under it. Water comes straight up, and the rest of the zone runs weak." },
+        { "tag": "Brown patches", "title": "Coverage, not run time", "body": "A head that is tilted, sunk or clogged leaves a gap between heads. Fixing the head fixes the patch. More minutes only flood the rest." },
+        { "tag": "Weak everywhere", "title": "Pressure, or a hidden leak", "body": "A partly closed shutoff, a leaking line under the turf or too many heads on one zone. We check pressure and walk the line." },
+        { "tag": "Soggy spot", "title": "A slow leak underground", "body": "Turf that stays wet, sinks or grows faster in a stripe often sits over a cracked fitting. We dig small, fix it and put the sod back." }
+      ]
+    },
+    {
+      "type": "steps",
+      "plane": "mist",
+      "eyebrow": "The visit",
+      "title": "How a repair **visit runs.**",
+      "steps": [
+        { "title": "Every zone, run and watched", "body": "We start at the controller and run each zone in turn, so we see the problem you called about and anything else that is quietly wasting water." },
+        { "title": "The cause, found", "body": "A dry spot gets traced to its head, a dead zone to its valve or wire, a soggy stripe to its leak." },
+        { "title": "You hear it first", "body": "Before we fix anything, we tell you what we found and what it takes. You decide." },
+        { "title": "Fixed, tested, put back", "body": "Repairs done, the zone run again to prove it, heads aimed, and the turf put back so the repair is hard to find." }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Why it is worth fixing now",
+      "figure": "100+",
+      "figureLabel": "gallons a run from one broken head, in our example",
+      "title": "One broken head **adds up fast.**",
+      "body": "A cracked head or riser can let five gallons a minute or more run straight into the ground. On a 20 minute zone that is over 100 gallons a run, into one spot, while the rest of that zone runs weak. Three runs a week, all summer, and it shows up on the water bill or the well pump."
+    },
+    {
+      "type": "reviews",
+      "plane": "white",
+      "title": "What repair customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    },
+    {
+      "type": "areas",
+      "plane": "mist",
+      "title": "Sprinkler repair **in your town.**",
+      "intro": "Each town has its own page with the details for that area."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do you repair sprinkler systems you did not install?",
+      "a": "Yes. Most of what Misty's does is service and repair, whoever put the system in. If a part is no longer made, we will tell you what fits and what it takes."
+    },
+    {
+      "q": "One part of my lawn is brown but the sprinklers run every day. What is wrong?",
+      "a": "Almost always coverage. A head near the brown spot is tilted, sunk below the grass, clogged or broken, so the water never reaches it. Turning up the run time floods the rest of the lawn and still misses the spot. Fixing the head is the fix."
+    },
+    {
+      "q": "A zone will not shut off. What should I do?",
+      "a": "Turn the system off at the controller first. If water still runs, close the main shutoff to the irrigation, usually a valve in the basement near where the line leaves the house. Then call or text [(810) 423-9513](tel:+18104239513). A stuck valve is usually grit under the diaphragm, and it is often a quick fix."
+    },
+    {
+      "q": "How do I know if there is a leak underground?",
+      "a": "Look for a patch that stays soggy, turf that sinks, a stripe that grows faster and greener than the rest, or a valve box with water standing in it. A zone that runs weak at every head can also mean a leak. We find it by running the zone and walking the line."
+    },
+    {
+      "q": "Can you fix a head the mower hit?",
+      "a": "Yes. That is one of the most common repairs we do. Usually the head or the riser under it is cracked. We replace it, set it level with the turf so the mower rides over it, and aim it. More on [heads and nozzles](/sprinkler-head-replacement/)."
+    },
+    {
+      "q": "My controller says a station has a fault. Is that the controller or the yard?",
+      "a": "Usually the yard: a failed solenoid on the valve, or a cut or corroded wire between the valve and the controller. We test the station and the wire to find which. If it is the controller, see [controller installation and setup](/sprinkler-controllers/)."
+    },
+    {
+      "q": "Should I fix a broken head now or wait until next season?",
+      "a": "Now, if the system is still running. A broken head wastes water every run, and the rest of that zone runs weak, so the lawn browns around it. If it is late in the year, we can fix it at your [spring startup](/sprinkler-startup/) instead."
+    }
+  ],
+  "quote": {
+    "title": "Tell us what the system is doing.",
+    "lede": "A zone that will not stop, a geyser, a dry patch. Send it here or text a photo, and we will call back to set a time."
+  },
+  "summary": {
+    "title": "A repair visit, **start to finish.**",
+    "intro": "Every visit follows the same order, so nothing gets missed and you know what you are paying for before we start.",
+    "items": [
+      { "name": "Every zone run", "detail": "Each zone run and watched, not just the one you called about." },
+      { "name": "Cause found", "detail": "Dry spots traced to heads, dead zones to valves or wires, wet spots to leaks." },
+      { "name": "Explained first", "detail": "What we found and what it takes, before any work starts." },
+      { "name": "Heads and leaks fixed", "detail": "Broken heads and risers replaced, leaks dug and repaired, heads aimed." },
+      { "name": "Valves and wiring", "detail": "Stuck valves cleaned or rebuilt, failed solenoids and cut wires replaced." },
+      { "name": "Put back", "detail": "The zone tested again, the turf replaced, and nothing left behind." }
+    ]
+  }
+}

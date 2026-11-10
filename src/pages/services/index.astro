@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Head from '../../components/Head.astro';
+import ServiceCards from '../../components/ServiceCards.astro';
+import QuoteBand from '../../components/QuoteBand.astro';
+import { GROUPS, inGroup } from '../../data/services';
+import { breadcrumbs, serviceListSchema } from '../../lib/schema';
+
+const schema = [serviceListSchema(), breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services/' }])];
+---
+
+<Base title="Sprinkler Services | Misty's Irrigation, Fenton MI" description="Every sprinkler service Misty's Irrigation offers around Fenton: startups, blowouts, repairs, heads, valves, new systems, lake pumps, drip, controllers and more." path="/services/" schema={schema}>
+  <PageHead eyebrow="Services" title="Everything a sprinkler system **needs.**" lede="Seasonal visits, repairs and upgrades for residential systems in Fenton, Linden, Grand Blanc, Holly, Hartland and Howell." crumbs={[{ name: 'Services', path: '/services/' }]} />
+  {
+    GROUPS.map((g, i) => (
+      <section class:list={['band', i % 2 === 1 && 'white']} aria-labelledby={`g-${g.id}`}>
+        <div class="wrap">
+          <Head id={`g-${g.id}`} eyebrow={g.name} title={g.blurb} />
+          <ServiceCards services={inGroup(g.id)} columns={inGroup(g.id).length === 2 ? 2 : 3} />
+        </div>
+      </section>
+    ))
+  }
+  <QuoteBand />
+</Base>

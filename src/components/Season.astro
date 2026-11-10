@@ -1,0 +1,229 @@
+---
+/* THE SEASON: a Michigan irrigation year on one line. Startups once the hard
+   freezes are over, the watering months, blowouts before the ground freezes, and
+   the quiet months when the spring list fills. A marker shows today and the line
+   under it says what to do now. Built with today's date at build time, then the
+   visitor's own clock moves the marker, in a box that never changes size. */
+import { SEASON } from '../data/site';
+import { href } from '../lib/paths';
+
+const DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const doy = (m: number, d: number) => DAYS.slice(0, m - 1).reduce((a, b) => a + b, 0) + d - 1;
+const pct = (m: number, d: number) => (doy(m, d) / 365) * 100;
+const span = (w: { from: number[]; to: number[] }) => ({ left: pct(w.from[0], w.from[1]), width: pct(w.to[0], w.to[1]) - pct(w.from[0], w.from[1]) });
+const bands = [
+  { id: 'startup', label: 'Spring startups', ...span(SEASON.startup) },
+  { id: 'watering', label: 'Watering season', ...span(SEASON.watering) },
+  { id: 'shutdown', label: 'Fall blowouts', ...span(SEASON.shutdown) },
+];
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const now = new Date();
+const today = pct(now.getMonth() + 1, now.getDate());
+
+/* what to say, by where the year is */
+const SAY = {
+  winter: { h: 'Off season. The spring list is open.', p: 'Systems are blown out and resting. Get on the startup list now and you are booked before the April rush.', cta: 'Get on the spring list', svc: 'Spring startup' },
+  startup: { h: 'Startup season.', p: 'Hard freezes are behind us. We turn systems on slowly, run every zone and fix what the winter broke.', cta: 'Book a startup', svc: 'Spring startup' },
+  early: { h: 'Early season.', p: 'The lawn is greening up. A good time to fix coverage before the summer heat finds the dry spots.', cta: 'Book a tune-up', svc: 'Repair' },
+  watering: { h: 'Peak watering season.', p: 'Heat and long days. Broken heads and dry spots show fast now, and every day a zone runs wrong costs water.', cta: 'Book a repair', svc: 'Repair' },
+  late: { h: 'Late summer.', p: 'Cut the run times back as nights cool, and book your fall blowout before the October rush.', cta: 'Book a blowout', svc: 'Fall blowout' },
+  shutdown: { h: 'Blowout season.', p: 'Get the water out before the ground freezes. A missed blowout shows up in spring as cracked pipes and a split backflow device.', cta: 'Book a blowout', svc: 'Fall blowout' },
+};
+function phase(m: number, d: number): keyof typeof SAY {
+  const t = doy(m, d);
+  const s = SEASON;
+  if (t >= doy(s.shutdown.from[0], s.shutdown.from[1]) && t <= doy(s.shutdown.to[0], s.shutdown.to[1])) return 'shutdown';
+  if (t >= doy(s.startup.from[0], s.startup.from[1]) && t <= doy(s.startup.to[0], s.startup.to[1])) return 'startup';
+  if (t >= doy(s.watering.from[0], s.watering.from[1]) && t <= doy(s.watering.to[0], s.watering.to[1])) return 'watering';
+  if (t > doy(s.watering.to[0], s.watering.to[1]) && t < doy(s.shutdown.from[0], s.shutdown.from[1])) return 'late';
+  if (t > doy(s.startup.to[0], s.startup.to[1]) && t < doy(s.watering.from[0], s.watering.from[1])) return 'early';
+  return 'winter';
+}
+const ph = phase(now.getMonth() + 1, now.getDate());
+const say = SAY[ph];
+---
+
+<div class="sn" data-season data-say={JSON.stringify(SAY)} data-season-cfg={JSON.stringify(SEASON)}>
+  <div class="sn__track" aria-hidden="true">
+    {bands.map((b) => <span class:list={['sn__band', `sn__band--${b.id}`]} style={`left:${b.left}%;width:${b.width}%`}><span>{b.label}</span></span>)}
+    <span class="sn__now" style={`left:${today}%`} data-now><span>Today</span></span>
+  </div>
+  <ol class="sn__months fine" aria-hidden="true">
+    {MONTHS.map((m) => <li>{m}</li>)}
+  </ol>
+  <ul class="sr">
+    {bands.map((b) => <li>{b.label}</li>)}
+  </ul>
+  <div class="sn__say">
+    <div>
+      <p class="h3" data-h>{say.h}</p>
+      <p class="small muted" data-p>{say.p}</p>
+    </div>
+    <a class="btn primary small" href={href('/book-service/')} data-cta="season" data-a>{say.cta}</a>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-season]').forEach(function (el) {
+      var SAY = JSON.parse(el.dataset.say), S = JSON.parse(el.dataset.seasonCfg);
+      var DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      function doy(m, d) { var t = 0; for (var i = 0; i < m - 1; i++) t += DAYS[i]; return t + d - 1; }
+      var n = new Date(), m = n.getMonth() + 1, d = Math.min(n.getDate(), DAYS[m - 1]), t = doy(m, d);
+      function w(k) { return [doy(S[k].from[0], S[k].from[1]), doy(S[k].to[0], S[k].to[1])]; }
+      var sh = w('shutdown'), st = w('startup'), wa = w('watering'), ph = 'winter';
+      if (t >= sh[0] && t <= sh[1]) ph = 'shutdown';
+      else if (t >= st[0] && t <= st[1]) ph = 'startup';
+      else if (t >= wa[0] && t <= wa[1]) ph = 'watering';
+      else if (t > wa[1] && t < sh[0]) ph = 'late';
+      else if (t > st[1] && t < wa[0]) ph = 'early';
+      el.querySelector('[data-now]').style.left = (t / 365) * 100 + '%';
+      var s = SAY[ph];
+      el.querySelector('[data-h]').textContent = s.h;
+      el.querySelector('[data-p]').textContent = s.p;
+      el.querySelector('[data-a]').textContent = s.cta;
+    });
+  })();
+</script>
+
+<style>
+  .sn {
+    display: grid;
+    gap: 0.6rem;
+    padding-top: 1.4rem;
+  }
+
+  .sn__track {
+    position: relative;
+    height: 4.25rem;
+    border-radius: var(--r);
+    background: repeating-linear-gradient(90deg, rgb(127 145 170 / 0.12) 0 1px, transparent 1px calc(100% / 12)), rgb(127 145 170 / 0.1);
+    overflow: visible;
+  }
+
+  .sn__band {
+    position: absolute;
+    top: 0.55rem;
+    bottom: 0.55rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.6rem;
+    border-radius: var(--r-sm);
+    font-size: 0.78rem;
+    font-weight: 680;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .sn__band span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sn__band--startup {
+    background: #c7f0d5;
+    color: #0f4527;
+  }
+
+  .sn__band--watering {
+    background: #bfe7fb;
+    color: #08364d;
+  }
+
+  .sn__band--shutdown {
+    background: #ffd2e8;
+    color: #6c0c3f;
+  }
+
+  .sn__now {
+    position: absolute;
+    top: -0.45rem;
+    bottom: -0.45rem;
+    width: 2px;
+    margin-left: -1px;
+    background: var(--rose);
+  }
+
+  .sn__now::before {
+    content: '';
+    position: absolute;
+    top: -0.2rem;
+    left: 50%;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-left: -0.35rem;
+    border-radius: 50%;
+    background: var(--rose);
+    box-shadow: 0 0 0 4px rgb(194 28 116 / 0.2);
+  }
+
+  .sn__now span {
+    position: absolute;
+    top: -1.55rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--rose-ink);
+    white-space: nowrap;
+  }
+
+  :global(.ink) .sn__now,
+  :global(.ink) .sn__now::before {
+    background: var(--pink-btn);
+  }
+
+  :global(.ink) .sn__now span {
+    color: var(--pink-on-ink);
+  }
+
+  .sn__months {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    margin-top: 0.4rem;
+    color: var(--muted);
+  }
+
+  :global(.ink) .sn__months {
+    color: var(--on-ink-muted);
+  }
+
+  @media (max-width: 34rem) {
+    .sn__months li {
+      font-size: 0;
+    }
+
+    .sn__months li::first-letter {
+      font-size: 0.75rem;
+    }
+
+    .sn__band {
+      font-size: 0;
+    }
+  }
+
+  .sn__say {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-top: 1rem;
+    padding: 1.1rem 1.25rem;
+    min-height: 6.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--white);
+  }
+
+  .sn__say > div {
+    flex: 1 1 22rem;
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  :global(.ink) .sn__say {
+    border-color: var(--line-ink);
+    background: var(--ink-2);
+  }
+</style>

@@ -1,0 +1,356 @@
+---
+/* HOW LONG SHOULD EACH ZONE RUN? A starting point for a controller, from four
+   honest inputs: the kind of head on the zone, the sun it gets, the month and
+   the soil, less the rain this week. The math is shown, the numbers round to
+   what a controller can actually be set to, and the answer is labeled a
+   starting point. The default answer is worked out at build time, so the page
+   shows a real result before any script runs.
+
+   Rates are typical published figures for each head type (inches of water an
+   hour, spaced head to head). Weekly need follows the common guidance that a
+   Michigan lawn needs about an inch a week in summer, rain included, a little
+   more in the heat of July and less in spring and fall. */
+
+const HEADS = [
+  { id: 'spray', label: 'Spray heads', rate: 1.5, hint: 'Fixed fan of water, 8 to 15 feet' },
+  { id: 'rotor', label: 'Rotors', rate: 0.55, hint: 'A single stream that turns, 20 to 45 feet' },
+  { id: 'rotary', label: 'Rotary nozzles', rate: 0.45, hint: 'Many small streams that turn slowly' },
+];
+const SUN = [
+  { id: 'full', label: 'Full sun', f: 1 },
+  { id: 'part', label: 'Part shade', f: 0.8 },
+  { id: 'shade', label: 'Mostly shade', f: 0.6 },
+];
+const MONTHS = [
+  { id: 'may', label: 'May', need: 0.75 },
+  { id: 'jun', label: 'June', need: 1.0 },
+  { id: 'jul', label: 'July', need: 1.25 },
+  { id: 'aug', label: 'August', need: 1.1 },
+  { id: 'sep', label: 'September', need: 0.75 },
+];
+const SOIL = [
+  { id: 'sand', label: 'Sandy', days: 3, soak: { spray: 14, rotor: 40, rotary: 45 } },
+  { id: 'loam', label: 'Loam', days: 3, soak: { spray: 10, rotor: 30, rotary: 35 } },
+  { id: 'clay', label: 'Clay', days: 2, soak: { spray: 6, rotor: 18, rotary: 22 } },
+];
+const DEF = { head: 'spray', sun: 'full', month: 'jul', soil: 'loam', rain: 0 };
+
+function calc(o: typeof DEF) {
+  const h = HEADS.find((x) => x.id === o.head)!, s = SUN.find((x) => x.id === o.sun)!, m = MONTHS.find((x) => x.id === o.month)!, so = SOIL.find((x) => x.id === o.soil)!;
+  const need = Math.max(0, m.need * s.f - o.rain);
+  // 80 percent of what a head puts down lands where it should on a typical system
+  const weekMin = (need / h.rate) * 60 / 0.8;
+  const days = need === 0 ? 0 : so.days;
+  const perDay = days ? Math.max(1, Math.round(weekMin / days)) : 0;
+  const max = (so.soak as Record<string, number>)[h.id];
+  const cycles = perDay > max ? Math.ceil(perDay / max) : 1;
+  const each = cycles > 1 ? Math.ceil(perDay / cycles) : perDay;
+  return { need, perDay, days, cycles, each, week: Math.round(weekMin) };
+}
+const r = calc(DEF);
+const fmt = (n: number) => (Math.round(n * 100) / 100).toString();
+const WEEK = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+const PICK: Record<number, number[]> = { 0: [], 2: [0, 3], 3: [0, 2, 4] };
+---
+
+<form class="zc panel" data-zc onsubmit="return false" aria-label="Watering time calculator">
+  <div class="zc__grid">
+    <div class="zc__in">
+      <fieldset>
+        <legend>What kind of heads are on this zone?</legend>
+        <div class="zc__opts">
+          {HEADS.map((h) => <label class="zc__opt"><input type="radio" name="head" value={h.id} data-rate={h.rate} checked={h.id === DEF.head} /><span><b>{h.label}</b><small>{h.hint}</small></span></label>)}
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>How much sun does it get?</legend>
+        <div class="zc__opts zc__opts--row">
+          {SUN.map((s) => <label class="zc__opt"><input type="radio" name="sun" value={s.id} data-f={s.f} checked={s.id === DEF.sun} /><span><b>{s.label}</b></span></label>)}
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Month</legend>
+        <div class="zc__opts zc__opts--row">
+          {MONTHS.map((m) => <label class="zc__opt"><input type="radio" name="month" value={m.id} data-need={m.need} checked={m.id === DEF.month} /><span><b>{m.label.slice(0, 3)}</b></span></label>)}
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Soil</legend>
+        <div class="zc__opts zc__opts--row">
+          {SOIL.map((s) => <label class="zc__opt"><input type="radio" name="soil" value={s.id} data-days={s.days} data-soak={JSON.stringify(s.soak)} checked={s.id === DEF.soil} /><span><b>{s.label}</b></span></label>)}
+        </div>
+      </fieldset>
+      <label class="zc__rain">
+        <span class="zc__legend">Rain so far this week <b data-rainv>0 in.</b></span>
+        <input type="range" name="rain" min="0" max="1.5" step="0.25" value="0" aria-valuetext="0 inches" />
+      </label>
+    </div>
+
+    <div class="zc__out" aria-live="polite">
+      <p class="zc__k">Run each zone</p>
+      <p class="zc__big"><span data-out="perDay" class="num">{r.perDay}</span><span class="zc__unit">min</span></p>
+      <p class="zc__line" data-out="split">{r.cycles > 1 ? `as ${r.cycles} cycles of ${r.each} minutes, about an hour apart` : 'in one run'}</p>
+      <ol class="zc__week" aria-label="Watering days" data-week>
+        {WEEK.map((d, i) => <li class:list={[(PICK[r.days] ?? []).includes(i) && 'is-on']}><span>{d}</span></li>)}
+      </ol>
+      <p class="zc__line"><b data-out="days">{r.days}</b> days a week, starting before 6 a.m.</p>
+      <dl class="zc__math fine">
+        <div><dt>Water the lawn needs this week</dt><dd><span data-out="need">{fmt(r.need)}</span> in.</dd></div>
+        <div><dt>Total run time a week</dt><dd><span data-out="week">{r.week}</span> min</dd></div>
+      </dl>
+      <p class="fine zc__note">A starting point, not a prescription. Older heads, low pressure and slopes change it. Walk the lawn: footprints that stay down mean it is thirsty. A rain sensor or a smart controller does this adjusting for you.</p>
+    </div>
+  </div>
+</form>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-zc]').forEach(function (f) {
+      if (f.dataset.on) return;
+      f.dataset.on = '1';
+      var PICK = { 0: [], 2: [0, 3], 3: [0, 2, 4] };
+      function val(n) { return f.querySelector('input[name="' + n + '"]:checked'); }
+      function run() {
+        var h = val('head'), s = val('sun'), m = val('month'), so = val('soil'), rain = +f.rain.value;
+        var need = Math.max(0, +m.dataset.need * +s.dataset.f - rain);
+        var week = (need / +h.dataset.rate) * 60 / 0.8;
+        var days = need === 0 ? 0 : +so.dataset.days;
+        var per = days ? Math.max(1, Math.round(week / days)) : 0;
+        var max = JSON.parse(so.dataset.soak)[h.value];
+        var cyc = per > max ? Math.ceil(per / max) : 1, each = cyc > 1 ? Math.ceil(per / cyc) : per;
+        f.querySelector('[data-out="perDay"]').textContent = per;
+        f.querySelector('[data-out="split"]').textContent = need === 0 ? 'Rain covered it. Skip the week.' : cyc > 1 ? 'as ' + cyc + ' cycles of ' + each + ' minutes, about an hour apart' : 'in one run';
+        f.querySelector('[data-out="days"]').textContent = days;
+        f.querySelector('[data-out="need"]').textContent = Math.round(need * 100) / 100;
+        f.querySelector('[data-out="week"]').textContent = Math.round(week);
+        f.querySelectorAll('[data-week] li').forEach(function (li, i) { li.classList.toggle('is-on', PICK[days].indexOf(i) > -1); });
+        var rv = rain === 0 ? '0 in.' : rain + ' in.';
+        f.querySelector('[data-rainv]').textContent = rv;
+        f.rain.setAttribute('aria-valuetext', rain + ' inches');
+      }
+      var used = false;
+      f.addEventListener('input', function () { run(); if (!used && window.miTrack) { used = true; window.miTrack('tool_use', { tool: 'watering_calculator' }); } });
+      run();
+    });
+  })();
+</script>
+
+<style>
+  .zc {
+    padding: clamp(1.1rem, 2.6vw, 2rem);
+  }
+
+  .zc__grid {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 60rem) {
+    .zc__grid {
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
+      gap: clamp(2rem, 4vw, 3rem);
+    }
+  }
+
+  .zc__in {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .zc fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .zc legend,
+  .zc__legend {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    font-size: 0.9375rem;
+    font-weight: 650;
+    color: var(--on-ink);
+  }
+
+  .zc__opts {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  @media (min-width: 34rem) {
+    .zc__opts {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .zc__opts--row {
+    grid-template-columns: repeat(auto-fit, minmax(5.5rem, 1fr));
+  }
+
+  .zc__opt {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .zc__opt input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .zc__opt span {
+    display: grid;
+    gap: 0.1rem;
+    align-content: center;
+    min-height: 2.9rem;
+    height: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--line-ink);
+    border-radius: var(--r);
+    background: rgb(255 255 255 / 0.03);
+    transition:
+      border-color 0.18s var(--ease),
+      background-color 0.18s var(--ease);
+  }
+
+  .zc__opt b {
+    font-weight: 650;
+    font-size: 0.9375rem;
+  }
+
+  .zc__opt small {
+    font-size: 0.78rem;
+    line-height: 1.3;
+    color: var(--on-ink-muted);
+  }
+
+  .zc__opt:hover span {
+    border-color: rgb(255 255 255 / 0.32);
+  }
+
+  .zc__opt input:checked + span {
+    border-color: var(--pink-btn);
+    background: rgb(255 90 169 / 0.12);
+  }
+
+  .zc__opt input:focus-visible + span {
+    outline: 2px solid var(--pink-on-ink);
+    outline-offset: 2px;
+  }
+
+  .zc__rain {
+    display: grid;
+  }
+
+  .zc__rain input {
+    width: 100%;
+    accent-color: var(--water);
+    min-height: 2rem;
+  }
+
+  .zc__rain b {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .zc__out {
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    padding: clamp(1.1rem, 2.4vw, 1.75rem);
+    border-radius: var(--r);
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgb(63 192 240 / 0.14), transparent 60%),
+      var(--ink);
+    border: 1px solid var(--line-ink);
+  }
+
+  .zc__k {
+    font-size: 0.78rem;
+    font-weight: 680;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pink-on-ink);
+  }
+
+  .zc__big {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: clamp(4rem, 9vw, 6rem);
+    font-weight: 780;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+  }
+
+  .zc__unit {
+    font-size: 1.25rem;
+    font-weight: 650;
+    letter-spacing: 0;
+    color: var(--on-ink-muted);
+  }
+
+  .zc__line {
+    color: var(--on-ink);
+    font-weight: 560;
+  }
+
+  .zc__week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.3rem;
+    margin-block: 0.4rem;
+  }
+
+  .zc__week li {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    max-height: 2.6rem;
+    border-radius: 50%;
+    border: 1px solid var(--line-ink);
+    font-size: 0.8rem;
+    font-weight: 650;
+    color: var(--on-ink-muted);
+    transition:
+      background-color 0.25s var(--ease),
+      color 0.25s var(--ease),
+      border-color 0.25s var(--ease);
+  }
+
+  .zc__week li:global(.is-on) {
+    background: var(--water);
+    border-color: var(--water);
+    color: var(--ink);
+  }
+
+  .zc__math {
+    display: grid;
+    gap: 0.3rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line-ink);
+  }
+
+  .zc__math div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--on-ink-muted);
+  }
+
+  .zc__math dd {
+    color: var(--on-ink);
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .zc__note {
+    color: var(--on-ink-muted);
+  }
+</style>

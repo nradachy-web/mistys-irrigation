@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import AreaChips from '../components/AreaChips.astro';
+import { BRAND, LINKS } from '../data/site';
+import { breadcrumbs } from '../lib/schema';
+
+const schema = [
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact-us/' }]),
+  { '@type': 'ContactPage', name: `Contact ${BRAND.name}`, url: `${BRAND.origin}/contact-us/`, about: { '@id': `${BRAND.origin}/#business` } },
+];
+---
+
+<Base title="Contact Misty's Irrigation | Fenton, MI" description="Call or text Misty's Irrigation at (810) 423-9513, email mistysirr@gmail.com, or send a service request. Fenton, Linden, Grand Blanc, Holly, Hartland, Howell." path="/contact-us/" schema={schema} quoteHref="#quote">
+  <PageHead eyebrow="Contact" title="Call, text, **or send it here.**" lede="Texting a photo of the problem is often the fastest way to get an answer." crumbs={[{ name: 'Contact', path: '/contact-us/' }]} />
+  <section class="band" aria-labelledby="c1">
+    <div class="wrap two top">
+      <div class="stack" style="--gap:1.25rem">
+        <h2 class="h2" id="c1">Reach us</h2>
+        <ul class="reach">
+          <li><a href={BRAND.phoneHref} data-loc="contact"><Icon name="phone" /><span><b class="num">{BRAND.phone}</b><small>Call</small></span></a></li>
+          <li><a href={BRAND.smsHref} data-loc="contact"><Icon name="text" /><span><b class="num">{BRAND.phone}</b><small>Text, photos welcome</small></span></a></li>
+          <li><a href={`mailto:${BRAND.email}`} data-loc="contact"><Icon name="mail" /><span><b>{BRAND.email}</b><small>Email</small></span></a></li>
+          <li><a href={LINKS.facebook} target="_blank" rel="noopener"><Icon name="facebook" /><span><b>Facebook</b><small>Misty's Irrigation Service and Repair</small></span></a></li>
+        </ul>
+        <h2 class="h3">Where we work</h2>
+        <AreaChips />
+        <p class="fine muted">We are a service area business based in Fenton, so there is no storefront to visit. We come to you.</p>
+      </div>
+      <div class="card pad light" id="quote">
+        <QuoteForm />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .reach {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .reach a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--white);
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease);
+  }
+
+  .reach a:hover {
+    border-color: var(--rose);
+  }
+
+  .reach :global(.icon) {
+    flex: none;
+    width: 1.4rem;
+    height: 1.4rem;
+    color: var(--rose);
+  }
+
+  .reach span {
+    display: grid;
+    min-width: 0;
+  }
+
+  .reach b {
+    font-size: 1.125rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .reach small {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  #quote {
+    scroll-margin-top: calc(var(--header) + 1rem);
+  }
+</style>

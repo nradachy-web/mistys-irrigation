@@ -1,0 +1,58 @@
+/* The hero photo is the largest thing on the first screen, so a page builds it
+   once here and hands the result to both the layout (for the preload hint) and
+   the Hero component (for the picture itself). */
+
+import { getImage } from 'astro:assets';
+import { photo, type PhotoId } from '../data/photos';
+
+export interface HeroImage {
+  alt: string;
+  width: number;
+  height: number;
+  sizes: string;
+  avif: string;
+  webp: string;
+  fallback: string;
+  preload: { srcset: string; sizes: string; type: string; media?: string };
+  note?: string;
+}
+
+const WIDTHS = [420, 640, 828, 1080, 1320, 1680, 1916];
+
+export async function heroImage(id: PhotoId, opts: { ratio?: number; focus?: string; sizes?: string; widths?: number[]; media?: string } = {}): Promise<HeroImage> {
+  const p = photo(id);
+  const ratio = opts.ratio ?? p.src.width / p.src.height;
+  // Speed first: a phone hero is the largest paint, and lawns compress badly. Measured on
+  // 2026-10-30, asking for more pixels here cost 7 points of phone Performance.
+  const sizes = opts.sizes ?? '(min-width: 56rem) 62vw, 100vw';
+  const widths = (opts.widths ?? WIDTHS.slice(0, 6)).filter((w) => w <= p.src.width);
+
+  const build = async (format: 'avif' | 'webp' | 'jpeg', quality: number) => {
+    const out = await Promise.all(
+      widths.map(async (w) => {
+        const img = await getImage({ src: p.src, width: w, height: Math.round(w / ratio), format, quality, fit: 'cover', position: opts.focus ?? p.focus ?? 'center' });
+        return `${img.src} ${w}w`;
+      }),
+    );
+    return out.join(', ');
+  };
+
+  // 38, not 42: Jake's color graded photos (2026-11-02) carry more detail, and the hedge
+  // hero went from 176 to 251 KB on a phone. At 38 it is back to 170 KB.
+  const [avif, webp] = await Promise.all([build('avif', 38), build('webp', 56)]);
+  const last = widths[widths.length - 1];
+  const mid = widths[Math.min(2, widths.length - 1)];
+  const fb = await getImage({ src: p.src, width: mid, height: Math.round(mid / ratio), format: 'jpeg', quality: 70, fit: 'cover', position: opts.focus ?? p.focus ?? 'center' });
+
+  return {
+    alt: p.alt,
+    width: last,
+    height: Math.round(last / ratio),
+    sizes,
+    avif,
+    webp,
+    fallback: fb.src,
+    preload: { srcset: avif, sizes, type: 'image/avif', media: opts.media },
+    note: p.kind === 'ai' ? 'Illustration' : p.kind === 'relit' ? p.caption : undefined,
+  };
+}

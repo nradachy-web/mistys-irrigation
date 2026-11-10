@@ -1,0 +1,137 @@
+---
+/* Where they work: the six towns placed from their real coordinates, the main
+   roads between them and the bigger lakes, drawn as a quiet night map. Fenton is
+   home and wears the daisy. Each town is a link to its hub. Not to scale, and
+   says so. */
+import { CITIES, hubPath } from '../data/cities';
+import { href } from '../lib/paths';
+
+interface Props {
+  current?: string;
+}
+const { current } = Astro.props;
+const X = (v: number) => v * 8;
+const Y = (v: number) => v * 5;
+/* lakes, placed from their real coordinates: [x, y, rx, ry, name, show label] */
+const LAKES: [number, number, number, number, string, boolean][] = [
+  [66, 30, 22, 12, 'Lake Fenton', true],
+  [56, 41, 10, 7, 'Lake Ponemah', false],
+  [30, 44, 14, 6, 'Lobdell Lake', false],
+  [58, 55, 12, 8, 'Lake Shannon', true],
+  [88, 50, 9, 6, '', false],
+  [16, 82, 10, 6, 'Thompson Lake', false],
+  [33, 92, 14, 7, 'Lake Chemung', false],
+  [70, 67, 9, 6, '', false],
+];
+---
+
+<figure class="am">
+  <svg viewBox="0 0 800 500" role="img" aria-labelledby="am-t">
+    <title id="am-t">A map of the service area: Fenton in the middle, Linden to the west, Grand Blanc to the north east, Holly to the east, Hartland to the south and Howell to the south west.</title>
+    <defs>
+      <radialGradient id="am-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#ff5aa9" stop-opacity=".35" />
+        <stop offset="1" stop-color="#ff5aa9" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+    <rect width="800" height="500" rx="10" fill="#101a2b" />
+    <g stroke="rgb(214 228 255 / .05)">
+      {Array.from({ length: 15 }, (_, i) => <path d={`M${(i + 1) * 50} 0V500`} />)}
+      {Array.from({ length: 9 }, (_, i) => <path d={`M0 ${(i + 1) * 50}H800`} />)}
+    </g>
+    <!-- lakes -->
+    <g fill="#1d3b5c">
+      {LAKES.map(([x, y, rx, ry]) => <ellipse cx={X(x)} cy={Y(y)} rx={rx * 2.2} ry={ry * 2} />)}
+    </g>
+    <g fill="#5d86b0" font-size="12" font-style="italic">
+      {LAKES.filter((l) => l[5]).map(([x, y, , ry, name]) => <text x={X(x)} y={Y(y) + ry * 2 + 16} text-anchor="middle">{name}</text>)}
+    </g>
+    <!-- roads -->
+    <g fill="none" stroke="#2b3c58" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M563 -20 L506 210 L448 370 L392 520" />
+      <path d="M640 -20 L696 62 L790 200 L830 260" />
+      <path d="M-20 405 L104 430 L448 380 L820 392" />
+      <path d="M-20 400 L104 440 L330 540" />
+    </g>
+    <g fill="#6d7f9c" font-size="11" font-weight="700" letter-spacing=".06em">
+      <text x="520" y="150" transform="rotate(-76 520 150)">US-23</text>
+      <text x="730" y="118" transform="rotate(56 730 118)">I-75</text>
+      <text x="250" y="402">M-59</text>
+      <text x="170" y="478" transform="rotate(24 170 478)">I-96</text>
+    </g>
+    <!-- towns -->
+    {
+      CITIES.map((c) => {
+        const cx = X(c.map[0]), cy = Y(c.map[1]);
+        const right = c.map[0] < 80;
+        return (
+          <a href={href(hubPath(c))} class:list={['am__town', c.home && 'is-home', current === c.id && 'is-current']}>
+            {c.home && <circle cx={cx} cy={cy} r="70" fill="url(#am-glow)" />}
+            <circle class="am__ring" cx={cx} cy={cy} r={c.home ? 13 : 9} />
+            <circle class="am__dot" cx={cx} cy={cy} r={c.home ? 6 : 4.5} />
+            <text x={right ? cx + 18 : cx - 18} y={cy + 5} text-anchor={right ? 'start' : 'end'}>{c.name}</text>
+          </a>
+        );
+      })
+    }
+    <text x="784" y="488" text-anchor="end" fill="#5f6f88" font-size="11">Not to scale.</text>
+  </svg>
+</figure>
+
+<style>
+  .am svg {
+    width: 100%;
+    height: auto;
+    border-radius: calc(var(--r) + 4px);
+    border: 1px solid var(--line-ink);
+  }
+
+  .am__town {
+    cursor: pointer;
+  }
+
+  .am__town text {
+    fill: #dfe7f2;
+    font-size: 17px;
+    font-weight: 680;
+    letter-spacing: -0.01em;
+    paint-order: stroke;
+    stroke: #101a2b;
+    stroke-width: 4px;
+  }
+
+  .am__ring {
+    fill: none;
+    stroke: rgb(255 90 169 / 0.5);
+    stroke-width: 2;
+    transition: r 0.25s var(--ease);
+  }
+
+  .am__dot {
+    fill: #ff5aa9;
+  }
+
+  .am__town.is-home .am__dot {
+    fill: #f6d84a;
+  }
+
+  .am__town.is-home text {
+    font-size: 20px;
+  }
+
+  .am__town:hover text,
+  .am__town:focus-visible text,
+  .am__town.is-current text {
+    fill: #ff67b2;
+  }
+
+  .am__town:hover .am__ring,
+  .am__town:focus-visible .am__ring {
+    r: 16;
+  }
+
+  .am__town.is-current .am__ring {
+    stroke: #ff67b2;
+    stroke-width: 3;
+  }
+</style>

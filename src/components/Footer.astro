@@ -1,0 +1,193 @@
+---
+/* The footer: the full logo, how to reach them, every service and town as plain
+   links, and the credit line. */
+import Icon from './Icon.astro';
+import Stars from './Stars.astro';
+import { BRAND, LINKS, RATING } from '../data/site';
+import { GROUPS, inGroup } from '../data/services';
+import { CITIES, hubPath } from '../data/cities';
+import { href } from '../lib/paths';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="ftr ink">
+  <div class="wrap ftr__top">
+    <div class="ftr__brand">
+      <a href={href('/')} aria-label={`${BRAND.name} home`}>
+        <img src={href('/brand/logo-dark.webp')} width="216" height="96" alt={`${BRAND.name} ${BRAND.tagline} logo`} loading="lazy" decoding="async" />
+      </a>
+      <p class="muted small">Sprinkler startups, blowouts, repairs and new systems around Fenton, Michigan. Family run, licensed and insured.</p>
+      <ul class="ftr__reach">
+        <li><a href={BRAND.phoneHref} data-loc="footer"><Icon name="phone" /><span class="num">{BRAND.phone}</span></a></li>
+        <li><a href={BRAND.smsHref} data-loc="footer"><Icon name="text" /><span>Text us</span></a></li>
+        <li><a href={`mailto:${BRAND.email}`} data-loc="footer"><Icon name="mail" /><span>{BRAND.email}</span></a></li>
+      </ul>
+      <a class="rating" href={LINKS.google} target="_blank" rel="noopener">
+        <Stars />
+        <span>{RATING.value} from {RATING.countLabel} Google reviews</span>
+      </a>
+    </div>
+
+    {
+      GROUPS.map((g) => (
+        <nav aria-labelledby={`f-${g.id}`}>
+          <p class="eyebrow" id={`f-${g.id}`}>{g.name}</p>
+          <ul class="ftr__list">
+            {inGroup(g.id).map((s) => <li><a href={href(s.path)}>{s.name}</a></li>)}
+          </ul>
+        </nav>
+      ))
+    }
+
+    <nav aria-labelledby="f-areas">
+      <p class="eyebrow" id="f-areas">Service areas</p>
+      <ul class="ftr__list">
+        {CITIES.map((c) => <li><a href={href(hubPath(c))}>{c.name}, MI</a></li>)}
+      </ul>
+      <p class="eyebrow ftr__gap" id="f-co">Company</p>
+      <ul class="ftr__list" aria-labelledby="f-co">
+        <li><a href={href('/about-us/')}>About us</a></li>
+        <li><a href={href('/reviews/')}>Reviews</a></li>
+        <li><a href={href('/watering-guide/')}>Watering guide</a></li>
+        <li><a href={href('/careers/')}>Now hiring</a></li>
+        <li><a href={href('/contact-us/')}>Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="wrap ftr__base fine">
+    <p>&copy; {year} {BRAND.name}. Fenton, Michigan.</p>
+    <p class="ftr__links">
+      <a href={href('/privacy-policy/')}>Privacy</a>
+      <a href={LINKS.facebook} target="_blank" rel="noopener">Facebook</a>
+      <a href={LINKS.google} target="_blank" rel="noopener">Google</a>
+    </p>
+    <p class="ftr__credit">Website &amp; marketing by <a href="https://modernapexstrategies.com" target="_blank" rel="noopener">Modern Apex Strategies</a></p>
+  </div>
+</footer>
+
+<style>
+  .ftr {
+    padding-block: clamp(3.5rem, 7vw, 5.5rem) 0;
+    border-top: 1px solid var(--line-ink);
+  }
+
+  .ftr__top {
+    display: grid;
+    gap: 2.5rem 2rem;
+    padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  @media (min-width: 40rem) {
+    .ftr__top {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ftr__brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .ftr__top {
+      grid-template-columns: minmax(0, 1.4fr) repeat(4, minmax(0, 1fr));
+    }
+
+    .ftr__brand {
+      grid-column: auto;
+    }
+  }
+
+  .ftr__brand {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    max-width: 24rem;
+  }
+
+  .ftr__brand img {
+    width: 13.5rem;
+    height: auto;
+  }
+
+  .ftr__reach {
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  .ftr__reach a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 2.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .ftr__reach a:hover span {
+    text-decoration: underline;
+  }
+
+  .ftr__reach :global(.icon) {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--pink-on-ink);
+  }
+
+  .ftr__list {
+    display: grid;
+    margin-top: 0.75rem;
+  }
+
+  .ftr__list a {
+    display: inline-block;
+    padding: 0.4rem 0;
+    color: var(--on-ink-muted);
+    font-size: 0.9625rem;
+    text-decoration: none;
+    transition: color 0.16s var(--ease);
+  }
+
+  .ftr__list a:hover {
+    color: var(--on-ink);
+  }
+
+  .ftr__gap {
+    margin-top: 1.75rem;
+  }
+
+  .ftr__base {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    padding-block: 1.5rem calc(1.5rem + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line-ink);
+    color: var(--on-ink-muted);
+  }
+
+  @media (max-width: 47.99rem) {
+    .ftr__base {
+      padding-bottom: 6.5rem;
+    }
+  }
+
+  .ftr__links {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .ftr__base a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+
+  .ftr__credit a {
+    color: var(--on-ink);
+  }
+</style>
