@@ -83,7 +83,7 @@ const schema = [breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Careers', pat
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       msg.textContent = ''; msg.className = 'app__msg small';
-      if (!f.dataset.key) { call('Applications open online when this site goes live. For now, call or text'); return; }
+      if (!f.dataset.key) { call('Online applications are not switched on yet. Please call or text'); return; }
       var d = new FormData(f), o = {};
       d.forEach(function (v, k) { o[k] = v; });
       o.subject = 'New job application: ' + (o.name || '');

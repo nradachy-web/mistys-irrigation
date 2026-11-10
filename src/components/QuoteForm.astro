@@ -93,6 +93,8 @@ const water = ['City water', 'Well', 'Lake', 'Not sure'];
     var one = f.querySelector('[data-step="1"]'), two = f.querySelector('[data-step="2"]');
     var msg = f.querySelector('.qf__msg'), send = f.querySelector('.qf__send');
     two.hidden = true;
+    /* no delivery key yet: say so before anyone fills it in */
+    if (!f.dataset.key) { msg.innerHTML = 'Online requests are switching on soon. Fastest way to book right now: call or text <a href="tel:+18104239513">(810) 423-9513</a>.'; msg.classList.add('is-note'); f.insertBefore(msg, one); }
     function clear() { msg.textContent = ''; msg.className = 'qf__msg small'; }
     function track(name, params) { if (window.miTrack) window.miTrack(name, params); }
     var started = false;
@@ -116,7 +118,7 @@ const water = ['City water', 'Well', 'Lake', 'Not sure'];
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       clear();
-      if (!f.dataset.key) { call('Online requests open when this site goes live. For now, call or text us at'); return; }
+      if (!f.dataset.key) { call('Online requests are not switched on yet. Please call or text us at'); return; }
       var d = new FormData(f), picked = d.getAll('services');
       if ((String(d.get('phone')).match(/\d/g) || []).length < 10) { msg.textContent = 'Please check the phone number, so we can reach you.'; msg.classList.add('is-bad'); f.querySelector('input[name=phone]').focus(); return; }
       if (d.get('other_service')) picked.push(d.get('other_service'));
@@ -390,6 +392,13 @@ const water = ['City water', 'Well', 'Lake', 'Not sure'];
 
   .qf__msg {
     font-weight: 560;
+  }
+
+  .qf__msg.is-note {
+    padding: 0.7rem 0.85rem;
+    border-left: 3px solid var(--rose);
+    background: #fdf0f6;
+    color: var(--text);
   }
 
   .qf__msg.is-bad {
