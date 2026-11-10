@@ -277,6 +277,16 @@
         say.textContent = 'Water is sitting in every pipe, the way it is all summer. Blow it out, or skip it, then drag winter in.';
         update();
       }
+      /* on a phone the whole yard is too small to read: frame the house, the valves and the first zones */
+      var svg = fig.querySelector('.bo__svg'), fl0 = fig.querySelector('.bo__frostlabel');
+      function frame() {
+        var narrow = fig.getBoundingClientRect().width < 560;
+        svg.setAttribute('viewBox', narrow ? '96 20 480 270' : '0 0 800 330');
+        fl0.setAttribute('x', narrow ? 566 : 790);
+      }
+      frame();
+      var rz = 0;
+      addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(frame, 120); });
       fig.querySelector('[data-act="blow"]').addEventListener('click', blow);
       fig.querySelector('[data-act="skip"]').addEventListener('click', skip);
       fig.querySelector('[data-act="reset"]').addEventListener('click', reset);

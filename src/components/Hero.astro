@@ -312,6 +312,7 @@ const p = primary.href.startsWith('#') ? primary.href : href(primary.href);
   .crumbs ol {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.35rem;
     color: #c4cedc;
   }
@@ -322,7 +323,13 @@ const p = primary.href.startsWith('#') ? primary.href : href(primary.href);
     opacity: 0.6;
   }
 
-  .crumbs a {
+  .crumbs li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .crumbs a,
+  .crumbs span {
     display: inline-block;
     padding-block: 0.6rem;
     text-decoration: none;

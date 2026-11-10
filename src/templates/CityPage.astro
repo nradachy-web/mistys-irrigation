@@ -99,7 +99,7 @@ const schema = [
       <ServiceCards services={local} town={town} columns={local.length === 4 ? 4 : 3} />
       <p class="small muted also">
         Also in {town.name}:
-        {rest.map((s, i) => <><a class="link" href={href(s.path)}>{s.short.toLowerCase()}</a>{i < rest.length - 1 ? ', ' : '.'}</>)}
+        {rest.map((s, i) => <><a class="link" href={href(s.path)}>{s.noun}</a>{i < rest.length - 1 ? ', ' : '.'}</>)}
       </p>
     </div>
   </section>

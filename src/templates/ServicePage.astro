@@ -32,7 +32,20 @@ const svc = getService(c.service as any);
 const hero = await heroImage(c.hero.photo as PhotoId);
 const lastPlane = c.blocks[c.blocks.length - 1].plane;
 const faqPlane = lastPlane === 'mist' ? 'white' : 'mist';
-const related = SERVICES.filter((s) => s.id !== svc.id && (s.group === svc.group || s.id === 'sprinkler-repair')).slice(0, 3);
+const PAIRS: Record<string, string[]> = {
+  startup: ['winterization', 'sprinkler-repair', 'controllers'],
+  winterization: ['startup', 'backflow', 'lake-pump'],
+  'sprinkler-repair': ['head-replacement', 'valve-repair', 'startup'],
+  'head-replacement': ['sprinkler-repair', 'valve-repair', 'controllers'],
+  'valve-repair': ['sprinkler-repair', 'controllers', 'head-replacement'],
+  installation: ['controllers', 'drip', 'backflow'],
+  'lake-pump': ['winterization', 'startup', 'sprinkler-repair'],
+  drip: ['installation', 'controllers', 'startup'],
+  controllers: ['sprinkler-repair', 'installation', 'startup'],
+  backflow: ['winterization', 'startup', 'sprinkler-repair'],
+  rust: ['sprinkler-repair', 'installation', 'startup'],
+};
+const related = (PAIRS[svc.id] ?? []).map((id) => SERVICES.find((s) => s.id === id)!).filter(Boolean);
 
 const schema = [
   serviceSchema({ name: svc.name, type: svc.name, description: c.meta.description, url: `${BRAND.origin}${svc.path}` }),

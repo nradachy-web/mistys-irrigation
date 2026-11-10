@@ -27,11 +27,11 @@ const { start = 'before' } = Astro.props;
       <button type="button" aria-pressed="true" data-mode="before">Before a tune-up</button>
       <button type="button" aria-pressed="false" data-mode="after">After a tune-up</button>
     </div>
-    <dl class="cov__meters">
-      <div class="cov__stat"><dt>of the lawn watered evenly</dt><dd data-m="even">0%</dd><span class="meter__track"><span class="meter__fill" data-f="even"></span></span></div>
-      <div class="cov__stat"><dt>too dry</dt><dd data-m="dry">0%</dd><span class="meter__track"><span class="meter__fill is-pink" data-f="dry"></span></span></div>
-      <div class="cov__stat"><dt>of the water on pavement</dt><dd data-m="waste">0%</dd><span class="meter__track"><span class="meter__fill is-pink" data-f="waste"></span></span></div>
-    </dl>
+    <ul class="cov__meters" aria-live="polite">
+      <li class="cov__stat"><b data-m="even">0%</b><span class="cov__lab">of the lawn watered evenly</span><span class="meter__track"><span class="meter__fill" data-f="even"></span></span></li>
+      <li class="cov__stat"><b data-m="dry">0%</b><span class="cov__lab">too dry</span><span class="meter__track"><span class="meter__fill is-pink" data-f="dry"></span></span></li>
+      <li class="cov__stat"><b data-m="waste">0%</b><span class="cov__lab">of the water on pavement</span><span class="meter__track"><span class="meter__fill is-pink" data-f="waste"></span></span></li>
+    </ul>
   </div>
   <figcaption class="cov__legend">
     <ol class="fine" data-legend>
@@ -319,8 +319,7 @@ const { start = 'before' } = Astro.props;
     gap: 0.2rem;
   }
 
-  .cov__stat dd {
-    order: -1;
+  .cov__stat b {
     margin: 0;
     font-size: clamp(1.6rem, 2.6vw, 2.1rem);
     font-weight: 760;
@@ -329,7 +328,7 @@ const { start = 'before' } = Astro.props;
     font-variant-numeric: tabular-nums;
   }
 
-  .cov__stat dt {
+  .cov__lab {
     font-size: 0.78rem;
     line-height: 1.3;
     color: var(--on-ink-muted);
