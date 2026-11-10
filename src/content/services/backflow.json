@@ -1,0 +1,155 @@
+{
+  "service": "backflow",
+  "meta": {
+    "title": "Pressure Vacuum Breakers in Fenton, MI | Misty's Irrigation",
+    "description": "The brass valve that keeps sprinkler water out of your drinking water. PVBs installed, repaired, replaced and protected from frost. Misty's Irrigation, Fenton."
+  },
+  "hero": {
+    "kicker": "Pressure vacuum breakers in Fenton, MI",
+    "title": "Lawn water stays **out of the kitchen tap.**",
+    "lede": "The brass fixture on the pipe beside your house is a pressure vacuum breaker. It keeps sprinkler water from being pulled back into the water you drink. We install them, repair them, replace the ones frost has cracked, and open and close them right every season.",
+    "chips": ["Installed and repaired", "Frost damage replaced", "Licensed and insured"],
+    "photo": "ai-pvb"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "What it does",
+      "title": "A one way door **with an air vent.**",
+      "intro": "If your sprinklers run on house water, the pipes in your lawn are connected to the same water you drink. A pressure vacuum breaker, or PVB, makes sure that water only ever moves one way.",
+      "body": [
+        "Inside the brass body are two working parts. A spring loaded check valve lets water flow out to the lawn and snaps shut if it tries to come back. Above it, under the cap, an air inlet pops open whenever the pressure drops, letting air in so nothing can be siphoned back toward the house.",
+        "Pressure can drop without warning: a water main breaks, a hydrant is opened down the street, and for a moment the supply pulls instead of pushes. Without protection, water that has been sitting in the lines and heads, in soil with fertilizer, weed killer and whatever the dog left, could be drawn back into your pipes.",
+        "That is why Michigan's plumbing code requires backflow protection on the drinking water line to a lawn system, and a PVB is one of the devices it allows."
+      ],
+      "checks": [
+        "Two handles: one to shut off water coming in, one going out",
+        "A cap on top, over the air inlet",
+        "Two small petcocks on the side, used to drain it",
+        "Mounted on a pipe that rises out of the ground, never in a box"
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "The height rule",
+      "figure": "12 in.",
+      "figureLabel": "minimum height above every head and pipe it feeds",
+      "title": "Above the highest head, **by a foot.**",
+      "body": "A PVB has to sit at least 12 inches above every head and every pipe downstream of it. It is built to stop siphoning, not to hold back pressure, and a head set higher than the device leans on it from the wrong side. On a yard that rises away from the house, that can mean a taller riser or a different spot. And it never goes in a valve box or below ground."
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "Freeze damage",
+      "title": "What one hard freeze **does to a PVB.**",
+      "intro": "A PVB sits above ground, out in the weather, with water inside it all summer. The buried pipes get some shelter from the soil. The PVB gets none.",
+      "columns": 2,
+      "items": [
+        { "tag": "Cracked body", "title": "Split brass", "body": "Water expands as it freezes and can split the brass body. A cracked body cannot be patched. The device gets replaced." },
+        { "tag": "Cracked cap", "title": "A broken bonnet", "body": "The cap over the air inlet, and the parts under it, can crack or pop. On a sound body, those parts can often be replaced." },
+        { "tag": "Ball valves", "title": "Handles left open or shut", "body": "A ball valve left fully open or fully closed traps a little water inside the ball. That water freezes and cracks it, which is why the handles are left half open for winter." },
+        { "tag": "Hidden damage", "title": "Found in spring", "body": "Freeze damage usually does not show until the water goes back on, and then it sprays. Opening the system slowly at startup is how we catch it before it soaks the foundation." }
+      ]
+    },
+    {
+      "type": "compare",
+      "plane": "mist",
+      "eyebrow": "Spring and fall",
+      "title": "Opening it and closing it, **in the right order.**",
+      "intro": "A PVB is easy to hurt with a valve opened too fast in spring or water left inside it in fall. This is the order that protects it.",
+      "columns": ["Spring startup", "Fall blowout"],
+      "rows": [
+        { "label": "First", "values": ["Both PVB handles and the petcocks closed", "Water shut off at the house and the line drained"] },
+        { "label": "House shutoff", "values": ["Opened slowly, so the pipe fills gently", "Stays closed all winter"] },
+        { "label": "PVB handles", "values": ["Opened slowly, the inlet side first", "Outlet closed, so the air never reaches the PVB"] },
+        { "label": "Compressed air", "values": ["None", "Into the blowout port below the PVB, never through it"] },
+        { "label": "Petcocks", "values": ["Closed before the water goes on", "Opened after the blowout to drain it"] },
+        { "label": "Left for the season", "values": ["Both handles open, no water spitting from the cap", "Both handles half open, petcocks open"] }
+      ]
+    },
+    {
+      "type": "panel",
+      "kind": "blowout",
+      "plane": "ink",
+      "title": "Where the PVB sits **in a blowout.**",
+      "intro": "The PVB is the device marked by the house in the drawing. Run the blowout, then drag winter in, and watch what the frost does to water left behind.",
+      "points": [
+        "The air goes in below the PVB, at a blowout port, never through the PVB itself. Hot compressed air can damage the seals inside it.",
+        "The PVB sits above ground, so it is the first part of the system the cold reaches."
+      ]
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "Repair or replace",
+      "title": "When a kit fixes it, **and when it does not.**",
+      "intro": "A lot of PVB trouble is rubber, springs and grit, and those can be cleaned or rebuilt. Some of it cannot.",
+      "columns": 3,
+      "items": [
+        { "tag": "Spits at startup", "title": "Normal, for a moment", "body": "A quick spurt from under the cap as the water comes on can happen while the air inlet seats. It should stop right away." },
+        { "tag": "Keeps dripping", "title": "Usually a rebuild", "body": "Water that keeps leaking from under the cap means grit on the seat or a worn seal. Cleaning it, or rebuilding it with new rubber parts, often fixes it." },
+        { "tag": "Cracked body", "title": "Replace it", "body": "A split body or a cracked ball valve is done. It gets replaced, and the new one goes in at the right height." },
+        { "tag": "Too low or buried", "title": "Replace and raise it", "body": "A PVB set below the highest head, sunk in a valve box or buried in a shrub gets moved up and out, where it works and can be reached." },
+        { "tag": "Parts not made", "title": "Replace it", "body": "An older device whose parts are no longer made gets replaced, rather than patched with parts that do not quite fit." },
+        { "tag": "Nothing there", "title": "Install one", "body": "A system tied into the house water with no backflow protection at all gets a proper device on the irrigation line." }
+      ]
+    },
+    {
+      "type": "reviews",
+      "plane": "mist",
+      "title": "What customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the brass thing sticking up beside my house?",
+      "a": "Most likely the backflow preventer for your sprinklers, and on a lot of home systems that is a pressure vacuum breaker: a brass body on a pipe that rises out of the ground, with two handles and a cap on top. It is the first part of the sprinkler system after the house water, and it keeps lawn water from flowing back into your drinking water."
+    },
+    {
+      "q": "Why is my PVB leaking or spraying?",
+      "a": "A short spurt right as it fills can be normal. A steady drip or spray from under the cap means the air inlet is not sealing, usually because of grit on the seat or a worn seal, and a rebuild often fixes it. Water coming from a crack in the body or a ball valve is freeze damage, and that means a new device. Turn the water off at the house shutoff until it is fixed, then call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Do I really need one?",
+      "a": "If your sprinkler system runs on your house water, yes. Michigan's plumbing code requires backflow protection on that line, because a lawn system is a direct connection between your drinking water and the soil. A PVB is one of the devices the code allows. A system that pulls only from a lake and never touches the house water is a different case. See [lake pump irrigation](/lake-pump-irrigation/)."
+    },
+    {
+      "q": "How high does a PVB have to be?",
+      "a": "At least 12 inches above the highest head and the highest pipe it feeds. On a flat lot that is easy. On a yard that rises away from the house, the highest head can sit well above the foundation, and the PVB has to go up on a taller riser or move to a better spot."
+    },
+    {
+      "q": "Can I blow out my sprinklers through the PVB?",
+      "a": "No. Compressed air should never go through a PVB. The compressor connects at a blowout port downstream, with the PVB's outlet handle closed, so the air goes out to the zones and not through the device. Air from a compressor runs hot and can damage the seals inside. Our [fall blowout](/sprinkler-winterization/) takes care of the PVB as part of the job."
+    },
+    {
+      "q": "How should the PVB be left for winter?",
+      "a": "Drained, with both handles half open and both petcocks open. A ball valve left fully open or fully closed traps a little water inside the ball, and that water cracks it when it freezes. An insulated cover adds protection. In spring, close the petcocks and the handles again before the water goes back on, then open them slowly."
+    },
+    {
+      "q": "My PVB froze. Can it be fixed?",
+      "a": "Sometimes. If the brass body and the ball valves are whole and only the cap or the parts under it cracked, those parts can often be replaced. A split body or a cracked ball valve means a new device. We check it as the water comes back on, slowly, at your [spring startup](/sprinkler-startup/)."
+    },
+    {
+      "q": "Is a PVB enough if fertilizer or rust treatment is fed through the sprinklers?",
+      "a": "Not always. When anything is injected into irrigation water that comes from a drinking water supply, the code calls for a reduced pressure type backflow preventer instead of a PVB. A system on its own irrigation well, with no tie to the house, is set up differently. We look at how yours is plumbed before anything is added. See [rust stain prevention](/rust-stain-prevention/)."
+    }
+  ],
+  "quote": {
+    "title": "Tell us what the PVB is doing.",
+    "lede": "Spitting, dripping, cracked, set too low or missing. Send it here or text a photo of it, and we will call back to set a time."
+  },
+  "summary": {
+    "title": "Backflow protection, **kept working.**",
+    "intro": "The pressure vacuum breaker keeps lawn water out of your drinking water. We install, repair and replace them, and open and close them right every season.",
+    "items": [
+      { "name": "New PVBs installed", "detail": "On the line to the sprinklers, at least 12 inches above the highest head." },
+      { "name": "Leaks repaired", "detail": "Seats cleaned and worn rubber parts replaced when the body is sound." },
+      { "name": "Frost damage replaced", "detail": "Cracked bodies and ball valves replaced, and set at the right height." },
+      { "name": "Spring opening", "detail": "Petcocks closed, water on slowly, handles opened in order." },
+      { "name": "Fall closing", "detail": "Air kept out of the device, then drained with the handles left half open." }
+    ]
+  }
+}

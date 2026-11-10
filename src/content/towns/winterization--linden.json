@@ -1,0 +1,75 @@
+{
+  "service": "winterization",
+  "city": "linden",
+  "meta": {
+    "title": "Sprinkler Winterization in Linden, MI | Misty's Irrigation",
+    "description": "Fall sprinkler blowouts in Linden, MI, timed to the local freeze record, for city, well and lake systems. Misty's Irrigation clears every zone with air."
+  },
+  "hero": {
+    "kicker": "Sprinkler winterization in Linden, MI",
+    "title": "Blown dry before **the hard freeze.**",
+    "lede": "Linden's first hard freeze of fall averages around October 27, and one year in ten it arrives before October 10. Misty's clears every zone with compressed air, then drains the backflow device and anything else that sits above ground.",
+    "chips": ["Zone by zone blowout", "Backflow device drained", "Licensed and insured"],
+    "photo": "ai-blowout"
+  },
+  "local": {
+    "eyebrow": "The local freeze record",
+    "title": "When Linden **actually freezes.**",
+    "intro": "NOAA keeps a weather station at the Linden wastewater plant, and its 1991 to 2020 normals give a clear fall calendar. A light frost does no harm to pipe under the turf. A hard freeze is what cracks things, and it starts with whatever is above ground.",
+    "points": [
+      {
+        "title": "First frost, mid October",
+        "body": "The first 32 degree night comes around October 12 in a typical year, and one year in ten before September 30. That frost browns tender plants but rarely touches buried lines. Treat it as the reminder to get on the blowout list."
+      },
+      {
+        "title": "First hard freeze, late October",
+        "body": "The first 28 degree night averages around October 27, and nine years in ten it has come by November 9. That is the date to beat, so late September through October is the window to book here."
+      },
+      {
+        "title": "The backflow device goes first",
+        "body": "The pressure vacuum breaker stands on a pipe beside the house with nothing around it but air, so it freezes long before anything buried does. Draining it and leaving its valves set right is part of every blowout. A cracked one turns into a [repair](/backflow-preventers/) in spring."
+      },
+      {
+        "title": "Wells and lakes add steps",
+        "body": "Most of Argentine Township relies on private wells, and some lake lots around town water straight from the lake. On a well we shut and drain only the irrigation branch. On a lake system the pump and suction line get emptied too."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How a Linden blowout **goes.**",
+    "body": [
+      "Book in September for a spot in October. Tell us where the irrigation shutoff is, usually in the basement where the line leaves the house, and where the blowout fitting sits outside. If you are not sure where either one is, we will track them down.",
+      "On the day we close the water to the system, hook up the compressor and push air through one zone at a time until the heads spit mist and then nothing. Then we drain the backflow device, set the controller to off, and tell you about anything worth fixing at [spring startup](/sprinkler-startup-linden-mi/)."
+    ],
+    "facts": [
+      { "label": "First 32 degree night", "value": "Around October 12 (NOAA, Linden station)" },
+      { "label": "First 28 degree night", "value": "Around October 27" },
+      { "label": "Time to book", "value": "September, for an October blowout" },
+      { "label": "Drive from Fenton", "value": "About 10 minutes" }
+    ]
+  },
+  "photo": "ai-pvb",
+  "faq": [
+    {
+      "q": "When should I schedule a sprinkler blowout in Linden?",
+      "a": "Late September through October. Misty's works through that window to get systems clear before the first hard freeze, which averages around October 27 at the Linden weather station. One year in ten it arrives before October 10, so earlier is safer than later."
+    },
+    {
+      "q": "Is draining the system enough, or does it really need air?",
+      "a": "A buried system has dips, low spots and heads where water sits after the valves are opened. Lateral pipes usually run only 6 to 12 inches down, well within reach of a Michigan freeze. Compressed air pushes that leftover water out one zone at a time. Skip it, and a cracked line or head shows up in spring as a geyser."
+    },
+    {
+      "q": "We already had a frost. Is it too late?",
+      "a": "Usually not. A light frost does little to pipe under the turf. A string of hard freezes is what does the damage, and it starts with the backflow device above ground. If a hard freeze is forecast before we can get there, shut the water to the system at the house and text us."
+    },
+    {
+      "q": "My sprinklers run off a well. What is different?",
+      "a": "The well also supplies the house, so we close and drain only the irrigation branch and leave the house water alone. If the line has a Rid-O-Rust treatment system, mention it when you book so we plan for it at shutdown."
+    },
+    {
+      "q": "Do you winterize lake pump systems too?",
+      "a": "Yes. A lake system holds water in the pump and the suction line as well as the zones. We blow the zones out, then drain the pump and intake line so nothing freezes inside them. More on [lake pump irrigation around Linden](/lake-pump-irrigation-linden-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s"]
+}

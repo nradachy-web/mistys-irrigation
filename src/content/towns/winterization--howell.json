@@ -1,0 +1,75 @@
+{
+  "service": "winterization",
+  "city": "howell",
+  "meta": {
+    "title": "Sprinkler Winterization in Howell, MI | Misty's Irrigation",
+    "description": "Fall sprinkler blowouts in Howell and the township. Misty's Irrigation clears every zone with air before the hard freezes. Visits are planned, so book early."
+  },
+  "hero": {
+    "kicker": "Sprinkler winterization in Howell, MI",
+    "title": "Air in the lines, **not ice.**",
+    "lede": "Misty's blows out Howell systems zone by zone with compressed air, so nothing is left in the pipe, the heads or the backflow device when the hard freezes come. Howell is our farthest drive, so the earlier you get on the fall list, the better.",
+    "chips": ["Zone by zone air blowout", "Backflow device cleared too", "Licensed and insured"],
+    "photo": "ai-blowout"
+  },
+  "local": {
+    "eyebrow": "Winterizing in Howell",
+    "title": "When the cold **actually gets here.**",
+    "intro": "NOAA's climate records include a station at Howell's wastewater plant, and its 1991 to 2020 normals give a fair picture of when a system out here needs to be empty. A few local details change how the blowout itself should go.",
+    "points": [
+      {
+        "title": "First frost around October 7",
+        "body": "In a typical year, that station records its first 32 degree night around October 7 and its first hard freeze, 28 degrees, around October 20. Buried pipe can ride out a light frost, but the backflow device above ground and the heads near the surface feel it first."
+      },
+      {
+        "title": "Thompson Lake drops in October",
+        "body": "By court order, the county lowers Thompson Lake three feet for winter in even numbered years, and the 2026 drawdown was set to begin October 9. A lake pump with a shallow intake can be left high and dry. Blow those systems out before the water starts falling."
+      },
+      {
+        "title": "Long runs on township acreage",
+        "body": "On a big township lot fed by a well, some zones sit a long way from the house. It takes steady air and patience to push all the water out of a long run of pipe. We work each zone until its heads spit only mist, then move to the next one."
+      },
+      {
+        "title": "Buried boxes in older yards",
+        "body": "Most homes in the city were built before 1980, and older systems often have valve boxes lost under turf and mulch. We find them before the blowout, because a zone we cannot see is a zone we cannot clear, and a valve full of water cracks."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Booking a Howell blowout **early.**",
+    "body": [
+      "Fall is when everyone calls at once. Howell is about 30 minutes from Fenton, our longest drive, so we plan blowouts out here ahead and do several nearby yards on the same trip. Get on the list in September by calling or texting [(810) 423-9513](tel:+18104239513) or through [book service](/book-service/), and we will call back with a time.",
+      "You do not need to be home if we can reach what we need: the irrigation shutoff, the backflow device and the controller. Tell us where each one is, and on a well system, where the pump and pressure tank are too. After the blowout, leave the controller off until spring."
+    ],
+    "facts": [
+      { "label": "Typical first frost", "value": "Around October 7, per NOAA's Howell station" },
+      { "label": "Typical first hard freeze", "value": "Around October 20" },
+      { "label": "When to call", "value": "September, before the fall rush" },
+      { "label": "From Fenton", "value": "About 30 minutes, visits grouped" }
+    ]
+  },
+  "photo": "flagstone-pond",
+  "faq": [
+    {
+      "q": "When should I book a sprinkler blowout in Howell?",
+      "a": "September, if you can. Misty's plans fall visits out here ahead and groups them, and we blow out systems from late September into November, ahead of the ground freezing. With the typical first hard freeze around October 20 at the Howell station, getting on the list early gives us room to reach you in time."
+    },
+    {
+      "q": "Does a system on a well need a blowout?",
+      "a": "Yes. Water sits in the pipe, the valves and the heads no matter what feeds them. On a well system we shut the sprinkler supply off, or switch off a pump that serves only the sprinklers, before the air goes in, so the pump is not trying to push water while we push air out."
+    },
+    {
+      "q": "What happens if I skip the blowout?",
+      "a": "Water left in the lines freezes and expands. The usual damage is a split backflow device, cracked heads and fittings, and valves that leak come spring. You find out at startup, when a zone will not hold pressure, and the repair is a bigger job than the blowout would have been."
+    },
+    {
+      "q": "My lawn waters from Thompson Lake. Does the drawdown change anything?",
+      "a": "It can. In even numbered years the county lowers the lake three feet, beginning in early October. If your intake sits in shallow water, have the system blown out and the intake pulled before the level drops. More on [lake pump systems](/lake-pump-irrigation-howell-mi/) around Howell."
+    },
+    {
+      "q": "Do you winterize the backflow device too?",
+      "a": "Yes. The pressure vacuum breaker sits above ground and is often the first thing to freeze. We blow it out with the rest of the system and leave its valves set for winter. If yours cracked last year, see [backflow preventers](/backflow-preventers/)."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

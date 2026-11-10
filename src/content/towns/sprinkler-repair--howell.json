@@ -1,0 +1,76 @@
+{
+  "service": "sprinkler-repair",
+  "city": "howell",
+  "meta": {
+    "title": "Sprinkler Repair in Howell, MI | Misty's Irrigation",
+    "description": "Broken heads, hidden leaks and zones that will not shut off, in town or out in the township. Misty's Irrigation finds the cause in Howell and fixes it."
+  },
+  "hero": {
+    "kicker": "Sprinkler repair in Howell, MI",
+    "title": "Find the leak **before the bill does.**",
+    "lede": "On city or MHOG water, a broken head shows up on the water bill. On a well, it keeps the pump running for nothing. Misty's runs every zone, finds what is actually wrong, tells you before we touch it, and puts the yard back when we are done.",
+    "chips": ["Every zone run and checked", "City, MHOG and well systems", "Licensed and insured"],
+    "photo": "street-sprinklers"
+  },
+  "local": {
+    "eyebrow": "Repair in Howell",
+    "title": "What tends to break **in Howell yards.**",
+    "intro": "Most repair calls here trace back to the water source, the trees or the ground. Here is what each one means for a system in the city or out in the township.",
+    "points": [
+      {
+        "title": "No bill credit for sprinkler leaks",
+        "body": "Howell Township's high water bill policy says leak adjustments will not be made for irrigation systems or lawn watering. Its own checklist asks whether a sprinkler head is broken. On MHOG water, a cracked head gets paid for on every run until someone fixes it."
+      },
+      {
+        "title": "Big trees over older lots",
+        "body": "The city's master plan counts 57 percent of homes as built before 1980 and notes mature trees in yards and along the streets. Roots tip heads out of level, and a trunk that was a sapling when the system went in can now block a rotor's throw. Both leave dry crescents."
+      },
+      {
+        "title": "Soft ground in the low spots",
+        "body": "USDA soil maps around Howell show mostly loam, with muck in the low, wet ground. A head set in soft ground settles until it sits below the grass, and then it sprays the turf right in front of it instead of the lawn beyond. We raise it back to grade."
+      },
+      {
+        "title": "Iron on the well systems",
+        "body": "Out on township acreage, sprinklers usually run on a private well. The ground water here carries iron, enough that the city filtered it from its own wells before 1992. Iron and grit can build up in nozzles and screens until the spray shrinks. Cleaning or swapping them brings it back."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Getting a Howell repair **on the calendar.**",
+    "body": [
+      "Howell is about 30 minutes from Fenton and the farthest town we serve, so repair visits out here are planned ahead and grouped with other jobs nearby when we can. Text a photo of the problem to [(810) 423-9513](tel:+18104239513) or [book online](/book-service/), and we will call back to set a time.",
+      "Until we get there, you can stop a leak from adding up. Turn the zone off at the controller. If water still runs, close the irrigation shutoff, usually in the basement where the line leaves the house. On a well, that also keeps the pump from running to feed the leak.",
+      "When you book, tell us whether you are on city water, MHOG water or a well, and where the controller is. It saves time on the day and helps us bring the right parts on the first trip."
+    ],
+    "facts": [
+      { "label": "From Fenton", "value": "About 30 minutes" },
+      { "label": "Scheduling", "value": "Planned ahead, grouped with other visits nearby" },
+      { "label": "If a zone will not stop", "value": "Close the irrigation shutoff, then call" },
+      { "label": "Good to tell us", "value": "City water, MHOG water or a private well" }
+    ]
+  },
+  "photo": "ai-valve-box",
+  "faq": [
+    {
+      "q": "Do you repair sprinkler systems in Howell that someone else installed?",
+      "a": "Yes. Most of what Misty's does is repair and service on systems other people put in, and that is true in Howell too, in town and out in the township. If a part on an older system is no longer made, we will tell you what fits and what it takes."
+    },
+    {
+      "q": "My water bill jumped this summer. Could it be the sprinklers?",
+      "a": "It is one of the first things to check. Howell Township's high bill guide lists a sprinkler system with a broken head among the usual causes, and its leak policy gives no adjustment for irrigation. Run each zone and look for a geyser, a soggy patch or a head that barely sprays. If nothing shows, the leak may be underground, and finding it is our job."
+    },
+    {
+      "q": "Can tree roots damage a sprinkler system?",
+      "a": "They push heads out of level, squeeze shallow pipe until it cracks, and shade the turf so it needs less water than the sunny side. Under big street trees it is common to find heads leaning or buried. We level them, move a head when a trunk blocks its throw, and repair cracked pipe."
+    },
+    {
+      "q": "The heads on my well system barely spray. What is wrong?",
+      "a": "Start with the nozzles and the small screens under them, where iron and grit from a well collect. It can also be the pump, the pressure, or too many heads on one zone for the well to supply. We check the pressure, clean or replace the nozzles and tell you which it is. If the house is also turning orange, see [rust stain prevention](/rust-stain-prevention/)."
+    },
+    {
+      "q": "Is it worth fixing a broken head this late in the season?",
+      "a": "If you still have a few weeks of watering ahead, yes, because it wastes water every run. If the blowout is close, the system will be off all winter anyway, so we can fix it at your [spring startup](/sprinkler-startup-howell-mi/) instead."
+    }
+  ],
+  "reviews": ["susan-r", "joe-s", "zachary-b"]
+}

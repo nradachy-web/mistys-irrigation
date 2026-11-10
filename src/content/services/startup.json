@@ -1,0 +1,144 @@
+{
+  "service": "startup",
+  "meta": {
+    "title": "Spring Sprinkler Startup in Fenton, MI | Misty's Irrigation",
+    "description": "Spring sprinkler startups around Fenton: water on slowly, the backflow device opened right, every zone run, heads adjusted and the controller set for spring."
+  },
+  "hero": {
+    "kicker": "Spring sprinkler startup in Fenton, MI",
+    "title": "Fill it slowly, **then run every zone.**",
+    "lede": "Your system sat empty all winter. We fill it slowly so nothing gets jolted, open the backflow device in the right order, run and watch every zone, fix what the winter broke, and set the controller for spring.",
+    "chips": ["Every zone run and checked", "Licensed and insured"],
+    "photo": "ai-startup"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "What a startup is",
+      "title": "The fall blowout, **run in reverse.**",
+      "intro": "In the fall we push the water out with air. In spring it goes back in, and how it goes back in matters more than most people think.",
+      "body": [
+        "After a winter empty, the pipes are full of air. Open the supply all at once and water rushes in, then slams to a stop against a closed valve or the end of a line. That jolt is called water hammer, and it is how a healthy system cracks a fitting on the first day of the season.",
+        "So a startup is slow on purpose. The backflow device is closed up and opened in order, the main line fills a little at a time, the air is let out through the heads, and only then does each zone run. Then we go looking for whatever the winter did."
+      ],
+      "photo": "lake-lawn",
+      "cta": { "label": "How the fall blowout works", "href": "/sprinkler-winterization/" }
+    },
+    {
+      "type": "panel",
+      "kind": "season",
+      "plane": "ink",
+      "title": "When to **book a startup.**",
+      "intro": "Startups run about mid April through May, once the hard freezes are over. The marker moves with today's date and the line under it says what to do now.",
+      "points": [
+        "Too early, and a hard frost can catch the backflow device full of water. It sits above ground, so it is the most exposed part of the system.",
+        "If a shovel will not go a foot into the lawn, the ground is still frozen. Wait a week.",
+        "A cool spring lawn needs far less water than a July one, so there is little to gain from turning on early."
+      ]
+    },
+    {
+      "type": "steps",
+      "plane": "white",
+      "eyebrow": "The visit",
+      "title": "What a startup **includes.**",
+      "intro": "The same order every time. The order is what keeps the first day of the season from being the day something cracks.",
+      "steps": [
+        { "title": "Backflow device closed up", "body": "The small test cocks and any drains left open for winter get closed, and the ball valves on the backflow device are set so it fills under control, not all at once." },
+        { "title": "Water on slowly", "body": "The irrigation shutoff, usually in the basement, opens a little at a time, then the backflow device's ball valves open slowly. The main fills gently and the air escapes through the heads. We watch the device for freeze cracks as it fills." },
+        { "title": "Every zone run and watched", "body": "Each zone runs in turn while we walk it. Heads that sputter air for the first minute are normal. Heads that do not rise, leak at the base or fall short of the next head get noted." },
+        { "title": "Heads cleaned, raised and aimed", "body": "Clogged nozzles flushed, sunk heads brought back up to the soil line, tilted ones straightened, and spray patterns turned back onto the lawn and off the drive." },
+        { "title": "Leaks and winter damage found", "body": "Wet spots, weak zones, water standing in valve boxes, anything the frost split. You hear what we found and what it takes before any repair, and you decide." },
+        { "title": "Controller set for spring", "body": "Date and time set, the backup battery that holds the clock through a power outage checked, the rain sensor checked if there is one, and each zone given a spring run time, not last August's." }
+      ],
+      "footnote": "A system that pulls from the lake also needs its pump primed and its intake checked first. See [lake pump systems](/lake-pump-irrigation/)."
+    },
+    {
+      "type": "cards",
+      "plane": "mist",
+      "eyebrow": "What winter leaves",
+      "title": "What a startup **usually turns up.**",
+      "intro": "Most systems come through a winter fine. These are the things we find on the ones that did not, and what causes them.",
+      "columns": 3,
+      "items": [
+        { "tag": "Backflow device", "title": "Water spraying from it", "body": "Water left inside over the winter froze and cracked the body or the cap on top. It needs fixing before the season starts, because that device keeps lawn water out of your drinking water. More on [backflow devices](/backflow-preventers/)." },
+        { "tag": "One zone weak", "title": "A split pipe or fitting", "body": "Ice in a low spot cracked a fitting or the pipe itself. The zone runs weak at every head, and a soggy or bubbling patch in the lawn marks where the break is." },
+        { "tag": "Heads high, low or leaning", "title": "Frost and settling soil", "body": "Ground that freezes and thaws can lift a head, tip it over or leave it sunk under the turf. Each one gets reset level with the soil and straight up." },
+        { "tag": "Weak or ragged spray", "title": "Grit in the nozzle", "body": "Dirt from a repair, a broken head or well water lodges in the small screen under the nozzle. Cleaned out, the head throws its full distance again." },
+        { "tag": "Zone will not stop", "title": "Debris in a valve", "body": "Grit in the lines can catch under a valve's rubber diaphragm and hold the zone open. Cleaning the valve usually fixes it. More on [valve repair](/sprinkler-valve-repair/)." },
+        { "tag": "Wrong days, wrong hours", "title": "A controller that lost its clock", "body": "A dead backup battery plus a winter power outage can reset the clock, so the program runs at the wrong time. A new battery and a reset fix it. More on [controllers](/sprinkler-controllers/)." }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Setting the controller",
+      "figure": "1 in.",
+      "figureLabel": "of water a week in summer, rain included",
+      "title": "Set it for spring, **not for July.**",
+      "body": "Most lawns want about an inch of water a week in midsummer, rain included, and much less in a cool, wet spring. A controller still on last summer's program waters an April lawn as if it were July: soggy soil, water down the drain and a bigger bill. We set spring run times at startup, and they go up as the weather warms. The [watering guide](/watering-guide/) has the numbers."
+    },
+    {
+      "type": "reviews",
+      "plane": "white",
+      "title": "What our customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    },
+    {
+      "type": "areas",
+      "plane": "mist",
+      "title": "Spring startup **in your town.**",
+      "intro": "Each town has its own page with the details for that area."
+    }
+  ],
+  "faq": [
+    {
+      "q": "When should I schedule my spring startup?",
+      "a": "About mid April through May, once the hard freezes are over and the ground has thawed. A quick test: if a shovel will not go a foot into the lawn, it is too early. Getting on the list over the winter or early in spring puts you ahead of the April rush. [Book a startup](/book-service/) or call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Can I just turn the water back on myself?",
+      "a": "You can. The risk is all in the first minute: a shutoff opened all the way into empty pipes, or a backflow device opened out of order, is what cracks fittings. If you do it yourself, close the test cocks and drains first, open everything slowly, and let the air out through the heads. Then run every zone and look for what the winter broke, which is the part a startup visit is really for."
+    },
+    {
+      "q": "My system was not winterized last fall. Can you still start it up?",
+      "a": "Yes. Tell us when you book. Water left in the lines may have frozen and split a pipe, a valve or the backflow device. We fill it slowly, watch for leaks as it comes up to pressure, and show you anything that cracked before we fix it."
+    },
+    {
+      "q": "What happens if you find something broken?",
+      "a": "We show you what it is and tell you what it takes before we touch it. Many common repairs, like a cracked head, a split fitting or a stuck valve, can be done during the same visit. If a part has to be ordered, we tell you and come back. More on [sprinkler repair](/sprinkler-repair/)."
+    },
+    {
+      "q": "Water is spraying out of my backflow device. What happened?",
+      "a": "Most often it froze. Water left inside over the winter expands as it turns to ice and cracks the body or the cap on top, and it stays hidden until the water comes back on. Close the irrigation shutoff, usually in the basement, and call or text [(810) 423-9513](tel:+18104239513). We repair and replace [pressure vacuum breakers](/backflow-preventers/)."
+    },
+    {
+      "q": "Do I need to be home for the startup?",
+      "a": "Only if we need to get inside. The irrigation shutoff is usually in the basement and the controller is often in the garage, so someone has to let us reach them. If both are outside or easy to get to, tell us when you book and we will work it out."
+    },
+    {
+      "q": "How long should my zones run in spring?",
+      "a": "Less than in summer. Most lawns want about an inch of water a week in midsummer, rain included, and less in a cool spring. How many minutes that takes depends on the heads: spray heads put water down about three times as fast as rotors, so spray zones run shorter. We set a spring schedule at startup, and the [watering guide](/watering-guide/) walks through the math."
+    },
+    {
+      "q": "Do you start up lake pump systems?",
+      "a": "Yes. A system that pulls from the lake needs its pump primed and its intake and suction line checked before any zone runs. More on [lake pump systems](/lake-pump-irrigation/)."
+    }
+  ],
+  "quote": {
+    "title": "Get on the spring startup list.",
+    "lede": "Send your address and anything you noticed last season, like a weak zone, a soggy spot or a head that never popped up. We will call back to set a time."
+  },
+  "summary": {
+    "title": "A spring startup, **in order.**",
+    "intro": "Every startup follows the same order, so the system fills without a jolt and anything the winter broke is found on the first day, not in July.",
+    "items": [
+      { "name": "Backflow device opened right", "detail": "Test cocks and drains closed, ball valves opened slowly, the device checked for freeze cracks." },
+      { "name": "Water on slowly", "detail": "The main line filled a little at a time, with the air let out through the heads." },
+      { "name": "Every zone run", "detail": "Each zone run and walked, not just switched on at the controller." },
+      { "name": "Heads adjusted", "detail": "Clogged nozzles cleaned, sunk heads raised, tilted heads straightened and aimed." },
+      { "name": "Leaks found", "detail": "Wet spots, weak zones and split fittings found and explained before any repair." },
+      { "name": "Controller set", "detail": "Date and time set, backup battery checked, and a spring run time for each zone." }
+    ]
+  }
+}

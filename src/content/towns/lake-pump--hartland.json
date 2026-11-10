@@ -1,0 +1,71 @@
+{
+  "service": "lake-pump",
+  "city": "hartland",
+  "meta": {
+    "title": "Lake Pump Irrigation in Hartland, MI | Misty's Irrigation",
+    "description": "Lake pump sprinklers on Long, Handy, Round, Dunham and other Hartland lakes: primed in spring, drained in fall, intakes kept clear. Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Lake pump irrigation in Hartland, MI",
+    "title": "Water the lawn **from the lake.**",
+    "lede": "Hartland Township counts thirteen significant lakes and ponds, and a home on one can water from the lake instead of the well. Misty's Irrigation primes and starts lake pumps in spring, checks intakes and suction lines, and drains it all before the ice comes.",
+    "chips": ["Spring priming, fall drain", "Intake and suction line checked"],
+    "photo": "lake-lawn"
+  },
+  "local": {
+    "eyebrow": "Lake lots in Hartland",
+    "title": "Hartland's lakes, **and the lawns beside them.**",
+    "intro": "The township zoning map names Long, Handy, Round, Maxfield, Dunham, Bullard, Silver and Blaine Lakes, Lake Walden and several more. Its plan describes a large number of homes along the shorelines, many of them built as cottages and now lived in year-round.",
+    "points": [
+      {
+        "title": "Small lots, close to the water",
+        "body": "Around Round, Handy and Maxfield Lakes, the township plans for lots of 8,000 to 20,000 square feet to match what is already there. The pump usually sits near shore with a suction line running out into the lake, so a short, tight run from intake to pump makes a real difference."
+      },
+      {
+        "title": "Long Lake: a level set by law",
+        "body": "The county lists Long Lake at about 174 acres, with a legal lake level set in 1947 and held by a dam. In December 2025 the county drain office held a hearing on the cost of repairs to that dam. A set level helps, but near shore the water can still drop in a dry summer, and an intake set too shallow pulls air."
+      },
+      {
+        "title": "The well stays for the house",
+        "body": "Most Hartland homes rely on a private well, and EGLE notes iron is common in Michigan groundwater. Watering from the lake takes the lawn's demand off the well and keeps the well's iron off the siding, the walk and the dock."
+      },
+      {
+        "title": "Weeds and silt find the intake",
+        "body": "Shallow, weedy water near shore is where intakes clog. A screen fouled with weeds or silt starves the pump, and a pump running short of water runs hot and loses its prime. We check the screen and the foot valve, the one-way valve that holds the prime, at every startup and blowout."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How we look after **a lake pump.**",
+    "body": [
+      "In spring, once the ice is off, we check the intake, fill and prime the pump, and bring the system up slowly while we watch the pressure. Then every zone runs and gets aimed so lake water lands on the lawn, not the dock or the deck.",
+      "In fall, the pump, its casing and the suction line get drained along with the [blowout](/sprinkler-winterization-hartland-mi/), and anything that could freeze above ground is emptied. If you pull the dock or the line yourself, tell us when, so we can plan the visit around it."
+    ],
+    "facts": [
+      { "label": "Significant lakes and ponds", "value": "Thirteen, by the township's count" },
+      { "label": "Long Lake", "value": "About 174 acres, legal level set in 1947" },
+      { "label": "Spring start", "value": "After ice-out, once hard freezes are over" },
+      { "label": "Fall shutdown", "value": "Late September into November" }
+    ]
+  },
+  "photo": "ai-lake-pump",
+  "faq": [
+    {
+      "q": "Do you work on lake pump sprinkler systems in Hartland?",
+      "a": "Yes. Lake pump systems are one of the services Misty's Irrigation offers, and Hartland has lake homes on Long, Handy, Round, Maxfield and Dunham Lakes, among others. We start them in spring, repair them when they act up, and winterize them in fall."
+    },
+    {
+      "q": "My lake pump runs but the sprinklers barely spray. Why?",
+      "a": "Usually the pump is not getting a full flow of water. The common causes are a clogged intake screen, a leaking foot valve that lets the prime drain back to the lake, an air leak in the suction line, or lake water that has dropped below the intake. We check them in that order, from the lake up."
+    },
+    {
+      "q": "Can I use lake water if my well stains the house orange?",
+      "a": "That is a good reason to. Lake water does not come out of your well, so it does not carry the well's iron onto the siding and walks. If your lot is not on the water, a [Rid-O-Rust treatment system](/rust-stain-prevention/) is the other way to stop the stains."
+    },
+    {
+      "q": "When should the lake pump be shut down for winter?",
+      "a": "Before the first hard freeze, as part of the fall blowout. A pump on shore holds water in its casing, and one cold night can crack it. The closest NOAA station to Hartland, at the Milford proving ground, averages a first fall frost around October 5, so get on the list in September."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s"]
+}

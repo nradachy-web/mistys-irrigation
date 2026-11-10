@@ -1,0 +1,76 @@
+{
+  "service": "sprinkler-repair",
+  "city": "fenton",
+  "meta": {
+    "title": "Fenton Sprinkler Repair, City and Township | Misty's",
+    "description": "Leaks, broken heads and zones that will not stop, fixed by Misty's Irrigation across Fenton and Fenton Township. Every zone run, the cause explained first."
+  },
+  "hero": {
+    "kicker": "Sprinkler repair in Fenton, MI",
+    "title": "Found before **the bill finds it.**",
+    "lede": "City meters here are read four times a year, so a leaking zone can run for months before anyone sees it on paper. Misty's runs every zone, finds the cause, tells you what it is and fixes it. Fenton is home base, so there is no drive to get to you.",
+    "chips": ["Every zone run", "Based in Fenton", "Licensed and insured"],
+    "photo": "pine-lawn"
+  },
+  "local": {
+    "eyebrow": "Repair in Fenton",
+    "title": "What breaks here, **and how it hides.**",
+    "intro": "Fenton has city lots on city water, township homes on private wells and lake lots in between. The repair work is the same craft on all of them. What changes is how a problem shows itself, and how long it can go unnoticed.",
+    "points": [
+      {
+        "title": "A quarter's worth of leak",
+        "body": "The city reads meters in March, June, September and December and bills the month after. Sewer consumption comes off the same reading. A zone that starts leaking just after the June read can run until the October bill, charged as water and again as sewer."
+      },
+      {
+        "title": "On a well, the pump pays for it",
+        "body": "Out in the township, plenty of systems run off a private well. A stuck valve or a cracked riser there never shows on a bill. It shows as a well pump that keeps cycling, pressure that sags in the house, and more of the orange iron stain that local well water is known for."
+      },
+      {
+        "title": "Sand, loam and muck in one yard",
+        "body": "Soil maps around Fenton show mostly loam, with sandy pockets that drain fast and muck in low ground that stays wet from fall into June. A brown patch on a sandy rise and a soggy corner in a low spot can sit on the same zone. Each needs a different fix."
+      },
+      {
+        "title": "Older lots, older parts",
+        "body": "Half the homes in the city were built in 1981 or earlier, about one in seven before 1940. Township homes run newer, with a median year of 1992. A system that went in with a 1990s house has been through more than twenty-five winters, and valves and heads are where that age shows first."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "A repair visit, **start to finish.**",
+    "body": [
+      "Call or text [(810) 423-9513](tel:+18104239513) with what you are seeing: a geyser by the drive, a soggy stripe, a zone that will not quit. Tell us if the system runs on city water, a well or the lake. Since we are based in Fenton, there is no travel to fit in ahead of your visit.",
+      "If a zone will not shut off, turn the controller off first. If water still runs, close the shutoff for the sprinklers, usually a valve in the basement or utility room where the line leaves the house. On a well or lake system, switch off the pump that feeds the sprinklers as well.",
+      "At the visit we run every zone from the controller, trace the cause, and tell you what we found and what it takes before any work starts. Then we fix it, run the zone again to prove it, and put the turf back."
+    ],
+    "facts": [
+      { "label": "Drive to you", "value": "None. Fenton is home base." },
+      { "label": "City meter reads", "value": "March, June, September, December" },
+      { "label": "Pipe depth", "value": "Laterals usually 6 to 12 inches down" },
+      { "label": "Often the cause", "value": "Mower-hit heads, stuck valves, cut wires" }
+    ]
+  },
+  "photo": "ai-valve-box",
+  "faq": [
+    {
+      "q": "Can Misty's fix a sprinkler system in Fenton that someone else installed?",
+      "a": "Yes. Most of what Misty's does around town is service and repair on systems other people put in, from small city yards to lake lots in the township. If a part is no longer made, we tell you what fits and what it takes to swap it."
+    },
+    {
+      "q": "Our city water bill jumped. Could it be the sprinklers?",
+      "a": "It could. The city bills quarterly, so one bill covers about three months, and summer is when water use runs highest anyway. Walk the yard for a patch that stays soggy, a valve box with water standing in it, or a stripe greener than the rest. If nothing obvious turns up, we can run every zone and walk the lines."
+    },
+    {
+      "q": "One corner of the lawn browns every summer. Is that the soil?",
+      "a": "Sometimes. Sandy ground drains fast and browns first. But a brown corner is more often a head that is tilted, sunk or clogged, so the water never reaches it. We check the heads first, then set the run time for the ground on that zone."
+    },
+    {
+      "q": "Our sprinklers run off a well and leave orange marks. Will a repair fix that?",
+      "a": "A repair stops water landing where it should not, like a tilted head soaking the siding. The orange itself comes from iron in the well water, and no repair removes it. For that, we install [Rid-O-Rust treatment](/rust-stain-prevention/) on the sprinkler line."
+    },
+    {
+      "q": "Is it worth fixing a leak this late in the season?",
+      "a": "For a broken head or a geyser, yes, because it wastes water every run until the [fall blowout](/sprinkler-winterization-fenton-mi/). If it is October and the leak is small, we can note it at the blowout and fix it at the [spring startup](/sprinkler-startup-fenton-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s", "susan-r"]
+}

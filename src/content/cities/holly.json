@@ -1,0 +1,79 @@
+{
+  "city": "holly",
+  "meta": {
+    "title": "Sprinkler Service in Holly, MI | Misty's Irrigation",
+    "description": "Sprinkler startups, repairs, blowouts and lake pump systems in the Village of Holly and Holly Township, from Misty's Irrigation, 15 minutes away in Fenton."
+  },
+  "hero": {
+    "kicker": "Lawn sprinkler service in Holly, MI",
+    "title": "Village water, well water, **lake water.**",
+    "lede": "Around Holly the sprinklers might run on village water, a private well or a pump in the lake, and each one needs something different. Misty's Irrigation starts up, repairs, winterizes and installs all three, from Fenton, about 15 minutes west.",
+    "chips": ["Village water or private well", "More than 35 lakes in the township", "About 15 minutes from Fenton"],
+    "photo": "pine-lawn"
+  },
+  "about": {
+    "eyebrow": "Irrigation in Holly",
+    "title": "Where the water comes from **decides a lot.**",
+    "body": [
+      "Inside the village, water comes from the village's own system: four wells on the west side of town, about 210 feet down in sandstone, with three water towers and booster stations holding the pressure. Out in the township there is no municipal water at all. The township's 2024 master plan says residents rely mostly on their own wells, with some homes tied into the village lines.",
+      "That split shapes every sprinkler job here. On village water, pressure comes from the towers and the system shares a meter with the house. On a well, the pump sets both the pressure and the flow, and each zone has to be sized to what that pump can push. A lake lot adds a third option: a pump that pulls from the lake and leaves the house well alone.",
+      "The ground is not uniform either. The township's plan places it in the hilly zone of southeast Michigan, on glacial till and moraine with pockets of sandy outwash, and loamy and mucky soils in between. A sandy rise and a low, loamy corner of the same yard can need very different run times."
+    ],
+    "points": [
+      {
+        "title": "Iron in Oakland County wells",
+        "body": "When the USGS sampled 38 private wells around Oakland County, 26 carried more iron than the EPA's guideline for staining and taste. Iron leaves a deposit wherever the water dries. If the sprinklers are painting your siding orange, a [Rid-O-Rust treatment](/rust-stain-prevention/) stops it."
+      },
+      {
+        "title": "Lawns that run down to the lake",
+        "body": "Bush Lake covers 110 acres, and the DNR's 2025 survey of it notes owners who keep turf right down to the water. A lawn like that can be watered from the lake with its own pump instead of the well. See [lake pump systems in Holly](/lake-pump-irrigation-holly-mi/)."
+      },
+      {
+        "title": "Frost at both ends of the season",
+        "body": "NOAA's normals for the stations around town put the last spring frost in the first ten days of May and the first fall frost between October 6 and 14. Book a [spring startup](/sprinkler-startup-holly-mi/) after the hard freezes and a [blowout](/sprinkler-winterization-holly-mi/) before the ground locks up."
+      },
+      {
+        "title": "Older village lots, newer acreage",
+        "body": "Half the homes in the township went up before 1990, and the village keeps its historic neighborhoods. Older systems mean buried valve boxes and sunken heads. Newer homes on acreage mean long runs and zones that have to match the well. We [repair both](/sprinkler-repair-holly-mi/)."
+      }
+    ],
+    "photo": "estate-clouds"
+  },
+  "logistics": {
+    "title": "Getting a Holly visit **on the calendar.**",
+    "body": [
+      "Call or text [(810) 423-9513](tel:+18104239513) with what the system is doing, and a photo if you have one. Tell us if the water comes from the village, a well or the lake, because it changes where we start. We call back to set a time.",
+      "Holly is a short trip for us: Grange Hall Road is the main road between Fenton and Holly. On the day, we need to reach the controller, the irrigation shutoff and, on a lake lot, the pump. An open gate and dogs inside both help."
+    ],
+    "facts": [
+      { "label": "From Fenton", "value": "About 15 minutes" },
+      { "label": "Village water", "value": "Four village wells, about 210 feet deep" },
+      { "label": "Township water", "value": "Mostly private wells" },
+      { "label": "Frost-free stretch", "value": "Early May to mid October, typically" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Do you service sprinkler systems in Holly?",
+      "a": "Yes. Holly is one of the towns Misty's Irrigation works in most, both in the village and out across the township. We do spring startups, repairs, fall blowouts, new systems and lake pump systems here. Call or text [(810) 423-9513](tel:+18104239513), or [book online](/book-service/)."
+    },
+    {
+      "q": "I live in Holly Township. Are my sprinklers on a well?",
+      "a": "Probably. The township does not run a water system, and its master plan says most residents are on private wells, though some homes connect to the village lines. A pressure tank in the basement is the giveaway. If the sprinklers lose pressure when someone runs a shower, they share the well with the house."
+    },
+    {
+      "q": "Why is the side of the house turning orange?",
+      "a": "Iron. Well water around Oakland County often carries more iron than the EPA's staining guideline, and when sprinkler water dries on vinyl, brick or concrete, the iron stays behind. Aiming heads off the house helps. A [Rid-O-Rust treatment](/rust-stain-prevention/) fed into the system stops the stain at the source. The county lab's basic chemistry panel does not include iron, so if you want a number, ask for an iron test specifically."
+    },
+    {
+      "q": "When should I book a startup and a blowout?",
+      "a": "Startups run from about mid April through May, once the hard freezes are over, and around here the last one usually comes in late April. For the fall, the first frost usually arrives in the first half of October, and we blow systems out from late September until the ground freezes, often into November. More on [startups](/sprinkler-startup-holly-mi/) and [winterization](/sprinkler-winterization-holly-mi/)."
+    },
+    {
+      "q": "Can my sprinklers pull water from the lake instead of the well?",
+      "a": "On a lake lot, often yes. A lake pump system draws from the lake through an intake line, so the lawn stops competing with the house for well water. It needs attention at both ends of the season: priming and an intake check in spring, draining in fall. See [lake pump irrigation in Holly](/lake-pump-irrigation-holly-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r", "joe-s"],
+  "neighbors": ["fenton", "grand-blanc", "hartland"]
+}

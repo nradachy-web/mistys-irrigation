@@ -1,0 +1,74 @@
+{
+  "service": "installation",
+  "city": "holly",
+  "meta": {
+    "title": "Sprinkler Installation in Holly, MI | Misty's Irrigation",
+    "description": "New sprinkler systems in Holly laid out around what feeds them: a private well, village water or the lake. Zones sized to the supply, heads spaced head to head."
+  },
+  "hero": {
+    "kicker": "Sprinkler system installation in Holly, MI",
+    "title": "Start with the water, **then draw zones.**",
+    "lede": "Every new system in Holly starts with one question: what will feed it? Misty's measures what your well, village line or lake can supply, then lays out zones and heads to match, spaced head to head for the yard you actually have.",
+    "chips": ["Zones sized to your supply", "Compact trencher, narrow cut", "Licensed and insured"],
+    "photo": "trencher-dog"
+  },
+  "local": {
+    "title": "Planning a system **for a Holly lot.**",
+    "intro": "A sprinkler design is mostly arithmetic: how much water the source can deliver, how much each head needs, and how the ground takes it in. Around Holly, each of those answers can change from one road to the next.",
+    "points": [
+      {
+        "title": "On a private well",
+        "body": "Most of the township runs on private wells, and a well's flow in gallons per minute caps how many heads can run at once. We measure it first and size every zone to it, so the last head on the line still pops up and throws its full distance."
+      },
+      {
+        "title": "On village water",
+        "body": "Village homes draw from four village wells through three water towers and booster stations, so your pressure is set by that system and your meter, not by a pump. We read the pressure at the house before choosing nozzles, and fit a [pressure vacuum breaker](/backflow-preventers/) to protect the supply."
+      },
+      {
+        "title": "Hills, sand and loam",
+        "body": "Glacial hills, sandy outwash and loam all show up in the township's soil mapping, sometimes on a single lot. We zone by slope and sun as well as by area: a sandy south slope and a shaded loamy flat do not belong on the same valve."
+      },
+      {
+        "title": "Lots that keep their woods",
+        "body": "The township's master plan describes the Great Lakes Community, first platted in the 1930s, as an up-north lakefront area, and discourages broad sodded fronts in new building there. A smaller lawn zone with [drip for the beds](/drip-irrigation/) suits that kind of lot."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "From the first walk **to the first run.**",
+    "body": [
+      "It starts with a walk around the yard with you. We find the water source, measure flow and pressure, note the slopes, the beds and the shade, and sketch the zones. You see the layout and what it takes before any digging.",
+      "Our compact stand-on trencher cuts a narrow trench for the lateral pipe, usually 6 to 12 inches down, instead of opening wide ditches across the lawn. Then the heads go in, the valves get wired to the controller, and every zone is run and aimed before we call it finished."
+    ],
+    "facts": [
+      { "label": "Lateral pipe depth", "value": "Usually 6 to 12 inches" },
+      { "label": "Digging", "value": "Compact stand-on trencher" },
+      { "label": "Water sources", "value": "Village line, private well or lake" },
+      { "label": "From Fenton", "value": "About 15 minutes" }
+    ]
+  },
+  "photo": "garden-misters",
+  "faq": [
+    {
+      "q": "Do you install new sprinkler systems in Holly?",
+      "a": "Yes. Misty's lays out and installs new systems, and adds zones to existing ones, in the village and across the township. It starts with a walk around the yard and a look at the water source. Call or text [(810) 423-9513](tel:+18104239513) to set that up."
+    },
+    {
+      "q": "Can a new sprinkler system run off my house well?",
+      "a": "Usually, if it is designed for the well. We measure how many gallons a minute the well delivers and keep each zone under that, with room left for the house. Then the zones run at hours when nobody is showering or doing laundry. Weak zones on a well usually come from a layout drawn for city pressure and hung on a pump that cannot keep up."
+    },
+    {
+      "q": "Should I drill a separate well just for the sprinklers?",
+      "a": "Sometimes, on a big lawn or with a weak house well. Oakland County's health division treats a well for lawn watering as an irrigation well, a separate type from a drinking water well, with its own paper permit application. A well driller handles that part. We design the system around whatever flow the new well produces."
+    },
+    {
+      "q": "Our well water stains. Does that change the design?",
+      "a": "Yes. We keep throws off the siding, walks and fence from the start, rather than aiming around them later. We can also plan a [Rid-O-Rust](/rust-stain-prevention/) feed into the system at install, which is simpler than adding it afterward."
+    },
+    {
+      "q": "How torn up will the lawn be?",
+      "a": "The trencher cuts a narrow slot for the pipe, and the soil goes back into it. Heads and valve boxes need small holes. Expect a visible seam across the lawn for a while, not open trenches or a yard of bare dirt."
+    }
+  ],
+  "reviews": ["joe-s", "zachary-b"]
+}

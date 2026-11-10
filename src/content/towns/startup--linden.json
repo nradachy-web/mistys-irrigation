@@ -1,0 +1,76 @@
+{
+  "service": "startup",
+  "city": "linden",
+  "meta": {
+    "title": "Sprinkler Startup in Linden, MI | Misty's Irrigation",
+    "description": "Spring sprinkler startups in Linden, MI, timed to the local frost record. Misty's Irrigation fills the lines slowly, runs every zone and sets the controller."
+  },
+  "hero": {
+    "kicker": "Spring sprinkler startup in Linden, MI",
+    "title": "On after **the last hard freeze.**",
+    "lede": "In Linden the last hard freeze of spring usually passes in late April, though light frost can hang on into May. Misty's fills the lines slowly, runs every zone, fixes what winter broke and sets the controller for your yard.",
+    "chips": ["Every zone run", "Controller set for the season", "Licensed and insured"],
+    "photo": "ai-startup"
+  },
+  "local": {
+    "eyebrow": "Spring in Linden",
+    "title": "What a Linden spring **asks of a system.**",
+    "intro": "A startup is the same job anywhere: water on gently, every zone checked, the controller set. What changes here is the frost calendar, the water pressure in town, the city's flushing weeks and the soil under the lawn.",
+    "points": [
+      {
+        "title": "The frost calendar",
+        "body": "At NOAA's Linden station the last 28 degree night falls around April 23 in a typical year, and one year in ten after May 9. Lighter 32 degree frost lingers to around May 3. Once the backflow device is full of water a hard freeze can crack it, so late April into May is the window."
+      },
+      {
+        "title": "More pressure than last spring",
+        "body": "The city reported pressure up 7 to 12 psi after the 2025 move to county water, with more step increases planned. At startup we watch every spray zone for mist and drift, and adjust heads or fit pressure regulating nozzles where a zone needs it."
+      },
+      {
+        "title": "Hydrant flushing weeks",
+        "body": "The city flushes hydrants in spring and fall. In 2026 the spring round ran May 4 to 9, and the city warns the water can run cloudy or reddish with silt and iron. That silt can plug the small screens under spray nozzles, so a startup a few days clear of flushing is the safer bet."
+      },
+      {
+        "title": "Sandy patches dry first",
+        "body": "USDA soil maps show Boyer loamy sand on parts of town and Wawasee loam on others, both well drained. The sandy ground holds less water and browns first in a dry spell, so those zones get shorter, more frequent runs instead of one long soak."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How a startup **runs here.**",
+    "body": [
+      "We open the water slowly so the lines fill without a slam, set the backflow device's valves in order, then run each zone and walk it. Heads that froze, sank or got clipped by a snowplow along the street turn up now instead of in July.",
+      "Then the controller: the date and time, a fresh battery if it needs one, and a program built for your yard. Summer rain at the Linden station averages about 10 inches across June, July and August, a bit under the inch a week a lawn wants, so the system covers the gap. Our [watering guide](/watering-guide/) explains run times.",
+      "On a well, we also watch that the pump keeps up with each zone. If your siding or walk picked up orange last summer, ask about [Rid-O-Rust treatment](/rust-stain-prevention/) before the season gets going."
+    ],
+    "facts": [
+      { "label": "Last 28 degree night", "value": "Around April 23 (NOAA, Linden station)" },
+      { "label": "Last 32 degree night", "value": "Around May 3" },
+      { "label": "Rain, June to August", "value": "About 10 inches in a normal summer" },
+      { "label": "Drive from Fenton", "value": "About 10 minutes" }
+    ]
+  },
+  "photo": "pine-lawn",
+  "faq": [
+    {
+      "q": "When is the right time for a sprinkler startup in Linden?",
+      "a": "Late April through May. Misty's schedules startups from mid April on, and in Linden the end of April is a sensible start, because the local weather station's typical last hard freeze is around April 23. If a hard freeze shows up in the forecast after your startup, text us."
+    },
+    {
+      "q": "Can I just turn the system on myself?",
+      "a": "You can, but go slowly. Opening the main valve fast slams water into empty pipe and can split a fitting, and a part that cracked over winter will announce itself as a geyser. A startup visit opens the water gently and walks every zone, so both get caught before the lawn pays for them."
+    },
+    {
+      "q": "Do I need to change the controller settings each spring?",
+      "a": "Yes. Outages and dead batteries scramble programs, and a run time that suits May is too little for July. We set a spring schedule and show you how to step it up as it warms. Linden's normal summer rain covers most of what a lawn needs, so the system tops it up rather than doing all the work."
+    },
+    {
+      "q": "Is anything different about startups on city water now?",
+      "a": "The pressure. After the switch to Genesee County water the city counted pressures 7 to 12 psi higher, and it planned to keep raising them in steps. Spring is the moment to see whether spray zones now mist and whether an old fitting objects to the extra push."
+    },
+    {
+      "q": "What if a head is broken at startup?",
+      "a": "We tell you what it is and what it takes, and fix it with your OK. A cracked head or nozzle is a small job. A leaking valve or a cut wire takes longer. See [sprinkler repair in Linden](/sprinkler-repair-linden-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

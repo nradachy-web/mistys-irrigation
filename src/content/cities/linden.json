@@ -1,0 +1,80 @@
+{
+  "city": "linden",
+  "meta": {
+    "title": "Sprinkler Service in Linden, MI | Misty's Irrigation",
+    "description": "Sprinkler repair, spring startups, fall blowouts, new systems and lake pumps in Linden, MI, on city water, wells or lake water. From Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler service in Linden, MI",
+    "title": "City water, wells and **the lake.**",
+    "lede": "Lawns around Linden drink from three places: county water in town, private wells out in the townships, and the lakes around town. Misty's Irrigation works on all three, about 10 minutes from our base in Fenton.",
+    "chips": ["About 10 minutes from Fenton", "City, well and lake systems", "Licensed and insured"],
+    "photo": "street-sprinklers"
+  },
+  "about": {
+    "eyebrow": "Linden, up close",
+    "title": "What shapes a sprinkler system **around here.**",
+    "body": [
+      "The water in town changed in 2025. The city finished its Genesee County connection on April 29 of that year, trading four deep wells for a surface water supply, and reported pressure up 7 to 12 psi across the system, with more step increases planned. A system set up under the old pressure can now mist, drift, or find the one tired fitting in the yard.",
+      "Past the city line the water is your own. Argentine Township's master plan says most of the township relies on private wells, and an older U.S. Geological Survey study found county groundwater commonly carries objectionable iron, the kind that turns siding and walks orange. Along the shorelines, some lawns skip both and pull straight from the lake.",
+      "The homes range from older streets beside downtown, like Main, Oak and Tickner, to newer neighborhoods on the edges of town such as Spring Meadows, Saddlebrook and Creekwood. By the city's count, more than a third of its homes went up between 1980 and 2000, and more than a fifth date from 1959 or earlier."
+    ],
+    "points": [
+      {
+        "title": "Loam in some yards, sand in others",
+        "body": "USDA soil maps put well drained Wawasee loam under much of town and Boyer loamy sand on parts of the west and east sides. That sandy layer sits over sand and gravel and drains fast, so those lawns brown first and want shorter, more frequent runs."
+      },
+      {
+        "title": "A frost calendar of its own",
+        "body": "NOAA runs a weather station at the Linden wastewater plant. In a typical year its last 28 degree night of spring comes around April 23 and its first one in fall around October 27. Those two dates set our startup and blowout season here."
+      },
+      {
+        "title": "Lakes close to town",
+        "body": "Byram Lake sits on the southwest edge of the city. The Mill Pond in town connects east to Tupper Lake and Lake Ponemah, and Lobdell Lake lies to the southwest in Argentine Township. See [lake pump irrigation](/lake-pump-irrigation-linden-mi/)."
+      },
+      {
+        "title": "A separate meter for the lawn",
+        "body": "The city offers a lawn meter that measures outdoor water on its own. What runs through it is billed as water only, with no sewer charge, since it never goes down a drain. The Treasurer's Department handles it."
+      }
+    ],
+    "photo": "lake-lawn"
+  },
+  "logistics": {
+    "title": "Getting service **in Linden.**",
+    "body": [
+      "Call or text [(810) 423-9513](tel:+18104239513) with the address and what the system is doing. A photo of the problem, the controller, or the backflow device on the side of the house helps us bring the right parts the first time.",
+      "Tell us about gates, dogs, where the controller hangs and where the irrigation shutoff is, usually in the basement where the line leaves the house. For a lake system, tell us where the pump sits. For a well, tell us if the house water drops when the sprinklers run.",
+      "Each service has its own Linden page: [repair](/sprinkler-repair-linden-mi/), [spring startup](/sprinkler-startup-linden-mi/), [winterization](/sprinkler-winterization-linden-mi/), [new systems](/sprinkler-installation-linden-mi/) and [lake pumps](/lake-pump-irrigation-linden-mi/). Or go straight to [booking](/book-service/)."
+    ],
+    "facts": [
+      { "label": "Drive from Fenton", "value": "About 10 minutes" },
+      { "label": "City water source", "value": "Genesee County, from April 2025" },
+      { "label": "Last hard freeze, spring", "value": "Around April 23 (NOAA, Linden station)" },
+      { "label": "First hard freeze, fall", "value": "Around October 27" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Do you service sprinkler systems in Linden?",
+      "a": "Yes. Linden is one of the towns Misty's covers most, about 10 minutes from our base in Fenton. We do repairs, spring startups, fall blowouts, new systems and lake pump systems, inside the city and out in the townships around it."
+    },
+    {
+      "q": "Our water pressure jumped after the switch to county water. Does that matter for the sprinklers?",
+      "a": "It can. Spray heads work inside a pressure range, and above it the water breaks into fine mist that drifts onto the street instead of landing on the lawn. More pressure also finds weak fittings and worn valve parts. If the system was set up before the switch, a [startup](/sprinkler-startup-linden-mi/) or a [repair visit](/sprinkler-repair-linden-mi/) shows which zones need adjusting."
+    },
+    {
+      "q": "We are on a well outside town. What should we watch for?",
+      "a": "Orange stains on siding, walks and the foundation where the heads hit. Iron in well water turns to rust when it meets air, and an older USGS study found it common in county groundwater. A [Rid-O-Rust treatment system](/rust-stain-prevention/) on the irrigation line keeps it from building up. Also notice the pump: if it cycles on and off hard during a zone, that zone may want more water than the well gives."
+    },
+    {
+      "q": "When should we book a startup or a blowout?",
+      "a": "Startups from late April into May, once the hard freezes are behind us. Blowouts from late September through October, ahead of the first hard freeze, which comes around October 27 in a typical Linden year. Text early in either window to get the date you want."
+    },
+    {
+      "q": "Do you work on lake pump systems near Linden?",
+      "a": "Yes. We prime and start lake pumps in spring, check intakes and suction lines, fix what is not pulling, and drain the pump and lines before the freeze. More on [lake pump irrigation in Linden](/lake-pump-irrigation-linden-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r", "joe-s"],
+  "neighbors": ["fenton", "hartland", "howell"]
+}

@@ -29,7 +29,7 @@ const {
   avoid = [],
 } = Astro.props;
 
-const OPTIONS: PhotoId[] = ['estate-clouds', 'colonial-mist', 'lake-lawn', 'street-sprinklers'];
+const OPTIONS: PhotoId[] = ['estate-clouds', 'pine-lawn', 'lake-lawn', 'flagstone-pond'];
 const seed = [...Astro.url.pathname].reduce((a, c) => a + c.charCodeAt(0), 0);
 const open = OPTIONS.filter((o) => !avoid.includes(o));
 const bg = open[seed % open.length] ?? 'estate-clouds';

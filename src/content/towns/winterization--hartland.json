@@ -1,0 +1,74 @@
+{
+  "service": "winterization",
+  "city": "hartland",
+  "meta": {
+    "title": "Sprinkler Blowouts in Hartland, MI | Misty's Irrigation",
+    "description": "Compressed air blowouts for Hartland sprinklers on wells, lake pumps and township water, zone by zone, before the ground freezes. Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler winterization in Hartland, MI",
+    "title": "Dry lines **before the hard freeze.**",
+    "lede": "Water left in a sprinkler line freezes, swells and splits pipe, heads and the backflow device. Misty's Irrigation pushes every zone dry with compressed air, empties the parts that sit above ground, and leaves the system ready for spring.",
+    "chips": ["Late September into November", "Lake pumps drained too"],
+    "photo": "ai-blowout"
+  },
+  "local": {
+    "eyebrow": "Fall in Hartland",
+    "title": "What a Hartland fall **asks of a system.**",
+    "intro": "The nearest long term weather station to Hartland's ZIP code, at the Milford proving ground, averages a first fall frost around October 5, and about 3 years in 10 it comes sooner. A light frost will not freeze pipe buried 6 to 12 inches down. It can crack what sits above ground, and a hard freeze gets the rest.",
+    "points": [
+      {
+        "title": "The backflow device freezes first",
+        "body": "The pressure vacuum breaker, the brass fitting on a pipe beside the house, holds water above ground. One cold night after a warm fall day can split it. We blow it out, open its small side valves and leave the handles half open so no water is trapped inside. More on [backflow devices](/backflow-preventers/)."
+      },
+      {
+        "title": "Lake pumps need their own shutdown",
+        "body": "The township's plan counts thirteen significant lakes and ponds, and a lot that waters from one has more to winterize. A lake pump holds water in its casing and in the suction line out to the lake. Both get drained, and the intake gets a look, before the lake freezes."
+      },
+      {
+        "title": "Acreage means long lines",
+        "body": "Estate land at two acres or more a home covers nearly half the township, by its own plan. Big lawns mean long mainlines and many zones, and each one has to be pushed dry. We work zone by zone and go back over the far ones, because water at the end of a long run is the last to leave."
+      },
+      {
+        "title": "On a well, the pump comes off first",
+        "body": "Most Hartland homes draw from a private well. Before any air goes in, the irrigation is closed off from the well so the pump is not running against the compressor or running dry. Then everything from that shutoff out to the last head is blown clear."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Booking a blowout **in Hartland.**",
+    "body": [
+      "Blowouts run from late September into November, before the ground freezes. Text or call [(810) 423-9513](tel:+18104239513), or use the [booking form](/book-service/), and we set a day. If you will not be home, tell us where the irrigation shutoff and the controller are and how we get to them.",
+      "If we find a broken head or a leaking valve during the blowout, you hear about it that day. Small repairs can wait for your [spring startup](/sprinkler-startup-hartland-mi/), so the system goes into winter dry and comes out of it fixed."
+    ],
+    "facts": [
+      { "label": "Blowout window", "value": "Late September into November" },
+      { "label": "Average first frost", "value": "Around October 5 (Milford station, NOAA normals)" },
+      { "label": "Lateral pipe depth", "value": "Usually 6 to 12 inches" }
+    ]
+  },
+  "photo": "flagstone-pond",
+  "faq": [
+    {
+      "q": "When should I book my sprinkler blowout in Hartland?",
+      "a": "Early in the window, which runs from late September into November. A first frost does not hurt buried pipe, but a hard freeze can crack the backflow device and anything else above ground, and a cold snap does not check the calendar. Text or call Misty's Irrigation at [(810) 423-9513](tel:+18104239513) in September to get on the list."
+    },
+    {
+      "q": "Can I just drain the system instead of blowing it out?",
+      "a": "Some systems have drain valves, but low spots in the line hold water no matter what, and much of Hartland sits on hills and moraines, so most yards have low spots. Compressed air pushes the water out of every zone, head by head, until only air comes out."
+    },
+    {
+      "q": "Does a lake pump need to be winterized separately?",
+      "a": "Yes. The pump, its casing and the suction line from the lake all hold water. We drain them as part of the blowout and look over the intake while we are there. For the full picture, see [lake pump irrigation in Hartland](/lake-pump-irrigation-hartland-mi/)."
+    },
+    {
+      "q": "What happens if I skip the blowout?",
+      "a": "Water left in the lines freezes and expands. What usually breaks is the backflow device, the heads and fittings near the surface, and pipe in low spots. You find out in spring, when a zone geysers or will not hold pressure, and the fix means digging."
+    },
+    {
+      "q": "I am on township water. Is anything different?",
+      "a": "The blowout itself is the same. Close the irrigation shutoff where the line leaves the house, or show us where it is. If you bought a separate irrigation meter from the township, tell us where it sits so we know where the sprinkler line starts."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s"]
+}

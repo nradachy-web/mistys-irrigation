@@ -1,0 +1,147 @@
+{
+  "service": "rust",
+  "meta": {
+    "title": "Rust Stain Prevention in Fenton, MI | Misty's Irrigation",
+    "description": "Orange stripes on the siding from well water sprinklers? Misty's installs Rid-O-Rust treatment systems that keep iron from staining. Fenton area."
+  },
+  "hero": {
+    "kicker": "Rust stain prevention in Fenton, MI",
+    "title": "Well water, **without the orange.**",
+    "lede": "Iron in well water paints siding, walks and fences orange, one sprinkler run at a time. We install Rid-O-Rust treatment systems that feed a measured dose into the irrigation water, so the iron stays dissolved instead of turning to rust on your house.",
+    "chips": ["Rid-O-Rust systems", "For well-fed sprinklers", "Licensed and insured"],
+    "photo": "ai-rust-stained"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "Where the orange comes from",
+      "title": "Clear in the pipe, **rust on the wall.**",
+      "intro": "Well water comes up from underground with no air in it. Iron dissolves in that water and stays dissolved, clear and invisible, all the way out of the sprinkler head.",
+      "body": [
+        "Then it lands on the siding, the walk or the fence and meets the air. The iron turns to rust right there, a thin orange film that dries on. One run barely shows. A summer of runs leaves stripes you cannot miss, right where the heads reach.",
+        "It does not take much iron to do it. Iron occurs naturally in Michigan groundwater, some areas run high, and even a small amount stains light surfaces over a season."
+      ],
+      "checks": [
+        "Vinyl siding, painted trim and the foundation",
+        "Concrete walks, driveways and patios",
+        "Fences, mailboxes and light posts",
+        "Landscape stone, boulders and retaining walls"
+      ],
+      "photo": "estate-clouds"
+    },
+    {
+      "type": "panel",
+      "kind": "rust",
+      "plane": "ink",
+      "title": "Drag the stain **off the wall.**",
+      "intro": "This is a season of treatment, in a few seconds. A treatment system keeps new stains from forming. Old ones need cleaning once.",
+      "points": [
+        "The treatment works on the water before it leaves the head, not on the wall.",
+        "Clean the stains, start the treatment, and new orange stops building."
+      ]
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "How it works",
+      "title": "A measured dose, **every time the sprinklers run.**",
+      "intro": "A treatment system is a tank of Rid-O-Rust mixed with water and a way to feed it into the irrigation line. It only feeds while the sprinklers run.",
+      "columns": 2,
+      "items": [
+        { "tag": "The product", "title": "It holds the iron in solution", "body": "Rid-O-Rust binds the dissolved iron in the water, so the iron does not turn to rust and stick where the water lands. It works on iron that is still dissolved, which is the kind that comes up from a well." },
+        { "tag": "The tank", "title": "Mixed to your water", "body": "The product is mixed with water in a tank set near the pump. How much goes in depends on how much iron your water carries and how much water the system moves." },
+        { "tag": "The feed", "title": "Matched to your pump", "body": "With a pump above ground, the system can draw the mix into the suction side of the pump. With a pump down in the well, a small metering pump wired to the controller pushes it into the line." },
+        { "tag": "The injection point", "title": "On the sprinkler side only", "body": "The feed goes into the irrigation line before the first zone. Where the well also supplies the house, it goes in after the backflow preventer, so treated water stays on the lawn side." }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Worth knowing",
+      "title": "It stops new stains. **It does not erase old ones.**",
+      "body": "A treatment system works on the water, not the wall. Stains already on the siding and the concrete stay until they are cleaned off with a rust stain remover made for outdoor surfaces. Clean them once, start the treatment, and new stripes stop building as long as the tank is kept full."
+    },
+    {
+      "type": "steps",
+      "plane": "mist",
+      "eyebrow": "Setup",
+      "title": "How we put a system **on your well.**",
+      "steps": [
+        { "title": "Know the water", "body": "The dose starts from how much iron the water carries, so a recent well water test helps. Orange stripes tell you iron is there. A test tells you how much." },
+        { "title": "Match the feeder to the pump", "body": "We look at the well pump and how the water is plumbed: above ground or down the well, sprinklers only or shared with the house. That decides the kind of feeder and where it goes." },
+        { "title": "Tank, feed and injection point", "body": "The tank goes on a level spot near the pump, where it is easy to refill. The feed runs to the injection point on the sprinkler side, and a metering pump, if there is one, gets wired to the controller." },
+        { "title": "Dosed and run", "body": "We mix the first tank, run a zone and watch the feed draw, then set the rate to the water and the system." },
+        { "title": "Refills shown", "body": "You see how to mix a refill, where to read the level, and what to check if the level stops going down." }
+      ]
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "Upkeep",
+      "title": "A tank to keep full, **and not much else.**",
+      "intro": "A treatment system is simple, but it only works while it is fed. This is what it asks of you through the season.",
+      "columns": 3,
+      "items": [
+        { "tag": "Refills", "title": "Before it runs dry", "body": "How long a tank lasts depends on its size, the feed rate and how much you water, anywhere from a few weeks to much of a season. Refill before the level reaches the bottom." },
+        { "tag": "Clean tank", "title": "Keep algae out", "body": "A tank in the sun can grow algae, and algae clogs the feed. Keep the lid on and the tank clean." },
+        { "tag": "Filter and foot valve", "title": "Rinsed now and then", "body": "A small filter keeps sediment out of the feed. If the level stops dropping, that filter or a stuck foot valve in the tank is the first place to look." },
+        { "tag": "Water changes", "title": "Iron levels can move", "body": "The iron in a well can change from year to year. A fresh water test now and then keeps the dose right." },
+        { "tag": "Winter", "title": "Shut down with the system", "body": "At the fall blowout, the feeder is shut down with the rest of the system, so nothing in it sits full of water through a freeze." },
+        { "tag": "Stains coming back", "title": "Something stopped feeding", "body": "New orange usually means the tank ran dry, the feed clogged or the dose is too light for the water. We track down which." }
+      ]
+    },
+    {
+      "type": "reviews",
+      "plane": "mist",
+      "title": "What customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why is my house turning orange where the sprinklers hit?",
+      "a": "That orange is iron. If your sprinklers run on a well, the water carries dissolved iron that is clear in the pipe, then turns to rust where it lands and dries. Every run adds a little more, which is why the stripes line up with the heads."
+    },
+    {
+      "q": "Will it remove the stains I already have?",
+      "a": "No. It prevents new ones. Stains already there need to be cleaned off once with a rust stain remover made for outdoor surfaces. Clean first, then start the treatment, and new stains stop building."
+    },
+    {
+      "q": "Does it work on city water or lake water?",
+      "a": "It is made for systems fed by a well, where the iron comes up dissolved. Lake water has been open to the air, so the iron in it has already turned, and a feed cannot stop iron that has already turned. Lake-fed sprinklers usually do not stain the way a well does anyway. If you are on city water and seeing stains, call and we will look at what is causing them."
+    },
+    {
+      "q": "How often does the tank need refilling?",
+      "a": "It depends on the tank size, the feed rate and how much you water. Some setups need a refill every few weeks in summer, others go much longer. After the first month you will know the rhythm, and we show you how to mix a refill when we set it up."
+    },
+    {
+      "q": "I have a treatment system and still see some stains. Why?",
+      "a": "Check the tank first: an empty tank is the usual reason. After that, a clogged feed filter, a dose too light for your water, or iron that has turned before it reaches the feed, from air getting into the line or iron bacteria in the well. Brown, tea colored stains are a different problem, from tannins, and a rust treatment does not stop those."
+    },
+    {
+      "q": "Can you add one to the system I already have?",
+      "a": "Usually, yes. The treatment system goes in near the well pump and feeds into your existing irrigation line. What it takes depends on the kind of pump and how the water is plumbed, which is the first thing we look at."
+    },
+    {
+      "q": "Does a treatment system change what backflow preventer I need?",
+      "a": "It can. If the well also supplies the house, the code calls for a reduced pressure type backflow preventer on the irrigation line when anything is fed into it, and the feed goes in after that preventer. A well that only feeds the sprinklers, with no tie to the house, is a different setup. We look at how yours is plumbed first. More on [backflow preventers](/backflow-preventers/)."
+    }
+  ],
+  "quote": {
+    "title": "Tell us where the orange is.",
+    "lede": "Siding, walk, fence or all three. Send it here or text a photo of the stain and the well pump, and we will call back to set a time."
+  },
+  "summary": {
+    "title": "Rust treatment, **from well to wall.**",
+    "intro": "A Rid-O-Rust treatment system feeds a measured dose into well-fed sprinkler water, so the iron stays dissolved instead of staining siding, walks and fences.",
+    "items": [
+      { "name": "Water first", "detail": "The dose starts from how much iron the well water carries." },
+      { "name": "Feeder matched", "detail": "A siphon feed for pumps above ground, a metering pump for pumps down the well." },
+      { "name": "Fed on the lawn side", "detail": "Into the irrigation line before the first zone, after the backflow preventer where the well feeds the house." },
+      { "name": "Dosed and run", "detail": "First tank mixed, the feed watched while a zone runs, the rate set." },
+      { "name": "Refills shown", "detail": "How to mix a refill, read the level and keep the feed clear." }
+    ],
+    "footnote": "It prevents new stains. Stains already on the house need a one time cleaning first."
+  }
+}

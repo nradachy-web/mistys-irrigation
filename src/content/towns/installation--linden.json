@@ -1,0 +1,76 @@
+{
+  "service": "installation",
+  "city": "linden",
+  "meta": {
+    "title": "Sprinkler Installation in Linden, MI | Misty's Irrigation",
+    "description": "New sprinkler systems in Linden, MI, planned around your water source, soil and trees. Misty's Irrigation lays out zones head to head and trenches them in."
+  },
+  "hero": {
+    "kicker": "Sprinkler system installation in Linden, MI",
+    "title": "Start with the water, **then the layout.**",
+    "lede": "A new system around Linden starts with one question: city water, a well or the lake. Misty's plans the zones around that answer, your soil and your trees, then cuts the lines in with a compact stand-on trencher.",
+    "chips": ["Zones laid out head to head", "City, well or lake water", "Licensed and insured"],
+    "photo": "trencher-dog"
+  },
+  "local": {
+    "eyebrow": "Planning a Linden system",
+    "title": "Four things to settle **before we dig.**",
+    "intro": "Every new system gets a layout drawn for the actual yard. In and around Linden, four local facts change that layout more than anything else: the lawn meter option, the city's backflow inspections, the wells outside town, and the soil.",
+    "points": [
+      {
+        "title": "In town, ask about a lawn meter",
+        "body": "The city offers a separate lawn meter for outdoor water, billed as water only with no sewer charge, since that water never reaches the sewer. If the new system will run on city water, talk to the Treasurer's Department before the line goes in so the system can be fed through it."
+      },
+      {
+        "title": "In town, a backflow device set up right",
+        "body": "The city's cross-connection inspector looks at the backflow device on lawn systems, and the program says a vacuum breaker should not sit under constant pressure. A new system gets a [pressure vacuum breaker](/backflow-preventers/) installed the right way from day one."
+      },
+      {
+        "title": "Outside town, size it to the well",
+        "body": "Most of Argentine Township relies on private wells. A well gives only so many gallons a minute, so zones are sized to what the pump delivers, not to what a city main could push. Iron is common in county groundwater, so [Rid-O-Rust treatment](/rust-stain-prevention/) can go in with the system."
+      },
+      {
+        "title": "Sand and loam get their own zones",
+        "body": "USDA soil maps show loamy sand on parts of Linden and loam on others. Sandy stretches drink fast and dry fast, so they get zones of their own that run shorter and more often. Around the mature trees common in town, trench routes are planned to stay clear of big roots."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How an install **comes together.**",
+    "body": [
+      "First a walk of the yard: where the water comes in, where the controller can hang, which areas are sandy or sloped, and where beds and pots could use [drip](/drip-irrigation/) instead of spray. Then a layout with heads spaced so each one throws to the next, which is what keeps a lawn evenly green.",
+      "On install day the compact stand-on trencher cuts a narrow slot for the pipe, so the lawn closes back over it instead of being torn open. Heads are set level with the turf, every zone is run and aimed, and the controller is programmed for the yard before we pack up.",
+      "Older lots near downtown and newer ones on the edge of town call for different plans. A tight in-town lot with old trees and a sidewalk close by needs careful aiming so the water stays on the grass. A bigger lot in the townships, on a well, may need more and smaller zones so each one stays inside what the pump can give."
+    ],
+    "facts": [
+      { "label": "Water in town", "value": "Genesee County, from April 2025" },
+      { "label": "Water outside town", "value": "Mostly private wells (Argentine Township)" },
+      { "label": "Soils", "value": "Loam and loamy sand, both well drained" },
+      { "label": "Drive from Fenton", "value": "About 10 minutes" }
+    ]
+  },
+  "photo": "estate-clouds",
+  "faq": [
+    {
+      "q": "Do you install new sprinkler systems in Linden?",
+      "a": "Yes. Misty's puts in new systems and adds zones to existing ones in Linden and the townships around it, on city water, wells and lake pumps. We plan the layout around your water source and soil, then trench it in with our own compact trencher."
+    },
+    {
+      "q": "Can you add zones to the system I already have?",
+      "a": "Usually. We check whether the water supply can carry another zone, find a free station on the controller, and add valves and heads that work with what is there. Many Linden homes date from 1980 to 2000, so adding on starts with a look at what is already in the ground and whether it is worth building on."
+    },
+    {
+      "q": "Will a new system work off my well?",
+      "a": "Yes, if the zones are sized to the well. We find out what the pump actually delivers and lay out zones that stay inside it, so each zone runs at full strength and the pump is not cycling on and off. If the water carries iron, plan for rust treatment from the start rather than after the siding stains."
+    },
+    {
+      "q": "Is a lawn meter worth it for a new system in the city?",
+      "a": "If you water a lot, it can be. The city bills water through a lawn meter as water only, without a sewer charge, and says that can add up to real savings for heavy outdoor use. The meter has its own city fees, so ask the Treasurer's Department to run the numbers. It is easiest to settle before the new system is connected."
+    },
+    {
+      "q": "What about flower beds and pots?",
+      "a": "Beds and pots do better on drip than spray. The water goes to the roots instead of the siding, the walk and the leaves. Drip zones run on the same controller as the lawn. See [drip irrigation](/drip-irrigation/)."
+    }
+  ],
+  "reviews": ["joe-s", "zachary-b"]
+}

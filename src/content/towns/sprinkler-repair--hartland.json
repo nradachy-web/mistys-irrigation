@@ -1,0 +1,74 @@
+{
+  "service": "sprinkler-repair",
+  "city": "hartland",
+  "meta": {
+    "title": "Sprinkler Repair in Hartland, MI | Misty's Irrigation",
+    "description": "Broken heads, hidden leaks and dead zones on Hartland well, lake and township water systems, found and fixed. Misty's Irrigation, 20 minutes away."
+  },
+  "hero": {
+    "kicker": "Sprinkler repair in Hartland, MI",
+    "title": "Fix the zone, **spare the well pump.**",
+    "lede": "Most Hartland homes are on a private well, so a broken head or a split line does more than waste water: it keeps the pump running. Misty's Irrigation runs every zone, finds the cause, tells you what it is, and fixes it.",
+    "chips": ["Well, lake and township systems", "Every zone checked"],
+    "photo": "colonial-mist"
+  },
+  "local": {
+    "eyebrow": "Repair in Hartland",
+    "title": "What goes wrong here, **and why.**",
+    "intro": "Hartland yards sit on very different ground and draw from very different water. That changes how a problem shows up and where we look first. Here is what we keep in mind on a repair call in the township.",
+    "points": [
+      {
+        "title": "On a well, a leak runs the pump",
+        "body": "Outside the select areas the township water system reaches, the house and the sprinklers share one private well. A cracked riser or a valve stuck open keeps the pump cycling, can starve the house of pressure while the zone runs, and wears the pump. Low pressure at the kitchen tap during a watering cycle is a clue."
+      },
+      {
+        "title": "Township water shows it on the bill",
+        "body": "The township's own billing page says high usage is often caused by irrigation systems and by leaking toilets or faucets. Meters are read once a quarter, so a leak in the lawn can run for weeks before the bill shows it. If a bill jumps, walk the yard for soggy turf and call us."
+      },
+      {
+        "title": "Sand hides leaks, low ground floods boxes",
+        "body": "The county soil survey, as the township sums it up, has well drained soils over gravelly sand on the hills and very poorly drained ground in the low spots and along Ore Creek. On sand a leak can drain away without a puddle, so the clue is a weak zone. In the wet ground, valve boxes fill and wire splices sit in water."
+      },
+      {
+        "title": "Iron clogs what it touches",
+        "body": "EGLE notes iron is common in Michigan groundwater, and iron bacteria leave a reddish-brown slime that can clog filters and pipes. On a well system that can show up as nozzles that spit instead of spray and filter screens caked orange. A cleaned or replaced nozzle often brings a dry patch back."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How a repair visit **runs in Hartland.**",
+    "body": [
+      "Call or text [(810) 423-9513](tel:+18104239513) with what the system is doing, and send a photo if you can. We come down US-23 from Fenton, about 20 minutes, and start at the controller: every zone run in turn, the one you called about and all the rest.",
+      "Tell us where the system gets its water. On a well, we want to know where the pressure tank and the irrigation shutoff are. On a lake pump, where the pump sits. On township water, where the irrigation line leaves the house and whether it has its own meter. Before any work starts, you hear what we found and what it takes."
+    ],
+    "facts": [
+      { "label": "Drive from Fenton", "value": "About 20 minutes" },
+      { "label": "Usual water source", "value": "Private well; township water in select areas" },
+      { "label": "Township meter reads", "value": "Quarterly, so a lawn leak shows up late" }
+    ]
+  },
+  "photo": "ai-valve-box",
+  "faq": [
+    {
+      "q": "Do you repair sprinkler systems in Hartland that someone else installed?",
+      "a": "Yes. Misty's Irrigation repairs systems no matter who put them in, on lake lots, in subdivisions and on acreage across Hartland Township. If an old part is no longer made, we explain what fits in its place before we change anything."
+    },
+    {
+      "q": "The water pressure in the house drops when the sprinklers run. Is that a sprinkler problem?",
+      "a": "On a private well it can be. A well only delivers so many gallons a minute, and a zone with too many heads, or a hidden leak, can take more than the well keeps up with while the house is using water too. We run each zone and watch the pressure. Sometimes the fix is a repair. Sometimes it is moving the schedule so zones do not run while the house is busy, or splitting one big zone into two."
+    },
+    {
+      "q": "My township water bill jumped this quarter. Could it be the sprinklers?",
+      "a": "It could. The township's billing page names irrigation systems, along with leaking toilets and faucets, as common causes of high usage. Look for turf that stays soggy, a stripe that grows faster than the rest, or water standing in a valve box, then call or text [(810) 423-9513](tel:+18104239513). If the bill runs high every summer with no leak at all, the township also sells separate irrigation meters at Township Hall."
+    },
+    {
+      "q": "Why do my sprinkler heads spit and sputter instead of spraying?",
+      "a": "On a well, iron is one likely cause. Iron, and the slime iron bacteria leave behind, builds up in nozzles and the small filter screens under them until the spray breaks apart. We clean or replace the nozzle and check the screen. If the siding is also staining orange, ask about [Rid-O-Rust treatment](/rust-stain-prevention/)."
+    },
+    {
+      "q": "Can you find a valve box that got buried?",
+      "a": "Usually. On older lake lots and rebuilt cottages, boxes end up under sod, mulch or a new patio. We trace the valve wire out from the controller to find it, then bring the box back up to grade so you can reach it next time. More on [valve locating and repair](/sprinkler-valve-repair/)."
+    }
+  ],
+  "reviews": ["susan-r", "joe-s", "zachary-b"]
+}

@@ -1,0 +1,70 @@
+{
+  "service": "lake-pump",
+  "city": "holly",
+  "meta": {
+    "title": "Lake Pump Sprinklers in Holly, MI | Misty's Irrigation",
+    "description": "Lake pump sprinkler systems on Holly lakes: intakes set clear of sand, muck and weeds, pumps primed each spring and drained each fall. Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Lake pump irrigation in Holly, MI",
+    "title": "Keep the intake **out of the weeds.**",
+    "lede": "On Bush Lake and the other lakes around Holly, the sprinklers can drink from the lake instead of the well. Misty's sets intakes where the water stays clean, primes the pump each spring, and drains the pump and lines every fall.",
+    "chips": ["Bush Lake: 110 acres", "Intake checked every spring", "Pump drained every fall"],
+    "photo": "lake-lawn"
+  },
+  "local": {
+    "title": "Pulling from a Holly lake, **and what comes with it.**",
+    "intro": "Holly Township counts more than 35 lakes. Several sit inside Seven Lakes State Park and the Holly Recreation Area; others, like Bush Lake, have homes with lawns running down to the shore. Here is what matters when your sprinklers draw from one.",
+    "points": [
+      {
+        "title": "Sand, muck and weeds",
+        "body": "The DNR's 2025 survey of Bush Lake found a sand bottom out to about ten feet deep, organic muck beyond that, and abundant plant growth in the shallows. An intake on the sand pulls grit that wears the pump; one in the weeds clogs. We set the intake off the bottom, screened, clear of both."
+      },
+      {
+        "title": "Turf to the water's edge",
+        "body": "The same survey notes several Bush Lake owners mowing right to the water, and recommends a no-mow strip along the shore. If you leave one, we set the last row of heads to stop short of it, so you are not paying to water the lake."
+      },
+      {
+        "title": "When the water level moves",
+        "body": "In July 2025 the state ordered the village's Mill Pond drawn down about four feet over the condition of its dam, with some forty waterfront homes on it. An intake set for the old level can end up in inches of water, or none. Check the depth before every spring startup."
+      },
+      {
+        "title": "Lake water spares the well",
+        "body": "Most township homes are on private wells. A lake pump takes the lawn off the house well entirely, so the sprinklers stop fighting the shower for pressure, and the well pump is not running for hours every summer morning."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Lake pump service **in Holly.**",
+    "body": [
+      "When you book, tell us where the pump sits (a box on shore, under the deck, in the basement or garage) and roughly how far the intake line runs into the lake. Text [(810) 423-9513](tel:+18104239513); a photo of the pump helps.",
+      "In spring we check the intake and its screen, prime the pump, then run and adjust every zone. In fall we drain the pump body and blow the water out of the lines and zones, so nothing that holds water is left to freeze. Between visits, a pump that hums but will not build pressure usually means lost prime or a blocked intake."
+    ],
+    "facts": [
+      { "label": "Bush Lake", "value": "110 acres, 47 feet at the deepest" },
+      { "label": "Lakes in the township", "value": "More than 35" },
+      { "label": "Spring", "value": "Intake checked, pump primed, zones run" },
+      { "label": "Fall", "value": "Pump drained, lines blown out" }
+    ]
+  },
+  "photo": "ai-lake-pump",
+  "faq": [
+    {
+      "q": "Do you work on lake pump sprinkler systems in Holly?",
+      "a": "Yes. Misty's starts up, repairs and winterizes lake pump systems on lake lots around town, and sets up new ones. We look after the pump, the intake line and the zones together, since a problem at the intake shows up as weak heads on the lawn. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "My lake pump runs but the sprinklers barely spray. Why?",
+      "a": "Usually one of four things. The pump lost its prime and is pulling air. The intake screen is packed with weeds or sand. There is an air leak on the suction side, often at a fitting near the pump. Or the water dropped and the intake now sits too shallow. Each one shows up quickly once we look at the pump and the intake together."
+    },
+    {
+      "q": "How is a lake system winterized?",
+      "a": "Like any system, plus the pump. The lines and zones get blown out with compressed air. The pump body and the suction line hold water too, so they are drained before the freeze. More on [winterization in Holly](/sprinkler-winterization-holly-mi/)."
+    },
+    {
+      "q": "We are on village water near the lake. Is a lake pump worth it?",
+      "a": "It can be. A lake pump waters the lawn with lake water, so the village meter only counts what the house uses. In exchange there is a pump to prime in spring and drain in fall. For a large lakefront lawn the trade is worth a look, and we can walk the lot and tell you plainly."
+    }
+  ],
+  "reviews": ["susan-r", "zachary-b", "joe-s"]
+}

@@ -1,0 +1,72 @@
+{
+  "service": "lake-pump",
+  "city": "fenton",
+  "meta": {
+    "title": "Lake Pump Sprinklers in Fenton, MI | Misty's Irrigation",
+    "description": "Lake pump sprinkler systems around Fenton, from Lake Fenton to Lake Ponemah and Silver Lake: pumps primed, intakes checked and blown out by Misty's."
+  },
+  "hero": {
+    "kicker": "Lake pump irrigation in Fenton, MI",
+    "title": "Lake water, **on the lawn.**",
+    "lede": "About 13 percent of Fenton Township is water, and a lake lot can water its lawn straight from the lake. Misty's primes the pump, checks the intake, runs and walks every zone in spring, and empties the whole system, pump included, before winter.",
+    "chips": ["Pumps primed", "Intakes checked", "Based in Fenton"],
+    "photo": "lake-lawn"
+  },
+  "local": {
+    "eyebrow": "Lake systems in Fenton",
+    "title": "The lakes here, **and what they mean for a pump.**",
+    "intro": "A lake system is a sprinkler system with a pump and an intake line in front of it. The lakes around Fenton add a few things to watch that a yard on city water never deals with.",
+    "points": [
+      {
+        "title": "A lot of shoreline",
+        "body": "Lake Fenton alone covers about 845 acres, and the state's boating rules list Lake Ponemah, Silver Lake, Pine Lake and several more inside the township. On any of them, a lawn can drink from the lake instead of a well or a city meter."
+      },
+      {
+        "title": "Treatment days and the do-not-use date",
+        "body": "The township posts a lake treatment schedule. In 2023 it scheduled Lake Fenton for weed and algae treatments in late May and early June, and for starry stonewort in July and August. EGLE requires a sign at the shore before each treatment, and it lists the water use limits, turf irrigation included."
+      },
+      {
+        "title": "Lake Ponemah drops in fall",
+        "body": "The water on Lake Ponemah and Tupper Lake is lowered every fall and brought back up every spring. An intake set for the summer level can end up in shallow water by blowout time, pulling sand or air. Once the lake is back up in spring, it is the moment to set it right."
+      },
+      {
+        "title": "Keeping the lawn off the well",
+        "body": "Out in the township, plenty of houses run on a private well. Watering from the lake takes hours of sprinkler time a week off the well pump, and keeps the house from losing pressure every time a zone comes on."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "A lake system visit, **season to season.**",
+    "body": [
+      "Tell us which lake you are on and where the pump sits: in a pump house, under a deck or at the shoreline. In spring we check the intake and the line, prime the pump, then run and walk every zone. In fall the zones are blown out and the pump and its intake line are emptied too.",
+      "When a treatment is coming, read the sign at the shore for the turf and ornamental irrigation date. Turn the lake zones off at the controller until it has passed. Most controllers have a rain delay setting that does the job without changing your program.",
+      "Fenton is home base, so the lakes in town are close to home for us. Call or text [(810) 423-9513](tel:+18104239513) with a photo of the pump and controller if you can."
+    ],
+    "facts": [
+      { "label": "Lakes in the township", "value": "Lake Fenton, Ponemah, Silver, Pine and more" },
+      { "label": "Lake Fenton", "value": "About 845 acres" },
+      { "label": "Treatment notices", "value": "Posted at the shore, with an irrigation date" },
+      { "label": "Lake Ponemah level", "value": "Lowered in fall, raised in spring" }
+    ]
+  },
+  "photo": "ai-lake-pump",
+  "faq": [
+    {
+      "q": "Does Misty's work on lake pump sprinklers around Fenton?",
+      "a": "Yes. Misty's works on lake pump systems around town, whichever lake you are on: spring startups with the pump primed and the intake checked, repairs to heads, valves and lines, and fall blowouts with the pump emptied before the freeze."
+    },
+    {
+      "q": "The pump runs but the sprinklers barely come on. What is wrong?",
+      "a": "Usually the intake. A screen clogged with weed or sand, an intake that has ended up too shallow, or a leak on the suction side that lets air in. A pump can also lose its prime and spin without moving water, which damages it fast. Shut it off and call or text us."
+    },
+    {
+      "q": "Is it safe to water the lawn right after the lake is treated?",
+      "a": "Not always. The posted sign at the shore names the product and its water use limits, including a do-not-use date for turf and ornamental irrigation. That date differs from product to product, so read this year's sign, not last year's. Keep the lake zones off until the date has passed."
+    },
+    {
+      "q": "Lake Ponemah went down this fall. Should I worry about the intake?",
+      "a": "Look at it before the blowout. Lake Ponemah is lowered every fall, so an intake set for the summer level can end up in shallow water. When the lake comes back up in spring, set the intake where it belongs for the season, or have us check it at the [spring startup](/sprinkler-startup-fenton-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

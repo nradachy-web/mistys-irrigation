@@ -1,0 +1,158 @@
+{
+  "service": "controllers",
+  "meta": {
+    "title": "Sprinkler Controller Setup in Fenton, MI | Misty's Irrigation",
+    "description": "Old timers replaced, smart controllers and rain sensors installed, and every zone programmed for its heads, sun and soil. Misty's Irrigation, Fenton, MI."
+  },
+  "hero": {
+    "kicker": "Sprinkler controller installation and setup in Fenton, MI",
+    "title": "Set by the zone, **not the factory default.**",
+    "lede": "A controller left on its first schedule waters every zone the same, in May and in July. We install new and smart controllers, wire them right, and program each zone for its heads, its sun and its soil.",
+    "chips": ["Every zone programmed", "Smart and standard", "Licensed and insured"],
+    "photo": "ai-controller"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "When to replace it",
+      "title": "Signs the old timer **is done.**",
+      "intro": "The controller is the box in the garage that tells each valve when to open and for how long. When one starts to fail, it rarely goes all at once.",
+      "body": [
+        "Before we replace anything, we check whether the trouble is the controller or the yard. A station fault is more often a valve or a wire than the box itself, and a new controller will not fix a cut wire."
+      ],
+      "checks": [
+        "A blank, faded or flickering display",
+        "The program disappears every time the power blinks",
+        "Zones that skip, run on the wrong days or run twice",
+        "No open stations for a new zone or a drip line",
+        "Worn buttons and a dial nobody can read anymore",
+        "You want it to adjust for the weather on its own"
+      ],
+      "photo": "pine-lawn",
+      "cta": { "label": "Valve and wiring repairs", "href": "/sprinkler-repair/" }
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "Programming",
+      "title": "Every zone **gets its own numbers.**",
+      "intro": "A zone of spray heads and a zone of rotors can sit side by side and need very different run times. This is what goes into each zone's program.",
+      "columns": 3,
+      "items": [
+        { "tag": "Spray heads", "title": "Short runs, often split", "body": "Sprays put water down fast, around an inch and a half an hour. They get short runs, often split in two so the water has time to soak in." },
+        { "tag": "Rotors", "title": "About three times longer", "body": "Rotors put down about half an inch an hour, a third of what sprays do, so a rotor zone runs about three times as long for the same water." },
+        { "tag": "Rotary nozzles", "title": "The longest lawn zones", "body": "Rotary nozzles are slower still, around 0.4 inches an hour. The water soaks in well, and these zones run the longest of the lawn." },
+        { "tag": "Drip", "title": "Its own program", "body": "Drip is measured in gallons per hour, not inches. Pots may want it daily in summer and beds every few days, so it usually runs on a program of its own." },
+        { "tag": "Shade and slope", "title": "Less time, shorter cycles", "body": "A shaded zone needs less water than one in full sun. A slope sheds water fast, so its time gets split into short cycles with a soak between." },
+        { "tag": "Soil", "title": "Clay and sand differ", "body": "Clay takes water in slowly and holds it, so it gets fewer, split waterings. Sand drinks fast and dries fast, so it gets watered more often." }
+      ]
+    },
+    {
+      "type": "panel",
+      "kind": "calc",
+      "plane": "ink",
+      "title": "How long should **each zone run?**",
+      "intro": "Pick the kind of heads on a zone, how much sun it gets, the month and your soil. The calculator works out a starting run time, and splits it into cycles when the water would run off.",
+      "points": [
+        "It starts from about an inch of water a week in summer, rain included, a little more in July and less in spring and fall.",
+        "Slide the rain up to see why a rain sensor or a smart controller saves water.",
+        "It is a starting point. On a real system we set each zone by watching where the water lands and how fast it soaks in."
+      ]
+    },
+    {
+      "type": "compare",
+      "plane": "mist",
+      "eyebrow": "Your options",
+      "title": "Timer, rain sensor **or smart controller.**",
+      "intro": "Three ways to run the same system, from the simplest to the most automatic. Any of them works well when every zone is programmed right.",
+      "columns": ["Standard timer", "Timer and rain sensor", "Smart controller"],
+      "rows": [
+        { "label": "How it decides", "values": ["Runs the schedule you set", "Runs your schedule, skips after rain", "Adjusts your zones to the weather"] },
+        { "label": "After a wet week", "values": ["Waters anyway", "Holds off until the sensor dries", "Skips or shortens the runs"] },
+        { "label": "A hot July", "values": ["Same minutes as May unless changed", "Same minutes as May unless changed", "Adds time as the weather heats up"] },
+        { "label": "Changing it", "values": ["Buttons at the box", "Buttons at the box", "At the box or from a phone app"] },
+        { "label": "What it needs", "values": ["Power", "Power, and a sensor out in the rain", "Power, and usually Wi-Fi where it hangs"] }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Cycle and soak",
+      "figure": "1.5",
+      "figureLabel": "inches of water an hour from a typical spray head",
+      "title": "Water faster than the ground drinks **runs down the driveway.**",
+      "body": "A spray zone puts down about an inch and a half of water an hour. Clay and packed soil take it in far slower than that, so one long run puddles and runs off into the street. Cycle and soak splits the time: run the zone, let it soak in, run it again. The same total water ends up in the root zone instead of the gutter."
+    },
+    {
+      "type": "steps",
+      "plane": "white",
+      "eyebrow": "The install",
+      "title": "How a controller **swap runs.**",
+      "steps": [
+        { "title": "Wires labeled", "body": "Before the old controller comes off the wall, every wire is tagged to its zone, so nothing gets crossed." },
+        { "title": "Mounted and wired", "body": "The new one goes up near an outlet, indoors unless it is built for outside. Each zone wire lands on its station, along with the common wire, the rain sensor and the pump relay if there is one." },
+        { "title": "Every zone run", "body": "We run each zone from the new controller to prove the wiring, and track down any valve or wire that does not answer." },
+        { "title": "Programmed by zone", "body": "Each zone gets run times for its heads, sun, slope and soil, cycle and soak where it needs it, and start times early in the morning." },
+        { "title": "Connected and shown", "body": "A smart controller gets connected to your Wi-Fi and its app. Then we show you how to skip a day, run a zone by hand and adjust for the season." }
+      ],
+      "footnote": "On a lake or well system, the controller also starts the pump through a relay, and that gets wired and set for every zone. See [lake pump irrigation](/lake-pump-irrigation/)."
+    },
+    {
+      "type": "reviews",
+      "plane": "mist",
+      "title": "What customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need a smart controller?",
+      "a": "Not always. A standard controller, programmed well and adjusted a few times a season, waters a lawn just fine. A smart controller earns its spot if you never touch the settings, are away a lot, or want watering to back off in wet weather without thinking about it. We will tell you which fits the way you use it."
+    },
+    {
+      "q": "What does a smart controller actually do?",
+      "a": "It changes your run times with the weather: hotter and drier means more water, cool and wet means less or none. Many pull local weather over Wi-Fi, and some use a sensor on site. It is only as good as what it knows about each zone, so we set the head type, sun, soil and slope for every one."
+    },
+    {
+      "q": "What is a rain sensor, and do I need one?",
+      "a": "A small sensor mounted where rain falls on it, usually on a gutter or the edge of the roof, and wired to the controller. When it gets wet it tells the controller to hold off, and watering resumes as it dries. It is a simple add-on for a standard controller. Smart controllers can skip for rain on their own, and many can take a sensor as well."
+    },
+    {
+      "q": "What time of day should my sprinklers run?",
+      "a": "Early morning, finishing around sunrise. There is less wind and less evaporation, the water has time to soak in, and the grass dries off during the day. Watering in the evening leaves the lawn wet all night. The [watering guide](/watering-guide/) has more on how much and how often."
+    },
+    {
+      "q": "Why do my sprinklers run while it is raining?",
+      "a": "A standard controller only knows the clock. Without a rain sensor or a smart controller, it runs on schedule no matter what the sky is doing. Adding a sensor is a small job. Until then, turn the controller to its off or rain setting when a wet stretch is coming."
+    },
+    {
+      "q": "My controller loses its settings when the power goes out. Is it broken?",
+      "a": "Maybe not. Many older controllers keep the program alive on a backup battery, and a dead battery means a blank slate after every outage, so start with a fresh one. If the controller is old or acting up in other ways too, it may be time to replace it. Most newer controllers hold their program without a battery."
+    },
+    {
+      "q": "Can you add a zone to my controller?",
+      "a": "If it has an open station and there is a wire to the new valve, yes. If every station is taken, many controllers accept an add-on module. If yours does not, it gets replaced with one that has room. See [new systems and added zones](/sprinkler-installation/)."
+    },
+    {
+      "q": "Should the schedule change during the summer?",
+      "a": "Yes, or the controller should change it for you. Many standard controllers have a seasonal adjust that turns every zone up or down by a percentage: lower in spring and fall, higher in July. A smart controller does that on its own from the weather."
+    }
+  ],
+  "quote": {
+    "title": "Tell us about the controller.",
+    "lede": "What it is doing, how many zones it runs, or what you want it to do. Send it here or text a photo of the box, and we will call back to set a time."
+  },
+  "summary": {
+    "title": "A controller, **set up for every zone.**",
+    "intro": "A new or smart controller is only as good as its program. We install it, wire it and set every zone for the part of the yard it waters.",
+    "items": [
+      { "name": "Old timer checked", "detail": "We confirm the trouble is the controller, not a valve or a wire, before replacing it." },
+      { "name": "Mounted and wired", "detail": "Each wire labeled and landed on its station, plus the rain sensor and pump relay." },
+      { "name": "Every zone programmed", "detail": "Run times set for the heads, sun, slope and soil of each zone." },
+      { "name": "Cycle and soak", "detail": "Long runs split where water would run off, with early morning start times." },
+      { "name": "Rain and weather", "detail": "A rain sensor or smart weather adjustment, set up and working." },
+      { "name": "Shown how", "detail": "How to skip a day, run a zone by hand and adjust for the season." }
+    ]
+  }
+}

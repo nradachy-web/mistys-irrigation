@@ -1,0 +1,161 @@
+{
+  "service": "drip",
+  "meta": {
+    "title": "Flowerpot Drip Irrigation in Fenton, MI | Misty's Irrigation",
+    "description": "Drip lines for flowerpots, planters and beds, on the same controller as your lawn, with the filter and regulator set up right. Misty's Irrigation, Fenton."
+  },
+  "hero": {
+    "kicker": "Drip irrigation for pots and beds in Fenton, MI",
+    "title": "Water the roots, **not the patio.**",
+    "lede": "Pots that are dry by noon, beds the lawn heads cannot reach, planters nobody remembers when you are away. We run drip lines to each one and put them on their own zone of your sprinkler controller.",
+    "chips": ["Pots, planters and beds", "Same controller as the lawn"],
+    "photo": "garden-misters"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "What drip is",
+      "title": "A slow drink, **right where the roots are.**",
+      "intro": "Drip is low pressure watering. Instead of throwing water across a bed, it lets water out a little at a time at the base of each plant.",
+      "body": [
+        "A half inch line runs along the bed or the edge of the patio. Thin quarter inch tubing branches off it to each pot, and an emitter at the end lets out a measured amount, rated in gallons per hour. A bigger pot gets a bigger emitter, or two. The leaves stay dry, the walk stays dry, and very little runs off.",
+        "It is fed from your sprinkler system through its own valve, so it runs on the same controller as the lawn, on its own schedule."
+      ],
+      "checks": [
+        "Flowerpots and planters on patios, porches and decks",
+        "Window boxes and hanging baskets a line can reach",
+        "Annual and perennial beds the lawn heads do not cover",
+        "Shrubs and young trees that want slow, deep water"
+      ],
+      "photo": "ai-drip"
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "The parts",
+      "title": "Small parts, **each with a job.**",
+      "intro": "A drip zone is simple, but every part is there for a reason. Leave out the filter or the regulator and it does not last.",
+      "columns": 3,
+      "items": [
+        { "tag": "Valve", "title": "Its own zone", "body": "Drip gets its own valve and its own station on the controller. It never shares a zone with spray heads, because the two need different pressure and very different run times." },
+        { "tag": "Filter", "title": "A fine screen up front", "body": "Emitter openings are tiny. A fine mesh filter at the start of the zone catches the grit that would plug them, and it gets rinsed out at startup." },
+        { "tag": "Regulator", "title": "Pressure brought down", "body": "Sprinkler lines run at house or pump pressure. Drip is built for far less, roughly 20 to 30 psi. Without a regulator, fittings come apart and emitters pop out of the line." },
+        { "tag": "Line and tubing", "title": "Half inch out, quarter inch in", "body": "The half inch line carries water along the bed. Quarter inch tubing runs from it to each pot, tucked along the edge or up the back so it is hard to see." },
+        { "tag": "Emitters", "title": "Sized to the pot", "body": "Each emitter lets out a set amount, from about half a gallon an hour to a few gallons. Sizing them to the pot is how a small pot and a big planter both come out right on one run." },
+        { "tag": "End caps", "title": "A way to flush it", "body": "The far end of each line closes with a cap that comes off. Opening it flushes out grit in spring and lets the line drain in fall." }
+      ]
+    },
+    {
+      "type": "compare",
+      "plane": "mist",
+      "eyebrow": "Pots and beds",
+      "title": "Hand watering, spray heads **or drip.**",
+      "intro": "Three ways to water a patio full of pots or a bed along the house, side by side.",
+      "columns": ["Hand watering", "Spray heads", "Drip"],
+      "highlight": 2,
+      "rows": [
+        { "label": "Where it lands", "values": ["Wherever the hose points", "Over leaves, mulch and the walk", "At the base of each plant"] },
+        { "label": "Pots in July", "values": ["Every day, by you", "Most of it misses the pots", "Each pot gets its own measured share"] },
+        { "label": "Leaves", "values": ["Often wet", "Wet every run", "Stay dry"] },
+        { "label": "Away for a week", "values": ["Someone has to come by", "Runs, but the pots still dry out", "Runs on the timer as usual"] },
+        { "label": "Water lost", "values": ["Depends on the hand", "Plenty, to wind and pavement", "Very little"] }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Why drip gets its own zone",
+      "figure": "GPH",
+      "figureLabel": "drip runs in gallons an hour, sprays in gallons a minute",
+      "title": "Gallons an hour **against gallons a minute.**",
+      "body": "A spray head is rated in gallons per minute. A drip emitter is rated in gallons per hour. Put them on one valve and nothing works right: a regulator for the drip starves the sprays, full pressure blows the drip apart, and no single run time suits both. That is why drip always gets its own valve and its own schedule."
+    },
+    {
+      "type": "steps",
+      "plane": "white",
+      "eyebrow": "Adding a drip zone",
+      "title": "How we put drip **on your system.**",
+      "steps": [
+        { "title": "Pots and beds planned", "body": "We walk the patio and the beds with you, count the pots, and work out where the line runs so it stays hidden and out from under foot." },
+        { "title": "A new zone tapped in", "body": "A new valve comes off your existing system, with the filter and regulator right after it, and gets wired to an open station on the controller." },
+        { "title": "Line and tubing run", "body": "The half inch line goes along the bed edge or under the mulch, and quarter inch tubing runs to each pot with the right emitter for its size." },
+        { "title": "Schedule set", "body": "Drip gets its own start times and longer runs than the lawn. Pots in full sun often need water every day in high summer, while beds in the ground go longer between runs." },
+        { "title": "Every pot checked", "body": "We run the zone, check that each emitter drips, and show you how to rinse the filter and flush the line." }
+      ],
+      "footnote": "If the controller has no open station, it needs an add-on module or a larger controller. See [controller installation and setup](/sprinkler-controllers/)."
+    },
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "In the fall",
+      "title": "Drip needs **a blowout too.**",
+      "intro": "Drip tubing is flexible, but the valve, the filter and the regulator all hold water, and a fitting full of ice splits.",
+      "body": [
+        "At the fall blowout, the drip zone is drained and cleared with low pressure air, with the end caps open so the water has somewhere to go. Drip takes gentle air. Pushing it at the pressure used on lawn zones blows fittings and emitters apart.",
+        "Pots that come inside for winter get unhooked at the tubing, and the open ends are capped or tucked up so dirt and bugs stay out until spring."
+      ],
+      "checks": [
+        "Filter screen pulled and rinsed",
+        "Lines drained at the end caps",
+        "Zone cleared with low pressure air",
+        "Tubing to indoor pots unhooked and capped"
+      ],
+      "photo": "flagstone-pond",
+      "flip": true,
+      "cta": { "label": "The fall blowout in detail", "href": "/sprinkler-winterization/" }
+    },
+    {
+      "type": "reviews",
+      "plane": "white",
+      "title": "What customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can drip run on the same controller as my lawn sprinklers?",
+      "a": "Yes, and that is the usual way to do it. The drip gets its own valve and its own station on your controller, with its own start times and run times. If the controller is out of stations, it needs an add-on module or a larger controller. See [controller installation and setup](/sprinkler-controllers/)."
+    },
+    {
+      "q": "Can you turn one sprinkler head into drip for a bed?",
+      "a": "Not by itself. A zone runs spray heads or drip, never both, because they need different pressure and different run times. If every head on a small bed zone is converted, that whole zone can become drip. Otherwise the bed gets a new drip zone of its own."
+    },
+    {
+      "q": "How often should my pots be watered?",
+      "a": "More often than beds. Pots dry out fast in sun and wind, and many need water every day in the heat of summer, small ones sometimes twice. Beds in the ground usually do fine every few days. We set a starting schedule, and after a week you check the soil with a finger and we adjust from there."
+    },
+    {
+      "q": "Will the emitters clog?",
+      "a": "They can, which is why the filter matters. A fine mesh filter catches grit before it reaches the emitters, and rinsing it at startup and now and then in summer keeps it clear. On lake water or well water, the filter has more to catch and gets checked more often. An emitter that does clog can be cleaned or swapped in a minute."
+    },
+    {
+      "q": "What about a bed packed solid with plants?",
+      "a": "A bed planted wall to wall can take small micro spray or mist heads instead of emitters. They sit low, throw a fine spray across the bed, and run on the same low pressure drip zone, with the same filter and regulator."
+    },
+    {
+      "q": "Can drip reach hanging baskets and window boxes?",
+      "a": "If a line can get to them, yes. Quarter inch tubing runs up a post, a railing or along a wall to the basket or box, with an emitter at the end. We route it so it is tidy and out of the way."
+    },
+    {
+      "q": "Does drip need anything in the fall?",
+      "a": "Yes. It gets drained and cleared with low pressure air, with the end caps open, and the filter screen comes out and gets rinsed. Tubing to pots that come inside gets unhooked. If we do your [fall blowout](/sprinkler-winterization/), the drip zone is part of it."
+    }
+  ],
+  "quote": {
+    "title": "Tell us about the pots and beds.",
+    "lede": "How many pots, where they sit, what is in the beds. Send it here or text a photo of the patio, and we will call back to set a time."
+  },
+  "summary": {
+    "title": "Drip for pots and beds, **set up right.**",
+    "intro": "A drip zone waters flowerpots, planters and beds at the roots, on the same controller as the lawn, with every part chosen for what it feeds.",
+    "items": [
+      { "name": "Its own zone", "detail": "A new valve and controller station, so drip runs on its own schedule." },
+      { "name": "Filter and regulator", "detail": "A fine screen to keep emitters clear, and pressure brought down to what drip is built for." },
+      { "name": "Line and tubing", "detail": "Half inch line along the beds, quarter inch tubing to each pot, kept out of sight." },
+      { "name": "Emitters sized", "detail": "Each pot and plant gets the flow it needs, measured in gallons per hour." },
+      { "name": "Run and checked", "detail": "Every emitter checked, and the schedule set for pots and beds." },
+      { "name": "Fall care", "detail": "Drained and cleared with low pressure air at the blowout." }
+    ]
+  }
+}

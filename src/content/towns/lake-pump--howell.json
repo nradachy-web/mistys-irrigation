@@ -1,0 +1,71 @@
+{
+  "service": "lake-pump",
+  "city": "howell",
+  "meta": {
+    "title": "Lake Pump Sprinklers in Howell, MI | Misty's Irrigation",
+    "description": "Lake pump sprinkler systems on Thompson Lake, Lake Chemung and the other lakes around Howell: primed, checked, started and blown out by Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Lake pump irrigation in Howell, MI",
+    "title": "Watered from the lake, **timed to the lake.**",
+    "lede": "Thompson Lake sits inside the city, and Lake Chemung, Cedar Lake and Triangle Lake all have lakefront homes with Howell addresses. Misty's primes, checks and services the pumps and intakes that water those lawns, from spring startup to fall blowout.",
+    "chips": ["Pumps primed and checked", "Intakes and screens cleared", "Licensed and insured"],
+    "photo": "lake-sunrise"
+  },
+  "local": {
+    "eyebrow": "Lake systems in Howell",
+    "title": "Each lake **sets its own terms.**",
+    "intro": "A lake pump system drinks from water that rises, falls and grows weeds on its own schedule. Around Howell, the county sets the legal lake levels, and those levels shape when and how these systems should be serviced.",
+    "points": [
+      {
+        "title": "Thompson Lake drops three feet",
+        "body": "Under a court order, Thompson Lake is lowered three feet for winter every other year, in even numbered years. The county set the 2026 drawdown to start October 9, weather permitting. An intake placed for summer level can end up out of the water, so get ahead of it."
+      },
+      {
+        "title": "Lake Chemung holds one level",
+        "body": "Lake Chemung, in Genoa Township, has a single legal level of 957.25 feet on the county's lake list, with no separate winter level. Intakes there do not have to chase a drawdown, but they still come out or get protected before the lake freezes."
+      },
+      {
+        "title": "Weeds are managed, not gone",
+        "body": "The Thompson Lake Improvement Board oversees weed management on that lake, and Cedar Lake has an improvement board of its own. Weed beds near shore can still wrap an intake and clog its screen, which starves the pump. We clear it whenever the pressure drops."
+      },
+      {
+        "title": "Keeping the pump primed",
+        "body": "A lake pump has to stay full of water to pull from the lake. Air in the suction line, a foot valve leaking back, or a falling lake can make it lose prime and run dry. When a lake system quits in midsummer, that is one of the first things we check."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Servicing a lake system **out in Howell.**",
+    "body": [
+      "Howell is about 30 minutes from Fenton, so lake system visits are planned ahead and grouped with other work out here. Spring startups wait until the ice is gone and the hard freezes are over. In fall, Thompson Lake owners should book around the drawdown rather than after it.",
+      "We need to reach the pump, the suction line and the intake. Tell us whether the pump sits on the dock, in a small pump house or by the house, and how we get down to the water. Call or text [(810) 423-9513](tel:+18104239513) or [book service](/book-service/)."
+    ],
+    "facts": [
+      { "label": "Thompson Lake drawdown", "value": "Three feet in even numbered years, from early October" },
+      { "label": "Lake Chemung", "value": "One legal level, 957.25 ft, no winter level listed" },
+      { "label": "From Fenton", "value": "About 30 minutes, visits grouped" },
+      { "label": "Tell us", "value": "Where the pump and intake are and how to reach them" }
+    ]
+  },
+  "photo": "ai-lake-pump",
+  "faq": [
+    {
+      "q": "Do you service lake pump sprinkler systems in Howell?",
+      "a": "Yes. Misty's starts up, repairs and blows out lake pump systems around Howell, on Thompson Lake inside the city and on the lakes outside it, like Lake Chemung, Cedar Lake and Triangle Lake. Call or text [(810) 423-9513](tel:+18104239513) and tell us which lake you are on."
+    },
+    {
+      "q": "When does Thompson Lake get lowered?",
+      "a": "Every other year, in even numbered years, the county lowers it three feet for winter under a court order. The 2026 drawdown was set to begin October 9, and the county notes the date depends on the weather. If your sprinklers pull from Thompson Lake, plan the blowout and the intake removal before then."
+    },
+    {
+      "q": "My lake pump runs, but no water comes out. What happened?",
+      "a": "Most likely it has lost prime: air in the suction line, a foot valve leaking back, or an intake that is out of the water or choked with weeds. Shut the pump off right away so it does not keep running dry, which can ruin it, then call us."
+    },
+    {
+      "q": "Does a lake system need a fall blowout too?",
+      "a": "Yes. The pipe, valves and heads on a lake system hold water all summer like any other. We blow out every zone, drain the pump and the suction line, and make sure the intake is out of harm's way before ice forms. More on [winterization](/sprinkler-winterization-howell-mi/) in Howell."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

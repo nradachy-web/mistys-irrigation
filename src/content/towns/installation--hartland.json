@@ -1,0 +1,75 @@
+{
+  "service": "installation",
+  "city": "hartland",
+  "meta": {
+    "title": "Sprinkler Installation in Hartland, MI | Misty's Irrigation",
+    "description": "New sprinkler systems for Hartland lake lots, subdivisions and acreage, laid out head to head and sized to your well, lake pump or township water."
+  },
+  "hero": {
+    "kicker": "Sprinkler installation in Hartland, MI",
+    "title": "Built for the yard **and the water you have.**",
+    "lede": "A new system in Hartland starts with two questions: how big is the yard, and where does the water come from. Misty's Irrigation lays heads out so the spray meets, sizes each zone to the well, lake pump or meter, and trenches the lines in with our own stand-on trencher.",
+    "chips": ["Head to head coverage", "Zones sized to your water"],
+    "photo": "estate-clouds"
+  },
+  "local": {
+    "eyebrow": "New systems in Hartland",
+    "title": "Three kinds of lot, **three kinds of system.**",
+    "intro": "Hartland Township's plans describe small lake lots, subdivisions on half acre to one acre lots, and estate land at two acres and up that covers nearly half the township. Add a water supply that might be a private well, a lake or the township system, and no two layouts come out the same.",
+    "points": [
+      {
+        "title": "Lake lots: tight, shaded, close to water",
+        "body": "Around Round, Handy and Maxfield Lakes, the township plans for lots of 8,000 to 20,000 square feet, matching what is already built. Its older plan describes mature trees and homes facing the lake. That means short zones, spray heads in the tight spots, care around old roots, and the option of a [lake pump](/lake-pump-irrigation-hartland-mi/)."
+      },
+      {
+        "title": "Rebuilt cottages need a fresh start",
+        "body": "The township's plan notes that many older lake cottages have been expanded or torn down for bigger homes. Construction crushes whatever was buried in the yard. After a rebuild, a new layout around the new footprint usually beats patching an old system back together."
+      },
+      {
+        "title": "Acreage: rotors and long runs",
+        "body": "On two acres and up along the county roads, rotors cover the big open lawn, and the layout is split into zones the water supply can carry. Long mainlines get trenched in below the mower, and pipe sized for the distance keeps pressure up at the far zones."
+      },
+      {
+        "title": "Sized to the water source",
+        "body": "Most Hartland homes are on a private well, and a well only gives so many gallons a minute. We check what yours delivers and build zones to match, so the house still has water while the lawn runs. On a well, ask about adding [Rid-O-Rust](/rust-stain-prevention/) when the system goes in."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "From walk-through **to first watering.**",
+    "body": [
+      "It starts with a walk of the yard: where the lawn and beds are, where the water comes from, where the controller can go, and what is already buried. Before any digging, buried utilities get marked.",
+      "On township water, check one thing first. The township's billing page says homes on municipal water and sewer may buy separate irrigation meters at Township Hall to keep lawn water apart from household water. Then the lines go in with our trencher, heads are set level with the turf, and every zone is run and aimed before we call it done."
+    ],
+    "facts": [
+      { "label": "Lake lot sizes", "value": "About 8,000 to 20,000 sq ft around Round, Handy and Maxfield" },
+      { "label": "Estate land", "value": "Two acres and up, nearly half the township" },
+      { "label": "Water source", "value": "Private well, lake pump or township meter" },
+      { "label": "Soils", "value": "Gravelly sand on the hills, very wet ground in the low spots" }
+    ]
+  },
+  "photo": "trencher-dog",
+  "faq": [
+    {
+      "q": "Do you install new sprinkler systems in Hartland?",
+      "a": "Yes. Misty's Irrigation puts in new systems and adds zones to existing ones across Hartland Township, from lake lots to acreage. We own a compact stand-on trencher, which cuts a narrow slot for the pipe instead of tearing up the whole lawn."
+    },
+    {
+      "q": "Will my well keep up with a sprinkler system?",
+      "a": "It can, if the zones are sized to it. A well delivers a set number of gallons a minute. Put more heads on a zone than that and the far heads sputter, or the pump never shuts off. We check what the well gives and design the zones around it. A well that is weak to begin with is a question for a well contractor first."
+    },
+    {
+      "q": "I am on township water. Should I get a separate irrigation meter?",
+      "a": "Ask the township. Its water billing page says homes on municipal water and sewer may buy separate irrigation meters at Township Hall to keep lawn water apart from household use, and that it can mean a large savings. If you plan to get one, tell us before we lay out the system so the sprinkler line starts in the right place."
+    },
+    {
+      "q": "My well stains the house orange. Should the new sprinklers still use it?",
+      "a": "They can, with treatment. A [Rid-O-Rust system](/rust-stain-prevention/) put in alongside the new sprinklers treats the water before it reaches the heads. On a lake lot, pulling from the lake with a [lake pump](/lake-pump-irrigation-hartland-mi/) is the other way to keep the well's iron off the house."
+    },
+    {
+      "q": "Can the system water flower beds and pots too?",
+      "a": "Yes. Beds and pots do better on [drip irrigation](/drip-irrigation/), on their own zone, watering at the roots from the same controller as the lawn. It keeps spray off the leaves and off the siding."
+    }
+  ],
+  "reviews": ["joe-s", "zachary-b"]
+}

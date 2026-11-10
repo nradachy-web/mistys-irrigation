@@ -1,0 +1,76 @@
+{
+  "service": "startup",
+  "city": "grand-blanc",
+  "meta": {
+    "title": "Sprinkler Startup in Grand Blanc, MI | Misty's Irrigation",
+    "description": "Spring sprinkler startups in Grand Blanc: water on slowly, every zone run, heads fixed and aimed, controller set. Book Misty's Irrigation for late April."
+  },
+  "hero": {
+    "kicker": "Spring sprinkler startup in Grand Blanc, MI",
+    "title": "Start it after **the last hard freeze.**",
+    "lede": "Around Grand Blanc, the last hard freeze of spring comes about April 22 in a typical year, and the last frost about May 1. Misty's Irrigation turns systems on after that: water in slowly, every zone run and checked, and the controller set for spring.",
+    "chips": ["Late April into May", "Every zone checked", "Licensed and insured"],
+    "photo": "ai-startup"
+  },
+  "local": {
+    "eyebrow": "Startups in Grand Blanc",
+    "title": "What spring looks like **in these yards.**",
+    "intro": "Turning on a sprinkler system is the same job in every town. The timing, the soil and the water supply are what make it a Grand Blanc job, and each one changes how the first weeks of the season should go.",
+    "points": [
+      {
+        "title": "April 22 and May 1",
+        "body": "Those are the median dates of the last 28 degree hard freeze and the last 32 degree frost at the NOAA station in Goodrich, just east of Grand Blanc. Start too early and one cold night can crack the backflow device, the part that sits above ground full of water."
+      },
+      {
+        "title": "Ground that is still full",
+        "body": "The Conover loams common here can hold a perched water table 6 to 18 inches down in spring. The lawn often does not need watering yet. We start with short run times and let the schedule build as the ground dries, instead of soaking soil that is already wet."
+      },
+      {
+        "title": "House water comes first",
+        "body": "If the township shut off your house water for the winter, its spring turn on has to happen before the sprinklers can. On a private well, the pump needs power and pressure first. Either way, we open the sprinkler supply slowly so the pipe fills without a bang."
+      },
+      {
+        "title": "Summer notices on township water",
+        "body": "Township water comes through the county, and the county can send summer conservation notices that restrict lawn watering for a set period. We set sensible run times from the first day, so a notice means a small change at the controller, not a scramble."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Booking a startup **in Grand Blanc.**",
+    "body": [
+      "Get on the spring list in March or early April by calling or texting [(810) 423-9513](tel:+18104239513). We start Grand Blanc systems once the hard freezes are behind us, usually from late April into May, and come over from Fenton, about 20 minutes away.",
+      "On the visit we open the water slowly, close the drains, and run each zone while we walk it. Heads that sank, tilted, clogged or cracked over winter get fixed or flagged, and you hear about anything bigger before we touch it. Last, the controller gets a spring schedule, not a July one.",
+      "City homes run on water from the city's own wells, more than 300 feet deep and filtered by reverse osmosis. Township homes run on county water or a private well. Tell us which when you book. On a well, we also watch that the pump holds pressure with a zone running."
+    ],
+    "facts": [
+      { "label": "Median last hard freeze", "value": "April 22, at the NOAA station in Goodrich" },
+      { "label": "Median last frost", "value": "May 1" },
+      { "label": "Startup window", "value": "Late April into May" },
+      { "label": "Drive from Fenton", "value": "About 20 minutes" }
+    ]
+  },
+  "photo": "ai-controller",
+  "faq": [
+    {
+      "q": "When does Misty's start turning on sprinklers in Grand Blanc?",
+      "a": "Misty's Irrigation starts systems once the hard freezes are over, which around Grand Blanc means late April into May. The median last hard freeze nearby is April 22 and the median last frost is May 1. Call or text [(810) 423-9513](tel:+18104239513) early in spring to get a date that suits you."
+    },
+    {
+      "q": "Can I turn the sprinklers on myself?",
+      "a": "You can, if you open the supply valve slowly, close any drains left open in the fall, and walk every zone afterward. The usual mistakes are opening the valve fast, which slams the pipe, and skipping the walk, so a head that cracked over winter runs broken all summer. If you want it checked properly, book a [startup](/sprinkler-startup/)."
+    },
+    {
+      "q": "The lawn is still soggy in April. Should the sprinklers run?",
+      "a": "Usually not yet. Soggy April turf around here is often the soil's own spring water table sitting a few inches down. We still start the system so problems are found early, but set it to run lightly and pick up as the weather warms and the ground dries out."
+    },
+    {
+      "q": "Is startup a good time for a smart controller?",
+      "a": "Yes, because we are already running every zone. A controller that adjusts for weather waters less on cool spring days and more in July without anyone touching it. On township water it also makes a summer conservation notice easy to follow. More on [controllers](/sprinkler-controllers/)."
+    },
+    {
+      "q": "What if something is broken at startup?",
+      "a": "Most winter damage is small: a cracked head, a split riser, a valve stuck open. We fix what we can on the visit after telling you what it takes. Anything bigger, like a broken pipe under the lawn, gets explained first and scheduled as a [repair](/sprinkler-repair-grand-blanc-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

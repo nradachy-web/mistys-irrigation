@@ -1,0 +1,76 @@
+{
+  "service": "installation",
+  "city": "fenton",
+  "meta": {
+    "title": "Sprinkler System Installation in Fenton, MI | Misty's",
+    "description": "New sprinkler systems and added zones in Fenton, laid out for your soil and your water: city, well or lake. Planned and put in by Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler installation in Fenton, MI",
+    "title": "Built for **the yard you have.**",
+    "lede": "A new system in Fenton starts with two questions: where the water comes from, and what the ground does with it. Misty's lays out every zone head to head, trenches the lines in and sets the controller for your yard, on city water, a well or the lake.",
+    "chips": ["Head to head layout", "Our own trencher", "Licensed and insured"],
+    "photo": "trencher-dog"
+  },
+  "local": {
+    "eyebrow": "New systems in Fenton",
+    "title": "What decides the design **before we dig.**",
+    "intro": "Two yards on the same street can need very different systems. Around Fenton, four things shape the layout long before the first trench is cut.",
+    "points": [
+      {
+        "title": "The water source sets the limits",
+        "body": "In the city, water comes from four city wells, softened at the city plant, and sewer is billed off the same meter. A private well has only so much flow to give, and if it carries iron, that iron stains. A lake lot can pump from the lake. Each one changes zone size and run times."
+      },
+      {
+        "title": "New county water in the south end",
+        "body": "A Genesee County water main fed from Lake Huron now runs through the southern part of the township, and homes along it can connect. Once a home on township sewer connects, the sewer bill follows water use. Worth knowing before choosing which supply the sprinklers draw from."
+      },
+      {
+        "title": "Loam, sand and muck",
+        "body": "Soil survey maps around Fenton show mostly loam, with sandy pockets that drain fast and muck in low ground that can stay wet into June. We split zones by what the ground does, so a sandy rise and a wet corner do not share a run time."
+      },
+      {
+        "title": "New subdivisions and older lots",
+        "body": "About a third of township homes were built in 2000 or later. In the city, the median home dates to 1981, and about one in seven is older than 1940. A new lawn is open ground. An older lot means working around established beds, walks and roots, and the layout bends to fit."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "From walk-around **to first run.**",
+    "body": [
+      "It starts with a walk around the yard with you: the beds, the slopes, the spots that always brown first, and where the water will come from. Then we lay out zones head to head, so every head throws to the next and nothing is left dry between them.",
+      "Before any digging, MISS DIG 811 needs at least 3 business days to mark the public utility lines, and placing that request is the installer's job. MISS DIG does not mark private lines like an invisible dog fence or a buried line to a shed or detached garage, so show us where yours run.",
+      "The pipe goes in with our compact stand-on trencher, which cuts a narrow slot instead of tearing up the lawn. Heads are set level with the turf, every zone is run and adjusted, and the controller is programmed. Fenton is home base, so the trencher never has far to travel."
+    ],
+    "facts": [
+      { "label": "Digging notice", "value": "MISS DIG 811, at least 3 business days ahead" },
+      { "label": "Layout", "value": "Head to head coverage, zone by zone" },
+      { "label": "Water sources", "value": "City water, private well or lake" },
+      { "label": "Equipment", "value": "Compact stand-on trencher" }
+    ]
+  },
+  "photo": "estate-clouds",
+  "faq": [
+    {
+      "q": "Does Misty's install new sprinkler systems in Fenton?",
+      "a": "Yes. Misty's puts in new systems and adds zones to existing ones in the city, out in the township and on lake lots. We start with a walk around the yard and a plan, so you know the zones and what goes where before any digging."
+    },
+    {
+      "q": "Can a new system run off our well?",
+      "a": "Usually, as long as the zones are sized to what the well can deliver. The well's flow sets how many heads can run at once, so the plan starts there. If the water carries iron, plan on [Rid-O-Rust treatment](/rust-stain-prevention/) from day one, before the siding and the walk turn orange."
+    },
+    {
+      "q": "We are on a lake. Should the new system pump from it?",
+      "a": "Often it makes sense: the water is right there, and it keeps lawn watering off your well or the city meter. It takes a pump, an intake line out into the lake and a plan for winter. See [lake pump irrigation in Fenton](/lake-pump-irrigation-fenton-mi/) for how those systems are cared for."
+    },
+    {
+      "q": "Will trenching tear up the lawn?",
+      "a": "No. A stand-on trencher cuts a narrow slot and the pipe goes in at depth, usually 6 to 12 inches for the zone lines. The slot is closed back up and fills in as the lawn is watered. Walks and bed edges are crossed with care, and we clean up as we go."
+    },
+    {
+      "q": "Can you add zones to the system we already have?",
+      "a": "Yes, if the water supply and the controller have room. A new bed, a back yard that was never covered, a side strip that browns every August: we check the existing zones first, then add what is needed. If the old zones need work too, see [sprinkler repair in Fenton](/sprinkler-repair-fenton-mi/)."
+    }
+  ],
+  "reviews": ["joe-s", "susan-r"]
+}

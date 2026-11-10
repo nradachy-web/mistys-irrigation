@@ -1,0 +1,76 @@
+{
+  "service": "winterization",
+  "city": "fenton",
+  "meta": {
+    "title": "Sprinkler Blowouts in Fenton, MI | Misty's Irrigation",
+    "description": "Compressed air blowouts for Fenton sprinkler systems on city water, private wells and lake pumps, done before the ground freezes. Book with Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler winterization in Fenton, MI",
+    "title": "Out before **the hard freeze.**",
+    "lede": "The average first fall frost in Fenton lands around October 7. Misty's blows every zone out with compressed air, drains the backflow device and leaves the system ready to sit through a Michigan winter, whether it runs on city water, a well or the lake.",
+    "chips": ["Zone by zone", "City, well and lake systems", "Licensed and insured"],
+    "photo": "ai-blowout"
+  },
+  "local": {
+    "eyebrow": "Blowouts in Fenton",
+    "title": "What winter **does to a system here.**",
+    "intro": "Freezing is the whole reason this service exists. Around Fenton, the timing of the first frost, the ground the pipes sit in and where the water comes from each change what a good blowout looks like.",
+    "points": [
+      {
+        "title": "Frost arrives in early October",
+        "body": "NOAA climate normals from the weather station next door in Linden put the average first fall frost around October 7, with about a 3 in 10 chance it comes sooner. One frosty night will not reach buried pipe. It can freeze the backflow device sitting above ground, still full of water."
+      },
+      {
+        "title": "Pipe sitting in wet ground",
+        "body": "The most widespread soil around Fenton holds a water table 6 to 18 inches below the surface at times from September to May. Sprinkler laterals run right through that band. Depth is no protection for them. Getting every bit of water out of the pipe is."
+      },
+      {
+        "title": "Lake systems hold more water",
+        "body": "On Lake Fenton, Lake Ponemah, Silver Lake and the rest, a lake system has a pump and an intake line on top of the zones, and all of it holds water. Lake Ponemah is lowered every fall, so an intake set for summer can end up shallow. Book lake systems on the early side."
+      },
+      {
+        "title": "Wells get closed off first",
+        "body": "Out in the township, many sprinkler systems run off a private well. On those, we close the valve between the well and the irrigation before the compressor goes on, so the air clears the sprinkler side and goes nowhere near the pressure tank."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "A Fenton blowout, **step by step.**",
+    "body": [
+      "Book in September for a blowout between late September and November. We are based in Fenton, so a stop in town has no long drive in front of it. Let us know how to reach the sprinkler shutoff, the backflow device and the controller.",
+      "We close the shutoff, hook up the compressor and blow each zone in turn until the heads spit only air. Then we drain the backflow device, leave its valves half open so trapped water cannot split the body, and set the controller to off.",
+      "On a lake system, the pump and its intake line are emptied as well. Anything we spot that needs fixing gets noted, so it can be handled at the [spring startup](/sprinkler-startup-fenton-mi/) instead of discovered then."
+    ],
+    "facts": [
+      { "label": "Average first frost", "value": "About October 7 (Linden station)" },
+      { "label": "Blowout window", "value": "Late September into November" },
+      { "label": "Drive to you", "value": "None. We are based in Fenton." },
+      { "label": "Systems we blow out", "value": "City water, private well and lake pump" }
+    ]
+  },
+  "photo": "flagstone-pond",
+  "faq": [
+    {
+      "q": "When does Misty's start fall blowouts in Fenton?",
+      "a": "Misty's runs blowouts from late September into November, before the ground freezes. With the average first frost around October 7, booking in September gets your system on the list before the cold shows up. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Can I blow out my own system with a shop compressor?",
+      "a": "You can try, but most shop compressors cannot move enough air to clear a whole zone, so water stays in the low runs. Too much pressure cracks fittings, and rotors spun dry for too long wear out. A proper blowout moves a big volume of air at a controlled pressure, one zone at a time."
+    },
+    {
+      "q": "Does my lake pump need anything special before winter?",
+      "a": "Yes. The pump and the intake line hold water just like the zones do. On Lake Ponemah the water is lowered each fall, so the intake may sit shallower than it ran all summer and pull sand or air. Book early, and see [lake pump irrigation in Fenton](/lake-pump-irrigation-fenton-mi/) for the rest."
+    },
+    {
+      "q": "What if a hard freeze comes before my blowout?",
+      "a": "One cold night rarely hurts pipe in the ground. The backflow device above ground is what cracks. If the forecast drops below freezing and we have not been out yet, wrap the device in an old towel with a plastic bag over it, do not run the system that morning, and call us."
+    },
+    {
+      "q": "My system runs off a well. Is the blowout any different?",
+      "a": "Only at the start. We close off the well side first, so the air goes through the sprinkler lines and nothing else. If you have noticed orange staining or weak zones this year, tell us at the blowout. Spring repairs, or a [Rid-O-Rust treatment system](/rust-stain-prevention/), are easier to plan with the season behind us."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

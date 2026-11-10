@@ -1,0 +1,78 @@
+{
+  "city": "howell",
+  "meta": {
+    "title": "Sprinkler Service in Howell, MI | Misty's Irrigation",
+    "description": "Sprinkler repair, spring startups, fall blowouts and lake pump systems in Howell and the township around it, from Misty's Irrigation. Visits planned ahead."
+  },
+  "hero": {
+    "kicker": "Lawn sprinkler service in Howell, MI",
+    "title": "City water, wells and **lake lots.**",
+    "lede": "Howell is the farthest town Misty's Irrigation drives to, and it has a bit of everything: softened city water in town, MHOG water and private wells in the township, and lawns that run down to Thompson Lake. We plan visits out here ahead and handle startups, repairs and blowouts.",
+    "chips": ["About 30 minutes from Fenton", "Visits planned ahead", "Licensed and insured"],
+    "photo": "estate-clouds"
+  },
+  "about": {
+    "title": "Two kinds of Howell, **two kinds of system.**",
+    "body": [
+      "Inside the city, yards are mostly small and close together. The city's master plan counts 57 percent of homes as built before 1980, says many older lots do not meet today's zoning, and notes mature trees in yards and along the streets. Those systems run on city water drawn from five wells in town and softened and filtered at the city plant.",
+      "Cross into Howell Township and the lots open up. The township plan describes most of it as farmland and large lot or estate parcels, with about 62 percent zoned Agricultural Residential, and subdivisions near the city line and north of M-59 and Grand River. Neighborhoods there buy water from MHOG, the authority the township shares with Marion, Oceola and Genoa. Rural parcels run on private wells.",
+      "Then there are the lakes. Thompson Lake sits inside the city limits, and Lake Chemung, Cedar Lake and Triangle Lake all have lakefront homes with Howell addresses. A lawn on any of them may pull its water straight from the lake, which brings its own pump, intake and timing."
+    ],
+    "points": [
+      {
+        "title": "A separate meter for the sprinklers",
+        "body": "Howell Township says outdoor watering can double or triple a water bill, and water on its irrigation meter is billed without a sewer charge. The city also takes meter requests for lawn irrigation through Public Works. If your sprinklers run through the house meter, ask your utility."
+      },
+      {
+        "title": "Iron in the ground water",
+        "body": "Before its current plant opened in 1992, the city filtered hardness and iron out of its own well water. A private well gets no such treatment, so on township acreage the sprinklers can paint siding and walks orange. That is what [rust stain prevention](/rust-stain-prevention/) is for."
+      },
+      {
+        "title": "Loam, sand and muck",
+        "body": "USDA soil maps around Howell show mostly loam over glacial deposits, with sandy rises and muck in the low, wet ground. Sand dries out fast and loam drinks slowly, so one run time for every zone overwaters some of the lawn and starves the rest."
+      },
+      {
+        "title": "Frost on a rough schedule",
+        "body": "NOAA's 1991 to 2020 normals for its Howell station put the typical last frost around May 4 and the first around October 7. Hard freezes of 28 degrees land around April 24 and October 20. Those are the edges of the sprinkler season here."
+      }
+    ],
+    "photo": "wrap-car-dog"
+  },
+  "logistics": {
+    "title": "Our farthest town, **planned ahead.**",
+    "body": [
+      "Howell is about 30 minutes from our home base in Fenton, the longest drive on our list. Rather than make that trip for a single stop, we plan visits ahead and group them with other jobs in the area. Call or text [(810) 423-9513](tel:+18104239513) or [book a visit](/book-service/), tell us what the system is doing, and we will call back with a time.",
+      "The more notice you give, the easier it is to fit you in, especially in spring and fall when everyone wants the same few weeks. If a zone will not shut off while you wait, turn it off at the controller, then close the irrigation shutoff if the water keeps running. Once the water is off, the problem can wait for us."
+    ],
+    "facts": [
+      { "label": "From Fenton", "value": "About 30 minutes, the farthest town we serve" },
+      { "label": "Visits", "value": "Planned ahead and grouped with nearby jobs" },
+      { "label": "Water in town", "value": "City wells, softened and filtered at the city plant" },
+      { "label": "Water in the township", "value": "MHOG in the neighborhoods, private wells on acreage" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Do you service sprinkler systems in Howell and the township?",
+      "a": "Yes. Misty's Irrigation works across Howell, from in-town yards on city water to township acreage on private wells and lake lots that pump from the lake. It is the farthest drive we make from Fenton, so we plan those visits ahead and group them. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Is a separate irrigation meter worth it?",
+      "a": "If you are on city or MHOG water and the sprinklers share the house meter, it is worth asking about. Howell Township encourages them: water on the irrigation meter is billed for water only, with no sewer charge, and its brochure points out the meter gives the sprinklers their own shutoff. In the city, meter requests for lawn irrigation go through the Department of Public Works. Ask your utility about the cost and the process."
+    },
+    {
+      "q": "The siding and the walk by my sprinklers are turning orange. Why?",
+      "a": "On a well, it is almost always iron. The spray dries on the surface and leaves the iron behind, and it builds up run after run. The ground water around Howell carries iron, which is why the city's own plant used to filter it out, and a private well gets no treatment unless you add one. A [Rid-O-Rust treatment system](/rust-stain-prevention/) on the sprinkler line is made to stop it."
+    },
+    {
+      "q": "When should I book a startup or a blowout in Howell?",
+      "a": "Early, in both seasons. Startups wait for the hard freezes to end, which here usually means late April into May. Fall blowouts start in late September and should be done before the ground freezes, usually by some point in November. Since visits out here are grouped, the sooner you are on the list the more room we have. See [spring startup](/sprinkler-startup-howell-mi/) and [winterization](/sprinkler-winterization-howell-mi/)."
+    },
+    {
+      "q": "Do you work on lake pump systems on Thompson Lake?",
+      "a": "Yes, and on the other lakes around town. Thompson Lake has one thing to plan around: by court order, the county lowers it three feet every other year, starting in early October. A lake system there should be blown out with the intake out of the water before the level drops. More on [lake pump systems](/lake-pump-irrigation-howell-mi/) here."
+    }
+  ],
+  "reviews": ["susan-r", "joe-s", "zachary-b"],
+  "neighbors": ["hartland", "linden", "fenton"]
+}

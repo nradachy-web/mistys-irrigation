@@ -1,0 +1,72 @@
+{
+  "service": "startup",
+  "city": "fenton",
+  "meta": {
+    "title": "Spring Sprinkler Startup in Fenton, MI | Misty's",
+    "description": "Spring sprinkler startups in Fenton and Fenton Township: water on slowly, every zone run, heads set and the controller programmed. Book with Misty's."
+  },
+  "hero": {
+    "kicker": "Sprinkler startup in Fenton, MI",
+    "title": "Water on slow, **every zone checked.**",
+    "lede": "Startups in Fenton run from about mid April through May. Misty's opens the water slowly, runs every zone, fixes what winter broke, and sets the controller for your soil and your water, whether that is city water, a well or the lake.",
+    "chips": ["Mid April through May", "Based in Fenton"],
+    "photo": "ai-startup"
+  },
+  "local": {
+    "eyebrow": "Startups in Fenton",
+    "title": "Spring here, **what to know first.**",
+    "intro": "A startup is mostly the same job everywhere. These are the local details that change when to book one and what we watch for once the water is back on.",
+    "points": [
+      {
+        "title": "You do not have to wait for May 10",
+        "body": "NOAA normals from the Linden station put the average last spring frost for Fenton around May 10. That is a garden date. A light frost on the grass does not reach pipe buried in the lawn. What matters is a stretch of hard freezes, which is why startups begin about mid April."
+      },
+      {
+        "title": "Let the city flush clear first",
+        "body": "The city flushes its water mains in spring, two of its four quadrants at a time, mostly at night, with notice posted first. Afterward the water can run rust colored from iron stirred up in the mains. Run the house cold taps clear before the first sprinkler run, so that grit goes down a drain and not into a valve."
+      },
+      {
+        "title": "A soggy patch in April",
+        "body": "Much of the ground here is a loam that carries a perched water table 6 to 18 inches down from fall into spring, right where sprinkler pipe sits. A wet patch at startup can simply be the season. We run that zone and watch the heads. If the ones beside the wet spot run weak, it is the pipe."
+      },
+      {
+        "title": "Well water and the first run",
+        "body": "If you are on a well, the first run of the year is when the orange shows up again on the siding and the walk. A USGS study of the county's groundwater found iron common in it. Spring is a good time to add [Rid-O-Rust treatment](/rust-stain-prevention/), before a whole summer of staining."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How a Fenton startup **runs.**",
+    "body": [
+      "Book in March or early April for a startup between mid April and the end of May. Fenton is home base, so there is no travel to fit in before your visit. We need the sprinkler shutoff, the backflow device and the controller, so leave the garage or basement open or tell us how to reach them.",
+      "We open the main slowly so the pipes fill without a hammer, open the backflow device's valves in order, then run each zone and walk it. Heads that froze, sank or got clipped by a plow get fixed or flagged, and the controller is set for spring.",
+      "On a lake system, we check the intake and prime the pump before any zone runs. More on that at [lake pump irrigation in Fenton](/lake-pump-irrigation-fenton-mi/)."
+    ],
+    "facts": [
+      { "label": "Startup window", "value": "About mid April through May" },
+      { "label": "Average last frost", "value": "Around May 10 (NOAA normals, Linden)" },
+      { "label": "City main flushing", "value": "Spring and fall, by quadrant, mostly at night" },
+      { "label": "Drive to you", "value": "None. This is where we are based." }
+    ]
+  },
+  "photo": "colonial-mist",
+  "faq": [
+    {
+      "q": "When should I book a spring startup in Fenton?",
+      "a": "In March or early April. Misty's starts systems from about mid April through May, once the hard freezes are done. Being based in town makes Fenton the easiest place for us to fit you in, but spring fills up fast for everyone. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Can I just turn the water on myself?",
+      "a": "You can, if you open the main slowly and know which way the backflow device's valves go. Opening the main all at once slams water through empty pipe, and that is how fittings crack. You would still need to run every zone and find the heads that froze, sank or got hit over winter. That part is most of a startup."
+    },
+    {
+      "q": "The tap water turned orange after the city flushed the mains. Will it hurt the sprinklers?",
+      "a": "The city says discolored water after flushing is not a health hazard, and running the cold taps clears it. For the sprinklers, the risk is grit settling in a valve or a nozzle. Run the house taps clear before the next watering. If a zone then will not shut off, that grit is the likely reason, and it is often a quick fix."
+    },
+    {
+      "q": "Should the controller run the same schedule all summer?",
+      "a": "No. Spring needs less water than July. A lawn wants about an inch a week in summer, rain included. We set the controller for spring at startup, and you raise it as the weather warms. The [watering guide](/watering-guide/) has the numbers for spray heads and rotors."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s"]
+}

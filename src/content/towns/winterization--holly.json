@@ -1,0 +1,74 @@
+{
+  "service": "winterization",
+  "city": "holly",
+  "meta": {
+    "title": "Sprinkler Winterization in Holly, MI | Misty's Irrigation",
+    "description": "Compressed air blowouts for Holly sprinkler systems on village water, private wells and lake pumps, zone by zone, before the ground freezes. Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler winterization in Holly, MI",
+    "title": "Empty pipes **cannot crack.**",
+    "lede": "Around Holly the first fall frost usually lands between October 6 and 14, and the hard freezes follow about two weeks later. Misty's blows every zone dry with compressed air, drains the backflow device and leaves the system ready to sit until spring.",
+    "chips": ["First frost: early to mid October", "Blown out zone by zone", "Well, village and lake systems"],
+    "photo": "ai-blowout"
+  },
+  "local": {
+    "title": "What a Holly winter **does to a wet system.**",
+    "intro": "A sprinkler line stays full of water all season. Whatever is still inside when the cold settles in turns to ice, swells and splits pipe, fittings and valve bodies. Around here, that water tends to hide in a few predictable places.",
+    "points": [
+      {
+        "title": "The calendar around Holly",
+        "body": "NOAA's 1991 to 2020 normals for Linden, Goodrich, White Lake and Milford put the first 32 degree night between October 6 and 14, and the first 28 degree hard freeze between October 19 and 28. The brass backflow device above ground is exposed first. Buried pipe follows as the ground freezes."
+      },
+      {
+        "title": "Low spots on rolling ground",
+        "body": "The township's master plan places it in the hilly zone, on glacial moraine and till. Water runs to the low point of every zone and waits there. Draining alone leaves those pockets full, so we push air through each zone until the heads spit mist instead of water."
+      },
+      {
+        "title": "Systems fed by a well",
+        "body": "Most township homes water from a private well. We close the irrigation supply and blow out from the yard side of it, so air never goes back toward the pump or the pressure tank. If a pump serves only the sprinklers, it gets drained as well."
+      },
+      {
+        "title": "The breaker on village water",
+        "body": "On village water, the [pressure vacuum breaker](/backflow-preventers/) is what keeps lawn water out of the village supply. It sits above ground on a riser and holds water in its body. We drain it and set its valves for winter, so a hard freeze has nothing to split."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Booking a Holly **blowout.**",
+    "body": [
+      "Our blowout season opens in late September and runs until the ground freezes, usually into November. Text [(810) 423-9513](tel:+18104239513) with your address and your water source (village line, well or lake), and we will set a time.",
+      "We need to reach the controller, the irrigation shutoff and the backflow device, plus the pump on a lake lot, so tell us where each one is when you book. After the blowout the controller is switched off. Anything we notice along the way, like a cracked head or a weeping valve, we point out so it can be fixed at startup."
+    ],
+    "facts": [
+      { "label": "First fall frost", "value": "October 6 to 14, typically" },
+      { "label": "First hard freeze", "value": "October 19 to 28, typically" },
+      { "label": "Blowout window", "value": "Late September into November" },
+      { "label": "From Fenton", "value": "About 15 minutes" }
+    ]
+  },
+  "photo": "flagstone-pond",
+  "faq": [
+    {
+      "q": "When should I schedule a sprinkler blowout in Holly?",
+      "a": "Book for late September or October. Misty's runs blowouts from late September into November, and here the first frost usually arrives between October 6 and 14. Earlier is safer than later: once the ground starts to freeze, water left in the lines has nowhere to go. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Can I just open the drains instead of using air?",
+      "a": "Some systems have drain valves, but on rolling ground water sits in every dip between them, and pipe that is not perfectly sloped stays partly full. Compressed air pushes it out zone by zone. It is the step that clears the low spots draining misses."
+    },
+    {
+      "q": "My sprinklers run off the house well. Does the well need anything?",
+      "a": "The house well stays on for the house. We only isolate the irrigation side and blow it out, so the pump and pressure tank are not part of it. If you have a separate pump that feeds only the sprinklers, that pump gets drained too, or it can crack like a pipe."
+    },
+    {
+      "q": "A hard freeze is coming and my blowout is next week. What should I do?",
+      "a": "Turn the controller off and close the irrigation shutoff, usually in the basement. Buried pipe holds up to a cold night or two, because the ground stays warmer than the air. The exposed part is the backflow device on its riser. Text us and we will tell you what to do with it until we get there."
+    },
+    {
+      "q": "Do lake pump systems get winterized the same way?",
+      "a": "The lines and zones, yes. The pump and the intake line need their own steps, because the pump body holds water and the intake runs out into the lake. See [lake pump irrigation in Holly](/lake-pump-irrigation-holly-mi/)."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s"]
+}

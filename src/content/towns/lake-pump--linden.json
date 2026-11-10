@@ -1,0 +1,76 @@
+{
+  "service": "lake-pump",
+  "city": "linden",
+  "meta": {
+    "title": "Lake Pump Irrigation in Linden, MI | Misty's Irrigation",
+    "description": "Sprinklers that pull from Byram, Ponemah, Lobdell or the Mill Pond. Misty's Irrigation primes, repairs and winterizes lake pump systems around Linden, MI."
+  },
+  "hero": {
+    "kicker": "Lake pump irrigation in Linden, MI",
+    "title": "When the lake is **the water supply.**",
+    "lede": "Linden sits among lakes, from Byram on the edge of town to Ponemah and Lobdell a few miles out. Misty's primes and starts lake pump systems in spring, keeps intakes and suction lines pulling, and drains them before the freeze.",
+    "chips": ["Pumps primed and checked", "Intakes and lines cleared", "Drained before the freeze"],
+    "photo": "lake-sunrise"
+  },
+  "local": {
+    "eyebrow": "The water near town",
+    "title": "Which water **your pump drinks.**",
+    "intro": "A lake pump skips the city meter and the well and lets the lawn drink from the shoreline. The lakes and ponds around Linden are not all alike, and what is in the water, how its level moves and who treats it all matter to the pump.",
+    "points": [
+      {
+        "title": "Byram Lake, edge of town",
+        "body": "Byram Lake sits on the southwest edge of the city, inside Fenton Township, with Clover Beach and Linden County Park on its shore. By the USGS map it lies about a mile from the center of town."
+      },
+      {
+        "title": "The Mill Pond, Tupper and Ponemah",
+        "body": "A dam on the Shiawassee River forms the Mill Pond just east of Bridge Street, and the pond connects east to Tupper Lake and Lake Ponemah. Ponemah covers 379 acres about two miles east of downtown. On water tied to the river, check the intake screen through the season, not just in spring."
+      },
+      {
+        "title": "Lobdell and Bennett, southwest",
+        "body": "Lobdell Lake covers 545 acres in Argentine Township, with the community of Argentine on its shore and its own dam, the Lobdell Lake Dam. Bennett Lake lies south of it, over the line in Livingston County. Argentine's plan notes most township land sits within a quarter mile of a major lake or stream."
+      },
+      {
+        "title": "Treatments have rules",
+        "body": "When the city treats the Mill Pond, its notices set restrictions on swimming and on irrigation. Lake treatments elsewhere can carry their own. Read the posted notice before the pump runs after a treatment."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "A lake system **through the year.**",
+    "body": [
+      "Spring: we prime the pump, check the foot valve and intake screen, bring the system up slowly and run every zone. A pump that will not hold prime usually points to an air leak on the suction side or a foot valve that is letting water drain back to the lake.",
+      "Summer: lake levels drop through a dry stretch. An intake set too shallow starts pulling air, and one lying on the bottom pulls silt and weeds into the pump. If the spray turns weak or sputters mid season, the intake is the first place to look.",
+      "Fall: the zones get blown out like any system, then the pump and suction line are drained so nothing freezes inside them. Linden's first hard freeze averages around October 27, so lake systems belong on the October list. More on [winterization in Linden](/sprinkler-winterization-linden-mi/)."
+    ],
+    "facts": [
+      { "label": "Lake Ponemah", "value": "379 acres, about 2 miles east of downtown" },
+      { "label": "Lobdell Lake", "value": "545 acres, in Argentine Township" },
+      { "label": "Byram Lake", "value": "On the southwest edge of the city" },
+      { "label": "First hard freeze", "value": "Around October 27 (NOAA, Linden station)" }
+    ]
+  },
+  "photo": "ai-lake-pump",
+  "faq": [
+    {
+      "q": "Do you service lake pump sprinkler systems around Linden?",
+      "a": "Yes. Misty's works on lake pump systems around Linden: priming and starting them in spring, fixing pumps, intakes and suction lines when they stop pulling, and draining everything before the hard freezes in fall."
+    },
+    {
+      "q": "My lake pump runs but will not build pressure. What is wrong?",
+      "a": "Usually the suction side: an air leak in the intake line, a foot valve that lets the water drain back, or an intake screen packed with weeds. Less often the pump itself is worn out. We work from the lake back to the pump until we find it."
+    },
+    {
+      "q": "The Mill Pond was just treated. Can I still run my sprinklers from it?",
+      "a": "Read the city's notice first. Linden's Mill Pond treatment notices list restrictions that cover irrigation, and how long they last depends on what was applied. Once the notice allows it, run the system as usual."
+    },
+    {
+      "q": "When should a lake system be shut down for winter?",
+      "a": "Before the hard freezes, same as any system. Around Linden the first 28 degree night comes near October 27 in a typical year. The pump and suction line hold water that blowing out the zones does not clear, so they get drained as their own step."
+    },
+    {
+      "q": "Can I add a lake pump to a system that runs on city water or a well now?",
+      "a": "Often, if the house is on the water. We look at where a pump can sit, how far and how high it has to lift water from the lake, and whether the existing zones fit what the pump can deliver. Then you hear what it would take before any work starts. See [lake pump irrigation](/lake-pump-irrigation/)."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s"]
+}

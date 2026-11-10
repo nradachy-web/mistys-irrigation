@@ -1,0 +1,34 @@
+---
+/* A page that only forwards: an address the old site answered on, or
+   one an old ad still links to. GitHub Pages cannot send a server redirect, so
+   the browser does the hop, and it keeps the query string and hash so an ad
+   click ID (gclid) or anything the quote form adds arrives at the real page.
+   No tag runs here, so a lead is never counted twice. */
+import { href, absolute } from '../lib/paths';
+
+interface Props {
+  /** Site-relative address of the real page, e.g. "/reviews/". */
+  to: string;
+}
+
+const { to } = Astro.props;
+const target = href(to);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Misty's Irrigation</title>
+    <link rel="canonical" href={absolute(to, Astro.site)} />
+    <script is:inline define:vars={{ target }}>
+      location.replace(target + location.search + location.hash);
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=${target}`} /></noscript>
+  </head>
+  <body>
+    <a href={target}>Continue to Misty's Irrigation</a>
+  </body>
+</html>

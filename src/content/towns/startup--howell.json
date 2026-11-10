@@ -1,0 +1,71 @@
+{
+  "service": "startup",
+  "city": "howell",
+  "meta": {
+    "title": "Sprinkler Startup in Howell, MI | Misty's Irrigation",
+    "description": "Spring sprinkler startups in Howell: water on slowly, every zone checked, heads raised and the controller set for your soil. Book early with Misty's."
+  },
+  "hero": {
+    "kicker": "Spring sprinkler startup in Howell, MI",
+    "title": "Wait out the freeze, **then turn it on.**",
+    "lede": "Hard freezes in Howell usually end in late April. Misty's turns systems on after that, slowly, runs every zone, fixes what winter did and sets the controller for your yard. Visits out here are planned ahead, so book early in spring.",
+    "chips": ["Water on slowly", "Every zone run and adjusted", "Licensed and insured"],
+    "photo": "ai-startup"
+  },
+  "local": {
+    "eyebrow": "Spring in Howell",
+    "title": "What a Howell startup **has to account for.**",
+    "intro": "The calendar, the water source and the soil all change how a spring startup should go here. These are the local facts behind how we time it and how we set a system up for the season.",
+    "points": [
+      {
+        "title": "Last hard freeze around April 24",
+        "body": "NOAA's 1991 to 2020 normals for the Howell station put the typical last 28 degree night around April 24 and the last 32 degree frost around May 4. Turn the water on too early and the backflow device above ground can freeze with water in it and split."
+      },
+      {
+        "title": "Loam, sand and muck in one yard",
+        "body": "USDA soil maps around Howell show mostly loam over glacial deposits, with sandy rises and muck in the low spots. Sand dries out first and loam takes water slowly, so the same minutes on every zone overwater one and starve another. We set each zone on its own."
+      },
+      {
+        "title": "A meter just for the sprinklers",
+        "body": "On city or MHOG water, spring is a good time to ask about an irrigation meter. Howell Township bills water on its irrigation meter without a sewer charge, and the city takes requests for lawn irrigation meters through Public Works. The utility sets the meter."
+      },
+      {
+        "title": "Heads lost under turf and mulch",
+        "body": "In older yards in town and around big trees, heads sink and get grown over through the years. Startup is when we find them, raise them to grade and trim the grass back, so the first summer run reaches the whole lawn instead of the turf around the head."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Getting on the **spring list.**",
+    "body": [
+      "Our startups run from about mid April through May, once the hard freezes are over, and the Howell numbers point to the later part of that window. Since Howell is our farthest drive, we plan startups out here ahead and group them. Call or text [(810) 423-9513](tel:+18104239513) or [book a startup](/book-service/), and we will call back with a time.",
+      "We need to reach the main irrigation shutoff, usually in the basement, and the controller. If the system runs on a well, tell us where the pump is. If a repair was left over from last fall, mention it when you book so we can plan for it on the same visit."
+    ],
+    "facts": [
+      { "label": "Typical last hard freeze", "value": "Around April 24, per NOAA's Howell station" },
+      { "label": "Typical last frost", "value": "Around May 4" },
+      { "label": "From Fenton", "value": "About 30 minutes, visits grouped" },
+      { "label": "When to call", "value": "Early spring, before the startup rush" }
+    ]
+  },
+  "photo": "colonial-mist",
+  "faq": [
+    {
+      "q": "When do you start turning on sprinkler systems in Howell?",
+      "a": "Once the hard freezes are behind us, which out here usually means late April into May. Misty's goes by the forecast more than the calendar, and the Howell station's typical last 28 degree night falls around April 24. Visits are planned ahead, so call early to get a time that suits you."
+    },
+    {
+      "q": "Can I turn the system on myself?",
+      "a": "You can, but go slowly. Open the main valve a little at a time so the pipe fills gently instead of slamming water into the heads and fittings. Then run every zone and look for geysers, soggy spots and heads that do not pop up. If something is wrong, call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Why do some zones on my well system run weak?",
+      "a": "A well pump can only supply so much water at once, so a zone with too many heads runs weak at the far end. A pipe that cracked over winter looks the same from the street. At startup we watch each zone run, check the pressure and tell you which one it is."
+    },
+    {
+      "q": "How long should each zone run in a Howell yard?",
+      "a": "It depends on the heads and the soil. Spray heads put down about 1.5 inches an hour and rotors about half an inch. On loam, two shorter runs soak in better than one long one, and sandy spots need water more often. Aim for about an inch a week, rain included. Our [watering guide](/watering-guide/) goes further."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s", "susan-r"]
+}

@@ -1,0 +1,157 @@
+{
+  "service": "winterization",
+  "meta": {
+    "title": "Sprinkler Winterization in Fenton, MI | Misty's Irrigation",
+    "description": "Fall sprinkler blowouts around Fenton: every zone cleared with compressed air and the backflow device drained and left open before the ground freezes."
+  },
+  "hero": {
+    "kicker": "Sprinkler winterization in Fenton, MI",
+    "title": "Off is not empty. **Blow it out.**",
+    "lede": "Shutting the water off leaves water sitting in the pipes, valves, heads and backflow device. We push it out with compressed air, zone by zone, and leave the backflow device drained and open, so the frost has nothing to crack.",
+    "chips": ["Every zone cleared", "Licensed and insured"],
+    "photo": "ai-blowout"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "Why it matters",
+      "title": "Turning it off **does not empty it.**",
+      "intro": "Closing the irrigation shutoff stops new water from coming in. It does nothing about the water already in the system, and there is a lot of it.",
+      "body": [
+        "Pipes in a lawn are not laid perfectly downhill. They dip and rise with the yard, and every dip holds water. So does every valve, every head and the backflow device beside the house. Opening a drain lets some of it out, but nobody can see whether the low spots emptied.",
+        "Lateral pipes usually sit 6 to 12 inches down, within reach of frost in a Michigan winter, and the backflow device sits above ground in the open air. Water grows about 9 percent as it freezes. Inside a closed pipe or valve it has nowhere to go, so the part splits."
+      ],
+      "photo": "flagstone-pond",
+      "cta": { "label": "What a spring startup includes", "href": "/sprinkler-startup/" }
+    },
+    {
+      "type": "panel",
+      "kind": "blowout",
+      "plane": "ink",
+      "title": "Try a winter **both ways.**",
+      "intro": "Run the blowout zone by zone, or skip it, then drag the season forward and watch the frost line reach the pipes.",
+      "points": [
+        "Watch the backflow device. It sits above ground, so cold air reaches it before frost reaches any pipe.",
+        "Nothing leaks in January because nothing is running. The damage shows up at the spring startup.",
+        "A little water always clings in the low spots, which is why air volume and timing matter."
+      ]
+    },
+    {
+      "type": "steps",
+      "plane": "white",
+      "eyebrow": "The visit",
+      "title": "How a blowout **runs.**",
+      "intro": "The same order every time, because the order is what protects the parts that crack.",
+      "steps": [
+        { "title": "Water off at the supply", "body": "We close the irrigation shutoff, usually in the basement, and open its drain so the line out to the backflow device empties." },
+        { "title": "Air in below the backflow device", "body": "The compressor connects at the blowout port just past the backflow device, never through it. Compressed air runs hot, and heat can damage the rubber seals inside the device." },
+        { "title": "One zone at a time", "body": "Each zone is opened in turn and the air pushes its water out through the heads. We watch until the heads go from water, to spitting mist, to dry air, then move to the next zone." },
+        { "title": "No zone left blowing dry", "body": "Air moving through empty pipe builds heat from friction, and heads spun on air alone can be damaged. A zone that still spits water gets a short second pass. A clear one is left alone." },
+        { "title": "Backflow device drained and left open", "body": "Its small test cocks are opened and its ball valves are left half open, at about 45 degrees, so no water is trapped inside the device or inside the balls of its valves." },
+        { "title": "Controller switched off", "body": "So it does not try to open valves all winter. Anything we noticed along the way, like a broken head or a zone that ran weak, gets noted for the spring startup." }
+      ],
+      "footnote": "A system that pulls from the lake also needs its pump and suction line drained. See [lake pump systems](/lake-pump-irrigation/)."
+    },
+    {
+      "type": "intro",
+      "plane": "mist",
+      "flip": true,
+      "eyebrow": "The backflow device",
+      "title": "The part most likely **to crack.**",
+      "intro": "The brass device on a short pipe beside the house is a pressure vacuum breaker. It keeps lawn water, with fertilizer, weed killer and whatever else is in the soil, from flowing back into the water you drink.",
+      "body": [
+        "It is also the most exposed part of the system: above ground, in the open air, full of water all summer. One hard overnight freeze can crack it while the ground below is still soft.",
+        "That is why it gets its own steps at a blowout. It is drained, its test cocks are opened and its ball valves are left half open, because a ball valve left fully open or fully closed can trap water inside the ball. An insulated cover over it helps on top of that. More on [pressure vacuum breakers](/backflow-preventers/)."
+      ],
+      "photo": "ai-pvb"
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Why things crack",
+      "figure": "9%",
+      "figureLabel": "how much water grows as it turns to ice",
+      "title": "Ice needs room, **and a pipe has none.**",
+      "body": "Water expands about 9 percent as it freezes, with enough force to split plastic pipe, fittings, valve bodies and brass. Nothing leaks in January because nothing is running. It shows up at the spring startup as a geyser in the lawn, a zone that will not hold pressure or a backflow device spraying water, and each of those is a repair the blowout was there to prevent."
+    },
+    {
+      "type": "compare",
+      "plane": "white",
+      "eyebrow": "The options",
+      "title": "Shut off, shop compressor **or a real blowout.**",
+      "intro": "What each one leaves in the ground for the winter.",
+      "columns": ["Shutoff closed only", "Small shop compressor", "Full blowout"],
+      "highlight": 2,
+      "rows": [
+        { "label": "Water left behind", "values": ["Nearly all of it, in every pipe, valve and head", "Pockets in the low spots and at the far ends of zones", "A little clinging in low spots, nothing pooled"] },
+        { "label": "Backflow device", "values": ["Full of water, above ground", "Often left full, or blown straight through", "Drained, test cocks open, ball valves half open"] },
+        { "label": "The air", "values": ["None", "Plenty of pressure, too little volume", "Enough volume to move water at a safe pressure"] },
+        { "label": "Risk", "values": ["Split pipe, cracked valves and backflow device", "Missed water, plus heat and strain on the pipe", "Air set for the pipe in the ground, no zone run dry"] },
+        { "label": "In spring", "values": ["Leaks and repairs at startup", "Maybe fine, maybe a split fitting", "An ordinary startup"] }
+      ]
+    },
+    {
+      "type": "reviews",
+      "plane": "mist",
+      "title": "What our customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    },
+    {
+      "type": "areas",
+      "plane": "white",
+      "title": "Fall blowouts **in your town.**",
+      "intro": "Each town has its own page with the details for that area."
+    }
+  ],
+  "faq": [
+    {
+      "q": "When should I schedule my sprinkler blowout?",
+      "a": "Late September into November, before the ground freezes. Earlier in that window is safer, because one hard overnight freeze can crack the backflow device while the ground is still soft, and by October a lawn needs far less water than it did in summer. The calendar fills as fall goes on, so book early. [Book a blowout](/book-service/) or call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Can I just shut the water off and open the drains?",
+      "a": "It is better than nothing, but it leaves water behind. Pipes dip and rise with the yard, and every dip, valve and head holds water that a drain cannot reach. There is also no way to see whether it emptied. Compressed air pushes the water out through the heads, where you can watch each zone go from water to mist to dry air."
+    },
+    {
+      "q": "Can I blow it out myself with my garage compressor?",
+      "a": "Most garage compressors make plenty of pressure but very little volume, and volume is what pushes water out of a pipe. With too little air, people turn the pressure up, which strains the pipe and heads and still leaves water in the low spots. If you do it yourself: connect below the backflow device, never through it, keep the pressure moderate, since flexible black poly pipe takes less than rigid white PVC, wear eye protection and never stand over a head."
+    },
+    {
+      "q": "Do you winterize the backflow device too?",
+      "a": "Yes, every time. It is drained, its test cocks are opened and its ball valves are left half open so no water is trapped inside. Air is never pushed through it. An insulated cover is worth adding on top. More on [pressure vacuum breakers](/backflow-preventers/)."
+    },
+    {
+      "q": "We had a hard freeze before my blowout. Is the system ruined?",
+      "a": "Probably not. A night or two of frost rarely freezes pipe buried in the lawn, because the soil holds its heat. The backflow device above ground is what is exposed. Put an insulated cover or an old blanket over it on a hard-freeze night and get the blowout booked. If anything did crack, it shows at the blowout or at the [spring startup](/sprinkler-startup/)."
+    },
+    {
+      "q": "Do I need to be home for the blowout?",
+      "a": "Usually someone needs to let us reach the irrigation shutoff, which is most often in the basement. If the shutoff and the controller are outside or easy to get to, tell us when you book."
+    },
+    {
+      "q": "One of my heads is broken. Should it be fixed before the blowout?",
+      "a": "Tell us when you book. A zone with a broken head can still be blown out. We can fix the head at the blowout or note it for the [spring startup](/sprinkler-startup/), whichever you prefer."
+    },
+    {
+      "q": "What happens to my controller over the winter?",
+      "a": "We switch it off at the blowout so it does not try to open valves all winter. Most controllers keep their programs while switched off, which makes spring setup quicker. If it has been skipping zones or showing faults, mention it and we will look at the [controller](/sprinkler-controllers/) at startup."
+    }
+  ],
+  "quote": {
+    "title": "Book your fall blowout.",
+    "lede": "Send your address and anything that acted up this season, like a weak zone or a head that would not shut off. We will call back to set a time."
+  },
+  "summary": {
+    "title": "A fall blowout, **zone by zone.**",
+    "intro": "Every blowout follows the same order, so the water comes out of every part that can crack and the backflow device is left ready for winter.",
+    "items": [
+      { "name": "Water shut off", "detail": "The irrigation shutoff closed and its drain opened, so the supply line empties." },
+      { "name": "Air in below the backflow", "detail": "The compressor connected past the backflow device, never through it." },
+      { "name": "Every zone cleared", "detail": "Each zone blown out through its heads until it goes from water to mist to dry air." },
+      { "name": "No zone run dry", "detail": "Air set for the pipe in the ground, and no zone left blowing once it is clear." },
+      { "name": "Backflow device drained", "detail": "Test cocks opened and ball valves left half open, so no water is trapped inside." },
+      { "name": "Controller off", "detail": "Switched off for the winter, with anything we noticed noted for the spring startup." }
+    ]
+  }
+}

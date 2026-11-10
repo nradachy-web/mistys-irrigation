@@ -1,0 +1,70 @@
+{
+  "service": "startup",
+  "city": "holly",
+  "meta": {
+    "title": "Sprinkler Startup in Holly, MI | Misty's Irrigation",
+    "description": "Spring startups in Holly: water on slowly, every zone run and checked, heads aimed off the house and the controller set for your soil. Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Spring sprinkler startup in Holly, MI",
+    "title": "Wait out the freeze, **then turn it on.**",
+    "lede": "Around Holly the last hard freeze usually passes in late April and the last frost by early May. Misty's brings the water up slowly, runs and checks every zone, and sets the controller for the soil and slope you actually have.",
+    "chips": ["Last hard freeze: late April", "Every zone run and checked", "Controller set for your soil"],
+    "photo": "ai-startup"
+  },
+  "local": {
+    "title": "What a Holly startup **has to account for.**",
+    "intro": "Turning the water on is the easy part. The point of a startup is to catch winter damage before it wastes a summer of water, and to set a schedule for the ground and the water supply this particular yard has.",
+    "points": [
+      {
+        "title": "Timing the last freeze",
+        "body": "At the NOAA stations ringing Holly, the median last 28 degree night falls between April 22 and 28, and the last 32 degree night between May 1 and 10. The part most exposed to a late freeze is the backflow device above ground, so we start once the hard freezes are past."
+      },
+      {
+        "title": "Loam, sand and slope",
+        "body": "The township's master plan maps mostly loamy Marlette and Capac soils, with sandy Oshtemo ground and mucky low spots mixed in, all on hilly glacial land. Loam soaks water in slowly; sand drinks fast and dries fast. On a slope we split long runs into short cycles so water soaks in instead of running off."
+      },
+      {
+        "title": "Iron and the first spray",
+        "body": "Oakland County's health division lists iron among the things that change how well water looks, and its lab's basic chemistry panel does not include it. At startup we aim every head off siding, fences and walks, so the iron lands on grass. For stains already there, see [Rid-O-Rust](/rust-stain-prevention/)."
+      },
+      {
+        "title": "Sharing the well",
+        "body": "Most township homes water from a private well, so the sprinklers and the house share one pump. We watch the pressure as each zone runs, then set start times that stay out of the way of morning showers and laundry."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Booking a Holly **startup.**",
+    "body": [
+      "Startups run from about mid April through May. Text [(810) 423-9513](tel:+18104239513) with your address and your water source, and we will set a time. Leave the irrigation valve closed until we arrive. We open it slowly, because a valve thrown wide open sends a slug of water through empty pipe that can crack fittings.",
+      "On the visit we open the supply, fill the lines, run each zone in turn and look at every head. Broken heads, leaks and stuck valves get pointed out on the spot, and the controller gets a schedule built for this spring instead of last year's."
+    ],
+    "facts": [
+      { "label": "Last hard freeze", "value": "April 22 to 28, typically" },
+      { "label": "Last spring frost", "value": "May 1 to 10, typically" },
+      { "label": "Startup window", "value": "Mid April through May" },
+      { "label": "From Fenton", "value": "About 15 minutes" }
+    ]
+  },
+  "photo": "ai-controller",
+  "faq": [
+    {
+      "q": "When is the right time for a sprinkler startup in Holly?",
+      "a": "Late April into May. Misty's runs startups from about mid April through May, and around here the last hard freeze usually passes by the end of April. Starting much earlier gains little: the system then sits charged with water through any late cold snap. Call or text [(810) 423-9513](tel:+18104239513) to get on the list."
+    },
+    {
+      "q": "How long should each zone run on this kind of soil?",
+      "a": "Aim for about an inch of water a week in summer, rain included. Spray heads put down about 1.5 inches an hour, so roughly 40 minutes a week per zone, split over three days. Rotors put down about half an inch an hour, so closer to two hours a week. On a slope or on heavier loam, split each run into two shorter cycles. More in the [watering guide](/watering-guide/)."
+    },
+    {
+      "q": "My well water leaves orange marks on the house. Can a startup help?",
+      "a": "Partly. Aiming heads so they stop hitting the house, walks and fence keeps new stains down. It does not take the iron out of the water. A [Rid-O-Rust treatment](/rust-stain-prevention/) added to the system keeps the iron from staining whatever the water lands on."
+    },
+    {
+      "q": "The system was fine last fall. What can go wrong over a Holly winter?",
+      "a": "Frost heaves the ground and tips heads out of level. A pocket of water missed in the blowout can crack a fitting. Plows and shovels clip heads along the drive, and a controller can lose its program after a power outage. A startup is when we catch all of that, before it shows up as a brown patch in July."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

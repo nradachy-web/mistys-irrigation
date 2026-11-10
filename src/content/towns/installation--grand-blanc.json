@@ -1,0 +1,76 @@
+{
+  "service": "installation",
+  "city": "grand-blanc",
+  "meta": {
+    "title": "New Sprinkler Systems in Grand Blanc, MI | Misty's Irrigation",
+    "description": "New sprinkler systems and added zones in Grand Blanc, designed around your water source, slow loam soil and the lawn you actually have. From Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler system installation in Grand Blanc, MI",
+    "title": "Design it around **the water you have.**",
+    "lede": "A Grand Blanc system can draw from city wells, county lake water, a house well or a separate irrigation well, and each one changes the design. Misty's Irrigation lays out new systems and added zones head to head, sized to your supply and your soil.",
+    "chips": ["Head to head coverage", "Sized to your water supply", "Licensed and insured"],
+    "photo": "estate-clouds"
+  },
+  "local": {
+    "eyebrow": "New systems in Grand Blanc",
+    "title": "Four things that shape **a system here.**",
+    "intro": "Most of the design work happens before the trencher starts. In Grand Blanc, four local facts drive it: where the water comes from, what the township allows, how slowly the soil drinks, and how big the lot is.",
+    "points": [
+      {
+        "title": "Lawn meters and irrigation wells",
+        "body": "The township's fee schedule lists irrigation meter fittings, so a township home can meter sprinkler water on its own line. Township water customers may also put in an irrigation well for lawns and beds, kept completely outside the house, with an initial and annual township inspection."
+      },
+      {
+        "title": "Keeping the old well",
+        "body": "When a township home moves from a private well to public water, the old well can sometimes stay on for irrigation, with approval from the Director of Public Works. It has to be disconnected from the house entirely. Ask the township first, then we design around what the well delivers."
+      },
+      {
+        "title": "Soil that drinks slowly",
+        "body": "Most of the area sits on Conover and Celina loams over dense glacial till, which the USDA describes as very slow to pass water. Spray heads put down about 1.5 inches an hour. Rotors and rotary nozzles, around 0.4 to 0.5, give heavy soil time to soak it in."
+      },
+      {
+        "title": "Small lots to an acre and up",
+        "body": "Lots are tighter in the north end of the township and roomier to the south, with rural estate parcels of an acre or more planned in the southwest corner. Small yards with trees and beds call for sprays and short throws. Big open lawns are rotor country, with more zones."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How an install **runs in Grand Blanc.**",
+    "body": [
+      "It starts with a visit. We find out what feeds the house, check pressure and flow at the source, measure the yard and note sun, shade and beds. Then we draw the zones so every head throws to the next one, and walk you through the plan before anything gets dug.",
+      "On install day the compact trencher cuts a narrow slot for the pipe, so the lawn closes back up instead of looking dug up. Valves go in boxes you can find again, the controller goes where you can reach it, and every zone gets run and aimed before we leave.",
+      "On a well, tell us early and share a recent water test if you have one. A U.S. Geological Survey study found county well water commonly carries iron, and more than about 0.3 parts per million stains. If yours does, we plan [Rid-O-Rust treatment](/rust-stain-prevention/) into the system from the start."
+    ],
+    "facts": [
+      { "label": "Water sources", "value": "City wells, county lake water or a private well" },
+      { "label": "Common soil", "value": "Conover and Celina loams over dense till" },
+      { "label": "Irrigation wells", "value": "Allowed in the township, outside the house" },
+      { "label": "Drive from Fenton", "value": "About 20 minutes" }
+    ]
+  },
+  "photo": "trencher-dog",
+  "faq": [
+    {
+      "q": "Does Misty's install new sprinkler systems in Grand Blanc?",
+      "a": "Yes. Misty's Irrigation designs and installs new systems, and adds zones to existing ones, across the City of Grand Blanc and the township. Call or text [(810) 423-9513](tel:+18104239513) to set up a visit to look at the yard and the water supply."
+    },
+    {
+      "q": "Do I need a separate meter for the sprinklers on township water?",
+      "a": "It is an option, not a requirement we know of. The township lists irrigation meter fittings in its fee schedule, and it bills a lawn meter a ready to serve fee every month, year-round, whether you water or not. Ask the township how its billing works with one before you decide. We can plan the system either way."
+    },
+    {
+      "q": "Can a new system run off my well?",
+      "a": "Often, if the well can keep up. We measure what the well delivers and size each zone to stay under it, so the pump is not switching on and off all through a cycle and the heads get full pressure. If the water carries iron, we add rust treatment so the system does not paint the house and walks orange."
+    },
+    {
+      "q": "Will a trencher tear up my lawn?",
+      "a": "Not the way people expect. The trencher cuts a narrow slot, the pipe goes in and the soil goes back. Expect thin lines across the lawn for a few weeks while the grass knits back together. Valve boxes sit flush with the turf so the mower rides right over them."
+    },
+    {
+      "q": "Can you add a zone for new beds or flowerpots?",
+      "a": "Yes. New beds, a new patio border or a fresh section of sod can get a new zone off the existing system, as long as the supply can carry it. Pots and beds often do better on [drip](/drip-irrigation/) than on spray heads, watered at the roots on the same controller."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s"]
+}

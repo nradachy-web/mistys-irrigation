@@ -1,0 +1,80 @@
+{
+  "city": "grand-blanc",
+  "meta": {
+    "title": "Sprinkler Service in Grand Blanc, MI | Misty's Irrigation",
+    "description": "Sprinkler repair, spring startups, fall blowouts and new systems across the city and township of Grand Blanc, from Misty's Irrigation in nearby Fenton."
+  },
+  "hero": {
+    "kicker": "Lawn sprinkler service in Grand Blanc, MI",
+    "title": "One town, **three water systems.**",
+    "lede": "City wells, Lake Huron water through the county, or a well in the backyard. Misty's Irrigation works on sprinkler systems across the city and the township, and the first thing we sort out is which one feeds yours.",
+    "chips": ["City and township", "About 20 minutes from Fenton", "Licensed and insured"],
+    "photo": "colonial-mist"
+  },
+  "about": {
+    "eyebrow": "Irrigation in Grand Blanc",
+    "title": "What is different about **sprinklers here.**",
+    "body": [
+      "Grand Blanc is really two places. The City of Grand Blanc is the four square miles in the middle, incorporated in 1930. Grand Blanc Township wraps around it, and most of its homes sit in single-family subdivisions: about 80 neighborhoods by the count in the township master plan, many with a homeowners association.",
+      "The water reaching a Grand Blanc lawn comes from one of three places. The city pumps its own from three wells, each over 300 feet deep, and filters it through reverse osmosis. The township buys Lake Huron water treated at the Genesee County plant. And many parts of the township have no water main at all, so those homes run on private wells.",
+      "For a sprinkler system, the source matters. It sets how much water a zone can have, it decides whether iron staining is a worry, and it decides whose rules apply when summer gets dry. We ask about it on the first call."
+    ],
+    "points": [
+      {
+        "title": "Loam on top, dense till below",
+        "body": "USDA soil maps put most of the area on Conover and Celina loams, laid down by glaciers over dense till that passes water very slowly. Run a spray zone too long in one go and the water sheets off before it soaks in. Shorter cycles, repeated, work better here."
+      },
+      {
+        "title": "Wet springs and a May frost",
+        "body": "Conover soils can hold a perched water table 6 to 18 inches down in spring, right around sprinkler pipe depth. The median last frost at the NOAA station in Goodrich, just east of town, is May 1. Startups here belong in late April and May, not March."
+      },
+      {
+        "title": "Systems of every age",
+        "body": "The busiest building decade was the 1960s just west of the city, the 1970s in the north end of the township and the 2000s across the southern half. A system added to a 1960s lot and an original 20 year old subdivision system wear out in different places."
+      },
+      {
+        "title": "Wells and iron",
+        "body": "A U.S. Geological Survey study of Genesee County groundwater found well water from the glacial deposits commonly carries enough iron to stain. On a well-fed system that shows up as orange on siding, walks and fences. [Rid-O-Rust treatment](/rust-stain-prevention/) is how we stop it."
+      }
+    ],
+    "photo": "pine-lawn"
+  },
+  "logistics": {
+    "title": "How service works **in Grand Blanc.**",
+    "body": [
+      "We are based in Fenton, about 20 minutes away, and we work Grand Blanc from spring through fall: startups once the hard freezes are over, repairs all summer, blowouts before the ground freezes. Call or text [(810) 423-9513](tel:+18104239513) with what the system is doing, and send a photo if you have one.",
+      "When you call, tell us whether you are in the city or the township, and whether the house is on public water or a well. On township water, mention a separate lawn meter if you have one. It saves a step on the visit and tells us what to bring.",
+      "Township homes on public water follow Genesee County standards, and the county sends out summer water conservation notices that can restrict lawn watering for a set period. When one is posted, the [controller](/sprinkler-controllers/) is the place to make the change, and we can set it up so that takes a minute."
+    ],
+    "facts": [
+      { "label": "Drive from Fenton", "value": "About 20 minutes" },
+      { "label": "City water", "value": "Three city wells, each over 300 feet deep" },
+      { "label": "Township water", "value": "Lake Huron water via the county, or a private well" },
+      { "label": "Median last spring frost", "value": "May 1, at the NOAA station in Goodrich" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Does Misty's work in both the city and the township of Grand Blanc?",
+      "a": "Yes. Misty's Irrigation works across the City of Grand Blanc and Grand Blanc Township, along with Fenton, Linden, Holly, Hartland and Howell. Repairs, spring startups, fall blowouts, new systems, controllers, pressure vacuum breakers and rust treatment for well-fed systems. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "How do I know if my sprinklers run on city water, township water or a well?",
+      "a": "Start with the utility bill. A bill from the city means city wells. A bill from the township means county water from Lake Huron, and if the township bills you for a lawn meter, the sprinklers have their own meter. A sewer charge with no water charge, or no utility bill at all, usually means a private well with a pressure tank in the basement. If you are not sure, we can tell on the first visit."
+    },
+    {
+      "q": "Is there an odd and even watering schedule in Grand Blanc?",
+      "a": "Neither the city nor the township posts a standing odd and even rule that we know of. Township homes on public water follow Genesee County standards, and the county issues water conservation notices in summer that can restrict lawn watering for a set period. Check with the city or township before relying on any schedule, and see the [watering guide](/watering-guide/) for how much a lawn actually needs."
+    },
+    {
+      "q": "Can I put in a separate well just for the sprinklers?",
+      "a": "In the township, yes, with conditions. Township water customers may install an irrigation well for lawns and flowerbeds, but it must stay completely outside the house and needs an initial and annual inspection by a township official. A house well you no longer drink from can sometimes be kept for irrigation too, with approval from the Director of Public Works. Ask the township first, then we can plan the [system](/sprinkler-installation-grand-blanc-mi/) around it."
+    },
+    {
+      "q": "When should I book a startup and a blowout?",
+      "a": "At the NOAA station in Goodrich, just east of Grand Blanc, the median last spring frost is May 1 and the median first fall frost is October 14. So book the [spring startup](/sprinkler-startup-grand-blanc-mi/) for late April or May, and the [fall blowout](/sprinkler-winterization-grand-blanc-mi/) for late September or October, before the hard freezes."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r", "joe-s"],
+  "neighbors": ["fenton", "holly", "linden"]
+}

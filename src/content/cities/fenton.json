@@ -1,0 +1,80 @@
+{
+  "city": "fenton",
+  "meta": {
+    "title": "Lawn Sprinkler Service in Fenton, MI | Misty's Irrigation",
+    "description": "Startups, blowouts, repairs and lake pump systems in Fenton and Fenton Township, from Misty's Irrigation, a family sprinkler business based right here."
+  },
+  "hero": {
+    "kicker": "Lawn sprinkler service in Fenton, MI",
+    "title": "Home base, **zone by zone.**",
+    "lede": "Misty's Irrigation is a family sprinkler business run by Misty and Mike Lutz out of Fenton. City yards, township homes on wells, lawns along the lakes: we start them in spring, fix what breaks, and blow them out before the freeze.",
+    "chips": ["Based in Fenton", "Family run", "Licensed and insured"],
+    "photo": "lake-sunrise"
+  },
+  "about": {
+    "eyebrow": "Irrigation in Fenton",
+    "title": "One town, **three kinds of water.**",
+    "body": [
+      "Inside the city, sprinklers run on city water: four wells feeding a plant that softens the water before it reaches the tap. Out in the township, many homes draw from their own private wells, and the township office keeps state well water sample bottles for anyone who wants a test. On a lake lot, the lawn can pump straight from the lake instead. Each source changes how a system should be set up, run and cared for.",
+      "Something new is happening in the south end of the township, too. A Genesee County water main fed from Lake Huron now runs along Thompson, Torrey, Lahring and Jennings roads and out toward Linden, and homes along it can choose to connect. For a home on township sewer, connecting means the sewer bill is figured from water use instead of a flat rate, so the sprinklers start to show up on it.",
+      "Fenton is also where Misty's is based. There is no drive in front of a Fenton visit, which usually makes it the simplest place for us to fit into the schedule. The work is the same as anywhere: every zone run, the problem explained before we touch it, and the yard left clean."
+    ],
+    "points": [
+      {
+        "title": "City water, read four times a year",
+        "body": "The City of Fenton reads meters in March, June, September and December, and both the water and the sewer charges come off that reading. A zone that starts leaking in early summer can run for months before a bill shows it. That is one reason we run every zone on every visit."
+      },
+      {
+        "title": "Township wells and orange stains",
+        "body": "A USGS study of Genesee County groundwater found the water in the glacial drift commonly carries objectionable amounts of iron. Sprinklers on a well throw that iron at the siding, the walk and the fence. [Rid-O-Rust treatment](/rust-stain-prevention/) is how we stop it."
+      },
+      {
+        "title": "Lakes, from Lake Fenton to Pine Lake",
+        "body": "Lake Fenton alone covers about 845 acres, and Lake Ponemah, Silver Lake and Pine Lake are in the township too. A lake system needs its intake checked and its pump primed every spring, and the pump and line emptied every fall. More on [lake pump systems here](/lake-pump-irrigation-fenton-mi/)."
+      },
+      {
+        "title": "Mostly loam, with sand and muck mixed in",
+        "body": "Soil survey maps of the area show mostly loam, sandy pockets that drain fast, and muck in the low, wet spots. One program on the controller rarely suits all three. We set run times zone by zone, by what the ground under each one does."
+      }
+    ],
+    "photo": "wrap-car-dog"
+  },
+  "logistics": {
+    "title": "How a visit **works here.**",
+    "body": [
+      "Call or text [(810) 423-9513](tel:+18104239513), or send the form below. Tell us whether the sprinklers run on city water, a well or the lake, and what they are doing. A photo of the problem or the controller screen helps us come prepared.",
+      "We need to reach the controller, the shutoff for the sprinklers and, for a startup or a blowout, the backflow device outside. In most homes that means the garage, the basement or a utility room, so let us know how to get to them.",
+      "We work spring through fall. [Spring startups](/sprinkler-startup-fenton-mi/) run from about mid April through May, once the hard freezes are over. [Fall blowouts](/sprinkler-winterization-fenton-mi/) run from late September into November, before the ground freezes. [Repairs](/sprinkler-repair-fenton-mi/) happen all season."
+    ],
+    "facts": [
+      { "label": "Home base", "value": "Fenton, so no drive to reach you" },
+      { "label": "Average last spring frost", "value": "About May 10 (NOAA normals, Linden)" },
+      { "label": "Average first fall frost", "value": "About October 7" },
+      { "label": "Water sources here", "value": "City wells, private wells and lakes" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Does Misty's work in Fenton Township and around the lakes, or only in the city?",
+      "a": "All of it. Misty's Irrigation is based in Fenton and works in the city, out in the township and on the lake lots, from Lake Fenton down to Silver Lake and Pine Lake. Linden, Holly, Hartland and Grand Blanc are close by as well."
+    },
+    {
+      "q": "We are on a well and the house is turning orange. Is that the sprinklers?",
+      "a": "Often, yes. Iron dissolves into groundwater as it moves through soil and rock, and when sprinkler water dries on siding or concrete, the iron stays behind. The state health department says iron above 0.3 mg/L can stain, and suggests a well test called partial chemistry, which includes iron. On the sprinkler side, a [Rid-O-Rust treatment system](/rust-stain-prevention/) treats the water on its way to the heads so it stops staining."
+    },
+    {
+      "q": "When should we book a spring startup or a fall blowout?",
+      "a": "Startups run from about mid April through May. The average last spring frost here is around May 10, but a light frost on the grass does not reach pipe buried in the lawn, so most systems can start before then. Blowouts run from late September into November. Book in September, because the part an early hard freeze cracks first is the backflow device sitting above ground."
+    },
+    {
+      "q": "Does sprinkler water count on a City of Fenton sewer bill?",
+      "a": "On a standard city account, yes. The city bills water and sewer consumption from the same meter reading, and the meter cannot tell lawn water from shower water. Ask City Hall whether a separate irrigation meter is possible at your address. Either way, a zone that leaks or overwaters costs you twice."
+    },
+    {
+      "q": "We connected to the new county water main. Does that change anything for the sprinklers?",
+      "a": "It can. If the sprinklers still run off the well, the well's flow and any iron in it still set the limits. If they moved to county water with the house, the lawn is now on a meter, and on township sewer the sewer bill now follows water use. Have the system looked over before its first season on the new supply, so the zones and run times suit it."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r", "joe-s"],
+  "neighbors": ["linden", "holly", "hartland", "grand-blanc"]
+}

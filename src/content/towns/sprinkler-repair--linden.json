@@ -1,0 +1,75 @@
+{
+  "service": "sprinkler-repair",
+  "city": "linden",
+  "meta": {
+    "title": "Sprinkler Repair in Linden, MI | Misty's Irrigation",
+    "description": "Misting heads, leaks, dead zones and backflow devices on city, well and lake systems in Linden, MI. Misty's Irrigation finds the cause and fixes it."
+  },
+  "hero": {
+    "kicker": "Sprinkler repair in Linden, MI",
+    "title": "More pressure finds **the weak spots.**",
+    "lede": "The county water switch raised pressure across town, and older systems feel it first. Misty's runs every zone, finds what is misting, leaking or stuck, tells you what it is, and fixes it.",
+    "chips": ["Every zone run and checked", "City, well and lake systems", "Licensed and insured"],
+    "photo": "colonial-mist"
+  },
+  "local": {
+    "eyebrow": "Why systems here act up",
+    "title": "Four local reasons a system **starts acting up.**",
+    "intro": "A broken head is a broken head anywhere. What makes Linden different is what sits behind the breakage: a change in the city's water pressure, a lot of systems of the same age, big trees, and wells just outside town.",
+    "points": [
+      {
+        "title": "Pressure went up in 2025",
+        "body": "The city finished its Genesee County connection on April 29, 2025 and reported pressure up 7 to 12 psi, with further increases planned. Spray heads pushed past their range throw mist instead of droplets, and a fitting or valve diaphragm that held for years at the old pressure can let go."
+      },
+      {
+        "title": "Many homes from 1980 to 2000",
+        "body": "The city's master plan counts 34.8 percent of Linden homes as built between 1980 and 2000, the largest share of any era. A house that age may still have its first sprinkler system, with heads, valves and wire splices that have been through a lot of winters."
+      },
+      {
+        "title": "Mature trees, shifting heads",
+        "body": "The same plan notes mature street and yard trees throughout the city's neighborhoods. Roots lift and tilt heads, shade changes what the grass needs, and a shrub that grew into a spray pattern leaves a dry crescent behind it. Fixing the head fixes the spot. More minutes do not."
+      },
+      {
+        "title": "Iron on the well side",
+        "body": "Most of Argentine Township, just west of town, relies on private wells, and an older USGS study found county groundwater commonly carries objectionable iron. Iron crusts nozzles and screens and stains whatever the spray hits. If the walk is turning orange, ask about [rust treatment](/rust-stain-prevention/) along with the repair."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Booking a repair **here.**",
+    "body": [
+      "Text [(810) 423-9513](tel:+18104239513) a photo or a short video of the zone running. It tells us whether to bring heads, a valve or wire. The visit starts at the controller and works through every zone, so the problem you called about and the ones you have not spotted yet both turn up.",
+      "On city water with a separate lawn meter, read that meter with the sprinklers and outside taps off. If the dial still creeps, water is escaping somewhere on the outdoor side, and we know to walk the lines for a leak.",
+      "The city's cross-connection program, run with HydroCorp, sends an inspector around the outside of homes on city water, and that inspector looks at the backflow device on lawn systems. If yours needs work, we install and repair [pressure vacuum breakers](/backflow-preventers/)."
+    ],
+    "facts": [
+      { "label": "Pressure change in town", "value": "Up 7 to 12 psi after the 2025 county switch" },
+      { "label": "Homes built 1980 to 2000", "value": "34.8 percent of the city's housing" },
+      { "label": "Drive from Fenton", "value": "About 10 minutes" }
+    ]
+  },
+  "photo": "ai-valve-box",
+  "faq": [
+    {
+      "q": "Who repairs sprinkler systems in Linden?",
+      "a": "Misty's Irrigation, a family business run by Misty and Mike Lutz out of Fenton, about 10 minutes away. We fix broken heads, leaks, stuck valves, wiring faults and backflow devices, whoever put the system in."
+    },
+    {
+      "q": "After the water switch my sprinklers throw a fine mist. Is something broken?",
+      "a": "Probably not broken, just over pressure. Spray heads are built for a range, and above it the stream shatters into mist that blows onto the driveway and the street. The usual fix is pressure regulating heads or nozzles on the spray zones. We read the pressure first, then fix only the zones that need it."
+    },
+    {
+      "q": "A zone started leaking this year after years of no trouble. Why now?",
+      "a": "Higher pressure goes looking for weak spots: a cracked fitting, a worn valve diaphragm, a riser with a hairline split. Signs are turf that stays soggy, a valve box holding water, or one zone that suddenly runs weak. We run the zone, trace the leak, dig a small hole and put the sod back."
+    },
+    {
+      "q": "The city inspector noted a problem with my backflow device. Can you fix it?",
+      "a": "We install and repair pressure vacuum breakers, the backflow device on most lawn systems. Linden's program says a vacuum breaker should not sit under constant pressure, so an older setup may need the device replaced or moved. Repairs are the homeowner's job under the program. Text us the notice and a photo."
+    },
+    {
+      "q": "My system runs off a well. Is a repair any different?",
+      "a": "A little. On a well, a leak shows up as the pump running longer or kicking on mid zone, not on a water bill. Iron can crust nozzles and the screens under them, so we clean or swap those while we are there. If a zone asks for more water than the well can give, it can be split so each half runs at full strength."
+    }
+  ],
+  "reviews": ["joe-s", "susan-r", "zachary-b"]
+}

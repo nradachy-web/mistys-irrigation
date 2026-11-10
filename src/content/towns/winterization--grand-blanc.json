@@ -1,0 +1,76 @@
+{
+  "service": "winterization",
+  "city": "grand-blanc",
+  "meta": {
+    "title": "Sprinkler Blowout in Grand Blanc, MI | Misty's Irrigation",
+    "description": "Fall sprinkler blowouts in Grand Blanc city and township, done zone by zone with compressed air before the hard freeze. Book yours with Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler winterization in Grand Blanc, MI",
+    "title": "Air in the lines **before late October.**",
+    "lede": "Near Grand Blanc, the first hard freeze lands around October 28 in a typical year. Misty's Irrigation blows out every zone with compressed air before the cold settles in, so no water is left in the pipe, the valves or the backflow device to freeze and split.",
+    "chips": ["Compressed air, zone by zone", "Wells and lawn meters too", "Licensed and insured"],
+    "photo": "ai-blowout"
+  },
+  "local": {
+    "eyebrow": "Blowouts in Grand Blanc",
+    "title": "Why fall timing **matters here.**",
+    "intro": "Michigan cold is not news. What helps is knowing when it usually shows up in Grand Blanc, what your water source adds to the shutdown, and what blowing out a township lawn meter line does and does not change.",
+    "points": [
+      {
+        "title": "First frost October 14, hard freeze October 28",
+        "body": "Those are the median dates at the NOAA station in Goodrich, about six miles east. A light frost will not reach pipe buried 6 to 12 inches down. The backflow device standing above ground is another matter, which is why a Grand Blanc blowout is best done in October, not left for Thanksgiving week."
+      },
+      {
+        "title": "Well systems have more to drain",
+        "body": "Many township homes run on private wells, and the township also allows separate irrigation wells kept fully outside the house. Either way, the pump connection and the pipe between it and the valves hold water too, so they are part of the shutdown, not an afterthought."
+      },
+      {
+        "title": "The lawn meter fee keeps running",
+        "body": "If your township home has a separate lawn meter, the township bills a ready to serve fee on it every month, year-round, whether it is used or not. A blowout protects the pipe and the valves. It does not pause that charge, so plan for it."
+      },
+      {
+        "title": "The brass device by the house",
+        "body": "Systems on public water carry a backflow device, usually a pressure vacuum breaker on a short pipe near the foundation. It is the first thing to freeze and an easy part to crack. We blow it out and leave its valves set for winter. If it cracked anyway, we [replace it](/backflow-preventers/)."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "Booking a blowout **in Grand Blanc.**",
+    "body": [
+      "Call or text [(810) 423-9513](tel:+18104239513) in September to get on the fall list. Booking early gives you the widest choice of dates before the hard freezes. We come over from Fenton, about 20 minutes away.",
+      "On the day we need the controller and the sprinkler shutoff. If the shutoff is inside, someone has to let us in, or close it before we arrive. We hook up the compressor, push air through each zone until the heads spit mist instead of water, then clear the backflow device and switch the controller off for the season.",
+      "Leaving for the winter? Grand Blanc Township offers a fall water turn off and spring turn on for the house itself. That is a township service, separate from the sprinkler blowout, so book both if you need both."
+    ],
+    "facts": [
+      { "label": "Median first frost", "value": "October 14, at the NOAA station in Goodrich" },
+      { "label": "Median first hard freeze", "value": "October 28, at 28 degrees or colder" },
+      { "label": "Best time to book", "value": "September" },
+      { "label": "Drive from Fenton", "value": "About 20 minutes" }
+    ]
+  },
+  "photo": "ai-pvb",
+  "faq": [
+    {
+      "q": "When does Misty's do fall blowouts in Grand Blanc?",
+      "a": "Misty's Irrigation runs blowouts from late September into November, before the ground freezes. Around Grand Blanc the median first hard freeze is about October 28, so October is the month to aim for. Call or text [(810) 423-9513](tel:+18104239513) to get on the list."
+    },
+    {
+      "q": "Can I just drain the system instead of blowing it out?",
+      "a": "Only if it was built with manual drains at every low point. Without them, water sits in the dips of each line and in the heads after a drain-down, and that is exactly where pipe splits. Compressed air pushes water out of every line and head, one zone at a time, which is why we blow out rather than drain."
+    },
+    {
+      "q": "My sprinklers run off a well. Is the blowout different?",
+      "a": "A little. The well pump has to be off or isolated from the sprinkler side before any air goes in, and the pipe between the pump and the valves has to be cleared as well. If the system has a sediment filter, we open and drain it. Tell us it is a well system when you book so we plan for it."
+    },
+    {
+      "q": "What if a hard freeze comes before my blowout?",
+      "a": "One cold night rarely reaches pipe buried 6 to 12 inches down. The parts at risk are above ground: the backflow device by the house and any exposed pipe. If a hard freeze is forecast and you are still waiting, shut off the water to the sprinklers and, if you know how, drain the backflow device. Then we blow out the lines as planned."
+    },
+    {
+      "q": "Does winterizing stop the township lawn meter charge?",
+      "a": "No. The township bills lawn meters a ready to serve fee every month, year-round, whether the meter is used or not. The blowout protects your pipe, valves and backflow device. Questions about the meter itself go to Grand Blanc Township public works."
+    }
+  ],
+  "reviews": ["zachary-b", "joe-s", "susan-r"]
+}

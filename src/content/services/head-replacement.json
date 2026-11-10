@@ -1,0 +1,154 @@
+{
+  "service": "head-replacement",
+  "meta": {
+    "title": "Sprinkler Head Replacement in Fenton, MI | Misty's Irrigation",
+    "description": "Broken, sunk, tilted and mower-hit sprinkler heads replaced, set level with the soil and matched to the zone so the coverage meets again. Fenton and nearby."
+  },
+  "hero": {
+    "kicker": "Sprinkler head replacement in Fenton, MI",
+    "title": "Right head, right nozzle, **right height.**",
+    "lede": "A brown patch is usually one head: cracked by the mower, sunk under the turf, tipped sideways or clogged. We replace it with the right kind for that zone, set it level with the soil and aim it so its water reaches the next head.",
+    "chips": ["Matched to the zone", "Licensed and insured"],
+    "photo": "ai-spray-macro"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "What we replace",
+      "title": "One bad head **browns a whole patch.**",
+      "intro": "Heads are the part of a system that takes the beating. Mowers, tires, edgers, frost and years of thatch all work on them.",
+      "checks": [
+        "Heads cracked by a mower, a car tire or a plow along the driveway, and the short pipe under them",
+        "Heads sunk below the turf, where the grass blocks the spray",
+        "Heads tipped sideways, watering the drive or the siding",
+        "Heads that stay up after the zone stops, or never pop up at all",
+        "Clogged and worn nozzles that fall short of the next head",
+        "Heads that mist instead of spray, from too much water pressure",
+        "A puddle around the lowest head after every run"
+      ],
+      "photo": "pine-lawn",
+      "cta": { "label": "Other repairs we do", "href": "/sprinkler-repair/" }
+    },
+    {
+      "type": "panel",
+      "kind": "coverage",
+      "plane": "ink",
+      "title": "Six heads, **four faults.**",
+      "intro": "This yard has four common faults: a head knocked sideways, a clogged nozzle, a sunk head and a broken one. Switch to after to see what fixing just those four does to the lawn.",
+      "points": [
+        "Tap or hover on a pink head to see what is wrong with it.",
+        "From the street, a sunk head and a clogged nozzle look the same: a brown patch."
+      ]
+    },
+    {
+      "type": "compare",
+      "plane": "white",
+      "eyebrow": "Know your heads",
+      "title": "Spray, rotor **or rotary nozzle.**",
+      "intro": "Three kinds of head water most lawns. They put water down at very different speeds, which is the whole reason they cannot share a zone.",
+      "columns": ["Spray heads", "Rotors", "Rotary nozzles"],
+      "rows": [
+        { "label": "How it waters", "values": ["A fixed fan of water, all at once", "One stream that turns slowly", "Many small streams that turn slowly"] },
+        { "label": "Reach", "values": ["About 8 to 15 feet", "About 20 to 45 feet", "Between the two, on a spray head body"] },
+        { "label": "Water rate", "values": ["About 1.5 inches an hour", "About 0.5 inch an hour", "About 0.4 to 0.6 inch an hour"] },
+        { "label": "Fits", "values": ["Small lawns, strips and curved edges", "Big open lawns", "Mid-size lawns, slopes and clay"] },
+        { "label": "Run time", "values": ["Short", "Long", "Long, with less runoff"] }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Matched precipitation",
+      "figure": "3x",
+      "figureLabel": "how fast a spray head waters compared with a rotor",
+      "title": "Never mix them **on one zone.**",
+      "body": "A spray head puts down about 1.5 inches of water an hour. A rotor puts down about half an inch. On the same zone, one run time cannot suit both: the spray area floods or the rotor area browns. Inside a zone the nozzles are matched too, so a half circle puts out half the water of a full circle and every part of the lawn gets the same depth. A replacement head has to fit that pattern."
+    },
+    {
+      "type": "cards",
+      "plane": "mist",
+      "eyebrow": "Why heads go wrong",
+      "title": "What we find, **and what fixes it.**",
+      "columns": 3,
+      "items": [
+        { "tag": "Sunk", "title": "Raised back to the soil line", "body": "Thatch builds up and soil settles until the turf sits above the head and blocks the spray. The head is lifted to sit level with the soil, on flexible pipe so the height can be set exactly." },
+        { "tag": "Tilted", "title": "Straightened and aimed", "body": "Frost, tires and settling soil tip heads over, so they water the drive or the siding. Stood back up and aimed, a head throws the pattern it was built for." },
+        { "tag": "Mower hit", "title": "Replaced and set lower", "body": "A head that sits above the turf gets clipped every week until it breaks. The new one sits level with the soil, so the mower rides over it." },
+        { "tag": "Stuck up or down", "title": "Flushed or replaced", "body": "Grit in the seal around the pop-up keeps it from rising or dropping back. Flushing fixes some. A worn head gets replaced." },
+        { "tag": "Misting", "title": "Pressure brought down", "body": "Too much pressure breaks the spray into a fine mist that drifts and dries before it lands. A pressure regulating head holds a spray nozzle near the 30 or so psi it was built for." },
+        { "tag": "Puddle at the low head", "title": "A check valve added", "body": "After each run, the water left in the pipe drains out of the lowest head on the zone and pools there. A head with a check valve built in holds that water in the line." }
+      ]
+    },
+    {
+      "type": "steps",
+      "plane": "white",
+      "eyebrow": "The repair",
+      "title": "How a head gets **replaced right.**",
+      "steps": [
+        { "title": "Dug out small", "body": "A small square of sod is cut around the head and set aside, so it goes back in one piece when the work is done." },
+        { "title": "Same kind, same rate", "body": "The new head matches the others on the zone: spray with spray, rotor with rotor, and a nozzle that puts down the same rate as its neighbors." },
+        { "title": "Flexible connection underneath", "body": "The head sits on flexible pipe or a swing joint, so a tire pushes it down instead of snapping the fitting below, and its height can be set exactly." },
+        { "title": "Level and straight", "body": "Set flush with the soil, standing straight, with a pop-up tall enough to clear the grass when it rises." },
+        { "title": "Aimed and tested", "body": "We run the zone and set the arc and the reach so the water meets the next head and stays off the pavement, then put the sod back." }
+      ],
+      "footnote": "When we replace a head, we run the rest of that zone too. One broken head is often not the only one."
+    },
+    {
+      "type": "reviews",
+      "plane": "mist",
+      "title": "What our customers **say.**",
+      "ids": ["susan-r", "zachary-b", "joe-s"]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can I replace a sprinkler head with whatever the hardware store has?",
+      "a": "You can, if it matches. It has to be the same kind as the others on the zone, put down water at the same rate, pop up as high, and fit the same pipe thread. A spray head on a rotor zone, or the wrong nozzle, changes how much water that spot gets on every run."
+    },
+    {
+      "q": "What is the difference between a spray head and a rotor?",
+      "a": "A spray head throws a fixed fan of water, usually 15 feet or less, and puts it down fast, about 1.5 inches an hour. A rotor throws a single stream that turns slowly and reaches much farther, putting down about half an inch an hour. Rotary nozzles sit in between: many small turning streams on a spray head body, at a slow rate. Each needs its own zone and its own run time."
+    },
+    {
+      "q": "Why does the mower keep hitting my sprinkler heads?",
+      "a": "Usually because they sit too high. Heads are meant to sit level with the soil so the mower rides over them. Over time, frost can lift one or the lawn around it settles. Resetting it at the right height ends the weekly clip."
+    },
+    {
+      "q": "My heads mist instead of spraying. Is that a problem?",
+      "a": "Yes. Mist drifts in the wind and dries before it lands, so the lawn gets less than the run time suggests. It means the water pressure is higher than the heads were built for. Pressure regulating heads, or a regulator for the zone, bring it back to a proper spray."
+    },
+    {
+      "q": "Why is there a puddle around one head after the sprinklers shut off?",
+      "a": "On a zone that runs downhill, the water left in the pipe drains out of the lowest head after each run. A head with a built-in check valve holds it. If water keeps trickling long after the zone has stopped, the valve may not be closing fully, which is a [valve repair](/sprinkler-valve-repair/)."
+    },
+    {
+      "q": "Should I switch my spray heads to rotary nozzles?",
+      "a": "On a slope or in heavy clay, often yes. Rotary nozzles put water down slowly, so less of it runs off before it soaks in. The catch is that the whole zone changes together, never one head, and the run times go up to match. We can look at a zone and tell you whether it is worth doing."
+    },
+    {
+      "q": "Do you work on heads you did not install?",
+      "a": "Yes. Most of what we do is on systems someone else put in. If a head is no longer made, we fit one that matches the zone's type and water rate."
+    },
+    {
+      "q": "Is a brown spot always a head problem?",
+      "a": "Not always, but it is the first thing to check. A head that is tilted, sunk, clogged or broken leaves a gap that more run time will not fill. If every head checks out, look at a weak zone, a hidden leak or the lawn itself. More on [sprinkler repair](/sprinkler-repair/)."
+    }
+  ],
+  "quote": {
+    "title": "Tell us which heads are acting up.",
+    "lede": "Text a photo of the head and the spot it should be watering, or send the details here. We will call back to set a time."
+  },
+  "summary": {
+    "title": "Heads and nozzles, **set right.**",
+    "intro": "A replaced head is only fixed when it matches the zone, sits at the right height and reaches the next head. Every head job covers all of it.",
+    "items": [
+      { "name": "Whole zone checked", "detail": "Every head on the zone run and looked at, not just the broken one." },
+      { "name": "Matched to the zone", "detail": "Spray with spray, rotor with rotor, and nozzles at the same rate as their neighbors." },
+      { "name": "Set at the soil line", "detail": "Level with the soil and standing straight, so the mower rides over it." },
+      { "name": "Flexible connection", "detail": "Flexible pipe or a swing joint under the head, so a tire does not snap the line." },
+      { "name": "Aimed to the next head", "detail": "Arc and reach set so the water meets the next head and stays off pavement." },
+      { "name": "Sod put back", "detail": "The turf set back in place and the zone run again to prove the fix." }
+    ]
+  }
+}

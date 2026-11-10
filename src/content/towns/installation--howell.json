@@ -1,0 +1,75 @@
+{
+  "service": "installation",
+  "city": "howell",
+  "meta": {
+    "title": "Sprinkler Installation in Howell, MI | Misty's Irrigation",
+    "description": "New sprinkler systems and added zones in Howell and the township, laid out head to head for your lot, your soil and your water source. Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler system installation in Howell, MI",
+    "title": "Laid out for **the lot you have.**",
+    "lede": "A small lot under old trees in town, a subdivision yard on a cul-de-sac and five acres on a well all need different systems. Misty's lays out new systems and added zones head to head, for your yard, your soil and the water you actually have.",
+    "chips": ["Head to head coverage", "Our own compact trencher", "Licensed and insured"],
+    "photo": "trencher-dog"
+  },
+  "local": {
+    "eyebrow": "New systems in Howell",
+    "title": "Four things to settle **before we trench.**",
+    "intro": "A good install out here starts with water and paperwork, not pipe. The city, the township and the ground each have a say in how a new system should be built, so we sort these out before any digging.",
+    "points": [
+      {
+        "title": "The street strip needs a city permit",
+        "body": "The City of Howell lists lawn irrigation installations as work in the public right of way, which needs a Right of Way Permit from the owner next to it. The right of way is usually 66 feet wide, sidewalk to sidewalk, so heads between the walk and the curb fall inside it."
+      },
+      {
+        "title": "Decide on an irrigation meter",
+        "body": "On city or MHOG water, a separate irrigation meter keeps sprinkler water off the sewer charge. Howell Township encourages them, and its brochure notes the meter also gives the system its own shutoff. A new install is the easiest time to plan around one."
+      },
+      {
+        "title": "Size zones to the well on acreage",
+        "body": "Much of Howell Township is farmland and large lots, and the rural parcels run on private wells. A well pump delivers a set flow, so we size each zone to what the pump can supply rather than what the yard would like. More, smaller zones beat weak ones."
+      },
+      {
+        "title": "Zone by soil, sun and shade",
+        "body": "Soil maps around Howell show loam over glacial deposits, sandy rises and muck in the low ground, and the city notes mature trees in many yards. Sun and shade, sand and loam each get their own zones, so no single run time has to fit them all."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How a Howell install **comes together.**",
+    "body": [
+      "It starts with a walk around the yard: where the water comes from, where the controller should go, and what the lot, the trees and the slopes ask for. Howell is about 30 minutes from Fenton, so we set that first visit ahead of time and come back to you with a layout before any digging.",
+      "Install days are planned with you, and we group work out here when we can. Before we trench, buried utilities get marked. Our compact trencher cuts a narrow trench, the pipe for each zone goes in, usually 6 to 12 inches down, and we backfill and settle the soil behind it."
+    ],
+    "facts": [
+      { "label": "City right of way", "value": "Permit needed for irrigation work in the right of way" },
+      { "label": "Irrigation meter", "value": "Offered by the city, encouraged by the township" },
+      { "label": "Zone pipe depth", "value": "Usually 6 to 12 inches down" },
+      { "label": "From Fenton", "value": "About 30 minutes, first visit set ahead" }
+    ]
+  },
+  "photo": "pine-lawn",
+  "faq": [
+    {
+      "q": "Do you install new sprinkler systems in Howell?",
+      "a": "Yes. Misty's lays out and puts in new systems, and adds zones to existing ones, in the city and out in the township, using our own compact trencher. Call or text [(810) 423-9513](tel:+18104239513) to set up a first visit to walk the yard."
+    },
+    {
+      "q": "Do I need a permit for sprinklers in the city?",
+      "a": "For anything in the public right of way, the city says yes. It lists lawn irrigation installations among the work that needs a Right of Way Permit Application, filed by the owner of the property next to it. Heads in the strip between the sidewalk and the street are the usual case. Check with the city about anything else on your lot."
+    },
+    {
+      "q": "Can my well run a whole sprinkler system?",
+      "a": "Usually, as long as the zones are sized to the pump. We find out what flow the well delivers and build zones that stay inside it, so every head reaches full spray. If the well also leaves orange stains on the house, plan [rust stain treatment](/rust-stain-prevention/) into the install."
+    },
+    {
+      "q": "Is the trenching hard on the lawn?",
+      "a": "Less than most people expect. The compact trencher cuts a narrow trench rather than a wide ditch. We lay the pipe, backfill it and settle the soil. You will see the lines for a while, and they fade as the grass fills back in."
+    },
+    {
+      "q": "Should I add drip for beds and pots at the same time?",
+      "a": "A new install is the easiest time to do it. Beds and flowerpots do better on [drip irrigation](/drip-irrigation/) on their own zone than under lawn sprays, and the same controller runs both."
+    }
+  ],
+  "reviews": ["joe-s", "zachary-b"]
+}

@@ -1,0 +1,158 @@
+{
+  "service": "lake-pump",
+  "meta": {
+    "title": "Lake Pump Irrigation in Fenton, MI | Misty's Irrigation",
+    "description": "Sprinklers that pull from the lake: intakes, foot valves, priming, pump controls, spring startup and fall shutdown. Misty's Irrigation, Fenton area."
+  },
+  "hero": {
+    "kicker": "Lake pump irrigation in Fenton, MI",
+    "title": "The lake does the watering. **The pump does the work.**",
+    "lede": "A lake system pulls water through a screen in the lake, up a suction line and into a pump on shore. When it loses its prime or chokes on weeds, the lawn goes dry. We get it primed, cleared and running, and open and close it with the seasons.",
+    "chips": ["Intake to the last head", "Startup and shutdown", "Licensed and insured"],
+    "photo": "lake-sunrise"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "How it works",
+      "title": "Four parts between the lake **and your lawn.**",
+      "intro": "A lake system is an ordinary sprinkler system with its own water supply. Instead of the house water or a well, it drinks from the lake, and four parts have to work together to make that happen.",
+      "body": [
+        "Out in the water sits the intake: a screen on the end of the suction line, with a foot valve right behind it. The foot valve is a one way valve. It opens when the pump pulls and closes when the pump stops, so the line stays full of water between runs. That full line is what people mean by the pump's prime.",
+        "On shore, the pump lifts water up that line and pushes it out to the valves and heads. Something has to tell it when to run. On some systems the controller starts it through a relay every time a zone opens. On others a pressure switch starts it when the pressure in the lines drops, and stops it when the pressure comes back up."
+      ],
+      "checks": [
+        "The intake screen keeps weeds, sand and shells out of the pump",
+        "The foot valve holds the prime, so the pump starts full of water",
+        "The pump lifts lake water and pushes it to the zones",
+        "The relay or pressure switch decides when the pump runs"
+      ],
+      "photo": "ai-lake-pump",
+      "cta": { "label": "The fall blowout in detail", "href": "/sprinkler-winterization/" }
+    },
+    {
+      "type": "cards",
+      "plane": "white",
+      "eyebrow": "Symptoms",
+      "title": "What it is doing, and **where to look first.**",
+      "intro": "Lake systems fail in a few familiar ways. Here is what each one looks like from the porch, and what usually sits behind it.",
+      "columns": 3,
+      "items": [
+        { "tag": "Pump runs, no water", "title": "Lost prime", "body": "Air got into the pump or the suction line, so the pump spins without moving water. Usually a foot valve that did not close, a loose fitting or a crack on the suction side. Shut it off: a pump running dry cooks its own seal." },
+        { "tag": "Weaker every week", "title": "A clogged intake screen", "body": "Weeds, algae, silt or shells build up on the screen until the pump starves. Pressure drops a little more each week. Cleaning the screen and lifting it up off the bottom usually brings it back." },
+        { "tag": "Fine in May, sputters in August", "title": "The lake dropped", "body": "An intake that sat deep in spring can end up close to the surface by late summer. The pump starts pulling air with the water, and you hear it surge. The intake gets moved deeper." },
+        { "tag": "Pump kicks on at night", "title": "A leak, on a pressure switch", "body": "A pressure switch starts the pump whenever pressure drops. If the pump runs for a few seconds when nothing is watering, a leak or a weeping valve is bleeding the pressure off." },
+        { "tag": "Pump never stops", "title": "A relay stuck on", "body": "A relay whose contacts have stuck keeps the pump running with every zone closed. With nowhere for the water to go, the pump heats up fast. Turn it off at its switch or breaker and call us." },
+        { "tag": "Heads sputter or clog", "title": "Lake debris in the lines", "body": "Bits that slip past a torn or missing screen end up in the nozzles and the valves. We clear the heads, then fix the screen so it stops happening." }
+      ]
+    },
+    {
+      "type": "panel",
+      "kind": "blowout",
+      "plane": "ink",
+      "title": "Water in the lines **is water in the lines.**",
+      "intro": "A lake system holds water in its pipes all summer, the same as one on house water. Run the blowout zone by zone, then drag winter in and see what the frost does to water left behind.",
+      "points": [
+        "The drawing starts at the house. On a lake system the water starts at the pump on shore, and the pump and the suction line get drained as well.",
+        "The pipes to the heads sit 6 to 12 inches down, well within reach of a Michigan frost."
+      ]
+    },
+    {
+      "type": "steps",
+      "plane": "mist",
+      "eyebrow": "Through the season",
+      "title": "Spring on, fall off, **the lake system way.**",
+      "intro": "A lake system gets the same startup and blowout as any other system, plus the steps that belong to the intake and the pump.",
+      "steps": [
+        { "title": "Intake in, up off the bottom", "body": "Once the ice is out, the intake goes back in the water. The screen sits up off the bottom, away from sand and muck, and deep enough that it stays under when the lake drops in summer.", "note": "Spring" },
+        { "title": "Pump primed", "body": "We fill the pump and the suction line with water through the priming port until no air is left, then start it and watch the pressure come up. If it will not hold prime, we find the leak before going further.", "note": "Spring" },
+        { "title": "Every zone run, controls checked", "body": "Each zone runs while we watch the pump, the pressure and the heads. Nozzles that took in lake debris get cleared, and the relay or pressure switch has to start and stop the pump when it should.", "note": "Spring" },
+        { "title": "Intake out, pump drained", "body": "Before the ice, the intake comes out of the water or the suction line is drained, depending on how the system is built. The pump is drained through its plugs, and it comes inside for winter where it can.", "note": "Fall" },
+        { "title": "Lines blown out", "body": "The zones get a compressed air blowout like any system, so no water is left in the pipes, the valves or the heads when the ground freezes.", "note": "Fall" }
+      ],
+      "footnote": "Startups run about mid April through May, once hard freezes are over. Blowouts run late September into November. More on [spring startup](/sprinkler-startup/) and [winterization](/sprinkler-winterization/)."
+    },
+    {
+      "type": "intro",
+      "plane": "white",
+      "eyebrow": "Lake water and well water",
+      "title": "Why lake water **does not paint the house orange.**",
+      "intro": "Well water comes up from underground with no air in it. Iron stays dissolved and clear in that water right up until a sprinkler throws it onto your siding. Then it meets the air, turns to rust and stays there.",
+      "body": [
+        "Lake water has been open to the air the whole time. Whatever iron it carries has mostly turned already and settled to the bottom, so lake-fed sprinklers usually do not leave the orange stripes a well does.",
+        "What lake water does carry is weeds, algae, silt and, in some lakes, mussel shells. That is a clogging problem, not a staining one, and it is why the intake screen matters so much. If a lake system does leave marks, we look at the intake first. One sitting in the muck pulls in a lot more than water."
+      ],
+      "photo": "lake-lawn",
+      "flip": true,
+      "cta": { "label": "Rust stains from a well", "href": "/rust-stain-prevention/" }
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "Why it matters",
+      "figure": "Dry",
+      "figureLabel": "is the one way a lake pump should never run",
+      "title": "A pump with no water **wrecks itself.**",
+      "body": "The water moving through a pump also cools it and keeps the seal on its shaft wet. When a pump loses its prime and keeps running, it spins in air, the seal overheats, and it does not take long before the pump drips or quits. If the pump is humming and the heads are dry, turn it off first. Then call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "type": "reviews",
+      "plane": "mist",
+      "title": "What customers **say.**",
+      "ids": ["zachary-b", "susan-r", "joe-s"]
+    },
+    {
+      "type": "areas",
+      "plane": "white",
+      "title": "Lake pump service **in your town.**",
+      "intro": "The lake towns each have their own page with the details for that area."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do you work on lake pump systems you did not install?",
+      "a": "Yes. A lake system is a standard sprinkler system with an intake and a pump added, and we service all of it: the intake and foot valve, the pump and its controls, the zones and the heads. If a pump part is no longer made, we tell you what fits and what it takes."
+    },
+    {
+      "q": "My lake pump runs but no water comes out. What happened?",
+      "a": "Most likely it has lost its prime: air got into the pump or the suction line, and it is spinning in air. Turn the pump off now, at its switch or breaker, because running dry ruins the seal. Then check two things from shore: is the intake still under water, and is the screen buried in weeds? If both look fine, the foot valve or a fitting on the suction side is letting air in. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Why does my pump keep losing its prime?",
+      "a": "Something is letting water out of the suction line between runs, or letting air in. The usual suspects: a foot valve held open by a stick or a shell, a worn foot valve, a loose or cracked fitting on the suction side, or an intake that has ended up too close to the surface. Priming it again only buys time. Finding the leak fixes it."
+    },
+    {
+      "q": "Does the intake have to come out of the lake for winter?",
+      "a": "It has to be empty of water and out of the ice's way. Depending on how the system is built, that means pulling the intake out of the lake or draining the suction line completely. Ice that shifts on a lake can drag or crack a line left in it. The pump gets drained through its plugs either way, and it comes inside if it can. Then the zones are blown out like any [winterization](/sprinkler-winterization/)."
+    },
+    {
+      "q": "When should I book the startup for a lake system?",
+      "a": "After the ice is out and the hard freezes are over, so the intake can go back in and the lines will not freeze again. Most years that lands from about mid April through May. Book a little ahead, and tell us it is a lake system so we come ready to prime the pump. More on [spring startup](/sprinkler-startup/)."
+    },
+    {
+      "q": "Will lake water stain my house the way well water does?",
+      "a": "Usually not. Well water carries dissolved iron that turns to rust when it lands on your siding. Lake water has been open to the air all along, so most of its iron has already turned and settled out. The trouble lake water brings is clogging: weeds, algae, silt and shells at the screen and in the nozzles. If your sprinklers run on a well and you are seeing orange, see [rust stain prevention](/rust-stain-prevention/)."
+    },
+    {
+      "q": "Does a lake system need a backflow preventer?",
+      "a": "Only where it connects to drinking water. A system that pulls only from the lake and never ties into the house water or a well has no drinking water to protect. If yours has a tie-in, say a valve that lets house water fill the lines, that connection needs proper backflow protection. More on [backflow preventers](/backflow-preventers/)."
+    }
+  ],
+  "quote": {
+    "title": "Tell us what the lake pump is doing.",
+    "lede": "Humming with no water, kicking on at night, heads that sputter. Send it here or text a photo of the pump, and we will call back to set a time."
+  },
+  "summary": {
+    "title": "A lake system, **intake to last head.**",
+    "intro": "A lake system is a sprinkler system with its own water supply. We look after the whole run, from the screen in the lake to the last head on the lawn.",
+    "items": [
+      { "name": "Intake and foot valve", "detail": "Screen cleaned, foot valve checked, intake set up off the bottom and deep enough to stay under." },
+      { "name": "Pump primed", "detail": "Pump and suction line filled until no air is left, then started and watched." },
+      { "name": "Controls", "detail": "The relay or pressure switch starting and stopping the pump when it should." },
+      { "name": "Every zone run", "detail": "Each zone run, nozzles cleared of lake debris, heads aimed." },
+      { "name": "Fall shutdown", "detail": "Intake pulled or drained, pump drained, lines blown out with air." }
+    ],
+    "footnote": "Startups run about mid April through May, once hard freezes are over. Blowouts run late September into November."
+  }
+}

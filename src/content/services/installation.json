@@ -1,0 +1,158 @@
+{
+  "service": "installation",
+  "meta": {
+    "title": "Sprinkler Installation in Fenton, MI | Misty's Irrigation",
+    "description": "New sprinkler systems and added zones around Fenton, laid out head to head, zoned by sun and plants, with a backflow device and a controller set for each zone."
+  },
+  "hero": {
+    "kicker": "Sprinkler system installation in Fenton, MI",
+    "title": "Head to head, **zoned for your yard.**",
+    "lede": "A new system or a few added zones, laid out so every head reaches the next, zoned by sun and by what is growing, with a backflow device at the house and a controller set for each zone. The pipe goes in through a narrow trench cut with our compact trencher.",
+    "chips": ["Head to head layout", "Licensed and insured"],
+    "photo": "trencher-dog"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "What we install",
+      "title": "A plan first, **then pipe.**",
+      "intro": "Most of what makes a system water evenly is decided before anything goes in the ground: how much water you have, where each head goes, and which parts of the yard share a zone.",
+      "checks": [
+        "New systems for lawns, beds and foundation plantings",
+        "Added zones on an existing system, for a new lawn area or bed",
+        "[Drip lines](/drip-irrigation/) for beds, pots and planters, on their own zone",
+        "A pressure vacuum breaker where the system meets the house water",
+        "A controller with a station for every zone, set up for your yard"
+      ],
+      "photo": "estate-clouds",
+      "cta": { "label": "Tell us about your yard", "href": "/book-service/" }
+    },
+    {
+      "type": "panel",
+      "kind": "coverage",
+      "plane": "ink",
+      "title": "Every head **reaches the next.**",
+      "intro": "Head to head means each head's water lands at the heads beside it. Switch to before to see what a short throw, a sunk head or a head aimed wrong does. A new system is laid out from the after picture.",
+      "points": [
+        "Heads are spaced by their real reach at your water pressure, not the most the box says they can throw.",
+        "Edges and corners get part circle heads, so the water lands on lawn, not on the drive."
+      ]
+    },
+    {
+      "type": "steps",
+      "plane": "white",
+      "eyebrow": "The process",
+      "title": "How a new system **goes in.**",
+      "steps": [
+        { "title": "Water measured first", "body": "We check the pressure and the flow your supply can deliver, from city water or a well. That sets how many heads a zone can run at once, and so how many zones the yard needs." },
+        { "title": "Laid out head to head", "body": "Heads are placed so each one throws to the next, with part circles along walks, drives and beds. Spray heads go in narrow and small areas, rotors or rotary nozzles in open lawn." },
+        { "title": "Zoned by sun and plants", "body": "Sunny lawn, shaded lawn and planting beds go on separate zones, so each gets its own run time. Spray heads and rotors never share a zone." },
+        { "title": "Utility lines marked", "body": "Public utility lines are marked through MISS DIG 811 before any digging, as Michigan law requires. Utilities do not mark private lines, like wiring to a garage or a pet fence, so we ask you where those run." },
+        { "title": "Pipe in, narrow and shallow", "body": "Lateral pipe goes 6 to 12 inches down, in a narrow trench cut with our compact stand-on trencher. Valves go in boxes at grade, and the backflow device at the house." },
+        { "title": "Controller set, every zone tested", "body": "Each zone gets its own program. We run every zone, aim every head, and show you the controller and the shutoff before we leave." }
+      ],
+      "footnote": "Trenches are filled, tamped and raked so they settle back. Expect faint lines in the lawn until the grass knits back together."
+    },
+    {
+      "type": "cards",
+      "plane": "mist",
+      "eyebrow": "Zoning",
+      "title": "How a yard gets **split into zones.**",
+      "intro": "A zone is a group of heads that run together on one valve. Grouping them by what they water is what lets each part of the yard get the right amount.",
+      "columns": 3,
+      "items": [
+        { "tag": "Full sun", "title": "Open lawn in full sun", "body": "Needs the most water. Usually rotors or rotary nozzles, spaced head to head across the open area." },
+        { "tag": "Shade", "title": "Lawn under trees or beside the house", "body": "Needs noticeably less water than the sunny side. On its own zone it can run shorter instead of staying soggy." },
+        { "tag": "Narrow strips", "title": "Strips along walks and drives", "body": "Spray heads with part circle and strip nozzles, so the water lands on the grass and not the pavement." },
+        { "tag": "Beds", "title": "Shrubs and planting beds", "body": "Drip at the roots or low spray heads, on a separate zone from the lawn, because shrubs want water on a different schedule than grass." },
+        { "tag": "Pots", "title": "Flowerpots and planters", "body": "Small drip lines to each pot, on the same controller as the lawn. More on [drip for pots and beds](/drip-irrigation/)." },
+        { "tag": "Slopes and clay", "title": "Where water runs off", "body": "Slow rotary nozzles, and run times split into shorter cycles so each one soaks in before the next starts." }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "The backflow device",
+      "figure": "12 in.",
+      "figureLabel": "minimum height above the highest head it feeds",
+      "title": "Lawn water stays **out of the house water.**",
+      "body": "Michigan's plumbing code requires backflow protection on any lawn system tied to the drinking water. A pressure vacuum breaker does that job: a brass device on a short pipe beside the house that stops lawn water, with fertilizer and whatever else is in the soil, from flowing back into the pipes you drink from. It has to sit at least 12 inches above the highest head and pipe it feeds. More on [pressure vacuum breakers](/backflow-preventers/)."
+    },
+    {
+      "type": "intro",
+      "plane": "white",
+      "flip": true,
+      "eyebrow": "Added zones",
+      "title": "Adding on **to what you have.**",
+      "intro": "A new lawn area, a bed along the fence, pots on the patio. Most of the time the answer is a new zone, not more heads on an old one.",
+      "body": [
+        "Every zone is sized to the water the supply can deliver. Add a few heads to a zone that was already at its limit and every head on it throws shorter, so the new corner gets water and the old lawn starts to brown.",
+        "A new zone gets its own valve, its own run time and its own station on the controller, tied into the main line. If the controller is out of stations, it gets more. We look over the existing system while we are there, because there is no point adding onto a zone that already leaks."
+      ],
+      "photo": "garden-misters"
+    },
+    {
+      "type": "reviews",
+      "plane": "mist",
+      "title": "What our customers **say.**",
+      "ids": ["zachary-b", "joe-s", "susan-r"]
+    },
+    {
+      "type": "areas",
+      "plane": "white",
+      "title": "New systems **in your town.**",
+      "intro": "Each town has its own page with the details for that area."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can you add zones to the sprinkler system I already have?",
+      "a": "Usually, yes. It depends on whether the water supply can run another zone and whether the controller has a free station or room to grow. We look at both, and at the shape the existing system is in, before suggesting anything."
+    },
+    {
+      "q": "How much of my yard gets dug up?",
+      "a": "A narrow line where each pipe runs, not a torn up lawn. Pipe goes in a narrow trench cut with our compact trencher. The trench is filled and tamped, heads and valve boxes are set level with the turf, and the lines fade as the grass grows back."
+    },
+    {
+      "q": "Do I need a backflow device?",
+      "a": "If the system connects to your house water, city or well, yes. Michigan's plumbing code requires backflow protection to keep lawn water out of the drinking water. A pressure vacuum breaker is the common choice, and it has to sit at least 12 inches above the highest head. More on [pressure vacuum breakers](/backflow-preventers/)."
+    },
+    {
+      "q": "Can a sprinkler system run off my well?",
+      "a": "Yes, if the well and pump can deliver enough water. A well often supplies less flow than city water, so the zones are sized to what the pump can keep up with. If your well water leaves orange stains, plan for that from the start: see [rust stain prevention](/rust-stain-prevention/)."
+    },
+    {
+      "q": "What kind of controller do you put in?",
+      "a": "One with a station for every zone and room to add more, set up for your yard rather than left on the factory program. Smart, weather-adjusting controllers are an option. More on [controllers](/sprinkler-controllers/)."
+    },
+    {
+      "q": "When can a new system go in?",
+      "a": "Spring through fall, while the ground can be worked. That is our working season, so for a spring install it helps to get in touch over the winter. [Tell us about your yard](/book-service/) or call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Will the system water my flower beds too?",
+      "a": "It can. Beds go on their own zone, usually with drip at the roots or low spray heads, because shrubs and flowers want water on a different schedule than grass. Pots and planters can get drip lines on the same controller. More on [drip irrigation](/drip-irrigation/)."
+    },
+    {
+      "q": "Do utility lines get marked before you dig?",
+      "a": "Yes. Michigan law requires notice to MISS DIG 811 at least three business days before digging, and the utilities mark their lines. Lines you own, like wiring to a garage, a lamp post or a pet fence, are not marked by the utilities, so tell us where those run."
+    }
+  ],
+  "quote": {
+    "title": "Tell us about the yard.",
+    "lede": "New system or added zones: send your address, roughly what you want watered, and whether you are on city water or a well. We will call back to talk it through."
+  },
+  "summary": {
+    "title": "A new system, **from plan to first run.**",
+    "intro": "Every install follows the same order, so the system matches the water you have and is set up to water the whole yard evenly.",
+    "items": [
+      { "name": "Water measured", "detail": "Pressure and flow checked at the supply, city or well, before anything is laid out." },
+      { "name": "Head to head layout", "detail": "Every head placed to reach the next, with part circles along the edges." },
+      { "name": "Zoned by sun and plants", "detail": "Sunny lawn, shade and beds on separate zones, sprays and rotors never mixed." },
+      { "name": "Backflow device", "detail": "A pressure vacuum breaker at least 12 inches above the highest head." },
+      { "name": "Narrow trench", "detail": "Pipe 6 to 12 inches down in a narrow trench, and valves boxed at grade." },
+      { "name": "Controller set", "detail": "A program for each zone, every head aimed, and a walkthrough before we leave." }
+    ]
+  }
+}

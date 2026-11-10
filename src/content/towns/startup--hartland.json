@@ -1,0 +1,70 @@
+{
+  "service": "startup",
+  "city": "hartland",
+  "meta": {
+    "title": "Sprinkler Startup in Hartland, MI | Misty's Irrigation",
+    "description": "Spring sprinkler startups in Hartland: water on slowly, every zone run and checked, heads set and the controller programmed. Wells, lake pumps, township water."
+  },
+  "hero": {
+    "kicker": "Spring sprinkler startup in Hartland, MI",
+    "title": "Water on slow, **every zone watched.**",
+    "lede": "A system that sat all winter needs water back in gently, then every zone run and walked. Misty's Irrigation does Hartland startups from about mid April through May, on well, lake pump and township water systems.",
+    "chips": ["Mid April through May", "Controller set for the season"],
+    "photo": "ai-startup"
+  },
+  "local": {
+    "eyebrow": "Spring in Hartland",
+    "title": "Why timing matters **in Hartland.**",
+    "intro": "Hard freezes are usually done by mid April. Light frosts are not. The NOAA normals for the Milford proving ground station, the closest one to Hartland's ZIP code, put the average last spring frost around May 13, with about a 3 in 10 chance of one coming later than that.",
+    "points": [
+      {
+        "title": "A May frost can catch the backflow device",
+        "body": "Once the system is charged, the pressure vacuum breaker by the house is full of water and sitting above ground. A hard frost night in May can crack it. If one is forecast right after your startup, close the irrigation supply for the night, or text us and ask what to do."
+      },
+      {
+        "title": "Well systems: let the water run clear",
+        "body": "EGLE notes iron is common in Michigan groundwater. After a winter of sitting, the first water through a well system can carry rust and sediment. We flush it through before setting heads, and check the filter screens and nozzles for orange buildup that would break up the spray."
+      },
+      {
+        "title": "Lake pumps wait for the lake",
+        "body": "A lake pump cannot start until the ice is gone and the intake sits in open water. Hartland has lake homes on Long, Handy, Round, Maxfield and Dunham Lakes, among others. On those, we check the intake and suction line, prime the pump, and watch the pressure before any zone runs."
+      },
+      {
+        "title": "Township water: watch for notices",
+        "body": "In June 2024 the township asked everyone on its water system to stop watering lawns until July 1 while a well was down for maintenance. A controller with a rain delay or a pause setting makes a request like that easy to follow. We show you where yours is when we set the spring schedule."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How a Hartland startup **goes.**",
+    "body": [
+      "We open the supply slowly so trapped air bleeds out without slamming the heads and fittings. Then every zone runs while we walk it: heads popping up and turning, aimed at grass and not the siding, and no wet spots or dry gaps between them.",
+      "Anything that broke over the winter gets found now, not in July. We tell you what it is before we fix it. Then the controller is set for spring watering, not left on last fall's program. Book by text or call at [(810) 423-9513](tel:+18104239513), or through the [booking form](/book-service/)."
+    ],
+    "facts": [
+      { "label": "Startup window", "value": "About mid April through May" },
+      { "label": "Average last frost", "value": "Around May 13 (Milford station, NOAA normals)" },
+      { "label": "Drive from Fenton", "value": "About 20 minutes on US-23" }
+    ]
+  },
+  "photo": "pine-lawn",
+  "faq": [
+    {
+      "q": "When should I book my spring sprinkler startup in Hartland?",
+      "a": "Misty's Irrigation does startups from about mid April through May, once hard freezes are over. Text or call [(810) 423-9513](tel:+18104239513) in March or early April to get a day. If you water from a lake pump, the lake has to be clear of ice first."
+    },
+    {
+      "q": "Can I turn the system on myself?",
+      "a": "You can, if you open the supply valve slowly and walk every zone afterward. The catch is that whatever broke over winter, a cracked head, a split fitting, a backflow device that froze, shows up the moment water hits it, and opening the valve fast can break more. If something sprays where it should not, shut it off and text us a photo."
+    },
+    {
+      "q": "How much should I water in spring?",
+      "a": "Less than most people think. A lawn needs about an inch a week in summer, rain included, and spring rain often covers much of that. On the well drained, gravelly soils of Hartland's hills, water drains through fast, so shorter runs more often work better than one long soak. In the lower, wetter ground, hold off until the lawn shows it needs water. The [watering guide](/watering-guide/) has more."
+    },
+    {
+      "q": "Do you check the well or the lake pump at startup?",
+      "a": "We check the parts that feed the sprinklers. On a lake pump, that means the intake, the suction line, priming and pressure. On a well, we watch pressure and flow while the zones run, so a zone that asks for more than the well can give gets spotted. The well itself, the pump down in it and the pressure tank, are a job for a well contractor."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r"]
+}

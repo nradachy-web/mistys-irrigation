@@ -1,0 +1,78 @@
+{
+  "city": "hartland",
+  "meta": {
+    "title": "Sprinkler Service in Hartland, MI | Misty's Irrigation",
+    "description": "Repairs, startups, blowouts, new systems and lake pumps for Hartland lake lots, subdivisions and acreage, on well, lake or township water. Misty's Irrigation."
+  },
+  "hero": {
+    "kicker": "Sprinkler service in Hartland, MI",
+    "title": "Lake lots, acreage and **well water.**",
+    "lede": "Hartland yards run from small lots on the lakes to subdivisions to acreage on the county roads, and most of the homes run on a private well. Misty's Irrigation keeps all of it running, about 20 minutes down US-23 from our home base in Fenton.",
+    "chips": ["About 20 minutes from Fenton", "Lake pump systems", "Licensed and insured"],
+    "photo": "lake-sunrise"
+  },
+  "about": {
+    "eyebrow": "Sprinklers in Hartland",
+    "title": "Three kinds of yard, **one township.**",
+    "body": [
+      "The township's own planning documents describe the mix: cottages and bigger homes on the water, subdivisions and site condos on lots of an acre or less, older homes on small lots around the village, and farmhouses on large parcels. Estate land, planned at two acres or more a home, covers nearly half of Hartland Township. A sprinkler system that suits a lake cottage would be the wrong system for five acres of open lawn, so we start every job by looking at the yard you actually have.",
+      "Where the water comes from matters just as much. Hartland Township runs a public water system from three wells over 200 feet deep, but it reaches select areas: a little over 830 homes and businesses, by its 2025 water quality report. In a township of about 15,000 people, that leaves most houses on their own private well, and lake homes with the option of pumping from the lake."
+    ],
+    "points": [
+      {
+        "title": "Lakes all over the township",
+        "body": "The township map names Long, Handy, Round, Maxfield, Dunham, Bullard and Silver Lakes, Lake Walden and more, and its plan counts thirteen significant water bodies. On a lake lot, a [lake pump](/lake-pump-irrigation-hartland-mi/) can water the lawn from the lake and leave the well for the house."
+      },
+      {
+        "title": "Iron in the ground water",
+        "body": "EGLE notes that iron is common in Michigan groundwater, and the township's own plant runs an iron and manganese removal system on its wells. On a private well, that iron goes straight out the heads and dries orange on siding, walks and fences. [Rid-O-Rust treatment](/rust-stain-prevention/) keeps it off the house."
+      },
+      {
+        "title": "Gravelly hills, wet low ground",
+        "body": "The county soil survey, as the township summarizes it, puts well drained soils over gravelly sand on the hills and moraines, and very poorly drained ground in the low spots and along Ore Creek. On the sandy hills a lawn browns fast when one head quits. In the wet ground, valve boxes can sit full of water."
+      },
+      {
+        "title": "Township water can get its own meter",
+        "body": "For homes on township water and sewer, the township says separate irrigation meters may be bought at Township Hall to split lawn water from household use, and that it can mean large savings. It is worth asking about before a [new system](/sprinkler-installation-hartland-mi/) goes in."
+      }
+    ],
+    "photo": "estate-clouds"
+  },
+  "logistics": {
+    "title": "Getting service **in Hartland.**",
+    "body": [
+      "Hartland is about 20 minutes down US-23 from our base in Fenton. Call or text [(810) 423-9513](tel:+18104239513), or use the [booking form](/book-service/), and tell us what the system is doing. A photo of the problem helps. We call back to set a time.",
+      "Three things make the visit faster. Know whether the sprinklers run off a well, the lake or township water. Know where the irrigation shutoff is, usually a valve in the basement where the line leaves the house. And if you will not be home, tell us how to reach the controller and the backflow device, the brass fitting on a pipe beside the house."
+    ],
+    "facts": [
+      { "label": "Drive from Fenton", "value": "About 20 minutes, down US-23" },
+      { "label": "Water source", "value": "Mostly private wells; township water in select areas" },
+      { "label": "Average frost dates", "value": "Last around May 13, first around October 5 (Milford station)" },
+      { "label": "Lakes on the township map", "value": "Long, Handy, Round, Maxfield, Dunham, Bullard and more" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Do you service sprinkler systems in Hartland?",
+      "a": "Yes. Hartland is one of the towns Misty's Irrigation serves most, about 20 minutes from our base in Fenton. We do [repairs](/sprinkler-repair-hartland-mi/), [spring startups](/sprinkler-startup-hartland-mi/), [fall blowouts](/sprinkler-winterization-hartland-mi/), [new systems](/sprinkler-installation-hartland-mi/) and [lake pump systems](/lake-pump-irrigation-hartland-mi/) across the township, from lake lots to subdivisions to acreage."
+    },
+    {
+      "q": "Is there an odd and even watering rule in Hartland Township?",
+      "a": "We did not find a standing odd and even schedule on the township's site. What the township has done is ask: in June 2024, Public Works asked everyone on the township water system to stop watering lawns until July 1 while one of its wells was down for maintenance. If you are on township water, watch for notices like that. On a private well or a lake pump, the limit is what the well or pump can supply. For how much to water, see the [watering guide](/watering-guide/)."
+    },
+    {
+      "q": "My sprinklers run on a well and the house is turning orange. What is it?",
+      "a": "Iron. EGLE says iron is common in Michigan groundwater, and its manganese fact sheet notes that iron leaves orange or brown stains. Sprinklers spray it on siding, walks, fences and the driveway every run, and it builds up. Aiming heads away from the house helps a little. A [Rid-O-Rust treatment system](/rust-stain-prevention/) treats the sprinkler water so the iron stops staining, and we install them on well systems."
+    },
+    {
+      "q": "Should a lake lot water from the lake or the well?",
+      "a": "If the lot is on the water, the lake is usually worth a look. A lake pump leaves the well for the house and keeps the well's iron off the siding. It needs its own care: an intake that stays clear and under water, a pump primed in spring and drained in fall. More on [lake pump systems in Hartland](/lake-pump-irrigation-hartland-mi/)."
+    },
+    {
+      "q": "When should I book a startup or a blowout?",
+      "a": "Startups run from about mid April through May, once hard freezes are over, though the nearest long term weather station, at the Milford proving ground, averages a last spring frost around May 13. Blowouts run from late September into November, before the ground freezes, and that same station averages a first fall frost around October 5. Booking early in each window gives you more days to choose from."
+    }
+  ],
+  "reviews": ["zachary-b", "susan-r", "joe-s"],
+  "neighbors": ["fenton", "howell", "holly", "linden"]
+}

@@ -1,0 +1,69 @@
+{
+  "service": "sprinkler-repair",
+  "city": "holly",
+  "meta": {
+    "title": "Sprinkler Repair in Holly, MI | Misty's Irrigation",
+    "description": "Weak zones on a well, crusted nozzles, soggy low spots, valves nobody can find. Misty's Irrigation repairs sprinkler systems in Holly and Holly Township."
+  },
+  "hero": {
+    "kicker": "Sprinkler repair in Holly, MI",
+    "title": "Weak zone? Check **the water first.**",
+    "lede": "Around Holly, a zone that runs weak can start at the well pump, the lake intake or the village meter as easily as at a broken head. Misty's runs every zone, follows the problem back to where it starts and fixes it there.",
+    "chips": ["Well, village and lake systems", "Every zone run and checked", "Licensed and insured"],
+    "photo": "colonial-mist"
+  },
+  "local": {
+    "title": "Why Holly systems **break the way they do.**",
+    "intro": "Heads, leaks and valves are most of the repair work anywhere. Holly adds a few problems of its own, because of where the water comes from and how the ground rolls.",
+    "points": [
+      {
+        "title": "Zones that fade on a well",
+        "body": "Most homes out in the township are on private wells, so the pump decides how much water a zone gets. Put too many heads on one zone and the far ones barely clear the grass. We check pressure and flow before we blame a head, then split the zone or change its nozzles."
+      },
+      {
+        "title": "Orange crust in the nozzles",
+        "body": "A USGS survey found more iron than the EPA's staining guideline in most of the Oakland County wells it sampled, and iron leaves deposits wherever water sits and dries. In a sprinkler that shows up as crusted nozzles and orange arcs on the siding. We clean or swap the nozzles, and [Rid-O-Rust](/rust-stain-prevention/) treats the cause."
+      },
+      {
+        "title": "Puddles at the bottom of the hill",
+        "body": "The township's master plan puts this area in the hilly zone of glacial moraines. On a slope, the water left in a pipe drains out of the lowest head after every cycle and keeps that spot soggy. A head with a check valve, or a valve that stops weeping, usually ends it."
+      },
+      {
+        "title": "Systems older than the sod",
+        "body": "Half the housing in Holly Township was built before 1990, and the village has historic streets older than that. Older systems hide their valve boxes under sod and mulch, and heads settle a little lower every year. We [find buried valves](/sprinkler-valve-repair/) and raise heads back to grade."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "How a repair visit **runs in Holly.**",
+    "body": [
+      "Text a photo of the problem to [(810) 423-9513](tel:+18104239513) and tell us whether the system runs on village water, a well or the lake. It changes what we bring and where we look first. We call back to set a time.",
+      "On the day, show us the controller and the irrigation shutoff. On a well that shutoff is usually in the basement near the pressure tank; on village water it is usually near the meter. We run each zone, mark what we find, walk you through it, and only then dig. The turf goes back when we finish."
+    ],
+    "facts": [
+      { "label": "We start at", "value": "The controller and the shutoff" },
+      { "label": "Water sources here", "value": "Village line, private well or lake" },
+      { "label": "From Fenton", "value": "About 15 minutes" }
+    ]
+  },
+  "photo": "ai-valve-box",
+  "faq": [
+    {
+      "q": "Do you repair sprinkler systems in Holly that someone else installed?",
+      "a": "Yes. Misty's repairs systems in the village and across the township no matter who put them in. If a part is no longer made, we tell you what fits before we change anything. Call or text [(810) 423-9513](tel:+18104239513)."
+    },
+    {
+      "q": "Why does one zone go weak when someone is in the shower?",
+      "a": "Because the house and the sprinklers share one well pump. When both pull at once, the pressure drops and the heads at the end of the zone stop reaching. Running the sprinklers while the house is quiet often fixes it. If the zone is weak even then, it may have more heads than the pump can feed, and we can split it in two."
+    },
+    {
+      "q": "The lowest head in the yard stays wet. Is that a leak?",
+      "a": "Maybe not. If the spot is only soggy right after the system runs, it is usually the pipe draining downhill through that head, which happens on any sloped lot. If it is wet all the time, or water stands in the valve box, a valve is likely seeping or a fitting is cracked. Running the zone and opening the valve box tells us which."
+    },
+    {
+      "q": "What is the orange crust on my sprinkler nozzles?",
+      "a": "Iron from well water, left behind every time the nozzle dries. It narrows the opening, so the spray turns ragged and short, and the lawn browns between heads. We clean or replace the nozzles. To stop both the crust and the orange marks on the house, see [rust stain prevention](/rust-stain-prevention/)."
+    }
+  ],
+  "reviews": ["susan-r", "joe-s", "zachary-b"]
+}

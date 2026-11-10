@@ -1,0 +1,159 @@
+{
+  "service": "valve-repair",
+  "meta": {
+    "title": "Sprinkler Valve Repair in Fenton, MI | Misty's Irrigation",
+    "description": "Buried sprinkler valves located, stuck open and stuck closed valves cleaned, rebuilt or replaced, and solenoids and zone wiring tested. Fenton and nearby."
+  },
+  "hero": {
+    "kicker": "Sprinkler valve locating and repair in Fenton, MI",
+    "title": "Trace it first, **then dig.**",
+    "lede": "A zone that will not start, a zone that will not stop, a valve box nobody has seen in years. We trace the wire to the valve, find what failed, clean, rebuild or replace it, and set a box at grade so it is easy to find next time.",
+    "chips": ["Valves traced, not guessed", "Licensed and insured"],
+    "photo": "ai-valve-box"
+  },
+  "blocks": [
+    {
+      "type": "intro",
+      "plane": "mist",
+      "eyebrow": "What a valve does",
+      "title": "Every zone **has a valve.**",
+      "intro": "Each zone has its own valve, buried in the lawn, usually inside a plastic box with a lid. The controller sends it a small electrical signal, and it opens or closes the water to that zone.",
+      "checks": [
+        "Valve boxes lost under sod, mulch, stone or a new bed",
+        "Valves buried with no box at all",
+        "Zones that will not shut off, even with the controller off",
+        "Zones that will not turn on",
+        "Failed solenoids, and diaphragms torn or held open by grit",
+        "Cut, nicked and corroded wires and splices between the valves and the controller",
+        "Valve bodies cracked by a winter with water left in them"
+      ],
+      "photo": "street-sprinklers",
+      "cta": { "label": "Controllers and timers", "href": "/sprinkler-controllers/" }
+    },
+    {
+      "type": "steps",
+      "plane": "white",
+      "eyebrow": "Locating",
+      "title": "How a buried valve **gets found.**",
+      "intro": "Probing the lawn with a rod or digging test holes is how solenoids and wires get cut. We narrow it down first and dig once.",
+      "steps": [
+        { "title": "Start at the controller", "body": "We count the zones, note which wire goes to which station, and see where the bundle of wire leaves the house. Those wires run out to the valves, so that is where the trail starts." },
+        { "title": "Run the zone and read it", "body": "The heads that pop up first on a zone are usually the ones closest to its valve, and the shape of the zone narrows down where the valve can be." },
+        { "title": "Follow the main line", "body": "Valves sit along the main line between the backflow device and the zones, often near the house or a corner of it, sometimes grouped in one box and sometimes spread out." },
+        { "title": "Trace the wire", "body": "A transmitter puts a signal on the zone's wire at the controller, and a receiver follows it across the yard. The signal changes over the solenoid. If it stops short, that is where the wire is broken." },
+        { "title": "Make it click", "body": "When the trace is unclear, pulsing the valve on and off makes its solenoid click, faint but audible right above it." },
+        { "title": "Dig once, set a box", "body": "We dig by hand at the mark, make the repair, and set a valve box level with the turf so the valve is never lost again. You see where it is before we leave." }
+      ]
+    },
+    {
+      "type": "cards",
+      "plane": "mist",
+      "eyebrow": "What goes wrong",
+      "title": "Stuck open, stuck closed, **and why.**",
+      "intro": "A valve is a simple part: a rubber diaphragm, a small electric solenoid and a few tiny passages for water. Most failures come down to one of these.",
+      "columns": 3,
+      "items": [
+        { "tag": "Will not shut off", "title": "Grit under the diaphragm", "body": "A bit of sand or pipe debris catches under the rubber diaphragm so it cannot seal. It is common after a new install, after a line repair and on well water. Cleaning the valve usually fixes it." },
+        { "tag": "Will not shut off", "title": "A torn diaphragm or a loose bleed", "body": "A worn or split diaphragm lets water through. So does a bleed screw or solenoid left loosened after someone ran the zone by hand. Tightening it, or a new diaphragm, fixes it." },
+        { "tag": "Will not turn on", "title": "A failed solenoid", "body": "The coil on top of the valve burns out, or the small plunger inside it sticks. A meter reading from the controller points to it, and a new solenoid fixes it without replacing the valve." },
+        { "tag": "Will not turn on", "title": "A cut or corroded wire", "body": "A shovel, an edger or a fence post nicks the wire, or water gets into a splice and corrodes it. We trace the break and splice it with waterproof connectors." },
+        { "tag": "Several zones dead", "title": "The common wire", "body": "Every valve shares one return wire to the controller, called the common. A break in it can take out every valve beyond the break at once." },
+        { "tag": "Low head always wet", "title": "A valve that will not fully close", "body": "If the lowest head on a zone trickles all day, not just for a while after a run, the valve is letting water by. That calls for a cleaning or a rebuild, not a new head." }
+      ]
+    },
+    {
+      "type": "note",
+      "plane": "ink",
+      "eyebrow": "How it works",
+      "figure": "24 V",
+      "figureLabel": "the small signal a controller sends to open a valve",
+      "title": "A small signal **moves a lot of water.**",
+      "body": "The controller does not push the water. It sends about 24 volts to the solenoid on the valve. The solenoid lifts a small plunger, water bleeds off the top of the diaphragm, and line pressure pushes the diaphragm open. Cut the power and the plunger drops, pressure builds back on top, and the valve closes. A grain of grit in that passage, a dead coil or a cut wire is all it takes to stop a zone or keep it running."
+    },
+    {
+      "type": "compare",
+      "plane": "white",
+      "eyebrow": "The fix",
+      "title": "Clean it, rebuild it **or replace it.**",
+      "intro": "Most valves can be saved. We tell you which one yours needs, and why, before we start.",
+      "columns": ["Clean", "Rebuild", "Replace"],
+      "rows": [
+        { "label": "When it fits", "values": ["Grit holding the diaphragm open", "A torn diaphragm or a dead solenoid", "A cracked body, a worn seat or no parts made"] },
+        { "label": "What we do", "values": ["Water off, top off, diaphragm and passages flushed", "New diaphragm, solenoid or both, in the same body", "Old valve cut out and a new one fitted in"] },
+        { "label": "Digging", "values": ["None once the box is found", "None once the box is found", "Enough room around the valve to cut it in"] },
+        { "label": "After", "values": ["Zone run and checked", "Zone run and checked", "Zone run, box set level with the turf"] }
+      ]
+    },
+    {
+      "type": "intro",
+      "plane": "mist",
+      "flip": true,
+      "eyebrow": "The wiring",
+      "title": "The wire matters **as much as the valve.**",
+      "intro": "Each valve has two wires: its own station wire back to the controller, and the common it shares with the other valves.",
+      "body": [
+        "We test from the controller first. A solenoid on a sound wire reads within the range its maker lists, usually somewhere between 20 and 60 ohms. A reading near zero points to a short. No reading at all points to a broken wire or a dead coil. That tells us whether to dig at the valve or follow the wire.",
+        "Splices underground need waterproof connectors. Plain twist-on connectors or tape let water in, and the corrosion that follows makes a zone work some days and not others."
+      ],
+      "checks": [
+        "Station and common wires tested from the controller",
+        "Breaks traced and spliced with waterproof connectors",
+        "A spare wire put to use where the run has one",
+        "New wire run where an old one is beyond saving"
+      ],
+      "photo": "ai-controller"
+    },
+    {
+      "type": "reviews",
+      "plane": "white",
+      "title": "What our customers **say.**",
+      "ids": ["joe-s", "zachary-b", "susan-r"]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where are my sprinkler valves?",
+      "a": "Usually in round or rectangular plastic boxes with green or black lids, set level with the lawn. They tend to sit along the main line, near the house or a corner of it, sometimes grouped in one box and sometimes spread out zone by zone. Over the years boxes get covered by sod, mulch and new beds. If you cannot find yours, we can."
+    },
+    {
+      "q": "How do I know if it is the valve or the controller?",
+      "a": "If one zone is dead and the rest work, it is usually that zone's valve, solenoid or wire. If several zones quit at once, look at the common wire or the controller. A quick check: if the zone runs when the valve is opened by hand at its bleed screw but not from the controller, the problem is electrical, not the valve."
+    },
+    {
+      "q": "A zone will not shut off, even with the controller off. What do I do?",
+      "a": "Close the irrigation shutoff, usually in the basement near where the line leaves the house. A valve that runs with the controller off is stuck open mechanically: grit under the diaphragm, a torn diaphragm, or a bleed screw or solenoid left loose. Then call or text [(810) 423-9513](tel:+18104239513). Most of these are fixed without replacing the valve."
+    },
+    {
+      "q": "Can a valve be repaired, or does it have to be replaced?",
+      "a": "Most can be repaired. Grit gets cleaned out, and a torn diaphragm or a dead solenoid can be replaced in the same body. A valve gets replaced when its body is cracked, often by a winter with water left in it, or when its seat is worn and parts are no longer made."
+    },
+    {
+      "q": "Why would a valve be buried with no box?",
+      "a": "It happens, on original installs and on later repairs. The valve works fine until something fails, and then nobody can find it. When we find one, we set a box over it so the next repair starts with a lid, not a shovel."
+    },
+    {
+      "q": "Can you find a valve under a patio or a new bed?",
+      "a": "We can find where it is. Under mulch, stone or pavers, it can be uncovered and given a box. Under concrete, it is often simpler to set a new valve on the line where it can be reached."
+    },
+    {
+      "q": "Can you add a valve for a new zone?",
+      "a": "Yes, if the water supply can run another zone. A new zone needs its own valve, wire back to the controller and a free station to connect to, or a controller with more stations. More on [added zones](/sprinkler-installation/)."
+    }
+  ],
+  "quote": {
+    "title": "A zone that will not start or stop?",
+    "lede": "Tell us which zone and what it does, or text a photo of the controller screen and the area the zone waters. We will call back to set a time."
+  },
+  "summary": {
+    "title": "Valve work, **start to finish.**",
+    "intro": "We find the valve with as little digging as possible, find out why it failed, and leave it where you can reach it next time.",
+    "items": [
+      { "name": "Traced from the controller", "detail": "Wire traced and the zone read to narrow down where the valve sits." },
+      { "name": "Found, then dug", "detail": "One small hole at the mark, not a lawn full of test holes." },
+      { "name": "Cause tested", "detail": "Solenoid, wire and diaphragm checked to find what actually failed." },
+      { "name": "Cleaned, rebuilt or replaced", "detail": "Whichever the valve needs, explained before we start." },
+      { "name": "Wiring made right", "detail": "Breaks spliced with waterproof connectors, and bad runs replaced." },
+      { "name": "Boxed at grade", "detail": "A valve box set level with the turf, so the valve is never lost again." }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "service": "sprinkler-repair",
+  "city": "grand-blanc",
+  "meta": {
+    "title": "Sprinkler Repair in Grand Blanc, MI | Misty's Irrigation",
+    "description": "Broken heads, hidden leaks, stuck valves and dead zones in Grand Blanc city and township. Misty's Irrigation runs every zone, finds the cause and fixes it."
+  },
+  "hero": {
+    "kicker": "Sprinkler repair in Grand Blanc, MI",
+    "title": "Find the leak **before the bill does.**",
+    "lede": "On township water, every 748 gallons is another unit on the bill, and one broken head can waste that in a few weeks. Misty's Irrigation runs every zone, finds what is actually wrong and fixes it, in the city or the township.",
+    "chips": ["Every zone run", "City, township or well", "Licensed and insured"],
+    "photo": "street-sprinklers"
+  },
+  "local": {
+    "eyebrow": "Repair in Grand Blanc",
+    "title": "What breaks here, **and why.**",
+    "intro": "Grand Blanc systems run from add-ons at 1960s houses to the original systems in 2000s subdivisions, on three different water sources, in soil that drains slowly. Each of those leaves its own kind of trouble, and knowing which one you have speeds up the fix.",
+    "points": [
+      {
+        "title": "The 748 gallon math",
+        "body": "The township bills water per 100 cubic feet, which is 748 gallons. A cracked head can pour five gallons a minute. On a 20 minute zone that runs three times a week, a full billing unit is gone in about two and a half weeks, all of it into one spot."
+      },
+      {
+        "title": "Wet spot, or just wet soil?",
+        "body": "Conover soils, common around Grand Blanc, can hold a perched water table 6 to 18 inches down in spring, the same depth as most sprinkler pipe. A soggy patch in April may simply be the ground. One that stays wet into a dry July, in a line, is usually a leak."
+      },
+      {
+        "title": "Twenty year old subdivisions",
+        "body": "The southern half of the township built more homes in the 2000s than in any other decade, so many systems there are around 20 years old. At that age we find heads sunk into the thatch, worn seals that weep, valve diaphragms gone stiff and wire splices corroding in the valve box."
+      },
+      {
+        "title": "Iron on well systems",
+        "body": "A U.S. Geological Survey study found Genesee County well water from the glacial deposits commonly carries objectionable iron, which turns to reddish sediment in air. On a well-fed system that sediment can plug nozzles and screens, so a weak head gets cleaned, not just turned up."
+      }
+    ]
+  },
+  "logistics": {
+    "title": "A repair visit **in Grand Blanc.**",
+    "body": [
+      "Call or text [(810) 423-9513](tel:+18104239513) with the symptom: a geyser by the walk, a zone that will not shut off, a brown patch that keeps growing. A photo or a short video of the zone running helps us bring the right parts. We come over from Fenton, about 20 minutes away.",
+      "We start at the controller and run every zone, not only the one you called about, because the quiet problems cost water too. You hear what we found and what it takes before any work starts. Then it gets fixed, the zone runs again to prove it, and the turf goes back.",
+      "If a zone is running and will not stop before we get there, switch it off at the controller first. If water keeps flowing, close the valve that feeds the sprinklers, most often found in the basement where the irrigation line leaves the house."
+    ],
+    "facts": [
+      { "label": "Township billing unit", "value": "100 cubic feet, or 748 gallons" },
+      { "label": "Common soil", "value": "Conover loam over dense glacial till" },
+      { "label": "Drive from Fenton", "value": "About 20 minutes" },
+      { "label": "Season", "value": "Spring through fall" }
+    ]
+  },
+  "photo": "ai-valve-box",
+  "faq": [
+    {
+      "q": "Does Misty's repair sprinkler systems in Grand Blanc Township as well as the city?",
+      "a": "Yes. Misty's Irrigation repairs systems all over the City of Grand Blanc and the township, whoever installed them: broken heads, leaks, stuck valves, cut wires and controllers that skip zones. Call or text [(810) 423-9513](tel:+18104239513) and tell us what the system is doing."
+    },
+    {
+      "q": "My water bill jumped in midsummer. Could it be the sprinklers?",
+      "a": "It often is. A broken head, a cracked fitting under the turf or a valve that never fully closes can waste hundreds of gallons a week, and nobody sees it because most systems water before dawn. Look for a soggy stripe, a sunken spot or water standing in the valve box. Then have every zone run and watched."
+    },
+    {
+      "q": "What should I do before the repair visit?",
+      "a": "Note which zones misbehave and what they do. Push a stick or a flag into any soggy or sunken spots so they are easy to find in daylight. Make sure we can reach the controller and the shutoff. That is all we need to get started."
+    },
+    {
+      "q": "Why do my sprinkler heads keep sinking into the lawn?",
+      "a": "Turf and thatch build up around them year after year, and heads settle in soft ground. A sunken head throws into the grass blades instead of over them, which leaves a dry ring around it. We raise it to grade, level it and aim it. More on [heads and nozzles](/sprinkler-head-replacement/)."
+    },
+    {
+      "q": "Our system runs off a well and the heads sputter. What causes that?",
+      "a": "Usually a zone asking for more water than the well can deliver, so pressure drops and heads sputter or barely pop up. On iron-heavy well water, sediment plugging the nozzles is the other usual suspect. We check pressure at the heads, clean what is plugged, and if a zone is simply too big for the well, we can split it in two."
+    }
+  ],
+  "reviews": ["susan-r", "joe-s", "zachary-b"]
+}

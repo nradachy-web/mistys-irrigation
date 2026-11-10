@@ -9,7 +9,7 @@ interface Props {
 const { steps } = Astro.props;
 ---
 
-<ol class:list={['st', `st--${Math.min(steps.length, 4)}`]}>
+<ol class:list={['st', `st--${steps.length === 4 ? 4 : 3}`]}>
   {
     steps.map((s, i) => (
       <li class="st__item">
