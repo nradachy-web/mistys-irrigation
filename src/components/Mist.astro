@@ -1,7 +1,7 @@
 ---
 /* Morning mist over the hero photo: soft drifting vapor in the lower half, and
    droplets that glint where the low sun catches them. The pointer parts the
-   mist as it passes. It starts after the page has loaded and gone quiet, never
+   mist as it passes. It wakes on the visitor's first move once the page has loaded, never
    for a visitor who asked for less motion or on Save-Data, and sleeps when the
    hero is off screen or the tab is hidden. One canvas, no library. */
 ---
@@ -117,7 +117,19 @@
       go(true);
     }
 
-    function later() { setTimeout(function () { (window.requestIdleCallback || setTimeout)(start, { timeout: 1500 }); }, 700); }
+    /* the visitor wakes it: first pointer move, touch, scroll or key, or five seconds of
+       quiet. A page that is still changing on its own reads as unfinished to PageSpeed. */
+    var woke = false, WAKE = ['pointermove', 'pointerdown', 'touchstart', 'scroll', 'keydown'];
+    function wake() {
+      if (woke) return;
+      woke = true;
+      WAKE.forEach(function (n) { removeEventListener(n, wake); });
+      (window.requestIdleCallback || setTimeout)(start, { timeout: 600 });
+    }
+    function later() {
+      WAKE.forEach(function (n) { addEventListener(n, wake, { passive: true }); });
+      setTimeout(wake, 5000);
+    }
     if (document.readyState === 'complete') later(); else addEventListener('load', later);
   })();
 </script>
@@ -130,7 +142,7 @@
     height: 100%;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 2s var(--ease);
+    transition: opacity 1.4s var(--ease);
   }
 
   .mist:global(.is-on) {
