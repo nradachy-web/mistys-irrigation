@@ -84,6 +84,7 @@ const PICK: Record<number, number[]> = { 0: [], 2: [0, 3], 3: [0, 2, 4] };
         <span class="zc__legend">Rain so far this week <b data-rainv>0 in.</b></span>
         <input type="range" name="rain" min="0" max="1.5" step="0.25" value="0" aria-valuetext="0 inches" />
       </label>
+      <p class="zc__pill" aria-hidden="true"><b data-pill="min">{r.perDay}</b> min a zone, <b data-pill="days">{r.days}</b> days a week</p>
     </div>
 
     <div class="zc__out" aria-live="polite">
@@ -121,6 +122,8 @@ const PICK: Record<number, number[]> = { 0: [], 2: [0, 3], 3: [0, 2, 4] };
         f.querySelector('[data-out="perDay"]').textContent = per;
         f.querySelector('[data-out="split"]').textContent = need === 0 ? 'Rain covered it. Skip the week.' : cyc > 1 ? 'as ' + cyc + ' cycles of ' + each + ' minutes, about an hour apart' : 'in one run';
         f.querySelector('[data-out="days"]').textContent = days;
+        f.querySelector('[data-pill="min"]').textContent = per;
+        f.querySelector('[data-pill="days"]').textContent = days;
         f.querySelector('[data-out="need"]').textContent = Math.round(need * 100) / 100;
         f.querySelector('[data-out="week"]').textContent = Math.round(week);
         f.querySelectorAll('[data-week] li').forEach(function (li, i) { li.classList.toggle('is-on', PICK[days].indexOf(i) > -1); });
@@ -247,6 +250,32 @@ const PICK: Record<number, number[]> = { 0: [], 2: [0, 3], 3: [0, 2, 4] };
 
   .zc__rain {
     display: grid;
+  }
+
+  /* on a phone the answer sits below the choices: keep a short version in view */
+  .zc__pill {
+    position: sticky;
+    bottom: calc(5.25rem + env(safe-area-inset-bottom));
+    z-index: 2;
+    justify-self: center;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: var(--pink-btn);
+    color: var(--ink);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    box-shadow: 0 10px 24px -8px rgb(0 0 0 / 0.6);
+  }
+
+  .zc__pill b {
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (min-width: 60rem) {
+    .zc__pill {
+      display: none;
+    }
   }
 
   .zc__rain input {

@@ -1,0 +1,249 @@
+---
+/* WHAT IS IT DOING? A symptom picker. Pick what the system is doing and see
+   what it usually is, what a homeowner can safely check first, and what the
+   visit fixes. "Book this fix" ticks the right choice in the booking form and
+   writes the symptom into its notes. Radio buttons and CSS do the switching, so
+   it works with no script; script only adds the form prefill. */
+import Icon from './Icon.astro';
+import { href } from '../lib/paths';
+
+const ITEMS = [
+  {
+    id: 'wont-stop', label: 'A zone will not shut off', icon: 'drop', ask: 'Repair',
+    is: 'Almost always a valve held open by grit under its diaphragm, or a valve that has worn out. Less often, a controller stuck on.',
+    check: 'Turn the controller off. If water still runs, close the irrigation shutoff (usually in the basement where the line leaves the house). That stops the water bill while you wait.',
+    fix: 'We find the valve, clean or rebuild it, or replace it, then run the zone to prove it shuts off.',
+  },
+  {
+    id: 'wont-start', label: 'A zone will not turn on', icon: 'gauge', ask: 'Repair',
+    is: 'A failed solenoid on the valve, a wire cut or corroded between the valve and the controller, or a controller station that has quit.',
+    check: 'Run the zone by hand from the controller. If nothing happens and other zones work, it is the valve, the wire or that station.',
+    fix: 'We test the station and the wire, trace the break, and replace the solenoid, the splice or the valve.',
+  },
+  {
+    id: 'geyser', label: 'Water shooting up, or a puddle', icon: 'spray', ask: 'Heads and nozzles',
+    is: 'A broken head or the short pipe under it. A mower, a tire or a hard frost cracks them. The rest of that zone usually runs weak too.',
+    check: 'Note which zone it is and turn that zone off. A photo by text helps us bring the right part.',
+    fix: 'We replace the head and the riser under it, set it level with the turf and aim it.',
+  },
+  {
+    id: 'dry', label: 'Brown patches in a watered lawn', icon: 'sun', ask: 'Repair',
+    is: 'Coverage. A head near the patch is tilted, sunk under the grass, clogged or the wrong nozzle, so the water never reaches the spot.',
+    check: 'Run that zone and watch the heads around the patch. Look for one that does not pop up, sprays sideways or falls short.',
+    fix: 'We raise, clean, re-nozzle and aim heads until each one reaches the next. More run time is rarely the answer.',
+  },
+  {
+    id: 'weak', label: 'Weak spray on every head', icon: 'gauge', ask: 'Repair',
+    is: 'A shutoff not fully open, a hidden leak in the line, or too many heads on one zone for the water you have.',
+    check: 'Make sure the irrigation shutoff is fully open. Look for a soggy stripe or a sinking spot in the lawn.',
+    fix: 'We check pressure, walk the line for the leak and fix it, or split the zone if it was overloaded.',
+  },
+  {
+    id: 'rust', label: 'Orange stains on the house or walk', icon: 'drop', ask: 'Rust stain treatment',
+    is: 'Iron in well water. It oxidizes wherever the spray dries, on siding, concrete and fences, and builds up every summer.',
+    check: 'Do the stains line up with where the sprinklers hit? If the house is on a well, that is the cause.',
+    fix: 'We install a Rid-O-Rust treatment system so the iron stops staining, and aim heads off the house.',
+  },
+] as const;
+---
+
+<div class="dg">
+  <fieldset class="dg__list">
+    <legend class="sr">What is the system doing?</legend>
+    {
+      ITEMS.map((it, i) => (
+        <label class="dg__opt">
+          <input type="radio" name="dg" value={it.id} checked={i === 0} />
+          <span><Icon name={it.icon} />{it.label}</span>
+        </label>
+      ))
+    }
+  </fieldset>
+  <div class="dg__out">
+    {
+      ITEMS.map((it) => (
+        <article class="dg__card" data-dg={it.id} aria-live="polite">
+          <h3 class="h3">{it.label}</h3>
+          <dl>
+            <div><dt>What it usually is</dt><dd>{it.is}</dd></div>
+            <div><dt>Check this first</dt><dd>{it.check}</dd></div>
+            <div><dt>What we do</dt><dd>{it.fix}</dd></div>
+          </dl>
+          <a class="btn primary" href={href('/book-service/')} data-book={it.ask} data-note={it.label} data-cta="diagnose-book">Book this fix</a>
+        </article>
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('[data-book]').forEach(function (a) {
+      if (a.dataset.on) return;
+      a.dataset.on = '1';
+      a.addEventListener('click', function (e) {
+        var f = document.getElementById('qf');
+        if (window.miTrack) window.miTrack('tool_use', { tool: 'diagnose', choice: a.dataset.note });
+        if (!f) return; /* no form on this page: go to the booking page */
+        e.preventDefault();
+        f.querySelectorAll('input[name=services]').forEach(function (c) { c.checked = c.value === a.dataset.book; });
+        var other = f.querySelector('select[name=other_service]');
+        if (other && !f.querySelector('input[name=services]:checked')) other.value = a.dataset.book;
+        var m = f.querySelector('textarea[name=message]');
+        if (m && !m.value) m.value = a.dataset.note + '.';
+        document.getElementById('quote').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
+  })();
+</script>
+
+<style>
+  .dg {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 60rem) {
+    .dg {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      align-items: start;
+    }
+  }
+
+  .dg__list {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .dg__opt {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dg__opt input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .dg__opt span {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--white);
+    font-weight: 620;
+    transition:
+      border-color 0.18s var(--ease),
+      background-color 0.18s var(--ease),
+      transform 0.18s var(--ease);
+  }
+
+  .dg__opt :global(.icon) {
+    flex: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--rose);
+  }
+
+  .dg__opt:hover span {
+    border-color: rgb(194 28 116 / 0.5);
+  }
+
+  .dg__opt input:checked + span {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #fff;
+    transform: translateX(4px);
+  }
+
+  .dg__opt input:checked + span :global(.icon) {
+    color: var(--pink-btn);
+  }
+
+  .dg__opt input:focus-visible + span {
+    outline: 2px solid var(--rose);
+    outline-offset: 2px;
+  }
+
+  .dg__out {
+    display: grid;
+  }
+
+  .dg__card {
+    grid-area: 1 / 1;
+    display: none;
+    gap: 1.1rem;
+    align-content: start;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: calc(var(--r) + 4px);
+    background:
+      radial-gradient(120% 90% at 100% 0%, rgb(255 90 169 / 0.14), transparent 55%),
+      var(--ink);
+    color: var(--on-ink);
+  }
+
+  .dg__card dl {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .dg__card dt {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pink-on-ink);
+  }
+
+  .dg__card dd {
+    margin: 0.2rem 0 0;
+    color: #d6deea;
+  }
+
+  .dg__card .btn {
+    justify-self: start;
+    background: var(--pink-btn);
+    color: var(--ink);
+  }
+
+  .dg__card .btn:hover {
+    background: var(--pink-btn-hover);
+  }
+
+  /* the picked symptom's card shows, with no script */
+  .dg:has(input[value='wont-stop']:checked) [data-dg='wont-stop'],
+  .dg:has(input[value='wont-start']:checked) [data-dg='wont-start'],
+  .dg:has(input[value='geyser']:checked) [data-dg='geyser'],
+  .dg:has(input[value='dry']:checked) [data-dg='dry'],
+  .dg:has(input[value='weak']:checked) [data-dg='weak'],
+  .dg:has(input[value='rust']:checked) [data-dg='rust'] {
+    display: grid;
+    animation: dg-in 0.35s var(--ease);
+  }
+
+  @keyframes dg-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+
+  /* browsers without :has show every card, stacked */
+  @supports not selector(:has(*)) {
+    .dg__card {
+      display: grid;
+      grid-area: auto;
+    }
+  }
+</style>

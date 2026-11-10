@@ -4,6 +4,8 @@ import PageHead from '../components/PageHead.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Season from '../components/Season.astro';
 import Icon from '../components/Icon.astro';
+import Head from '../components/Head.astro';
+import Diagnose from '../components/Diagnose.astro';
 import { BRAND } from '../data/site';
 import { breadcrumbs } from '../lib/schema';
 
@@ -30,6 +32,12 @@ const schema = [breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Book service'
           <Season />
         </div>
       </div>
+    </div>
+  </section>
+  <section class="band white" aria-labelledby="dg-h">
+    <div class="wrap">
+      <Head id="dg-h" eyebrow="Not sure what to ask for?" title="Tell us what **it is doing.**" intro="Pick the symptom. Book this fix fills in the form above for you." />
+      <Diagnose />
     </div>
   </section>
 </Base>

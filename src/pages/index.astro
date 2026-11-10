@@ -6,8 +6,9 @@
      2  white       the season clock: what to book right now
      3  mist        the services, as photo cards
      4  ink         HEAD TO HEAD: the coverage panel
-     5  white       who they are, beside the wrapped car and the shop dog
-     6  mist        reviews
+     5  white       WHAT IS IT DOING: the symptom picker
+     6  mist        who they are, beside the wrapped car and the shop dog
+     7  white       reviews
      7  ink         WINTERIZE IT: the blowout panel
      8  mist        how a visit works
      9  photo       lake lots
@@ -30,6 +31,7 @@ import Season from '../components/Season.astro';
 import Coverage from '../components/Coverage.astro';
 import Blowout from '../components/Blowout.astro';
 import AreaMap from '../components/AreaMap.astro';
+import Diagnose from '../components/Diagnose.astro';
 import Icon from '../components/Icon.astro';
 import { BRAND, RATING } from '../data/site';
 import { SERVICES, service } from '../data/services';
@@ -116,7 +118,14 @@ const schema = [serviceListSchema(), faqSchema(faq)];
     </div>
   </section>
 
-  <section class="band white" aria-labelledby="who-h">
+  <section class="band white" aria-labelledby="dg-h">
+    <div class="wrap">
+      <Head id="dg-h" eyebrow="Troubleshoot" title="What is your system **doing?**" intro="Pick the symptom. See what it usually is, what you can safely check yourself, and what the visit fixes." />
+      <Diagnose />
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="who-h">
     <div class="wrap two">
       <figure>
         <div class="frame wide">
@@ -140,7 +149,7 @@ const schema = [serviceListSchema(), faqSchema(faq)];
     </div>
   </section>
 
-  <section class="band" aria-labelledby="rev-h">
+  <section class="band white" aria-labelledby="rev-h">
     <div class="wrap">
       <Head id="rev-h" eyebrow="Reviews" title="In their **own words.**" intro="Word for word from Google. Promptness and fair pricing are what people mention most." />
       <Reviews reviews={REVIEWS} />

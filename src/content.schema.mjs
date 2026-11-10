@@ -104,7 +104,7 @@ export function makeSchemas(z, ids) {
     /** One of the interactive panels, with words beside or above it. */
     z.object({
       type: z.literal('panel'),
-      kind: z.enum(['coverage', 'blowout', 'calc', 'season', 'rust']),
+      kind: z.enum(['coverage', 'blowout', 'calc', 'season', 'rust', 'diagnose']),
       ...headFields,
       points: z.array(text(8, 240)).max(4).default([]),
     }),

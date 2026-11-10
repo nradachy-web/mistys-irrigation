@@ -8,7 +8,10 @@
     "kicker": "Sprinkler repair in Fenton, MI",
     "title": "Fix the head, **not the timer.**",
     "lede": "Brown patches, a geyser by the driveway, a zone that will not start or will not stop. We run every zone, find the actual cause, tell you what it is, and fix it.",
-    "chips": ["Every zone checked", "Licensed and insured"],
+    "chips": [
+      "Every zone checked",
+      "Licensed and insured"
+    ],
     "photo": "street-sprinklers"
   },
   "blocks": [
@@ -27,7 +30,10 @@
         "Controllers that skip zones, show errors or run on the wrong days"
       ],
       "photo": "colonial-mist",
-      "cta": { "label": "Heads and nozzles in detail", "href": "/sprinkler-head-replacement/" }
+      "cta": {
+        "label": "Heads and nozzles in detail",
+        "href": "/sprinkler-head-replacement/"
+      }
     },
     {
       "type": "panel",
@@ -41,20 +47,12 @@
       ]
     },
     {
-      "type": "cards",
+      "type": "panel",
+      "kind": "diagnose",
       "plane": "white",
-      "eyebrow": "Symptoms",
+      "eyebrow": "Troubleshoot",
       "title": "What it is doing, and **what usually causes it.**",
-      "intro": "A short guide to the calls we get most. It is a starting point: the visit is where we confirm it.",
-      "columns": 3,
-      "items": [
-        { "tag": "Zone will not start", "title": "Usually a valve or a wire", "body": "A solenoid that has failed, a wire nicked by a shovel or an edger, or a controller station that has quit. We test each one until we find it." },
-        { "tag": "Zone will not stop", "title": "Usually grit in the valve", "body": "A bit of debris under the valve diaphragm holds it open. Cleaning or rebuilding the valve fixes most of these without digging." },
-        { "tag": "Geyser or puddle", "title": "A broken head or riser", "body": "A mower, a car tire or a hard frost cracks the head or the short pipe under it. Water comes straight up, and the rest of the zone runs weak." },
-        { "tag": "Brown patches", "title": "Coverage, not run time", "body": "A head that is tilted, sunk or clogged leaves a gap between heads. Fixing the head fixes the patch. More minutes only flood the rest." },
-        { "tag": "Weak everywhere", "title": "Pressure, or a hidden leak", "body": "A partly closed shutoff, a leaking line under the turf or too many heads on one zone. We check pressure and walk the line." },
-        { "tag": "Soggy spot", "title": "A slow leak underground", "body": "Turf that stays wet, sinks or grows faster in a stripe often sits over a cracked fitting. We dig small, fix it and put the sod back." }
-      ]
+      "intro": "Pick the symptom. It is a starting point: the visit is where we confirm it."
     },
     {
       "type": "steps",
@@ -62,10 +60,22 @@
       "eyebrow": "The visit",
       "title": "How a repair **visit runs.**",
       "steps": [
-        { "title": "Every zone, run and watched", "body": "We start at the controller and run each zone in turn, so we see the problem you called about and anything else that is quietly wasting water." },
-        { "title": "The cause, found", "body": "A dry spot gets traced to its head, a dead zone to its valve or wire, a soggy stripe to its leak." },
-        { "title": "You hear it first", "body": "Before we fix anything, we tell you what we found and what it takes. You decide." },
-        { "title": "Fixed, tested, put back", "body": "Repairs done, the zone run again to prove it, heads aimed, and the turf put back so the repair is hard to find." }
+        {
+          "title": "Every zone, run and watched",
+          "body": "We start at the controller and run each zone in turn, so we see the problem you called about and anything else that is quietly wasting water."
+        },
+        {
+          "title": "The cause, found",
+          "body": "A dry spot gets traced to its head, a dead zone to its valve or wire, a soggy stripe to its leak."
+        },
+        {
+          "title": "You hear it first",
+          "body": "Before we fix anything, we tell you what we found and what it takes. You decide."
+        },
+        {
+          "title": "Fixed, tested, put back",
+          "body": "Repairs done, the zone run again to prove it, heads aimed, and the turf put back so the repair is hard to find."
+        }
       ]
     },
     {
@@ -81,7 +91,11 @@
       "type": "reviews",
       "plane": "white",
       "title": "What repair customers **say.**",
-      "ids": ["zachary-b", "susan-r", "joe-s"]
+      "ids": [
+        "zachary-b",
+        "susan-r",
+        "joe-s"
+      ]
     },
     {
       "type": "areas",
@@ -128,12 +142,30 @@
     "title": "A repair visit, **start to finish.**",
     "intro": "Every visit follows the same order, so nothing gets missed and you know what you are paying for before we start.",
     "items": [
-      { "name": "Every zone run", "detail": "Each zone run and watched, not just the one you called about." },
-      { "name": "Cause found", "detail": "Dry spots traced to heads, dead zones to valves or wires, wet spots to leaks." },
-      { "name": "Explained first", "detail": "What we found and what it takes, before any work starts." },
-      { "name": "Heads and leaks fixed", "detail": "Broken heads and risers replaced, leaks dug and repaired, heads aimed." },
-      { "name": "Valves and wiring", "detail": "Stuck valves cleaned or rebuilt, failed solenoids and cut wires replaced." },
-      { "name": "Put back", "detail": "The zone tested again, the turf replaced, and nothing left behind." }
+      {
+        "name": "Every zone run",
+        "detail": "Each zone run and watched, not just the one you called about."
+      },
+      {
+        "name": "Cause found",
+        "detail": "Dry spots traced to heads, dead zones to valves or wires, wet spots to leaks."
+      },
+      {
+        "name": "Explained first",
+        "detail": "What we found and what it takes, before any work starts."
+      },
+      {
+        "name": "Heads and leaks fixed",
+        "detail": "Broken heads and risers replaced, leaks dug and repaired, heads aimed."
+      },
+      {
+        "name": "Valves and wiring",
+        "detail": "Stuck valves cleaned or rebuilt, failed solenoids and cut wires replaced."
+      },
+      {
+        "name": "Put back",
+        "detail": "The zone tested again, the turf replaced, and nothing left behind."
+      }
     ]
   }
 }

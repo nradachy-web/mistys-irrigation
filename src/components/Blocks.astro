@@ -11,6 +11,7 @@ import Blowout from './Blowout.astro';
 import ZoneCalc from './ZoneCalc.astro';
 import Season from './Season.astro';
 import RustReveal from './RustReveal.astro';
+import Diagnose from './Diagnose.astro';
 import AreaChips from './AreaChips.astro';
 import type { Block } from '../content.config';
 import type { PhotoId } from '../data/photos';
@@ -149,6 +150,7 @@ const link = (h: string) => (h.startsWith('#') || /^(https?:|tel:|sms:)/.test(h)
                 {b.kind === 'calc' && <ZoneCalc />}
                 {b.kind === 'season' && <Season />}
                 {b.kind === 'rust' && <RustReveal />}
+                {b.kind === 'diagnose' && <Diagnose />}
               </div>
             </div>
           )}
